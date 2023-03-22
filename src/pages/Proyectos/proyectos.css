@@ -1,0 +1,35 @@
+.proyectos {
+    height: 100vh;
+    margin-top: 110px;
+}
+
+.proyect-list {
+    padding: 0;
+    margin: 50px 0;
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+.proyect-list a {
+    text-decoration: none;
+    color: black;   
+}
+
+.proyect-list a.active {
+    font-weight: bold;
+}
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    overflow: hidden;
+    min-height: auto;
+    justify-items: center;
+}
+
+
