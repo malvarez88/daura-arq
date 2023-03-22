@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./home.css";
+import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 
 import heroImg1 from "../../assets/1.png";
 import heroImg2 from "../../assets/2.png";
@@ -10,7 +11,12 @@ const Home = () => {
     <div className="container">
       <div className="row">
         <div className="col-xl-12">
-          <section className="home-section">
+          <motion.section 
+          initial={{opacity:0}}
+          animate={{opacity:1}}
+          exit={{opacity:0}}
+          transition={{ duration: 1 }}
+          className="home-section">
             <div
               id="carouselExampleControls"
               class="carousel slide"
@@ -59,7 +65,7 @@ const Home = () => {
                 <span className="sr-only">Next</span>
               </a>
             </div>
-          </section>
+          </motion.section>
         </div>
       </div>
     </div>
