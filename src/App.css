@@ -1,4 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+  font-family: 'Regular';
+  src: local('AdventorRegular'), 
+  url('./fonts/tex-gyre-adventor.regular.otf') format("opentype");;
+}
+
+
+@font-face {
+  font-family: 'Bold';
+  src: local('AdventorBold'), 
+  url('./fonts/tex-gyre-adventor.bold.otf') format("opentype");;
+}
+
+@font-face {
+  font-family: 'ExtraLigth';
+  src: local('TickbiteLight'), 
+  url('./fonts/tickbite-type-colin-extralight.otf') format("opentype");;
+}
+
+
 
 * {
   margin: 0;
@@ -6,5 +25,5 @@
   box-sizing: border-box;
   background: #f4f0f0;
   transition: 0.4s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Regular', sans-serif;
 }
