@@ -17,3 +17,12 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+.footer-list a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-list a:hover {
+  text-decoration: underline;
+}
