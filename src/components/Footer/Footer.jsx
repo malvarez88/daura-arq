@@ -10,14 +10,14 @@ const Footer = () => {
         <div className="row">
           <div className="col-xl-12">
             <motion.div
-              initial={{opacity:0}}
-              animate={{opacity: 1}}
-              transition={{ duration: 1 }}
+              initial={{opacity:0, y:100}}
+              animate={{opacity: 1, y: 0}}
+              transition={{ ease: "linear",duration: 1 }}
               exit={{}}
             >
             <ul className="footer-list">
               <li>CA / EN / ES</li>
-              <li>ESPAIS</li>
+              <li>ESPACIOS</li>
               <li><a href="/contact">CONTACTE</a> </li>
             </ul>
             </motion.div>
