@@ -70,7 +70,14 @@ const Proyectos = () => {
             >
               <div className="wrapper">
                 {proyectos.map((proyecto, index) => (
+                    <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x:0 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+                    >
                   <img src={proyecto} alt={`Image ${index}`} key={index} />
+                  </motion.div>
                 ))}
               </div>
             </motion.div>

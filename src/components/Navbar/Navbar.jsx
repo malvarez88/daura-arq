@@ -9,9 +9,9 @@ const Navbar = () => {
   return (
     <header>
       <motion.div 
-      initial={{opacity:0}}
-      animate={{opacity: 1}}
-      transition={{ duration: 1 }}
+      initial={{opacity:0, y: -100}}
+      animate={{opacity: 1, y:0}}
+      transition={{ ease: "linear",duration: 1 }}
       exit={{}}
       className="container">
         <div className="row">
