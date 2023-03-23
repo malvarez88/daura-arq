@@ -1,6 +1,6 @@
 footer {
   height: 15vh;
-  position: fixed;
+  position: absolute;
   left: 0;
   bottom: 0;
   right: 0;
@@ -8,6 +8,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: auto;
 }
 
 .footer-list {

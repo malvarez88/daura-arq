@@ -26,4 +26,11 @@
   background: #f4f0f0;
   transition: 0.4s ease;
   font-family: 'Regular', sans-serif;
+  position: relative;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
