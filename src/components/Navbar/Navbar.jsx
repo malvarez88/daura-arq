@@ -18,13 +18,14 @@ const Navbar = () => {
           <div className="col-xl-12">
             <ul className="nav-links">
               <li>
-                <a href="/">Estudi</a>{" "}
+                
+                <a href="/proyectos">Proyectes</a>
               </li>
               <li>
                 <img src={logo} alt="logo" width="100px" />
               </li>
               <li>
-                <a href="/proyectos">Proyectes</a>
+              <a href="/">Estudi</a>
               </li>
             </ul>
           </div>
