@@ -18,12 +18,13 @@ const Proyectos = () => {
         <div className="row">
           <div className="col-xl-12">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
+              initial={{ opacity: 0, x: -200 }}
+              animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 1, delay: 1 }}
             >
               <ul className="proyect-list">
+              <motion.div className="underline" layoutId="underline" />
                 <li>
                   <a
                     href=""
@@ -62,19 +63,21 @@ const Proyectos = () => {
                 </li>
               </ul>
             </motion.div>
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1 }}
-            >
+            > */}
               <div className="wrapper">
                 {proyectos.map((proyecto, index) => (
                   <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, x:200}}
+                    // animate={{ opacity: 1, x: 0 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 1, delay: 0.3 }}
+                    transition={{ duration: 1 }}
                   >
                     <div className="proyect-thumb">
                       <img src={proyecto} alt={`Image ${index}`} key={index} />
@@ -88,7 +91,7 @@ const Proyectos = () => {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+            {/* </motion.div> */}
           </div>
         </div>
       </div>
