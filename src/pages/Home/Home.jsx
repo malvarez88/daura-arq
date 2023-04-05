@@ -5,16 +5,19 @@ import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
 
 import heroImg1 from "../../assets/1.png";
 import heroImg2 from "../../assets/2.png";
+import heroImg3 from "../../assets/3.png";
+
 
 const Home = () => {
   return (
+    <AnimatePresence>
     <div className="container">
       <div className="row">
         <div className="col-xl-12">
           <motion.section 
           initial={{opacity:0, x:200}}
           animate={{opacity:1, x: 0}}
-          exit={{opacity:0}}
+          exit={{opacity:0, x:200}}
           transition={{ duration: 1 }}
           className="home-section">
             <div
@@ -29,6 +32,7 @@ const Home = () => {
                     src={heroImg1}
                     alt="First slide"
                     width="1100px"
+                    height="540px"
                   />
                 </div>
                 <div className="carousel-item">
@@ -37,6 +41,16 @@ const Home = () => {
                     src={heroImg2}
                     alt="Third slide"
                     width="1100px"
+                    height="540px"
+                  />
+                </div>
+                <div className="carousel-item">
+                  <img
+                    className="d-block"
+                    src={heroImg3}
+                    alt="Third slide"
+                    width="1100px"
+                    height="540px"
                   />
                 </div>
               </div>
@@ -69,6 +83,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    </AnimatePresence>
   );
 };
 

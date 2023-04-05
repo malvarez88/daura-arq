@@ -1,101 +1,111 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./proyectos.css";
 
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
-import proyectos from "../../utils/proyectos";
+import { proyectos } from "../../constants";
+import ProyectoAbierto from "../ProyectoAbierto/ProyectoAbierto";
 
 const Proyectos = () => {
   const [isActive, setIsActive] = useState(false);
+  // const [selectedProyect, setSelectedProyect] = useState(null);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
     setIsActive(true);
   };
 
+  // const handleProyect = (proyecto) => {
+  //   setSelectedProyect(proyecto)
+  // };
+
   return (
-    <div className="proyectos">
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-12">
-            <motion.div
-              initial={{ opacity: 0, x: -200 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1, delay: 1 }}
-            >
-              <ul className="proyect-list">
-              <motion.div className="underline" layoutId="underline" />
-                <li>
-                  <a
-                    href=""
-                    onClick={handleClick}
-                    className={isActive ? "active" : ""}
-                  >
-                    todo
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href=""
-                    onClick={handleClick}
-                    className={isActive ? "active" : ""}
-                  >
-                    arquitectura y urbanismo
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href=""
-                    onClick={handleClick}
-                    className={isActive ? "active" : ""}
-                  >
-                    deporte y ocio
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href=""
-                    onClick={handleClick}
-                    className={isActive ? "active" : ""}
-                  >
-                    patrimonio
-                  </a>
-                </li>
-              </ul>
-            </motion.div>
-            {/* <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1 }}
-            > */}
+    <AnimatePresence>
+      <div className="proyectos">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-12">
+              <motion.div
+                initial={{ opacity: 0, x: -200 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 1, delay: 1 }}
+              >
+                <ul className="proyect-list">
+                  <li>
+                    <a
+                      href=""
+                      onClick={handleClick}
+                      className={isActive ? "active" : ""}
+                    >
+                      todo
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      onClick={handleClick}
+                      className={isActive ? "active" : ""}
+                    >
+                      arquitectura y urbanismo
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      onClick={handleClick}
+                      className={isActive ? "active" : ""}
+                    >
+                      deporte y ocio
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href=""
+                      onClick={handleClick}
+                      className={isActive ? "active" : ""}
+                    >
+                      patrimonio
+                    </a>
+                  </li>
+                </ul>
+              </motion.div>
               <div className="wrapper">
                 {proyectos.map((proyecto, index) => (
                   <motion.div
-                    initial={{ opacity: 0, x:200}}
+                    initial={{ opacity: 0, x: 200 }}
                     // animate={{ opacity: 1, x: 0 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false }}
+                    viewport={{ once: true }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
                   >
+                    {/* <Link to={<ProyectoAbierto proyecto={proyecto} key={index}/>}> */}
                     <div className="proyect-thumb">
-                      <img src={proyecto} alt={`Image ${index}`} key={index} />
+                      <img
+                        src={proyecto.thumb}
+                        alt={`Image ${index}`}
+                        key={index}
+                        width="300px"
+                        height="300px"
+                      />
                       <div className="proyect-description">
                         <p>
-                          algun texto que tiene que ver con la descripcion del
-                          proyecto
+                          {proyecto.title.toUpperCase()}
+                          {proyecto.description}
                         </p>
                       </div>
                     </div>
+                    {/* </Link> */}
                   </motion.div>
                 ))}
               </div>
-            {/* </motion.div> */}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 };
 
