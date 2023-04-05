@@ -7,17 +7,18 @@ import Home from "./pages/Home/Home";
 import Proyectos from "./pages/Proyectos/Proyectos"
 import Footer from "./components/Footer/Footer";
 import Contact from "./pages/Contact/Contact";
+import ProyectoAbierto from "./pages/ProyectoAbierto/ProyectoAbierto";
 
 function App() {
   return (
 <>
 <Navbar />
-
 <Footer />
 <Routes>
     <Route path="/" element={<Home />}/>
     <Route path="/proyectos" element={ <Proyectos />}/>
-    <Route path="/contact" element={ <Contact />}/>
+    <Route path="/contacto" element={ <Contact />}/>
+    <Route path='/proyecto/:titulo' element={<ProyectoAbierto />}/>
 </Routes>
 </>
  

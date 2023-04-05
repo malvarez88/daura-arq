@@ -36,7 +36,10 @@
 
 .proyect-thumb {
     position: relative;
+}
 
+.proyect-thumb img {
+    border-radius: 5px;
 }
 
 .proyect-description {
