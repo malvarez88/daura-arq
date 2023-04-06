@@ -38,6 +38,12 @@ const Contact = () => {
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
+            <motion.div
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             exit={{ opacity: 0 }}
+             transition={{ duration: 1 }}
+            >
             <div className="contact-section">
               <h1>Contact Us</h1>
               <form onSubmit={handleSubmit} className="contact-form" action="">
@@ -50,7 +56,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                   />
-                  <span>Nombre:</span>
+                  <span>Nombre</span>
                 </div>
                 <div className="input-box">
                   <input
@@ -61,10 +67,10 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                   />
-                  <span>Email:</span>
+                  <span>Email</span>
                 </div>
                 <div className="input-box">
-                  <input
+                  <textarea
                     type="textarea"
                     required
                     id="message"
@@ -72,43 +78,12 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                   />
-                  <span>Mensaje:</span>
+                  <span>Mensaje</span>
                 </div>
+                <button className="btn btn-secondary" type="submit">Send</button>
               </form>
-
-              {/* <form onSubmit={handleSubmit} className="contact-form">
-                <label htmlFor="name">
-                  Name:
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
-                </label>
-                <label htmlFor="email">
-                  Email:
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                </label>
-                <label htmlFor="message">
-                  Message:
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                  ></textarea>
-                </label>
-                <button type="submit">Send</button>
-              </form> */}
             </div>
+            </motion.div>
           </div>
         </div>
       </div>
