@@ -29,7 +29,7 @@
     width: 100%;
     padding: 25px;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 4px;
     outline: none;
     height: 70px;
     font-size: 14px;
@@ -39,7 +39,7 @@
     width: 100%;
     padding: 25px;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 4px;
     outline: none;
    font-size: 14px;
 }
@@ -51,25 +51,27 @@
     pointer-events: none;
     transition: 0.5s;
     background: transparent;
-    text-transform: uppercase;
+    color: grey;
 }
 
 .input-box input:valid ~ span, .input-box input:focus ~ span{
     padding: 5px 10px;
     transform: translateX(10px) translateY(-20px);
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    background:  #f4f0f0;
+    border: 1px solid #f4f0f0;;
+    background:  black;
     letter-spacing: 3px;
+    color: #f4f0f0;
+    border-radius: 4px;
 }
 
 .input-box textarea:valid ~ span, .input-box textarea:focus ~ span {
     padding: 5px 10px;
     transform: translateX(10px) translateY(-20px);  
-    border-left: 1px solid black;
-    border-right: 1px solid black;
-    background:  #f4f0f0;
+    border: 1px solid #f4f0f0;;
+    background:  black;
     letter-spacing: 3px;
+    color: #f4f0f0;
+    border-radius: 4px;
 }
 
 .btn { 
