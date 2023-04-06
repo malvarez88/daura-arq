@@ -1,9 +1,9 @@
 import React from 'react'
 import './proyectoabierto.css'
 
-const ProyectoAbierto = (proyecto) => {
+const ProyectoAbierto = ({...proyecto}) => {
   return (
-    <div>{proyecto.titulo}</div>
+    <div><h1>{proyecto.titulo}</h1></div>
   )
 }
 

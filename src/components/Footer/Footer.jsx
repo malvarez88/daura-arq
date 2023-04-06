@@ -18,7 +18,7 @@ const Footer = () => {
             <ul className="footer-list">
               <li>CA / EN / ES</li>
               <li>ESPACIOS</li>
-              <li><a href="/contact">CONTACTE</a> </li>
+              <li><a href="/contacto">CONTACTE</a> </li>
             </ul>
             </motion.div>
           </div>
