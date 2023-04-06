@@ -34,9 +34,14 @@ import {
   frasca6,
 } from "../assets";
 
+// const replace = (title) => {
+//   return title.replace(/\s+/g, '-');
+// }
+
 const proyectos = [
   {
     title: "Barcelona World Basketball Festival",
+    path:  "barcelona-world-basketball-festival",
     location: "Barcelona - España",
     description: "",
     año: "",
@@ -50,6 +55,7 @@ const proyectos = [
   },
   {
     title: "Boardriders Barcelona",
+    path: "boardriders-barcelona",
     location: "Barcelona - España",
     description: "",
     año: "",
@@ -63,6 +69,7 @@ const proyectos = [
   },
   {
     title: "Centre de Emprenedoria de la Universitat de Vic",
+    path: "centre-emprendedoria-vic",
     location: "Barcelona - España",
     description: "",
     año: "",
@@ -76,6 +83,7 @@ const proyectos = [
   },
   {
     title: "Centro Civico Ca La Mina",
+    path:"centro-civico-la-mina",
     location: "Barcelona - España",
     description: "",
     año: "",
@@ -89,6 +97,7 @@ const proyectos = [
   },
   {
     title: "Complejo Deportivo de Cartama",
+    path: "cartama",
     location: "Malaga - España",
     description: "",
     año: "",
@@ -102,6 +111,7 @@ const proyectos = [
   },
 {
     title: "Habitage Unigamiliar E+L",
+    path: "habitage-el",
     location: "Barcelona - España",
     description: "",
     año: "",
@@ -115,6 +125,7 @@ const proyectos = [
 },
 {
     title: "La Frasca",
+    path: "la-frasca",
     location: "Haro - España",
     description: "",
     año: "",

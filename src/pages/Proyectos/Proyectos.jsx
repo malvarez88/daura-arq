@@ -7,18 +7,18 @@ import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import { proyectos } from "../../constants";
 import ProyectoAbierto from "../ProyectoAbierto/ProyectoAbierto";
 
-const Proyectos = () => {
+const Proyectos = (setSelectedProject) => {
   const [isActive, setIsActive] = useState(false);
-  // const [selectedProyect, setSelectedProyect] = useState(null);
+
 
   const handleClick = (e) => {
     e.preventDefault();
     setIsActive(true);
   };
 
-  // const handleProyect = (proyecto) => {
-  //   setSelectedProyect(proyecto)
-  // };
+  const handleProyect = (proyecto) => {
+    setSelectedProject(proyecto)
+  };
 
   return (
     <AnimatePresence>
@@ -81,8 +81,12 @@ const Proyectos = () => {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
                   >
-                    {/* <Link to={<ProyectoAbierto proyecto={proyecto} key={index}/>}> */}
                     <div className="proyect-thumb">
+                      <a
+                        href={`/proyectos/${proyecto.path}`}
+                        className="proyect-anchor"
+                        onClick={handleProyect}
+                      >  
                       <img
                         src={proyecto.thumb}
                         alt={`Image ${index}`}
@@ -96,8 +100,8 @@ const Proyectos = () => {
                           {proyecto.description}
                         </p>
                       </div>
+                      </a>
                     </div>
-                    {/* </Link> */}
                   </motion.div>
                 ))}
               </div>
