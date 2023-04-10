@@ -1,30 +1,38 @@
 import React from "react";
 import "./footer.css";
 
-import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-12">
-            <motion.div
-              initial={{opacity:0, y:100}}
-              animate={{opacity: 1, y: 0}}
-              transition={{ ease: "linear",duration: 1 }}
-              exit={{}}
-            >
-            <ul className="footer-list">
-              <li>CA / EN / ES</li>
-              <li>ESPACIOS</li>
-              <li><a href="/contacto">CONTACTE</a> </li>
-            </ul>
-            </motion.div>
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ ease: "linear", duration: 1 }}
+      exit={{}}
+    >
+      <div className="footer">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-12">
+              <ul className="footer-list">
+                <li>CA / EN / ES</li>
+                <li>
+                  <a href="/espacios" className="footer-link">
+                    Espacios
+                  </a>
+                </li>
+                <li>
+                  <a className="footer-link" href="/contacto">
+                    Contacto
+                  </a>{" "}
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
+    </motion.div>
   );
 };
 

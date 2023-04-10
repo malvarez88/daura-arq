@@ -1,10 +1,6 @@
-footer {
-  height: 15vh;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
+.footer {
+  padding: 20px 0;
+  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,11 +15,14 @@ footer {
   justify-content: space-between;
 }
 
-.footer-list a {
+.footer-link {
   text-decoration: none;
   color: black;
+  text-transform: uppercase;
 }
 
-.footer-list a:hover {
-  text-decoration: underline;
+.footer-link:hover {
+text-decoration: line-through;
+color: black;
+font-style: italic;
 }
