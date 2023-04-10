@@ -82,7 +82,7 @@ const Estudio = () => {
                   <ul className="partner-list">
                     {partners.map((partner) => (
                       <li>
-                        <a href={partner.url} target="_blank">
+                        <a href={partner.url} target="_blank" rel="noopener noreferrer">
                           {partner.name}
                         </a>
                       </li>
