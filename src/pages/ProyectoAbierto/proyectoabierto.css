@@ -42,6 +42,13 @@
 }
 
 
+.project-link {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
 @media screen and (max-width: 990px) {
     .images-section {
         grid-template-columns: 1fr;

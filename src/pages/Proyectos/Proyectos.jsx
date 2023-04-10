@@ -4,20 +4,18 @@ import "./proyectos.css";
 
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
-import { proyectos } from "../../constants";
+import { proyectos, categorias, colores } from "../../constants";
 import ProyectoAbierto from "../ProyectoAbierto/ProyectoAbierto";
 
 const Proyectos = (setSelectedProject) => {
-  const [isActive, setIsActive] = useState(false);
+  // const [isActive, setIsActive] = useState(false);
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    // setIsActive(true);
-  };
+  function mostrarProyectos(categoria) {
+    setCategoriaSeleccionada(categoria);
+  }
 
-  const handleProyect = (proyecto) => {
-    setSelectedProject(proyecto);
-  };
+  const categorias = Object.keys(colores);
 
   return (
     <AnimatePresence>
@@ -31,77 +29,64 @@ const Proyectos = (setSelectedProject) => {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 1, delay: 1 }}
               >
-                <ul className="proyect-list">
-                  <li>
-                    <a
-                      href=""
-                      onClick={handleClick}
-                      className={isActive ? "active" : ""}
+                <ul className="categories-list">
+                  {categorias.map((categoria) => (
+                    <li
+                      key={categoria}
+                      onClick={() => mostrarProyectos(categoria)}
+                      style={{
+                        color:
+                          categoria === categoriaSeleccionada ? colores[categoria] : "",
+                      }}
                     >
-                      todo
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      onClick={handleClick}
-                      className={isActive ? "active" : ""}
-                    >
-                      arquitectura y urbanismo
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      onClick={handleClick}
-                      className={isActive ? "active" : ""}
-                    >
-                      deporte y ocio
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href=""
-                      onClick={handleClick}
-                      className={isActive ? "active" : ""}
-                    >
-                      patrimonio
-                    </a>
-                  </li>
+                      {categoria}
+                    </li>
+                  ))}
                 </ul>
               </motion.div>
               <div className="wrapper">
-                {proyectos.map((proyecto, index) => (
-                  <motion.div
-                    initial={{ opacity: 0, x: 200 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
-                  >
-                    <a
-                      href={`/proyectos/${proyecto.path}`}
-                      // onClick={handleClick}
-                      className="link-project"
-                    >
-                      <div className="proyect-thumb">
-                        <img
-                          src={proyecto.thumb}
-                          alt={`Image ${index}`}
-                          key={index}
-                          width="300px"
-                          height="300px"
-                        />
-                        <div className="proyect-description">
-                          <p>
-                            {proyecto.title.toUpperCase()}
-                            {proyecto.description}
-                          </p>
-                        </div>
-                      </div>
-                    </a>
-                  </motion.div>
-                ))}
+                {proyectos.map((proyecto, index) => {
+                  if (
+                    categoriaSeleccionada === "todos" ||
+                    proyecto.categoria === categoriaSeleccionada
+                  ) {
+                    return (
+                      <motion.div
+                        initial={{ opacity: 0, x: 200 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1 }}
+                        key={index}
+                      >
+                        <a
+                          href={`/proyectos/${proyecto.path}`}
+                          // onClick={handleClick}
+                          className="link-project"
+                        >
+                          <div
+                            className="proyect-thumb"
+                            data-categoria={proyecto.categoria}
+                          >
+                            <img
+                              src={proyecto.thumb}
+                              alt={`Image ${index}`}
+                              key={index}
+                              width="300px"
+                              height="300px"
+                            />
+                            <div className="proyect-description">
+                              <p>
+                                {proyecto.title.toUpperCase()}
+                                {proyecto.description}
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+                      </motion.div>
+                    );
+                  }
+                })}
               </div>
             </div>
           </div>
