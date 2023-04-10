@@ -10,14 +10,13 @@ import ProyectoAbierto from "../ProyectoAbierto/ProyectoAbierto";
 const Proyectos = (setSelectedProject) => {
   const [isActive, setIsActive] = useState(false);
 
-
   const handleClick = (e) => {
     e.preventDefault();
-    setIsActive(true);
+    // setIsActive(true);
   };
 
   const handleProyect = (proyecto) => {
-    setSelectedProject(proyecto)
+    setSelectedProject(proyecto);
   };
 
   return (
@@ -75,33 +74,32 @@ const Proyectos = (setSelectedProject) => {
                 {proyectos.map((proyecto, index) => (
                   <motion.div
                     initial={{ opacity: 0, x: 200 }}
-                    // animate={{ opacity: 1, x: 0 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
                   >
-                    <div className="proyect-thumb">
-                      <a
-                        href={`/proyectos/${proyecto.path}`}
-                        className="proyect-anchor"
-                        onClick={handleProyect}
-                      >  
-                      <img
-                        src={proyecto.thumb}
-                        alt={`Image ${index}`}
-                        key={index}
-                        width="300px"
-                        height="300px"
-                      />
-                      <div className="proyect-description">
-                        <p>
-                          {proyecto.title.toUpperCase()}
-                          {proyecto.description}
-                        </p>
+                    <a
+                      href={`/proyectos/${proyecto.path}`}
+                      // onClick={handleClick}
+                      className="link-project"
+                    >
+                      <div className="proyect-thumb">
+                        <img
+                          src={proyecto.thumb}
+                          alt={`Image ${index}`}
+                          key={index}
+                          width="300px"
+                          height="300px"
+                        />
+                        <div className="proyect-description">
+                          <p>
+                            {proyecto.title.toUpperCase()}
+                            {proyecto.description}
+                          </p>
+                        </div>
                       </div>
-                      </a>
-                    </div>
+                    </a>
                   </motion.div>
                 ))}
               </div>

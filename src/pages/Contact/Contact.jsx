@@ -45,7 +45,7 @@ const Contact = () => {
              transition={{ duration: 1 }}
             >
             <div className="contact-section">
-              <h1>Contact Us</h1>
+              <h1>Contacto</h1>
               <form onSubmit={handleSubmit} className="contact-form" action="">
                 <div className="input-box">
                   <input

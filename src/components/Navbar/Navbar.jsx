@@ -1,37 +1,47 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./navbar.css";
 
-import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 import logo from "../../assets/dauralogo.png";
+import menu from "../../assets/bars-solid.svg";
 
 const Navbar = () => {
+  // useEffect(() => {
+  //   const navbarToggle = document.querySelector(".navbar-toggle");
+  //   const navbarNav = document.querySelector(".navbar-nav");
+  //   console.log("🚀 ~ file: Navbar.jsx:16 ~ useEffect ~ navbarNav:", navbarNav);
+
+  //   navbarToggle.addEventListener("click", () => {
+  //     navbarNav.classList.toggle("active");
+  //   });
+  // }, []);
+
   return (
-    <header>
-      <motion.div 
-      initial={{opacity:0, y: -100}}
-      animate={{opacity: 1, y:0}}
-      transition={{ ease: "linear",duration: 1 }}
-      exit={{}}
-      className="container">
-        <div className="row">
-          <div className="col-xl-12">
-            <ul className="nav-links">
-              <li>
-                
-                <a href="/proyectos">Proyectes</a>
-              </li>
-              <li>
-                <img src={logo} alt="logo" width="100px" />
-              </li>
-              <li>
-              <a href="/">Estudi</a>
-              </li>
-            </ul>
+      <motion.div
+        initial={{ opacity: 0, y: -100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: "linear", duration: 1 }}
+        exit={{ opacity: 0, y: -100 }}
+      >
+    <div className="container">
+      <div className="row">
+        <div className="col-xl-12">
+          <div className="navbar">
+            <div className="left-container">
+              <a href="/proyectos" className="nav-link">Proyectos</a>
+            </div>
+            <div className="center-container">
+              <img src={logo} alt="logo" />
+            </div>
+            <div className="rigth-container">
+              <a href="/" className="nav-link">Estudio</a>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
       </motion.div>
-    </header>
   );
 };
 

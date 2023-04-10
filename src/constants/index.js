@@ -38,6 +38,21 @@ import {
 //   return title.replace(/\s+/g, '-');
 // }
 
+export const mockProject = {
+  title: "Barcelona World Basketball Festival",
+  path:  "barcelona-world-basketball-festival",
+  location: "Barcelona - España",
+  description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+  año: "2009",
+  superficie: "1400 mt2",
+  equipo: ["Jorge Leiva", "Mauro Zeta", "Algun Otro"],
+  fotografia: "Claudia Shiffer",
+  colaboradores: "Amansio Ortega",
+  thumb: barcelona1,
+  images: [barcelona2, barcelona3, barcelona4, barcelona5, barcelona6],
+  categoria: "Arquitectura"
+}
+
 const proyectos = [
   {
     title: "Barcelona World Basketball Festival",
@@ -50,7 +65,7 @@ const proyectos = [
     fotografia: "",
     colaboradores: "",
     thumb: barcelona1,
-    images: barcelona1, barcelona2, barcelona3, barcelona4, barcelona5, barcelona6,
+    images: barcelona2, barcelona3, barcelona4, barcelona5, barcelona6,
     categoria: "Arquitectura"
   },
   {
@@ -64,7 +79,7 @@ const proyectos = [
     fotografia: "",
     colaboradores: "",
     thumb: board1,
-    images: board1, board2,
+    images: board2,
     categoria: "Sport"
   },
   {

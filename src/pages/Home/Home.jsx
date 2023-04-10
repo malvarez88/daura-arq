@@ -28,7 +28,7 @@ const Home = () => {
               <div className="carousel-inner">
                 <div className="carousel-item active">
                   <img
-                    class="d-block"
+                    className="d-block img-fluid hero-img"
                     src={heroImg1}
                     alt="First slide"
                     width="1100px"
@@ -37,7 +37,7 @@ const Home = () => {
                 </div>
                 <div className="carousel-item">
                   <img
-                    className="d-block"
+                    className="d-block img-fluid hero-img"
                     src={heroImg2}
                     alt="Third slide"
                     width="1100px"
@@ -46,7 +46,7 @@ const Home = () => {
                 </div>
                 <div className="carousel-item">
                   <img
-                    className="d-block"
+                    className="d-block img-fluid hero-img"
                     src={heroImg3}
                     alt="Third slide"
                     width="1100px"

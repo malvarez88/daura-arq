@@ -1,12 +1,12 @@
 .proyectos {
     min-height: 100vh;
-    margin-top: 16vh;
-    margin-bottom: 16vh;
+    /* margin-top: 50px; */
+    /* margin-bottom: 16vh; */
 }
 
 .proyect-list {
     padding: 0;
-    margin: 50px 0;
+    margin: 30px 0;
     list-style: none;
     display: flex;
     gap: 10px;
@@ -60,10 +60,11 @@
     opacity: 0.7;
 }
 
-/* .proyect-anchor {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-} */
+
+.link-project {
+    color: black;
+}
+
+.link-project:hover{
+    color: black;
+}

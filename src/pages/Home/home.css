@@ -2,5 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
+}
+
+.hero-img {
+  object-fit: cover;
+  min-height: 550px;
 }

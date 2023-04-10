@@ -14,13 +14,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <Footer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/proyectos" element={<Proyectos setSelectedProject={setSelectedProject}/>} />
         <Route path="/contacto" element={<Contact />} />
-        <Route path="/proyectos/:path" element={<ProyectoAbierto proyect={selectedProject}/>} />
+        {/* <Route path="/proyectos/:path" element={<ProyectoAbierto proyect={selectedProject}/>} /> */}
+        <Route path="/proyectos/:path" element={<ProyectoAbierto />} />
       </Routes>
+      <Footer />
     </>
   );
 }
