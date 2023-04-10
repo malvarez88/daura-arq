@@ -1,10 +1,12 @@
 .estudio {
   margin: 0 0 40px 0;
+  transition: all 1s ease;
 }
 
-.categories-list li:active {
-  color: "#DF6537";
+.categories-list li.active {
+  color: #DF6537
 }
+
 
 .sobre-nosotros-img {
   display: flex;

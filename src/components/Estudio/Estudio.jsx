@@ -15,9 +15,12 @@ import {
 
 const Estudio = () => {
   const [activeTab, setActiveTab] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  function handleClick(tab) {
-    setActiveTab(tab);
+
+  function handleClick(index) {
+    setActiveTab(index);
+    setActiveIndex(index)
   }
 
   return (
@@ -34,7 +37,7 @@ const Estudio = () => {
               >
                 <ul className="categories-list">
                   {espacios.map((espacio, index) => (
-                    <li key={index} onClick={() => handleClick(index)}>
+                    <li key={index} onClick={() => handleClick(index)} className={activeIndex === index ? "active" : ""}  >
                       {espacio}
                     </li>
                   ))}
@@ -157,27 +160,27 @@ const Estudio = () => {
                   </p>
                   <div className="equipo-profile">
                     <div className="profile">
-                      <img src={profile} alt="" />
+                      <img src={profile} alt="" className="img-fluid"/>
                       <p>Núria Ayala i Mitjavila</p>
                     </div>
                     <div className="profile">
-                      <img src={profile} alt="" />
+                      <img src={profile} alt="" className="img-fluid"/>
                       <p>Joan Ramon Rius</p>
                     </div>
                     <div className="profile">
-                      <img src={profile} alt="" />
+                      <img src={profile} alt="" className="img-fluid"/>
                       <p>Miquel García Soler</p>
                     </div>
                     <div className="profile">
-                      <img src={profile} alt="" />
+                      <img src={profile} alt="" className="img-fluid"/>
                       <p>Núria Ayala i Mitjavila</p>
                     </div>
                     <div className="profile">
-                      <img src={profile} alt="" />
+                      <img src={profile} alt="" className="img-fluid"/>
                       <p>Núria Ayala i Mitjavila</p>
                     </div>
                     <div className="profile">
-                      <img src={profile} alt="" />
+                      <img src={profile} alt="" className="img-fluid"/>
                       <p>Núria Ayala i Mitjavila</p>
                     </div>
                   </div>
