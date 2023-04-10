@@ -7,19 +7,20 @@ import Proyectos from "./pages/Proyectos/Proyectos";
 import Footer from "./components/Footer/Footer";
 import Contact from "./pages/Contact/Contact";
 import ProyectoAbierto from "./pages/ProyectoAbierto/ProyectoAbierto";
+import Espacios from "./components/Estudio/Estudio";
 
 function App() {
-  const [selectedProject, setSelectedProject] = useState(null);
+
 
   return (
     <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/proyectos" element={<Proyectos setSelectedProject={setSelectedProject}/>} />
+        <Route path="/proyectos" element={<Proyectos />} />
         <Route path="/contacto" element={<Contact />} />
-        {/* <Route path="/proyectos/:path" element={<ProyectoAbierto proyect={selectedProject}/>} /> */}
         <Route path="/proyectos/:path" element={<ProyectoAbierto />} />
+        <Route path="/estudio" element={<Espacios />} />
       </Routes>
       <Footer />
     </>

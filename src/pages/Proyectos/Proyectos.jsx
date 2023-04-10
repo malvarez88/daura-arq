@@ -1,21 +1,19 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./proyectos.css";
 
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 import { proyectos, categorias, colores } from "../../constants";
-import ProyectoAbierto from "../ProyectoAbierto/ProyectoAbierto";
 
-const Proyectos = (setSelectedProject) => {
-  // const [isActive, setIsActive] = useState(false);
+const Proyectos = () => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
   function mostrarProyectos(categoria) {
     setCategoriaSeleccionada(categoria);
   }
 
-  const categorias = Object.keys(colores);
+  const categorias= Object.keys(colores);
 
   return (
     <AnimatePresence>
@@ -30,9 +28,9 @@ const Proyectos = (setSelectedProject) => {
                 transition={{ duration: 1, delay: 1 }}
               >
                 <ul className="categories-list">
-                  {categorias.map((categoria) => (
+                  {categorias.map((categoria, index) => (
                     <li
-                      key={categoria}
+                      key={index}
                       onClick={() => mostrarProyectos(categoria)}
                       style={{
                         color:
@@ -61,7 +59,6 @@ const Proyectos = (setSelectedProject) => {
                       >
                         <a
                           href={`/proyectos/${proyecto.path}`}
-                          // onClick={handleClick}
                           className="link-project"
                         >
                           <div

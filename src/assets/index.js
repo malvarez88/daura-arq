@@ -45,6 +45,15 @@ import frasca4 from "./lafrasca4.png";
 import frasca5 from "./lafrasca5.jpg";
 import frasca6 from "./lafrasca6.png";
 
+
+//ABOUT US
+import about1 from './aboutus1.png';
+import about2 from './aboutus2.png';
+import about3 from './aboutus3.png';
+
+import profile from './profile.png';
+ 
+
 export {
   barcelona1,
   barcelona2,
@@ -79,4 +88,8 @@ export {
   frasca4,
   frasca5,
   frasca6,
+  about1,
+  about2,
+  about3,
+  profile
 };

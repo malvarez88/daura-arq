@@ -421,14 +421,47 @@ const categorias = [
   "patrimonio",
   "inmobiliario",
 ];
-const colores = 
+const colores = {
+  todos: "black",
+  arquitectura: "#3068B0",
+  sport: "#72BB66",
+  patrimonio: "#CA3038",
+  inmobiliario: "#DEC800",
+};
+
+const espacios = ["sobre nosotros", "noticias", "equipo"];
+
+const partners = [
+  { name: "SOFAR", url: "https://espacio-sofar.com/" },
   {
-    todos: "black",
-    arquitectura: "#3068B0",
-    sport: "#72BB66",
-    patrimonio: "#CA3038",
-    inmobiliario: "#DEC800",
+    name: "Frediani Arquitectura",
+    url: "http://www.fredianiarquitectura.com/",
+  },
+  {
+    name: "Blancafort-Reus",
+    url: "https://www.blancafort-reus.com/",
+  },
+  {
+    name: "Zaha Hadid Architects",
+    url: "http://www.zaha-hadid.com/"
+  },
+  {
+    name: "Detalldisseny",
+    url: "http://www.detalldisseny.com/"
+  },
+  {
+    name: "Grup de Recerca en Innovació Territorial",
+    url: "http://www.tecnocampus.cat/ca/recerca/gric"
+  },
+  {
+    name: "Coco Consulting",
+    url: "http://www.cocoideas.com/"
+  },
+  {
+    name: "Monumenta",
+    url: "http://www.monumenta.info/"
   }
 
-  
-export { proyectos, categorias, colores };
+];
+
+export { proyectos, categorias, colores, espacios, partners };

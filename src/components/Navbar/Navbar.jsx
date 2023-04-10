@@ -32,10 +32,12 @@ const Navbar = () => {
               <a href="/proyectos" className="nav-link">Proyectos</a>
             </div>
             <div className="center-container">
-              <img src={logo} alt="logo" />
+              <a href="/">
+                <img src={logo} alt="logo" />
+                </a>
             </div>
             <div className="rigth-container">
-              <a href="/" className="nav-link">Estudio</a>
+              <a href="/estudio" className="nav-link">Estudio</a>
             </div>
           </div>
         </div>
