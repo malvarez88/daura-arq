@@ -62,3 +62,66 @@
 .link-project:hover{
     color: black;
 }
+
+.dropdown {
+    display: none;
+    position: relative;
+    margin-top: 10px;
+  }
+  
+  .dropdown-toggle {
+    padding: 10px;
+    background-color: #AEACA0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    background-color: #AEACA0;
+    list-style: none;
+    margin: 0;
+    text-transform: uppercase;
+    border-radius: 4px;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    background-color: #AEACA0;
+  }
+  
+
+
+@media (max-width: 768px) {
+    .wrapper {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 20px;
+        grid-auto-rows: minmax(100px, auto);
+        overflow: hidden;
+        min-height: auto;
+        justify-items: center;
+    }
+.categories-list {
+    display: none;
+}
+
+.dropdown {
+    display: block;
+}
+
+ }
+
+
+ /* @media (max-width: 900px) {
+    .wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+ } */

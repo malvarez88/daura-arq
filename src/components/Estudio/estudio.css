@@ -44,13 +44,27 @@
 .partner-list li:before {
   content: "";
   display: inline-block;
-  width: 5px;
-  height: 5px;
+  width: 3px;
+    height: 3px;
   /* -moz-border-radius: 7.5px;
     -webkit-border-radius: 7.5px; */
   border-radius: 7.5px;
   background-color: black;
   margin-right: 10px;
+  margin-bottom: 3px;
+}
+
+.partner-list li:last-child:after {
+    content: "";
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    /* -moz-border-radius: 7.5px;
+      -webkit-border-radius: 7.5px; */
+    border-radius: 7.5px;
+    background-color: black;
+    margin-left: 10px;
+    margin-bottom: 3px;
 }
 
 /* .partner-list {
