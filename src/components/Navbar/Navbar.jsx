@@ -9,6 +9,12 @@ import menu from "../../assets/bars-solid.svg";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+
+  const handleToggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -100 }}
@@ -36,24 +42,30 @@ const Navbar = () => {
                 </a>
               </div>
             </div>
-            </div>
-            <div className="col-xl-12">
+          </div>
+          <div className="col-xl-12">
             <div className="mobile-navbar">
               <div className="logo">
                 <a href="/">
                   <img src={logo} alt="logo" width="70px" />
                 </a>
               </div>
-              <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
+              <div className={`hamburger ${isOpen ? "open" : ""}`} onClick={handleToggleMenu}>
                 <div className="line"></div>
                 <div className="line"></div>
                 <div className="line"></div>
               </div>
               <div className={`menu ${isOpen ? "open" : ""}`}>
                 <ul className="navbar-menu">
-                  <li className="mobile-link"><a href="/proyectos">Proyectos</a> </li>
-                  <li className="mobile-link"><a href="/espacios">Espacios</a> </li>
-                  <li className="mobile-link"><a href="/estudio">Estudio</a> </li>
+                  <li className="mobile-link">
+                    <a href="/proyectos">Proyectos</a>{" "}
+                  </li>
+                  <li className="mobile-link">
+                    <a href="/espacios">Espacios</a>{" "}
+                  </li>
+                  <li className="mobile-link">
+                    <a href="/estudio">Estudio</a>{" "}
+                  </li>
                 </ul>
               </div>
             </div>

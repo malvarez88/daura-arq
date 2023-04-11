@@ -2,10 +2,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 84vh;
 }
 
 .hero-img {
   object-fit: cover;
   min-height: 550px;
+}
+
+.mobile-home {
+  display: none;
+}
+
+.mobile-hero-img {
+  height: 250px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+
+@media (max-width: 768px) { 
+
+  .carousel {
+    display: none;
+  }
+
+  .mobile-home {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
 }

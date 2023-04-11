@@ -22,7 +22,7 @@ const Home = () => {
           className="home-section">
             <div
               id="carouselExampleControls"
-              class="carousel slide"
+              className="carousel slide"
               data-ride="carousel"
             >
               <div className="carousel-inner">
@@ -79,6 +79,13 @@ const Home = () => {
                 <span className="sr-only">Next</span>
               </a>
             </div>
+
+            <div className="mobile-home">
+              <img src={heroImg1} alt="" className="img-fluid mobile-hero-img" />
+              <img src={heroImg2} alt="" className="img-fluid mobile-hero-img" />
+
+            </div>
+
           </motion.section>
         </div>
       </div>
