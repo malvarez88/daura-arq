@@ -22,10 +22,10 @@ const Proyectos = () => {
           <div className="row">
             <div className="col-xl-12">
               <motion.div
-                initial={{ opacity: 0, x: -200 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 1, delay: 1 }}
+                initial={{ opacity: 0, y: 200 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 200 }}
+                transition={{ duration: 1, delay: 0.5 }}
               >
                 <ul className="categories-list">
                   {categorias.map((categoria, index) => (

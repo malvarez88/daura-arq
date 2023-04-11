@@ -1,3 +1,7 @@
+.proyectos {
+    transition: all 0.3s ease;
+}
+
 .open-thumb {
     object-fit: cover;
     width: 100%;
@@ -27,6 +31,11 @@
 .info {
     border: none;
     cursor: pointer;   
+}
+
+.info span:hover {
+    text-decoration: line-through;
+    font-style: italic;
 }
 
 .project-description {
