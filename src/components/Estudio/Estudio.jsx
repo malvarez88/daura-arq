@@ -35,7 +35,7 @@ const Estudio = () => {
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 1, delay: 1 }}
               >
-                <ul className="categories-list">
+                <ul className="estudio-list">
                   {espacios.map((espacio, index) => (
                     <li key={index} onClick={() => handleClick(index)} className={activeIndex === index ? "active" : ""}  >
                       {espacio}
