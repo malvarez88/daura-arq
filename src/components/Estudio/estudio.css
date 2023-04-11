@@ -3,7 +3,7 @@
   transition: all 1s ease;
 }
 
-.categories-list li.active {
+.estudio-list li.active {
   color: #DF6537
 }
 
@@ -67,11 +67,18 @@
     margin-bottom: 3px;
 }
 
-/* .partner-list {
+.estudio-list {
+    padding: 0;
+    margin: 30px 0;
+    list-style: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+    text-transform: uppercase;
+    gap: 10px;
+}
+
+.estudio-list li {
+    cursor: pointer;
+}
 
 .partner-list li a {
   color: black;
