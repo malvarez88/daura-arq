@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import logo from "../../assets/dauralogo.png";
 import menu from "../../assets/bars-solid.svg";
 
-const Navbar = () => {
+const Navbar = ({language}) => {  
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -44,7 +44,7 @@ const Navbar = () => {
               <div className={`navbar ${isScrolled && "header-scrolled"}`}>
                 <div className="left-container">
                   <a href="/proyectos" className="nav-link">
-                    Proyectos
+                    {language.proyectos}
                   </a>
                 </div>
                 <div className="center-container">
@@ -54,7 +54,7 @@ const Navbar = () => {
                 </div>
                 <div className="rigth-container">
                   <a href="/estudio" className="nav-link">
-                    Estudio
+                    {language.estudio}
                   </a>
                 </div>
               </div>
@@ -77,13 +77,13 @@ const Navbar = () => {
                 <div className={`menu ${isOpen ? "open" : ""}`}>
                   <ul className="navbar-menu">
                     <li className="mobile-link">
-                      <a href="/proyectos">Proyectos</a>{" "}
+                      <a href="/proyectos">{language.proyectos}</a>{" "}
                     </li>
                     <li className="mobile-link">
-                      <a href="/espacios">Espacios</a>{" "}
+                      <a href="/espacios">{language.espacios}</a>{" "}
                     </li>
                     <li className="mobile-link">
-                      <a href="/estudio">Estudio</a>{" "}
+                      <a href="/estudio">{language.estudio}</a>{" "}
                     </li>
                   </ul>
                 </div>

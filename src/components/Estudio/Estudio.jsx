@@ -13,7 +13,7 @@ import {
   profile,
 } from "../../assets";
 
-const Estudio = () => {
+const Estudio = ({language}) => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
