@@ -4,9 +4,9 @@ import "./proyectos.css";
 
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
-import { proyectos, categorias, colores } from "../../constants";
+import { proyectos, colores } from "../../constants";
 
-const Proyectos = () => {
+const Proyectos = ({language}) => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
   function mostrarProyectos(categoria) {
@@ -35,7 +35,7 @@ const Proyectos = () => {
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 <ul className="categories-list">
-                  {categorias.map((categoria, index) => (
+                  {language.listaproyectos.map((categoria, index) => (
                     <li
                       key={index}
                       onClick={() => mostrarProyectos(categoria)}
@@ -58,7 +58,7 @@ const Proyectos = () => {
                       ? colores[categorias]
                       : "",
                     }}>
-                  proyectos</h5>
+                  {language.proyectos}</h5>
                   <button className="dropdown-toggle" onClick={handleToggle} style={{
                     color: 
                     categorias === categoriaSeleccionada
@@ -69,7 +69,7 @@ const Proyectos = () => {
                   </button>
                   {isOpen && (
                     <ul className="dropdown-menu">
-                      {categorias.map((categoria, index) => (
+                      {language.listaproyectos.map((categoria, index) => (
                         <li
                           key={index}
                           onClick={() => mostrarProyectos(categoria)}

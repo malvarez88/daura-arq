@@ -3,7 +3,7 @@ import "./estudio.css";
 
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
-import { espacios, partners } from "../../constants";
+import {partners } from "../../constants";
 import {
   about1,
   about2,
@@ -35,7 +35,7 @@ const Estudio = ({language}) => {
                 transition={{ duration: 1, delay: 1 }}
               >
                 <ul className="estudio-list">
-                  {espacios.map((espacio, index) => (
+                  {language.listaestudio.map((espacio, index) => (
                     <li
                       key={index}
                       onClick={() => handleClick(index)}
@@ -99,7 +99,7 @@ const Estudio = ({language}) => {
                   <div>
                     <img src={barcelona1} alt="" className="img-fluid" />
                   </div>
-                </div>
+                </div> 
 
                 {/* NOTICIAS */}
 

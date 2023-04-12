@@ -414,13 +414,6 @@ const proyectos = [
   },
 ];
 
-const categorias = [
-  "todos",
-  "arquitectura",
-  "sport",
-  "patrimonio",
-  "inmobiliario",
-];
 const colores = {
   todos: "black",
   arquitectura: "#3068B0",
@@ -430,6 +423,7 @@ const colores = {
 };
 
 const espacios = ["sobre nosotros", "noticias", "equipo"];
+const spaces = ["about us", "news", "team"];
 
 const partners = [
   { name: "SOFAR", url: "https://espacio-sofar.com/" },
@@ -443,25 +437,24 @@ const partners = [
   },
   {
     name: "Zaha Hadid Architects",
-    url: "http://www.zaha-hadid.com/"
+    url: "http://www.zaha-hadid.com/",
   },
   {
     name: "Detalldisseny",
-    url: "http://www.detalldisseny.com/"
+    url: "http://www.detalldisseny.com/",
   },
   {
     name: "Grup de Recerca en Innovació Territorial",
-    url: "http://www.tecnocampus.cat/ca/recerca/gric"
+    url: "http://www.tecnocampus.cat/ca/recerca/gric",
   },
   {
     name: "Coco Consulting",
-    url: "http://www.cocoideas.com/"
+    url: "http://www.cocoideas.com/",
   },
   {
     name: "Monumenta",
-    url: "http://www.monumenta.info/"
-  }
-
+    url: "http://www.monumenta.info/",
+  },
 ];
 
-export { proyectos, categorias, colores, espacios, partners };
+export { proyectos, colores, espacios, partners };
