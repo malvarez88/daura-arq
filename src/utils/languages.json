@@ -1,6 +1,7 @@
 {
     "en": {
         "contacto": "contact",
+        "email": "Email",
         "espacios": "spaces",
         "estudio": "studio",
         "listaestudio": [
@@ -14,10 +15,13 @@
             "heritage",
             "real estate"
         ],
+        "mensaje": "Message",
+        "nombre": "Name",
         "proyectos": "projects"
     },
     "es": {
         "contacto": "contacto",
+        "email": "Email",
         "espacios": "espacios",
         "estudio": "estudio",
         "listaestudio": [
@@ -32,6 +36,8 @@
             "patrimonio",
             "inmobiliario"
         ],
+        "mensaje": "Mensaje",
+        "nombre": "Nombre",
         "proyectos": "proyectos"
     }
 }
