@@ -1,6 +1,5 @@
 .footer {
   padding: 20px 0;
-  /* position: absolute; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,4 +24,26 @@
 text-decoration: line-through;
 color: black;
 font-style: italic;
+}
+
+.mobile-footer {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+.footer-list {
+  display: none;
+}
+.mobile-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.instagram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 }

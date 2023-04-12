@@ -52,6 +52,8 @@ import about2 from './aboutus2.png';
 import about3 from './aboutus3.png';
 
 import profile from './profile.png';
+
+import instagram from './instag.png';
  
 
 export {
@@ -91,5 +93,6 @@ export {
   about1,
   about2,
   about3,
-  profile
+  profile,
+  instagram
 };

@@ -17,10 +17,9 @@ const Estudio = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
-
   function handleClick(index) {
     setActiveTab(index);
-    setActiveIndex(index)
+    setActiveIndex(index);
   }
 
   return (
@@ -37,12 +36,17 @@ const Estudio = () => {
               >
                 <ul className="estudio-list">
                   {espacios.map((espacio, index) => (
-                    <li key={index} onClick={() => handleClick(index)} className={activeIndex === index ? "active" : ""}  >
+                    <li
+                      key={index}
+                      onClick={() => handleClick(index)}
+                      className={activeIndex === index ? "active" : ""}
+                    >
                       {espacio}
                     </li>
                   ))}
                 </ul>
                 {/* SOBRE NOSOTROS */}
+
                 <div
                   className="sobre-nosotros"
                   style={{ display: activeTab === 0 ? "block" : "none" }}
@@ -82,7 +86,11 @@ const Estudio = () => {
                   <ul className="partner-list">
                     {partners.map((partner) => (
                       <li>
-                        <a href={partner.url} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={partner.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           {partner.name}
                         </a>
                       </li>
@@ -94,6 +102,7 @@ const Estudio = () => {
                 </div>
 
                 {/* NOTICIAS */}
+
                 <div
                   className="noticias"
                   style={{ display: activeTab === 1 ? "block" : "none" }}
@@ -160,27 +169,27 @@ const Estudio = () => {
                   </p>
                   <div className="equipo-profile">
                     <div className="profile">
-                      <img src={profile} alt="" className="img-fluid"/>
+                      <img src={profile} alt="" className="img-fluid" />
                       <p>Núria Ayala i Mitjavila</p>
                     </div>
                     <div className="profile">
-                      <img src={profile} alt="" className="img-fluid"/>
+                      <img src={profile} alt="" className="img-fluid" />
                       <p>Joan Ramon Rius</p>
                     </div>
                     <div className="profile">
-                      <img src={profile} alt="" className="img-fluid"/>
+                      <img src={profile} alt="" className="img-fluid" />
                       <p>Miquel García Soler</p>
                     </div>
                     <div className="profile">
-                      <img src={profile} alt="" className="img-fluid"/>
+                      <img src={profile} alt="" className="img-fluid" />
                       <p>Núria Ayala i Mitjavila</p>
                     </div>
                     <div className="profile">
-                      <img src={profile} alt="" className="img-fluid"/>
+                      <img src={profile} alt="" className="img-fluid" />
                       <p>Núria Ayala i Mitjavila</p>
                     </div>
                     <div className="profile">
-                      <img src={profile} alt="" className="img-fluid"/>
+                      <img src={profile} alt="" className="img-fluid" />
                       <p>Núria Ayala i Mitjavila</p>
                     </div>
                   </div>
