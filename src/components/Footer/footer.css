@@ -4,6 +4,10 @@
   justify-content: center;
   align-items: center;
   margin-top: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .footer-list {
