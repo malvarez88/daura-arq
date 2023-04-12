@@ -52,6 +52,13 @@ const Proyectos = () => {
                 </ul>
 
                 <div className="dropdown">
+                  <h5 className="mobile-title" style={{
+                      color: 
+                      categorias === categoriaSeleccionada
+                      ? colores[categorias]
+                      : "",
+                    }}>
+                  proyectos</h5>
                   <button className="dropdown-toggle" onClick={handleToggle} style={{
                     color: 
                     categorias === categoriaSeleccionada
@@ -92,7 +99,7 @@ const Proyectos = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         exit={{ opacity: 0 }}
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 1, delay: 0.5 }}
                         key={index}
                       >
                         <a

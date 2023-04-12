@@ -95,6 +95,7 @@
 .hamburger.open .line:nth-child(2) {
   /* transform: translateX(200px); */
   transform: translateX(50px);
+  opacity: 0;
 
 }
 

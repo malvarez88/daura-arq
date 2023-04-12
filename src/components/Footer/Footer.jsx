@@ -3,6 +3,8 @@ import "./footer.css";
 
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
+import { instagram } from "../../assets";
+
 const Footer = () => {
   return (
     <motion.div
@@ -16,7 +18,10 @@ const Footer = () => {
           <div className="row">
             <div className="col-xl-12">
               <ul className="footer-list">
-                <li>CA / EN / ES</li>
+                <li>
+                  <b>CA</b> / EN / ES
+                </li>
+
                 <li>
                   <a href="/espacios" className="footer-link">
                     Espacios
@@ -28,6 +33,22 @@ const Footer = () => {
                   </a>{" "}
                 </li>
               </ul>
+
+              <div className="mobile-footer">
+                <div className="languajes">
+                  <b>CA</b> / EN / ES
+                </div>
+                <div className="instagram">
+                  <a href="">
+                    <img
+                      src={instagram}
+                      alt="instagram"
+                      width="20px"
+                      height="20px"
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
