@@ -4,6 +4,10 @@
   justify-content: center;
   align-items: center;
   margin-top: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .footer-list {
@@ -28,6 +32,44 @@ font-style: italic;
 
 .mobile-footer {
   display: none;
+}
+
+
+.languages button {
+  border: none;
+  cursor: pointer;
+}
+
+.languages button:focus {
+  outline: none;
+}
+
+.languages button::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+    height: 3px;
+  /* -moz-border-radius: 7.5px;
+    -webkit-border-radius: 7.5px; */
+  border-radius: 7.5px;
+  background-color: black;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+
+.languages button:last-child:after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  /* -moz-border-radius: 7.5px;
+    -webkit-border-radius: 7.5px; */
+  border-radius: 7.5px;
+  background-color: black;
+  margin-left: 10px;
+  margin-bottom: 3px;
 }
 
 

@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 84vh;
+  height: 90vh;
+  margin-top: 50px;
 }
 
 .hero-img {
@@ -22,6 +23,12 @@
 
 
 @media (max-width: 768px) { 
+
+  .home-section{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+  }
 
   .carousel {
     display: none;

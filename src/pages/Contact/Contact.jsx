@@ -3,7 +3,7 @@ import "./contact.css";
 
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
-const Contact = () => {
+const Contact = ({language}) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,7 +45,7 @@ const Contact = () => {
              transition={{ duration: 1 }}
             >
             <div className="contact-section">
-              <h1>Contacto</h1>
+              <h1>{language.contacto.toUpperCase()}</h1>
               <form onSubmit={handleSubmit} className="contact-form" action="">
                 <div className="input-box">
                   <input
@@ -56,7 +56,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                   />
-                  <span>Nombre</span>
+                  <span>{language.nombre}</span>
                 </div>
                 <div className="input-box">
                   <input
@@ -67,7 +67,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                   />
-                  <span>Email</span>
+                  <span>{language.email}</span>
                 </div>
                 <div className="input-box">
                   <textarea
@@ -78,7 +78,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                   />
-                  <span>Mensaje</span>
+                  <span>{language.mensaje}</span>
                 </div>
                 <button className="btn btn-secondary" type="submit">Send</button>
               </form>

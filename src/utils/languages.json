@@ -1,0 +1,43 @@
+{
+    "en": {
+        "contacto": "contact",
+        "email": "Email",
+        "espacios": "spaces",
+        "estudio": "studio",
+        "listaestudio": [
+            "about us",
+            "news",
+            "team"
+        ],
+        "listaproyectos": [
+            "all",
+            "architecture",
+            "heritage",
+            "real estate"
+        ],
+        "mensaje": "Message",
+        "nombre": "Name",
+        "proyectos": "projects"
+    },
+    "es": {
+        "contacto": "contacto",
+        "email": "Email",
+        "espacios": "espacios",
+        "estudio": "estudio",
+        "listaestudio": [
+            "sobre nosotros",
+            "noticias",
+            "equipo"
+        ],
+        "listaproyectos": [
+            "todos",
+            "arquitectura",
+            "sport",
+            "patrimonio",
+            "inmobiliario"
+        ],
+        "mensaje": "Mensaje",
+        "nombre": "Nombre",
+        "proyectos": "proyectos"
+    }
+}
