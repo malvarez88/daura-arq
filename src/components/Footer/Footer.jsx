@@ -19,7 +19,7 @@ const Footer = ({handleLanguageChange, language}) => {
           <div className="row">
             <div className="col-xl-12">
               <ul className="footer-list">
-                <li>
+                <li className="footer-li">
                   <div className="languages">
                     <button
                       className="change-lang"
@@ -41,12 +41,12 @@ const Footer = ({handleLanguageChange, language}) => {
                     </button>
                   </div>
                 </li>
-                <li>
+                <li className="footer-li">
                   <a href="/espacios" className="footer-link">
                     {language.espacios}
                   </a>
                 </li>
-                <li>
+                <li className="footer-li">
                   <a className="footer-link" href="/contacto">
                     {language.contacto}
                   </a>

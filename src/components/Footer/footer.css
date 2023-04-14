@@ -16,16 +16,25 @@
   margin: 0;
   display: flex;
   justify-content: space-between;
+  flex-wrap: nowrap;
 }
 
 .footer-link {
   text-decoration: none;
   color: black;
-  text-transform: uppercase;
+  text-transform: uppercase
+}
+
+.footer-li {
+  width: 150px;
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .footer-link:hover {
-text-decoration: line-through;
+/* text-decoration: line-through; */
 color: black;
 font-style: italic;
 }
