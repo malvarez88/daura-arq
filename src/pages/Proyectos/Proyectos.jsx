@@ -6,12 +6,12 @@ import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 import { proyectos, colores } from "../../constants";
 
-const Proyectos = ({language}) => {
+const Proyectos = ({ language }) => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
   function mostrarProyectos(categoria) {
     setCategoriaSeleccionada(categoria);
-    setIsOpen(!isOpen)
+    setIsOpen(!isOpen);
   }
 
   const categorias = Object.keys(colores);
@@ -52,19 +52,27 @@ const Proyectos = ({language}) => {
                 </ul>
 
                 <div className="dropdown">
-                  <h5 className="mobile-title" style={{
-                      color: 
-                      categorias === categoriaSeleccionada
-                      ? colores[categorias]
-                      : "",
-                    }}>
-                  {language.proyectos}</h5>
-                  <button className="dropdown-toggle" onClick={handleToggle} style={{
-                    color: 
-                    categorias === categoriaSeleccionada
-                    ? colores[categorias]
-                    : "",
-                  }}>
+                  <h5
+                    className="mobile-title"
+                    style={{
+                      color:
+                        categorias === categoriaSeleccionada
+                          ? colores[categorias]
+                          : "",
+                    }}
+                  >
+                    {language.proyectos}
+                  </h5>
+                  <button
+                    className="dropdown-toggle"
+                    onClick={handleToggle}
+                    style={{
+                      color:
+                        categorias === categoriaSeleccionada
+                          ? colores[categorias]
+                          : "",
+                    }}
+                  >
                     {categoriaSeleccionada.toLocaleUpperCase()}
                   </button>
                   {isOpen && (
@@ -87,48 +95,50 @@ const Proyectos = ({language}) => {
                   )}
                 </div>
               </motion.div>
-              <div className="wrapper">
-                {proyectos.map((proyecto, index) => {
-                  if (
-                    categoriaSeleccionada === "todos" ||
-                    proyecto.categoria === categoriaSeleccionada
-                  ) {
-                    return (
-                      <motion.div
-                        initial={{ opacity: 0, x: 200 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        key={index}
-                      >
-                        <a
-                          href={`/proyectos/${proyecto.path}`}
-                          className="link-project"
+              <div className="grid-container">
+                <div className="wrapper">
+                  {proyectos.map((proyecto, index) => {
+                    if (
+                      categoriaSeleccionada === "todos" ||
+                      proyecto.categoria === categoriaSeleccionada
+                    ) {
+                      return (
+                        <motion.div
+                          initial={{ opacity: 0, x: 200 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 1, delay: 0.5 }}
+                          key={index}
                         >
-                          <div
-                            className="proyect-thumb"
-                            data-categoria={proyecto.categoria}
+                          <a
+                            href={`/proyectos/${proyecto.path}`}
+                            className="link-project"
                           >
-                            <img
-                              src={proyecto.thumb}
-                              alt={`Image ${index}`}
-                              key={index}
-                              width="300px"
-                              height="300px"
-                            />
-                            <div className="proyect-description">
-                              <p>
-                                {proyecto.title.toUpperCase()}
-                                {proyecto.description}
-                              </p>
+                            <div
+                              className="proyect-thumb"
+                              data-categoria={proyecto.categoria}
+                            >
+                              <img
+                                src={proyecto.thumb}
+                                alt={`Image ${index}`}
+                                key={index}
+                                width="300px"
+                                height="300px"
+                              />
+                              <div className="proyect-description">
+                                <p>
+                                  {proyecto.title.toUpperCase()}
+                                  {proyecto.description}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                        </a>
-                      </motion.div>
-                    );
-                  }
-                })}
+                          </a>
+                        </motion.div>
+                      );
+                    }
+                  })}
+                </div>
               </div>
             </div>
           </div>

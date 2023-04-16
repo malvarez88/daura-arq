@@ -4,6 +4,12 @@
   url('./fonts/tex-gyre-adventor.regular.otf') format("opentype");;
 }
 
+@font-face {
+  font-family: 'Heros';
+  src: local('HerosRegular'), 
+  url('./fonts/texgyreheros-regular.otf') format("opentype");;
+}
+
 
 @font-face {
   font-family: 'Bold';
@@ -30,7 +36,7 @@
   padding: 0;
   box-sizing: border-box;
   background: white;
-  font-family: 'Regular', sans-serif;
+  font-family: 'Heros', sans-serif;
   position: relative;
   background-color: white;
 }

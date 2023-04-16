@@ -1,5 +1,6 @@
 .header {
-  position: fixed;
+  /* position: fixed; */
+  height: 10vh;
   z-index: 1;
   top: 0;
   left: 0;
@@ -29,6 +30,10 @@
   display: flex;
   justify-content: center;
   width: 100px;
+}
+
+.last {
+  justify-content: flex-end;
 }
 
 .mobile-navbar {

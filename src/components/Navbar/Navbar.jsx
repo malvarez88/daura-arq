@@ -3,7 +3,7 @@ import "./navbar.css";
 
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
-import logo from "../../assets/dauralogo.png";
+import logo from "../../assets/dauralogo.svg";
 
 const Navbar = ({language}) => {  
   const [isOpen, setIsOpen] = useState(false);
@@ -33,10 +33,10 @@ const Navbar = ({language}) => {
                 </div>
                 <div className="link-container">
                   <a href="/">
-                    <img src={logo} alt="logo" />
+                    <img src={logo} alt="logo" width="100px"/>
                   </a>
                 </div>
-                <div className="link-container">
+                <div className="link-container last">
                   <a href="/estudio" className="nav-link">
                     {language.estudio}
                   </a>
