@@ -11,9 +11,11 @@ import translations from "../../utils/languages.json";
 
 const Footer = () => {
   const dispatch = useDispatch();
+  const [active, setActive] = useState(false);
 
   const handleLanguageChange = (newLang) => {
     dispatch(setNewLanguage(newLang));
+    setActive(newLang);
   };
 
   const lang = useSelector((state) => state.language);
@@ -35,19 +37,19 @@ const Footer = () => {
                 <li className="footer-li">
                   <div className="languages">
                     <button
-                      className="change-lang"
+                      className={active ? "" : "change-lang"}
                       onClick={() => handleLanguageChange("ca")}
                     >
                       CA
                     </button>
                     <button
-                      className="change-lang"
+                      className={active ? "active-lang" : "change-lang"}
                       onClick={() => handleLanguageChange("es")}
                     >
                       ES
                     </button>
                     <button
-                      className="change-lang"
+                      className={active ? "active-lang" : "change-lang"}
                       onClick={() => handleLanguageChange("en")}
                     >
                       EN
@@ -79,19 +81,19 @@ const Footer = () => {
               <div className="mobile-footer">
                 <div className="languages">
                   <button
-                    className="change-lang"
+                    className={active ? "active-lang" : "change-lang"}
                     onClick={() => handleLanguageChange("ca")}
                   >
                     CA
                   </button>
                   <button
-                    className="change-lang"
+                    className={active ? "active-lang" : "change-lang"}
                     onClick={() => handleLanguageChange("es")}
                   >
                     ES
                   </button>
                   <button
-                    className="change-lang active"
+                    className={active ? "active-lang" : "change-lang"}
                     onClick={() => handleLanguageChange("en")}
                   >
                     EN

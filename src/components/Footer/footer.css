@@ -89,12 +89,12 @@
 }
 
 
-.change-lang {
-  color: lightgray;
+.active-lang {
+  color: black;
 }
 
-.change-lang:active {
-  color: black
+.change-lang {
+  color: lightgray;
 }
 
 @media (max-width: 768px) {
