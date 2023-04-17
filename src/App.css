@@ -4,6 +4,12 @@
   url('./fonts/tex-gyre-adventor.regular.otf') format("opentype");;
 }
 
+@font-face {
+  font-family: 'Heros';
+  src: local('HerosRegular'), 
+  url('./fonts/texgyreheros-regular.otf') format("opentype");;
+}
+
 
 @font-face {
   font-family: 'Bold';
@@ -19,7 +25,7 @@
 
 :root {
 
-  --primary-color: '#f4f0f0',
+  --primary-color: '#f4f0f0';
 
 
 }
@@ -29,10 +35,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: var(--primary-color);
-  font-family: 'Regular', sans-serif;
+  background: white;
+  font-family: 'Heros', sans-serif;
   position: relative;
-  background-color: #f4f0f0;
+  background-color: white;
 }
 /* .app {
   display: flex;
@@ -40,10 +46,10 @@
   min-height: 100vh;
 } */
 
-body {
-  /* display: flex;
+/* body {
+  display: flex;
   flex-direction: column;
-  min-height: 100vh; */
-}
+  min-height: 100vh;
+} */
 /* 
 .general-text {} */

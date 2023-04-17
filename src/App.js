@@ -12,7 +12,7 @@ import Estudio from "./components/Estudio/Estudio";
 import translations from './utils/languages.json';
 
 function App() {
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState("es");
 
   const currentTranslations = translations[language];
 

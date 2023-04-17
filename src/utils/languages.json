@@ -39,5 +39,27 @@
         "mensaje": "Mensaje",
         "nombre": "Nombre",
         "proyectos": "proyectos"
+    },
+    "ca" : {
+        "contacto": "contacte",
+        "email": "Email",
+        "espacios": "espais",
+        "estudio": "estudi",
+        "listaestudio": [
+            "sobre nosaltres",
+            "notícies",
+            "equip"
+        ],
+        "listaproyectos": [
+            "tots",
+            "arquitectura",
+            "sport",
+            "patrimoni",
+            "immobiliari"
+        ],
+        "mensaje": "Missatge",
+        "nombre": "Nom",
+        "proyectos": "projectes"
     }
+
 }

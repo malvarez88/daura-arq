@@ -415,7 +415,7 @@ const proyectos = [
 ];
 
 const colores = {
-  todos: "black",
+  todos: "#DF6537",
   arquitectura: "#3068B0",
   sport: "#72BB66",
   patrimonio: "#CA3038",

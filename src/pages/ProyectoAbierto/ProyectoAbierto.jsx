@@ -5,7 +5,6 @@ import { mockProject } from "../../constants";
 
 const ProyectoAbierto = () => {
   const actualProject = mockProject;
-  const images = actualProject.images;
 
   const [visible, setVisible] = useState(false);
 
@@ -21,11 +20,16 @@ const ProyectoAbierto = () => {
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
+              <h6 style={{ textAlign: "center", margin: "10px 0 40px 0" }}>
+                {actualProject.categoria.toUpperCase()}
+              </h6>
               <div className="project-info">
-                <h4>{actualProject.title.toLocaleUpperCase()}</h4>
+                <h4 style={{ color: "#3068B0" }}>
+                  {actualProject.title.toLocaleUpperCase()}
+                </h4>
                 <h6>{actualProject.location}</h6>
                 <button className="info" onClick={() => setVisible(!visible)}>
-                  <span>+ INFO</span>
+                  <span>{!visible ? "+ INFO" : " - INFO"}</span>
                 </button>
                 {visible && (
                   <div className="project-description">
@@ -59,17 +63,23 @@ const ProyectoAbierto = () => {
               </div>
             </div>
             <div className="col-xl-12">
-              <div className="img-thumb">
-                <img
-                  src={actualProject.thumb}
-                  alt={actualProject.title}
-                  className="img-fluid"
-                />
-              </div>
-              <div className="images-section">
-                {actualProject.images.map((img, index) => (
-                  <img src={img} alt={index} className="open-thumb img-fluid" />
-                ))}
+              <div className="open-project-images">
+                <div className="img-thumb">
+                  <img
+                    src={actualProject.thumb}
+                    alt={actualProject.title}
+                    className="img-fluid"
+                  />
+                </div>
+                <div className="images-section">
+                  {actualProject.images.map((img, index) => (
+                    <img
+                      src={img}
+                      alt={index}
+                      className="open-thumb img-fluid"
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           </div>

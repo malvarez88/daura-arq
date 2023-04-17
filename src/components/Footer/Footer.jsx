@@ -5,8 +5,7 @@ import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
 import { instagram } from "../../assets";
 
-const Footer = ({handleLanguageChange, language}) => {
-
+const Footer = ({ handleLanguageChange, language }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -19,7 +18,7 @@ const Footer = ({handleLanguageChange, language}) => {
           <div className="row">
             <div className="col-xl-12">
               <ul className="footer-list">
-                <li>
+                <li className="footer-li">
                   <div className="languages">
                     <button
                       className="change-lang"
@@ -39,16 +38,26 @@ const Footer = ({handleLanguageChange, language}) => {
                     >
                       EN
                     </button>
+                    <br />
                   </div>
+                  <span className="daura-footer">@ d'aura arquitectura</span>
                 </li>
-                <li>
+                <li className="footer-li">
                   <a href="/espacios" className="footer-link">
                     {language.espacios}
                   </a>
                 </li>
-                <li>
-                  <a className="footer-link" href="/contacto">
+                <li className="footer-li">
+                  <a href="/contacto" className="footer-link">
                     {language.contacto}
+                  </a>
+                  <a href="">
+                    <img
+                      src={instagram}
+                      alt="instagram"
+                      width="15px"
+                      height="15px"
+                    />
                   </a>
                 </li>
               </ul>
@@ -70,7 +79,6 @@ const Footer = ({handleLanguageChange, language}) => {
                   <button
                     className="change-lang"
                     onClick={() => handleLanguageChange("en")}
-                    
                   >
                     EN
                   </button>
@@ -80,8 +88,8 @@ const Footer = ({handleLanguageChange, language}) => {
                     <img
                       src={instagram}
                       alt="instagram"
-                      width="20px"
-                      height="20px"
+                      width="15px"
+                      height="15px"
                     />
                   </a>
                 </div>

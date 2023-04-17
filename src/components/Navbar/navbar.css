@@ -1,11 +1,11 @@
 .header {
-  border-bottom: 1px solid #AEACA0;
-  position: fixed;
+  /* position: fixed; */
+  height: 10vh;
   z-index: 1;
   top: 0;
   left: 0;
   right: 0;
-  box-shadow: 0px 10px 15px -15px #AEACA0;    
+  /* box-shadow: 0px 10px 15px -15px #AEACA0;     */
 }
 
 
@@ -21,9 +21,18 @@
 }
 
 .nav-link:hover {
-  text-decoration: line-through;
-  color: black;
+  color: rgb(223, 101, 55);
   font-style: italic;
+}
+
+.link-container {
+  display: flex;
+  justify-content: center;
+  width: 100px;
+}
+
+.last {
+  justify-content: flex-end;
 }
 
 .mobile-navbar {
@@ -104,10 +113,8 @@
 }
 
 .hamburger.open .line:nth-child(2) {
-  /* transform: translateX(200px); */
   transform: translateX(50px);
   opacity: 0;
-
 }
 
 .hamburger.open .line:nth-child(3) {
@@ -132,7 +139,7 @@
   }
 
   .menu.open {
-    height: 270px;
+    height: 350px;
   }
 
   .hamburger {

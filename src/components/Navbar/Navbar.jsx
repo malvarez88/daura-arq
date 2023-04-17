@@ -3,8 +3,7 @@ import "./navbar.css";
 
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
-import logo from "../../assets/dauralogo.png";
-import menu from "../../assets/bars-solid.svg";
+import logo from "../../assets/dauralogo.svg";
 
 const Navbar = ({language}) => {  
   const [isOpen, setIsOpen] = useState(false);
@@ -13,21 +12,6 @@ const Navbar = ({language}) => {
     setIsOpen(!isOpen);
   };
 
-  const [isScrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-  const handleScroll = () => {
-    if (window.pageYOffset > 250) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
 
   return (
     <header className="header">
@@ -41,18 +25,18 @@ const Navbar = ({language}) => {
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
-              <div className={`navbar ${isScrolled && "header-scrolled"}`}>
-                <div className="left-container">
+              <div className='navbar'>
+                <div className="link-container">
                   <a href="/proyectos" className="nav-link">
                     {language.proyectos}
                   </a>
                 </div>
-                <div className="center-container">
+                <div className="link-container">
                   <a href="/">
-                    <img src={logo} alt="logo" />
+                    <img src={logo} alt="logo" width="100px"/>
                   </a>
                 </div>
-                <div className="rigth-container">
+                <div className="link-container last">
                   <a href="/estudio" className="nav-link">
                     {language.estudio}
                   </a>
@@ -77,13 +61,16 @@ const Navbar = ({language}) => {
                 <div className={`menu ${isOpen ? "open" : ""}`}>
                   <ul className="navbar-menu">
                     <li className="mobile-link">
-                      <a href="/proyectos">{language.proyectos}</a>{" "}
+                      <a href="/proyectos">{language.proyectos}</a>
                     </li>
                     <li className="mobile-link">
-                      <a href="/espacios">{language.espacios}</a>{" "}
+                      <a href="/espacios">{language.espacios}</a>
                     </li>
                     <li className="mobile-link">
-                      <a href="/estudio">{language.estudio}</a>{" "}
+                      <a href="/estudio">{language.estudio}</a>
+                    </li>
+                    <li className="mobile-link">
+                      <a href="/contacto">{language.contacto}</a>
                     </li>
                   </ul>
                 </div>
