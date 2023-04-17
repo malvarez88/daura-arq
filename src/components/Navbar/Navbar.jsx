@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from "react";
 import "./navbar.css";
 
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { useSelector } from "react-redux";
+
+// import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
 
 import logo from "../../assets/dauralogo.svg";
+import translations from "../../utils/languages.json";
 
-const Navbar = ({language}) => {  
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const lang = useSelector((state) => state.language)
 
+  const language = translations[lang]
+ 
   return (
     <header className="header">
       <motion.div
@@ -21,11 +28,10 @@ const Navbar = ({language}) => {
         transition={{ ease: "linear", duration: 1 }}
         exit={{ opacity: 0, y: -100 }}
       >
-        
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
-              <div className='navbar'>
+              <div className="navbar">
                 <div className="link-container">
                   <a href="/proyectos" className="nav-link">
                     {language.proyectos}
@@ -33,7 +39,7 @@ const Navbar = ({language}) => {
                 </div>
                 <div className="link-container">
                   <a href="/">
-                    <img src={logo} alt="logo" width="100px"/>
+                    <img src={logo} alt="logo" width="100px" />
                   </a>
                 </div>
                 <div className="link-container last">
@@ -78,9 +84,8 @@ const Navbar = ({language}) => {
             </div>
           </div>
         </div>
-      
       </motion.div>
-     </header>
+    </header>
   );
 };
 

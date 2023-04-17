@@ -88,6 +88,15 @@
   overflow: visible;
 }
 
+
+.change-lang {
+  color: lightgray;
+}
+
+.change-lang:active {
+  color: black
+}
+
 @media (max-width: 768px) {
   .footer-list {
     display: none;

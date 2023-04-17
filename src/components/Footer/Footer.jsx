@@ -1,11 +1,25 @@
 import React, { useState } from "react";
 import "./footer.css";
 
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
-
+import { motion } from "framer-motion";
 import { instagram } from "../../assets";
 
-const Footer = ({ handleLanguageChange, language }) => {
+import { setNewLanguage } from "../../store/language";
+import { useDispatch, useSelector } from "react-redux";
+
+import translations from "../../utils/languages.json";
+
+const Footer = () => {
+  const dispatch = useDispatch();
+
+  const handleLanguageChange = (newLang) => {
+    dispatch(setNewLanguage(newLang));
+  };
+
+  const lang = useSelector((state) => state.language);
+
+  const language = translations[lang];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -77,7 +91,7 @@ const Footer = ({ handleLanguageChange, language }) => {
                     ES
                   </button>
                   <button
-                    className="change-lang"
+                    className="change-lang active"
                     onClick={() => handleLanguageChange("en")}
                   >
                     EN

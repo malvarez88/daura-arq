@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+// import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
+
 import "./proyectoabierto.css";
 import { mockProject } from "../../constants";
 
