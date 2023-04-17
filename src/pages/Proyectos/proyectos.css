@@ -51,6 +51,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 0 20px;
 }
 
 .proyect-thumb:hover .proyect-description {
@@ -72,11 +73,9 @@
 }
 
 .dropdown-toggle {
-  padding: 10px;
-  background-color: #aeaca0;
+  margin: 10px 0 0 0;
   border: none;
   cursor: pointer;
-  border-radius: 4px;
 }
 
 .dropdown-menu {

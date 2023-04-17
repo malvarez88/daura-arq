@@ -21,8 +21,7 @@
 }
 
 .nav-link:hover {
-  /* text-decoration: line-through; */
-  color: black;
+  color: rgb(223, 101, 55);
   font-style: italic;
 }
 

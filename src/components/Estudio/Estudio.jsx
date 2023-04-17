@@ -3,7 +3,7 @@ import "./estudio.css";
 
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 
-import {partners } from "../../constants";
+import { partners } from "../../constants";
 import {
   about1,
   about2,
@@ -13,7 +13,7 @@ import {
   profile,
 } from "../../assets";
 
-const Estudio = ({language}) => {
+const Estudio = ({ language }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -24,16 +24,16 @@ const Estudio = ({language}) => {
 
   return (
     <AnimatePresence>
-      <div className="estudio">
-        <div className="container">
-          <div className="row">
-            <div className="col-xl-12">
-              <motion.div
-                initial={{ opacity: 0, x: -200 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 1, delay: 1 }}
-              >
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12">
+            <motion.div
+              initial={{ opacity: 0, x: -200 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 1, delay: 1 }}
+            >
+              <div className="estudio">
                 <ul className="estudio-list">
                   {language.listaestudio.map((espacio, index) => (
                     <li
@@ -51,7 +51,7 @@ const Estudio = ({language}) => {
                   className="sobre-nosotros"
                   style={{ display: activeTab === 0 ? "block" : "none" }}
                 >
-                  <h4 className="title">d'aura arquitectura</h4>
+                  <h5 className="title">d'aura arquitectura</h5>
                   <p className="general-text">
                     Fundado en el año 2000, es una red de personas y espacios;
                     apasionados por la arquitectura, la investigación y la
@@ -99,7 +99,7 @@ const Estudio = ({language}) => {
                   <div>
                     <img src={barcelona1} alt="" className="img-fluid" />
                   </div>
-                </div> 
+                </div>
 
                 {/* NOTICIAS */}
 
@@ -107,6 +107,7 @@ const Estudio = ({language}) => {
                   className="noticias"
                   style={{ display: activeTab === 1 ? "block" : "none" }}
                 >
+                  <h5 className="title">work in progress</h5>
                   <div className="noticia">
                     <div className="noticias-img">
                       <img src={board1} alt="" className="img-fluid" />
@@ -126,7 +127,7 @@ const Estudio = ({language}) => {
                       esportiva Cristina Rey i el vicepresident de l’Àrea
                       d’Instal·lacions Enrique Lupiáñez.
                     </p>
-                    <span>LEE MAS</span>
+                    <span><b>LEE MAS</b></span>
                   </div>
 
                   <div className="noticia">
@@ -148,7 +149,7 @@ const Estudio = ({language}) => {
                       esportiva Cristina Rey i el vicepresident de l’Àrea
                       d’Instal·lacions Enrique Lupiáñez.
                     </p>
-                    <span>LEE MAS</span>
+                    <span><b>LEE MAS</b></span>
                   </div>
                 </div>
 
@@ -194,8 +195,8 @@ const Estudio = ({language}) => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
