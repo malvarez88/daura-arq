@@ -9,6 +9,7 @@ import { proyectos, colores } from "../../constants";
 import translations from "../../utils/languages.json";
 
 const Proyectos = () => {
+
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
   function mostrarProyectos(categoria) {

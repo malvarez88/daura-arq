@@ -45,7 +45,6 @@
 .footer-link:hover {
   text-decoration: none;
   color: rgb(223, 101, 55);
-  font-style: italic;
 }
 
 .mobile-footer {
@@ -105,6 +104,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
   }
   .instagram {
     display: flex;

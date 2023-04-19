@@ -98,6 +98,7 @@ const Footer = () => {
                   >
                     EN
                   </button>
+                {/* <span className="daura-footer">@ d'aura arquitectura</span> */}
                 </div>
                 <div className="instagram">
                   <a href="">

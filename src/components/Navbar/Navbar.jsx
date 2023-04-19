@@ -1,25 +1,37 @@
 import React, { useEffect, useState } from "react";
 import "./navbar.css";
 
+import Logo from "../Logo/Logo";
+
+import { useLocation } from "react-router";
+
 import { useSelector } from "react-redux";
 
-// import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import { motion } from "framer-motion";
 
-import logo from "../../assets/dauralogo.svg";
+// import logo from "../../assets/dauralogo.svg";
+
 import translations from "../../utils/languages.json";
 
 const Navbar = () => {
+  const location = useLocation();
+  console.log("🚀 ~ file: Navbar.jsx:18 ~ Navbar ~ location:", location.pathname)
+
+useEffect(()=> {
+
+},[])
+
+   
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const lang = useSelector((state) => state.language)
+  const lang = useSelector((state) => state.language);
 
-  const language = translations[lang]
- 
+  const language = translations[lang];
+
   return (
     <header className="header">
       <motion.div
@@ -38,9 +50,8 @@ const Navbar = () => {
                   </a>
                 </div>
                 <div className="link-container">
-                  <a href="/">
-                    <img src={logo} alt="logo" width="100px" />
-                  </a>
+                  <a href="/" className="nav-link"/>
+                  <Logo color="" width="100px" />
                 </div>
                 <div className="link-container last">
                   <a href="/estudio" className="nav-link">
@@ -52,9 +63,8 @@ const Navbar = () => {
             <div className="col-xl-12">
               <div className="mobile-navbar">
                 <div className="logo">
-                  <a href="/">
-                    <img src={logo} alt="logo" width="70px" />
-                  </a>
+                  <a href="/" className="nav-link" />
+                  <Logo color={`${location.pathname === '/proyectos' ? "red" : "black"}`} width="100px" />
                 </div>
                 <div
                   className={`hamburger ${isOpen ? "open" : ""}`}
