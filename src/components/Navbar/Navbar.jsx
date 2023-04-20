@@ -15,13 +15,12 @@ import translations from "../../utils/languages.json";
 
 const Navbar = () => {
   const location = useLocation();
-  console.log("🚀 ~ file: Navbar.jsx:18 ~ Navbar ~ location:", location.pathname)
+  let color;
 
-useEffect(()=> {
+  if (location.pathname === "/proyectos") {
+    color = "#DF6537";
+  }
 
-},[])
-
-   
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -45,13 +44,13 @@ useEffect(()=> {
             <div className="col-xl-12">
               <div className="navbar">
                 <div className="link-container">
-                  <a href="/proyectos" className="nav-link">
+                  <a href="/proyectos" className="nav-link" style={{color:`${color? color : "black"}`}}>
                     {language.proyectos}
                   </a>
                 </div>
                 <div className="link-container">
-                  <a href="/" className="nav-link"/>
-                  <Logo color="" width="100px" />
+                  <a href="/" className="nav-link" />
+                  <Logo />
                 </div>
                 <div className="link-container last">
                   <a href="/estudio" className="nav-link">
@@ -64,7 +63,7 @@ useEffect(()=> {
               <div className="mobile-navbar">
                 <div className="logo">
                   <a href="/" className="nav-link" />
-                  <Logo color={`${location.pathname === '/proyectos' ? "red" : "black"}`} width="100px" />
+                  <Logo />
                 </div>
                 <div
                   className={`hamburger ${isOpen ? "open" : ""}`}

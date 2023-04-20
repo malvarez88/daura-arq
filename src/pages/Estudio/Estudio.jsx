@@ -54,7 +54,6 @@ const Estudio = () => {
                 ))}
               </ul>
               {/* SOBRE NOSOTROS */}
-
               <div
                 className="sobre-nosotros"
                 style={{ display: activeTab === 0 ? "block" : "none" }}
@@ -109,7 +108,6 @@ const Estudio = () => {
               </div>
 
               {/* NOTICIAS */}
-
               <div
                 className="noticias"
                 style={{ display: activeTab === 1 ? "block" : "none" }}

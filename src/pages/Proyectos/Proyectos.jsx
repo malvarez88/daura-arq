@@ -9,24 +9,26 @@ import { proyectos, colores } from "../../constants";
 import translations from "../../utils/languages.json";
 
 const Proyectos = () => {
+  const lang = useSelector((state) => state.language);
 
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
+
+
+  const categorias = Object.keys(colores);
+
+  
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   function mostrarProyectos(categoria) {
     setCategoriaSeleccionada(categoria);
     setIsOpen(!isOpen);
   }
 
-  const categorias = Object.keys(colores);
-
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
-  const lang = useSelector((state) => state.language)
-
-  const language = translations[lang]
+  const language = translations[lang];
 
   return (
     // <AnimatePresence>
