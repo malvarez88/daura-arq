@@ -34,9 +34,7 @@ import {
   frasca6,
 } from "../assets";
 
-// const replace = (title) => {
-//   return title.replace(/\s+/g, '-');
-// }
+
 
 export const mockProject = {
   title: "Barcelona World Basketball Festival",

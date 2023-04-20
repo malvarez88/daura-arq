@@ -1,7 +1,20 @@
 import React from "react";
+import { useLocation } from "react-router";
+
 import "./logo.css";
 
-const Logo = ({ color }) => {
+const Logo = () => {
+
+    const location = useLocation();
+
+    let color;
+
+    if(location.pathname === '/proyectos') {
+        color = '#DF6537';
+    }
+
+
+
   return (
     <svg
       id="Capa_1"
@@ -32,7 +45,13 @@ const Logo = ({ color }) => {
           strokeMiterlimit="10"
         />
       </g>
-      <rect className="cls-1" x="92.2" width="16" height="16" fill={color ? color : "black"} />
+      <rect
+        className="cls-1"
+        x="92.2"
+        width="16"
+        height="16"
+        fill={color}
+      />
     </svg>
   );
 };
