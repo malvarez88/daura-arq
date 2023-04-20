@@ -120,7 +120,7 @@ const Proyectos = () => {
                         key={index}
                       >
                         <a
-                          href={`/proyectos/${proyecto.path}`}
+                          href={`/proyectos/${proyecto.categoria}/${proyecto.path}`}
                           className="link-project"
                         >
                           <div

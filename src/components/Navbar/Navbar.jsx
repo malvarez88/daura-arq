@@ -13,14 +13,20 @@ import { motion } from "framer-motion";
 
 import translations from "../../utils/languages.json";
 
+
 const Navbar = () => {
   const location = useLocation();
-  let color;
+
+  let colorProyecto;
+  let colorEstudio;
 
   if (location.pathname === "/proyectos") {
-    color = "#DF6537";
+    colorProyecto = "#DF6537";
   }
 
+  if (location.pathname === "/estudio") {
+    colorEstudio = "#DF6537";
+  }
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -44,7 +50,13 @@ const Navbar = () => {
             <div className="col-xl-12">
               <div className="navbar">
                 <div className="link-container">
-                  <a href="/proyectos" className="nav-link" style={{color:`${color? color : "black"}`}}>
+                  <a
+                    href="/proyectos"
+                    className="nav-link"
+                    style={{
+                      color: `${colorProyecto ? colorProyecto : "black"}`,
+                    }}
+                  >
                     {language.proyectos}
                   </a>
                 </div>
@@ -53,7 +65,13 @@ const Navbar = () => {
                   <Logo />
                 </div>
                 <div className="link-container last">
-                  <a href="/estudio" className="nav-link">
+                  <a
+                    href="/estudio"
+                    className="nav-link"
+                    style={{
+                      color: `${colorEstudio ? colorEstudio : "black"}`,
+                    }}
+                  >
                     {language.estudio}
                   </a>
                 </div>

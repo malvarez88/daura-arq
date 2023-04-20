@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
-// import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+
 import { motion } from "framer-motion";
 
+import { proyectos, colores } from "../../constants";
+
 import "./proyectoabierto.css";
-import { mockProject } from "../../constants";
 
 const ProyectoAbierto = () => {
-  const params = useParams();
-  console.log("🚀 ~ file: ProyectoAbierto.jsx:11 ~ ProyectoAbierto ~ params:", params)
-  const actualProject = mockProject;
+  const { path, categoria } = useParams();
+
+  const actualProject = proyectos.find((proyecto) => proyecto.path === path);
 
   const [visible, setVisible] = useState(false);
 
@@ -29,7 +30,11 @@ const ProyectoAbierto = () => {
                 {actualProject.categoria.toUpperCase()}
               </h6>
               <div className="project-info">
-                <h4 style={{ color: "#3068B0" }}>
+                <h4
+                  style={{
+                    color: colores[categoria],
+                  }}
+                >
                   {actualProject.title.toLocaleUpperCase()}
                 </h4>
                 <h6>{actualProject.location}</h6>
@@ -79,6 +84,7 @@ const ProyectoAbierto = () => {
                 <div className="images-section">
                   {actualProject.images.map((img, index) => (
                     <img
+                      key={index}
                       src={img}
                       alt={index}
                       className="open-thumb img-fluid"

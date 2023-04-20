@@ -9,7 +9,7 @@ const Logo = () => {
 
     let color;
 
-    if(location.pathname === '/proyectos') {
+    if(location.pathname === '/proyectos' || location.pathname === '/estudio') {
         color = '#DF6537';
     }
 
