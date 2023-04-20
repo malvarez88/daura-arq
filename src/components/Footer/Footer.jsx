@@ -1,11 +1,27 @@
 import React, { useState } from "react";
 import "./footer.css";
 
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
-
+import { motion } from "framer-motion";
 import { instagram } from "../../assets";
 
-const Footer = ({ handleLanguageChange, language }) => {
+import { setNewLanguage } from "../../store/language";
+import { useDispatch, useSelector } from "react-redux";
+
+import translations from "../../utils/languages.json";
+
+const Footer = () => {
+  const dispatch = useDispatch();
+  const [active, setActive] = useState(false);
+
+  const handleLanguageChange = (newLang) => {
+    dispatch(setNewLanguage(newLang));
+    setActive(newLang);
+  };
+
+  const lang = useSelector((state) => state.language);
+
+  const language = translations[lang];
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 100 }}
@@ -21,19 +37,19 @@ const Footer = ({ handleLanguageChange, language }) => {
                 <li className="footer-li">
                   <div className="languages">
                     <button
-                      className="change-lang"
+                      className={active ? "" : "change-lang"}
                       onClick={() => handleLanguageChange("ca")}
                     >
                       CA
                     </button>
                     <button
-                      className="change-lang"
+                      className={active ? "active-lang" : "change-lang"}
                       onClick={() => handleLanguageChange("es")}
                     >
                       ES
                     </button>
                     <button
-                      className="change-lang"
+                      className={active ? "active-lang" : "change-lang"}
                       onClick={() => handleLanguageChange("en")}
                     >
                       EN
@@ -65,23 +81,24 @@ const Footer = ({ handleLanguageChange, language }) => {
               <div className="mobile-footer">
                 <div className="languages">
                   <button
-                    className="change-lang"
+                    className={active ? "active-lang" : "change-lang"}
                     onClick={() => handleLanguageChange("ca")}
                   >
                     CA
                   </button>
                   <button
-                    className="change-lang"
+                    className={active ? "active-lang" : "change-lang"}
                     onClick={() => handleLanguageChange("es")}
                   >
                     ES
                   </button>
                   <button
-                    className="change-lang"
+                    className={active ? "active-lang" : "change-lang"}
                     onClick={() => handleLanguageChange("en")}
                   >
                     EN
                   </button>
+                {/* <span className="daura-footer">@ d'aura arquitectura</span> */}
                 </div>
                 <div className="instagram">
                   <a href="">
