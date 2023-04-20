@@ -357,7 +357,7 @@ const proyectos = [
     lamina2,
     lamina3,
     lamina4,
-    categoria: "arquitectura",
+    categoria: "arquitectura"
   },
   {
     title: "Complejo Deportivo de Cartama",

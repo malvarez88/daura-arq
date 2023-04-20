@@ -1,25 +1,26 @@
 import React from "react";
 
 import "./home.css";
-import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+// import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+import { motion } from "framer-motion";
 
 import heroImg1 from "../../assets/1.png";
 import heroImg2 from "../../assets/2.png";
 import heroImg3 from "../../assets/3.png";
 
-
 const Home = () => {
   return (
-    <AnimatePresence>
+    // <AnimatePresence>
     <div className="container">
       <div className="row">
         <div className="col-xl-12">
-          <motion.section 
-          initial={{opacity:0, x:200}}
-          animate={{opacity:1, x: 0}}
-          exit={{opacity:0, x:200}}
-          transition={{ duration: 1 }}
-          className="home-section">
+          <motion.section
+            initial={{ opacity: 0, x: 200 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 200 }}
+            transition={{ duration: 1 }}
+            className="home-section"
+          >
             <div
               id="carouselExampleControls"
               className="carousel slide"
@@ -81,16 +82,22 @@ const Home = () => {
             </div>
 
             <div className="mobile-home">
-              <img src={heroImg1} alt="" className="img-fluid mobile-hero-img" />
-              <img src={heroImg2} alt="" className="img-fluid mobile-hero-img" />
-
+              <img
+                src={heroImg1}
+                alt=""
+                className="img-fluid mobile-hero-img"
+              />
+              <img
+                src={heroImg2}
+                alt=""
+                className="img-fluid mobile-hero-img"
+              />
             </div>
-
           </motion.section>
         </div>
       </div>
     </div>
-    </AnimatePresence>
+    // </AnimatePresence>
   );
 };
 

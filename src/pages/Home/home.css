@@ -16,9 +16,8 @@
 }
 
 .mobile-hero-img {
-  height: 250px;
-  object-fit: cover;
-  border-radius: 4px;
+  height: 250px !important;
+  /* object-fit: cover; */
 }
 
 
@@ -26,6 +25,7 @@
 
   .home-section{
     padding: 20px;
+    height: 75vh;
   }
 
   .carousel {

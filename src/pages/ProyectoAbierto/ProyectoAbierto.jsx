@@ -1,9 +1,14 @@
 import React, { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { useParams } from "react-router";
+// import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
+
 import "./proyectoabierto.css";
 import { mockProject } from "../../constants";
 
 const ProyectoAbierto = () => {
+  const params = useParams();
+  console.log("🚀 ~ file: ProyectoAbierto.jsx:11 ~ ProyectoAbierto ~ params:", params)
   const actualProject = mockProject;
 
   const [visible, setVisible] = useState(false);

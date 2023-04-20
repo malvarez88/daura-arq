@@ -45,7 +45,6 @@
 .footer-link:hover {
   text-decoration: none;
   color: rgb(223, 101, 55);
-  font-style: italic;
 }
 
 .mobile-footer {
@@ -88,6 +87,15 @@
   overflow: visible;
 }
 
+
+.active-lang {
+  color: black;
+}
+
+.change-lang {
+  color: lightgray;
+}
+
 @media (max-width: 768px) {
   .footer-list {
     display: none;
@@ -96,6 +104,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
   }
   .instagram {
     display: flex;

@@ -18,15 +18,21 @@
   text-transform: uppercase;
   color: black;
   padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
 .nav-link:hover {
   color: rgb(223, 101, 55);
-  font-style: italic;
 }
 
 .link-container {
   display: flex;
+  position: relative;
   justify-content: center;
   width: 100px;
 }
@@ -70,6 +76,7 @@
 
 .logo {
   display: none;
+  position: relative;
 }
 
 .navbar-menu {
@@ -136,6 +143,7 @@
 
   .mobile-navbar {
     display: flex;
+    padding: 0px 20px;
   }
 
   .menu.open {
@@ -148,6 +156,7 @@
 
   .logo {
     display: flex;
+    position: relative;
   }
 
   .navbar {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route } from "react-router";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -7,30 +7,20 @@ import Proyectos from "./pages/Proyectos/Proyectos";
 import Footer from "./components/Footer/Footer";
 import Contact from "./pages/Contact/Contact";
 import ProyectoAbierto from "./pages/ProyectoAbierto/ProyectoAbierto";
-import Estudio from "./components/Estudio/Estudio";
-
-import translations from './utils/languages.json';
+import Estudio from "./pages/Estudio/Estudio";
 
 function App() {
-  const [language, setLanguage] = useState("es");
-
-  const currentTranslations = translations[language];
-
-  function handleLanguageChange(newLanguage) {
-    setLanguage(newLanguage);
-  }
-
   return (
     <>
-      <Navbar language={currentTranslations} />
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Home language={currentTranslations}/>} />
-        <Route path="/proyectos" element={<Proyectos language={currentTranslations}/>} />
-        <Route path="/contacto" element={<Contact language={currentTranslations}/>} />
-        <Route path="/proyectos/:path" element={<ProyectoAbierto language={currentTranslations}/>} />
-        <Route path="/estudio" element={<Estudio language={currentTranslations} />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/proyectos" element={<Proyectos />} />
+        <Route path="/contacto" element={<Contact />} />
+        <Route path="/proyectos/:path" element={<ProyectoAbierto />} />
+        <Route path="/estudio" element={<Estudio />} />
       </Routes>
-      <Footer handleLanguageChange={handleLanguageChange} language={currentTranslations} />
+      <Footer />
     </>
   );
 }
