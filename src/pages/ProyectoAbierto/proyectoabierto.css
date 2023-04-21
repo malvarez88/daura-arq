@@ -34,10 +34,11 @@
 .info {
   border: none;
   cursor: pointer;
+  background: transparent;
 }
 
 .info span:hover {
-  font-style: italic;
+  color: var(--orange);
 }
 
 .info:focus {

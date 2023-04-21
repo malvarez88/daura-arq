@@ -43,13 +43,13 @@ const Footer = () => {
                       CA
                     </button>
                     <button
-                      className={active ? "active-lang" : "change-lang"}
+                      className={active ? "" : "change-lang"}
                       onClick={() => handleLanguageChange("es")}
                     >
                       ES
                     </button>
                     <button
-                      className={active ? "active-lang" : "change-lang"}
+                      className={active ? "" : "change-lang"}
                       onClick={() => handleLanguageChange("en")}
                     >
                       EN

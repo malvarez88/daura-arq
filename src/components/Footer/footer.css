@@ -58,6 +58,7 @@
 .languages button {
   border: none;
   cursor: pointer;
+  background: transparent;
 }
 
 .languages button:focus {

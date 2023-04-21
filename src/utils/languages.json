@@ -1,7 +1,7 @@
 {
     "en": {
         "contacto": "contact",
-        "email": "Email",
+        "email": "e-mail",
         "espacios": "spaces",
         "estudio": "studio",
         "listaestudio": [
@@ -15,13 +15,14 @@
             "heritage",
             "real estate"
         ],
-        "mensaje": "Message",
-        "nombre": "Name",
-        "proyectos": "projects"
+        "mensaje": "message",
+        "nombre": "name",
+        "proyectos": "projects",
+        "enviar": "send"
     },
     "es": {
         "contacto": "contacto",
-        "email": "Email",
+        "email": "e-mail",
         "espacios": "espacios",
         "estudio": "estudio",
         "listaestudio": [
@@ -36,13 +37,14 @@
             "patrimonio",
             "inmobiliario"
         ],
-        "mensaje": "Mensaje",
-        "nombre": "Nombre",
-        "proyectos": "proyectos"
+        "mensaje": "mensaje",
+        "nombre": "nombre",
+        "proyectos": "proyectos",
+        "enviar": "enviar"
     },
     "ca" : {
         "contacto": "contacte",
-        "email": "Email",
+        "email": "e-mail",
         "espacios": "espais",
         "estudio": "estudi",
         "listaestudio": [
@@ -57,9 +59,10 @@
             "patrimoni",
             "immobiliari"
         ],
-        "mensaje": "Missatge",
-        "nombre": "Nom",
-        "proyectos": "projectes"
+        "mensaje": "missatge",
+        "nombre": "nom",
+        "proyectos": "projectes",
+        "enviar": "enviar"
     }
 
 }

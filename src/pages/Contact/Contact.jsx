@@ -7,13 +7,14 @@ import { motion } from "framer-motion";
 
 import translations from "../../utils/languages.json";
 
+import { instagram, linkedin } from "../../assets";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
-
 
   const handleChange = (e) => {
     setFormData({
@@ -33,9 +34,9 @@ const Contact = () => {
     alert("Mensaje enviado correctamente");
   };
 
-  const lang = useSelector((state) => state.language)
+  const lang = useSelector((state) => state.language);
 
-  const language = translations[lang]
+  const language = translations[lang];
 
   return (
     <motion.section
@@ -44,17 +45,49 @@ const Contact = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
     >
-      <div className="container">
-        <div className="row">
-          <div className="col-xl-12">
-            <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 1 }}
-            >
-              <div className="contact-section">
-                <h1>{language.contacto.toUpperCase()}</h1>
+      <div className="contact-section">
+        <div className="container">
+          <div className="row">
+            <div className="col-xl-5">
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+                <div className="contact-direction">
+                  <h5 className="title">{language.contacto.toUpperCase()}</h5>
+                  <p>C/ Francesc Carbonell 34, B-2 Barcelona 08034</p>
+                  <p>
+                    C/ Nou, 17, 1-3a. 07701 <br />
+                    Maó 07701- Baleares
+                  </p>
+                  <p>(34) 93 203 2018</p>
+                  <p>info@daurastudio.com</p>
+                  <div className="contact-socials">
+                    <img
+                      src={instagram}
+                      alt="instagram"
+                      width="20px"
+                      className="img-fluid"
+                    />
+                    <img
+                      src={linkedin}
+                      alt="linkedin"
+                      width="25px"
+                      className="img-fluid"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+            <div className="col-xl-7">
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
                 <form
                   onSubmit={handleSubmit}
                   className="contact-form"
@@ -94,11 +127,11 @@ const Contact = () => {
                     <span>{language.mensaje}</span>
                   </div>
                   <button className="btn btn-secondary" type="submit">
-                    Send
+                    {language.enviar}
                   </button>
                 </form>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>

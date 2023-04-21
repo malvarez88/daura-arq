@@ -22,9 +22,9 @@ const Estudio = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const lang = useSelector((state) => state.language)
+  const lang = useSelector((state) => state.language);
 
-  const language = translations[lang]
+  const language = translations[lang];
 
   function handleClick(index) {
     setActiveTab(index);
@@ -73,11 +73,12 @@ const Estudio = () => {
                   <br /> <br /> Preguntar, diseñar, materializar, y comprobar
                   como actitud.
                 </p>
-
-                <div className="sobre-nosotros-img">
-                  <img src={about1} alt="about" className="img-fluid" />
-                  <img src={about2} alt="about" className="img-fluid" />
-                  <img src={about3} alt="about" className="img-fluid" />
+                <div className="col-xl-12">
+                  <div className="sobre-nosotros-img">
+                    <img src={about1} alt="about" className="img-fluid" />
+                    <img src={about2} alt="about" className="img-fluid" />
+                    <img src={about3} alt="about" className="img-fluid" />
+                  </div>
                 </div>
 
                 <p className="general-text">

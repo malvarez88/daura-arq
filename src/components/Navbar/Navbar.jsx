@@ -13,7 +13,6 @@ import { motion } from "framer-motion";
 
 import translations from "../../utils/languages.json";
 
-
 const Navbar = () => {
   const location = useLocation();
 
@@ -57,7 +56,7 @@ const Navbar = () => {
                       color: `${colorProyecto ? colorProyecto : "black"}`,
                     }}
                   >
-                    {language.proyectos}
+                    <span> {language.proyectos}</span>
                   </a>
                 </div>
                 <div className="link-container">
@@ -72,7 +71,7 @@ const Navbar = () => {
                       color: `${colorEstudio ? colorEstudio : "black"}`,
                     }}
                   >
-                    {language.estudio}
+                    <span>{language.estudio}</span>
                   </a>
                 </div>
               </div>

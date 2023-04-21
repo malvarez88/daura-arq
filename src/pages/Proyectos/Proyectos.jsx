@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "./proyectos.css";
 
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { proyectos, colores } from "../../constants";
@@ -119,8 +120,8 @@ const Proyectos = () => {
                         transition={{ duration: 1, delay: 0.5 }}
                         key={index}
                       >
-                        <a
-                          href={`/proyectos/${proyecto.categoria}/${proyecto.path}`}
+                        <Link
+                          to={`/proyectos/${proyecto.categoria}/${proyecto.path}`}
                           className="link-project"
                         >
                           <div
@@ -141,7 +142,7 @@ const Proyectos = () => {
                               </p>
                             </div>
                           </div>
-                        </a>
+                        </Link>
                       </motion.div>
                     );
                   }
