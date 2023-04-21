@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./footer.css";
 
 import { motion } from "framer-motion";
@@ -11,14 +11,13 @@ import translations from "../../utils/languages.json";
 
 const Footer = () => {
   const dispatch = useDispatch();
-  const [active, setActive] = useState(false);
+  const lang = useSelector((state) => state.language);
+  const [active, setActive] = useState(lang);
 
   const handleLanguageChange = (newLang) => {
     dispatch(setNewLanguage(newLang));
     setActive(newLang);
   };
-
-  const lang = useSelector((state) => state.language);
 
   const language = translations[lang];
 
@@ -37,20 +36,20 @@ const Footer = () => {
                 <li className="footer-li">
                   <div className="languages">
                     <button
-                      className={active ? "" : "change-lang"}
                       onClick={() => handleLanguageChange("ca")}
+                      style={{ color: active === "ca" ? "black" : "lightgray" }}
                     >
                       CA
                     </button>
                     <button
-                      className={active ? "" : "change-lang"}
-                      onClick={() => handleLanguageChange("es")}
+                      onClick={() => handleLanguageChange("es", 1)}
+                      style={{ color: active === "es" ? "black" : "lightgray" }}
                     >
                       ES
                     </button>
                     <button
-                      className={active ? "" : "change-lang"}
-                      onClick={() => handleLanguageChange("en")}
+                      onClick={() => handleLanguageChange("en", 2)}
+                      style={{ color: active === "en" ? "black" : "lightgray" }}
                     >
                       EN
                     </button>
@@ -98,7 +97,7 @@ const Footer = () => {
                   >
                     EN
                   </button>
-                {/* <span className="daura-footer">@ d'aura arquitectura</span> */}
+                  {/* <span className="daura-footer">@ d'aura arquitectura</span> */}
                 </div>
                 <div className="instagram">
                   <a href="">
