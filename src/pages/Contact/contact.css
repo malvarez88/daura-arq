@@ -18,7 +18,9 @@
 .contact-socials {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
+
 .contact-form {
   display: flex;
   flex-direction: column;

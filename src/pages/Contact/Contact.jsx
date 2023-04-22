@@ -74,7 +74,7 @@ const Contact = () => {
                     <img
                       src={linkedin}
                       alt="linkedin"
-                      width="25px"
+                      width="26px"
                       className="img-fluid"
                     />
                   </div>

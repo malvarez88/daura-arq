@@ -79,24 +79,26 @@ const Footer = () => {
 
               <div className="mobile-footer">
                 <div className="languages">
-                  <button
-                    className={active ? "active-lang" : "change-lang"}
-                    onClick={() => handleLanguageChange("ca")}
-                  >
-                    CA
-                  </button>
-                  <button
-                    className={active ? "active-lang" : "change-lang"}
-                    onClick={() => handleLanguageChange("es")}
-                  >
-                    ES
-                  </button>
-                  <button
-                    className={active ? "active-lang" : "change-lang"}
-                    onClick={() => handleLanguageChange("en")}
-                  >
-                    EN
-                  </button>
+                <button
+                      onClick={() => handleLanguageChange("ca")}
+                      style={{ color: active === "ca" ? "black" : "lightgray" }}
+                    >
+                      CA
+                    </button>
+                    <button
+                      onClick={() => handleLanguageChange("es", 1)}
+                      style={{ color: active === "es" ? "black" : "lightgray" }}
+                    >
+                      ES
+                    </button>
+                    <button
+                      onClick={() => handleLanguageChange("en", 2)}
+                      style={{ color: active === "en" ? "black" : "lightgray" }}
+                    >
+                      EN
+                    </button>
+                    <br />
+                  <span className="daura-footer">@ d'aura arquitectura</span>
                   {/* <span className="daura-footer">@ d'aura arquitectura</span> */}
                 </div>
                 <div className="instagram">

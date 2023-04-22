@@ -98,13 +98,19 @@
 }
 
 @media (max-width: 768px) {
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
   .footer-list {
     display: none;
   }
   .mobile-footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 20px;
   }
   .instagram {
