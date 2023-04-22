@@ -1,0 +1,30 @@
+.estudio {
+    min-height: 100vh;
+    margin: 0 66px;
+    transition: all 0.5s ease-out;
+    margin-bottom: 40px;
+  }
+  
+
+.noticias-img {
+    display: flex;
+    height: 500px;
+    margin-bottom: 20px;
+  }
+  
+  .noticias-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center; /* normally it's the default value */
+  }
+  
+  /* .noticia {
+    margin: 40px 0;
+  } */
+  
+  .noticia h4 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  

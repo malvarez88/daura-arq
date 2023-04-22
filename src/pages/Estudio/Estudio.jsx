@@ -107,62 +107,7 @@ const Estudio = () => {
                   <img src={barcelona1} alt="" className="img-fluid" />
                 </div>
               </div>
-
-              {/* NOTICIAS */}
-              <div
-                className="noticias"
-                style={{ display: activeTab === 1 ? "block" : "none" }}
-              >
-                <h5 className="title">work in progress</h5>
-                <div className="noticia">
-                  <div className="noticias-img">
-                    <img src={board1} alt="" className="img-fluid" />
-                  </div>
-                  <small>24/1/2023</small>
-                  <h4>
-                    El CN Terrassa rep el projecte bàsic per a la construcció
-                    d’una piscina coberta de 34×25 metres
-                  </h4>
-                  <p className="general-text">
-                    El CN Terrassa ha rebut el projecte bàsic per a la
-                    construcció d’una nova piscina coberta de 34×25 metres de
-                    mans de l’estudi D’Aura Arquitectura. Joan Ramon Rius i
-                    Núria Ayala, especialistes en projectes esportius aquàtics,
-                    han lliurat el document a la delegació del club, formada pel
-                    president Jordi Martín, la vicepresidenta esportiva Cristina
-                    Rey i el vicepresident de l’Àrea d’Instal·lacions Enrique
-                    Lupiáñez.
-                  </p>
-                  <span>
-                    <b>LEE MAS</b>
-                  </span>
-                </div>
-
-                <div className="noticia">
-                  <div className="noticias-img">
-                    <img src={barcelona1} alt="" className="img-fluid" />
-                  </div>
-                  <small>24/1/2023</small>
-                  <h4>
-                    El CN Terrassa rep el projecte bàsic per a la construcció
-                    d’una piscina coberta de 34×25 metres
-                  </h4>
-                  <p className="general-text">
-                    El CN Terrassa ha rebut el projecte bàsic per a la
-                    construcció d’una nova piscina coberta de 34×25 metres de
-                    mans de l’estudi D’Aura Arquitectura. Joan Ramon Rius i
-                    Núria Ayala, especialistes en projectes esportius aquàtics,
-                    han lliurat el document a la delegació del club, formada pel
-                    president Jordi Martín, la vicepresidenta esportiva Cristina
-                    Rey i el vicepresident de l’Àrea d’Instal·lacions Enrique
-                    Lupiáñez.
-                  </p>
-                  <span>
-                    <b>LEE MAS</b>
-                  </span>
-                </div>
-              </div>
-
+            
               {/* EQUIPO */}
               <div
                 className="eqiupo"

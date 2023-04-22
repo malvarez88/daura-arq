@@ -56,7 +56,7 @@ const Contact = () => {
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 <div className="contact-direction">
-                  <h5 className="title">{language.contacto.toUpperCase()}</h5>
+                  <h6 className="title">{language.contacto.toUpperCase()}</h6>
                   <p>C/ Francesc Carbonell 34, B-2 Barcelona 08034</p>
                   <p>
                     C/ Nou, 17, 1-3a. 07701 <br />

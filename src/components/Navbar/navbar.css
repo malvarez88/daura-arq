@@ -37,7 +37,7 @@
 }
 
 .last {
-  justify-content: flex-end;
+  margin-left: 32px;
 }
 
 .mobile-navbar {

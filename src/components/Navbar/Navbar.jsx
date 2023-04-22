@@ -21,9 +21,7 @@ const Navbar = () => {
 
   if (location.pathname === "/proyectos") {
     colorProyecto = "#DF6537";
-  }
-
-  if (location.pathname === "/estudio") {
+  } else if (location.pathname === "/estudio") {
     colorEstudio = "#DF6537";
   }
   const [isOpen, setIsOpen] = useState(false);
@@ -71,7 +69,7 @@ const Navbar = () => {
                       color: `${colorEstudio ? colorEstudio : "black"}`,
                     }}
                   >
-                    <span>{language.estudio}</span>
+                    <span className="last">{language.estudio}</span>
                   </a>
                 </div>
               </div>

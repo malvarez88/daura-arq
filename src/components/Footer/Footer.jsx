@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./footer.css";
 
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import { instagram } from "../../assets";
 
 import { setNewLanguage } from "../../store/language";
 import { useDispatch, useSelector } from "react-redux";
+
+import { useLocation } from "react-router";
 
 import translations from "../../utils/languages.json";
 
@@ -13,6 +15,17 @@ const Footer = () => {
   const dispatch = useDispatch();
   const lang = useSelector((state) => state.language);
   const [active, setActive] = useState(lang);
+  const location = useLocation();
+
+let colorNoticias;
+let colorContacto;
+
+  if (location.pathname === "/noticias") {
+     colorNoticias = "#DF6537";
+  } else if (location.pathname === "/contacto") {
+    colorContacto = "#DF6537";
+  }
+
 
   const handleLanguageChange = (newLang) => {
     dispatch(setNewLanguage(newLang));
@@ -58,12 +71,18 @@ const Footer = () => {
                   <span className="daura-footer">@ d'aura arquitectura</span>
                 </li>
                 <li className="footer-li">
-                  <a href="/espacios" className="footer-link">
-                    {language.espacios}
+                  <a href="/noticias" className="footer-link"
+                    style={{
+                      color: `${colorNoticias ? colorNoticias : "black"}`,
+                    }}>
+                    {language.noticias}
                   </a>
                 </li>
                 <li className="footer-li">
-                  <a href="/contacto" className="footer-link">
+                  <a href="/contacto" className="footer-link"
+                   style={{
+                    color: `${colorContacto ? colorContacto : "black"}`,
+                  }}>
                     {language.contacto}
                   </a>
                   <a href="">
