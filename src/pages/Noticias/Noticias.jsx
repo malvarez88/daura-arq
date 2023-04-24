@@ -4,28 +4,42 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 
 import { barcelona1, board1 } from "../../assets";
-import translations from "../../utils/languages.json";
+import en from "../../languages/en.json";
+import es from "../../languages/es.json";
+import ca from "../../languages/ca.json";
 
 const Noticias = () => {
-
   const lang = useSelector((state) => state.language);
 
-  const language = translations[lang];
+
+  let language;
+
+  if (lang === 'es') {
+    language = es[lang]
+  } else if (lang === 'en') {
+    language = en[lang]
+  } else {
+    language = ca[lang]
+  }
 
   return (
     <div className="container">
-    <div className="row">
-      <div className="col-xl-12">
+      <div className="row">
+        <div className="col-xl-12">
           <motion.div
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -200 }}
             transition={{ duration: 1, delay: 1 }}
           >
-            <div className="estudio" style={{marginTop: "30px"}}>
+            <div className="estudio" style={{ marginTop: "30px" }}>
               <div className="noticias">
-              <h6 className="title" style={{marginBottom: "30px"}}>{language.noticias.toUpperCase()}</h6>
-                <h6 className="title" style={{marginBottom: "30px"}}>work in progress</h6>
+                <h6 className="title" style={{ marginBottom: "30px" }}>
+                  {language.noticias.toUpperCase()}
+                </h6>
+                <h6 className="title" style={{ marginBottom: "30px" }}>
+                  work in progress
+                </h6>
                 <div className="noticia">
                   <div className="noticias-img">
                     <img src={board1} alt="" className="img-fluid" />

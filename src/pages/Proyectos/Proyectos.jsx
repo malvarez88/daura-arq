@@ -7,17 +7,17 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { proyectos, colores } from "../../constants";
 
-import translations from "../../utils/languages.json";
+import en from "../../languages/en.json";
+import es from "../../languages/es.json";
+import ca from "../../languages/ca.json";
 
 const Proyectos = () => {
   const lang = useSelector((state) => state.language);
 
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
-
   const categorias = Object.keys(colores);
 
-  
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
@@ -29,7 +29,17 @@ const Proyectos = () => {
     setIsOpen(!isOpen);
   }
 
-  const language = translations[lang];
+
+  let language;
+
+  if (lang === 'es') {
+    language = es[lang]
+  } else if (lang === 'en') {
+    language = en[lang]
+  } else {
+    language = ca[lang]
+  }
+
 
   return (
     // <AnimatePresence>

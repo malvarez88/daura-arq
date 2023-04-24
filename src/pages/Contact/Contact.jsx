@@ -5,9 +5,15 @@ import { useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 
-import translations from "../../utils/languages.json";
+import Swal from 'sweetalert'
+
+import en from "../../languages/en.json";
+import es from "../../languages/es.json";
+import ca from "../../languages/ca.json";
+
 
 import { instagram, linkedin } from "../../assets";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,12 +37,25 @@ const Contact = () => {
       email: "",
       message: "",
     });
-    alert("Mensaje enviado correctamente");
+    Swal({
+      title: 'Email Sent!',
+      text: 'Your email has been sent successfully.',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    })
   };
 
   const lang = useSelector((state) => state.language);
 
-  const language = translations[lang];
+  let language;
+
+  if (lang === 'es') {
+    language = es[lang]
+  } else if (lang === 'en') {
+    language = en[lang]
+  } else {
+    language = ca[lang]
+  }
 
   return (
     <motion.section
@@ -48,7 +67,7 @@ const Contact = () => {
       <div className="contact-section">
         <div className="container">
           <div className="row">
-            <div className="col-xl-5">
+            <div className="col-xl-5 col-sm-12">
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -81,7 +100,7 @@ const Contact = () => {
                 </div>
               </motion.div>
             </div>
-            <div className="col-xl-7">
+            <div className="col-xl-7 col-sm-12">
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}

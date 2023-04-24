@@ -99,7 +99,6 @@
 
 @media (max-width: 768px) {
 .footer {
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -112,6 +111,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 0 20px;
+    background-color: white;
   }
   .instagram {
     display: flex;

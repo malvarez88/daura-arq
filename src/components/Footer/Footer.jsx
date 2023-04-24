@@ -9,7 +9,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { useLocation } from "react-router";
 
-import translations from "../../utils/languages.json";
+import en from "../../languages/en.json";
+import es from "../../languages/es.json";
+import ca from "../../languages/ca.json";
+
+// import translations from "../../languages/languages.json";
 
 const Footer = () => {
   const dispatch = useDispatch();
@@ -31,8 +35,17 @@ let colorContacto;
     dispatch(setNewLanguage(newLang));
     setActive(newLang);
   };
+ 
+ 
+  let language;
 
-  const language = translations[lang];
+  if (lang === 'es') {
+    language = es[lang]
+  } else if (lang === 'en') {
+    language = en[lang]
+  } else {
+    language = ca[lang]
+  }
 
   return (
     <motion.div

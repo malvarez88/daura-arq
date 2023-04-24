@@ -9,9 +9,10 @@ import { useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 
-// import logo from "../../assets/dauralogo.svg";
 
-import translations from "../../utils/languages.json";
+import en from "../../languages/en.json";
+import es from "../../languages/es.json";
+import ca from "../../languages/ca.json";
 
 const Navbar = () => {
   const location = useLocation();
@@ -32,7 +33,16 @@ const Navbar = () => {
 
   const lang = useSelector((state) => state.language);
 
-  const language = translations[lang];
+  let language;
+
+  if (lang === "es") {
+    language = es[lang];
+  } else if (lang === "en") {
+    language = en[lang];
+  } else {
+    language = ca[lang];
+  }
+
 
   return (
     <header className="header">

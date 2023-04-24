@@ -26,7 +26,7 @@ const ProyectoAbierto = () => {
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
-              <h6 style={{ textAlign: "center", margin: "10px 0 40px 0" }}>
+              <h6 style={{ textAlign: "center", margin: "0 66px", padding: "20px" }}>
                 {actualProject.categoria.toUpperCase()}
               </h6>
               <div className="project-info">

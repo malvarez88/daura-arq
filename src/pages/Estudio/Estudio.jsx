@@ -3,7 +3,6 @@ import "./estudio.css";
 
 import { useSelector } from "react-redux";
 
-// import { motion } from "framer-motion/dist/framer-motion";
 import { motion } from "framer-motion";
 
 import { partners } from "../../constants";
@@ -12,11 +11,12 @@ import {
   about2,
   about3,
   barcelona1,
-  board1,
   profile,
 } from "../../assets";
 
-import translations from "../../utils/languages.json";
+import en from "../../languages/en.json";
+import es from "../../languages/es.json";
+import ca from "../../languages/ca.json";
 
 const Estudio = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -24,7 +24,15 @@ const Estudio = () => {
 
   const lang = useSelector((state) => state.language);
 
-  const language = translations[lang];
+  let language;
+
+  if (lang === "es") {
+    language = es[lang];
+  } else if (lang === "en") {
+    language = en[lang];
+  } else {
+    language = ca[lang];
+  }
 
   function handleClick(index) {
     setActiveTab(index);
@@ -59,40 +67,20 @@ const Estudio = () => {
                 style={{ display: activeTab === 0 ? "block" : "none" }}
               >
                 <h5 className="title">d'aura arquitectura</h5>
-                <p className="general-text">
-                  Fundado en el año 2000, es una red de personas y espacios;
-                  apasionados por la arquitectura, la investigación y la
-                  experimentación. <br /> <br /> Un "studio" más que una
-                  oficina, dónde la investigación está siempre presente
-                  favoreciendo el cambio de paradigmas; un espacio más que un
-                  lugar, para la búsqueda de oportunidades a través de un flujo
-                  de recursos, colaboraciones y tiempo. Un proceso de trabajo
-                  más que una forma de trabajar, basado en la formulación de
-                  estrategias, observación, yuxtaposición de información,
-                  práctica y conocimiento.
-                  <br /> <br /> Preguntar, diseñar, materializar, y comprobar
-                  como actitud.
-                </p>
-                <div className="col-xl-12">
+                <p className="general-text">{language.sobrenosotros}</p>
+ 
                   <div className="sobre-nosotros-img">
                     <img src={about1} alt="about" className="img-fluid" />
                     <img src={about2} alt="about" className="img-fluid" />
                     <img src={about3} alt="about" className="img-fluid" />
                   </div>
-                </div>
 
                 <p className="general-text">
-                  La investigación e innovación estan presente en nuestro
-                  estudio, participando en proyectos que buscan nuevas
-                  soluciones para aplicarlas en casos reales. Creemos en las
-                  redes de profesionales transdisciplinares orientada a obtener
-                  el mejor resultado para un proyecto; y por ello apostamos por
-                  la innovación abierta, la colaboración y compartir
-                  conocimientos. Algunos de nuestros partners y amigos son:
+                 {language.sobrenosotros2}
                 </p>
                 <ul className="partner-list">
-                  {partners.map((partner) => (
-                    <li>
+                  {partners.map((partner, index) => (
+                    <li key={index}>
                       <a
                         href={partner.url}
                         target="_blank"
@@ -107,21 +95,14 @@ const Estudio = () => {
                   <img src={barcelona1} alt="" className="img-fluid" />
                 </div>
               </div>
-            
+
               {/* EQUIPO */}
               <div
                 className="eqiupo"
-                style={{ display: activeTab === 2 ? "block" : "none" }}
+                style={{ display: activeTab === 1 ? "block" : "none" }}
               >
                 <p className="general-text">
-                  Somos arquitectos, urbanistas y diseñadores, con experiencia
-                  internacional, y participación en la docencia y la
-                  investigación. Trabajamos en las áreas de arquitectura, diseño
-                  de interiores, las intervenciones en sitios históricos, el
-                  diseño urbano y planificación, paisaje, exposiciones efímeras,
-                  la teoría y la crítica. Con sede en Barcelona, hemos ido
-                  ampliando nuestro campo de acción, estando ya involucrado en
-                  algunos proyectos internacionales.
+                 {language.equipo}
                 </p>
                 <div className="equipo-profile">
                   <div className="profile">
