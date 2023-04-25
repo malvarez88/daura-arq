@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./proyectos.css";
 
@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 
-import { proyectosES, colores } from "../../constants/proyectos-es";
+import { proyectosES, coloresEs } from "../../constants/proyectos-es";
 
 import { proyectosEN, colors } from "../../constants/proyectos-en";
 // import proyectosCA from '../../constants/proyectos-ca';
@@ -14,7 +14,7 @@ import { proyectosEN, colors } from "../../constants/proyectos-en";
 import en from "../../languages/en.json";
 import es from "../../languages/es.json";
 import ca from "../../languages/ca.json";
-import { useEffect } from "react";
+
 
 const Proyectos = () => {
   const lang = useSelector((state) => state.language);
@@ -33,16 +33,18 @@ const Proyectos = () => {
   }
 
   let language;
-  let proyectSearch;
+  let proyectSearch= " ";
   let proyectos;
   let categorias;
   let colores;
+
+
 
   if (lang === "es") {
     language = es[lang];
     proyectSearch = "todos";
     proyectos = proyectosES;
-    colores = colores;
+    colores = coloresEs;
     categorias = Object.keys(colores);
   } else if (lang === "en") {
     language = en[lang];
@@ -54,6 +56,9 @@ const Proyectos = () => {
     language = ca[lang];
     proyectSearch = "tots";
   }
+
+
+
 
   return (
     <div className="proyectos">
