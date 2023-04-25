@@ -20,8 +20,8 @@ const Footer = () => {
   const [active, setActive] = useState(lang);
   const location = useLocation();
 
-let colorNoticias;
-let colorContacto;
+var colorNoticias;
+var colorContacto;
 
   if (location.pathname === "/noticias") {
      colorNoticias = "#DF6537";
@@ -35,8 +35,7 @@ let colorContacto;
     setActive(newLang);
   };
  
- 
-  let language;
+ var language;
 
   if (lang === 'es') {
     language = es[lang]

@@ -17,8 +17,8 @@ import ca from "../../languages/ca.json";
 const Navbar = () => {
   const location = useLocation();
 
-  let colorProyecto;
-  let colorEstudio;
+  var colorProyecto;
+  var colorEstudio;
 
   if (location.pathname === "/proyectos") {
     colorProyecto = "#DF6537";
@@ -33,7 +33,7 @@ const Navbar = () => {
 
   const lang = useSelector((state) => state.language);
 
-  let language;
+  var language;
 
   if (lang === "es") {
     language = es[lang];

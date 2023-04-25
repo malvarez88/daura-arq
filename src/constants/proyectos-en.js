@@ -359,7 +359,7 @@ const proyectosEN = [
     fotografia: "",
     orden: 5,
     año: 2023,
-    images: [hp831, hp832, hp833, hp834, hp835, hp836, hp837],
+    images: [hp8131, hp8132, hp8133, hp8135, hp8134],
     description:
       "Housing reform in Barcelona. Study of project alternatives, energy renovation and selection of project and works management.",
   },

@@ -6,13 +6,7 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 
 import { partners } from "../../constants";
-import {
-  about1,
-  about2,
-  about3,
-wbf1,
-  profile,
-} from "../../assets";
+import { about1, about2, about3, wbf1, profile } from "../../assets";
 
 import en from "../../languages/en.json";
 import es from "../../languages/es.json";
@@ -23,8 +17,7 @@ const Estudio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const lang = useSelector((state) => state.language);
-
-  let language;
+  var language;
 
   if (lang === "es") {
     language = es[lang];
@@ -68,16 +61,14 @@ const Estudio = () => {
               >
                 <h5 className="title">d'aura arquitectura</h5>
                 <p className="general-text">{language.sobrenosotros}</p>
- 
-                  <div className="sobre-nosotros-img">
-                    <img src={about1} alt="about" className="img-fluid" />
-                    <img src={about2} alt="about" className="img-fluid" />
-                    <img src={about3} alt="about" className="img-fluid" />
-                  </div>
 
-                <p className="general-text">
-                 {language.sobrenosotros2}
-                </p>
+                <div className="sobre-nosotros-img">
+                  <img src={about1} alt="about" className="img-fluid" />
+                  <img src={about2} alt="about" className="img-fluid" />
+                  <img src={about3} alt="about" className="img-fluid" />
+                </div>
+
+                <p className="general-text">{language.sobrenosotros2}</p>
                 <ul className="partner-list">
                   {partners.map((partner, index) => (
                     <li key={index}>
@@ -101,9 +92,7 @@ const Estudio = () => {
                 className="eqiupo"
                 style={{ display: activeTab === 1 ? "block" : "none" }}
               >
-                <p className="general-text">
-                 {language.equipo}
-                </p>
+                <p className="general-text">{language.equipo}</p>
                 <div className="equipo-profile">
                   <div className="profile">
                     <img src={profile} alt="" className="img-fluid" />

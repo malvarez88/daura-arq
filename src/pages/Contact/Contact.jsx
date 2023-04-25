@@ -47,7 +47,7 @@ const Contact = () => {
 
   const lang = useSelector((state) => state.language);
 
-  let language;
+  var language;
 
   if (lang === 'es') {
     language = es[lang]

@@ -359,7 +359,7 @@ const proyectosES = [
     fotografia: "",
     orden: 5,
     año: 2023,
-    images: [hp831, hp832, hp833, hp834, hp835, hp836, hp837],
+    images: [hp8131, hp8132, hp8133, hp8135, hp8134],
     description:
       "Reforma de vivienda en Barcelona. Estudio de alternativas de proyecto, renovación energética y selección gestión de proyecto y obras.",
   },

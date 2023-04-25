@@ -15,8 +15,8 @@ const ProyectoAbierto = () => {
 
   const lang = useSelector((state) => state.language);
 
-  let proyectos;
-  let color;
+  var proyectos;
+  var color;
 
   if (lang === "es") {
     proyectos = proyectosES;

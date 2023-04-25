@@ -30,11 +30,11 @@ const Proyectos = () => {
     setIsOpen(!isOpen);
   }
 
-  let language;
-  let proyectSearch = " ";
-  let proyectos;
-  let categorias;
-  let colores;
+  var language;
+  var proyectSearch = " ";
+  var proyectos;
+  var categorias;
+  var colores;
 
   if (lang === "es") {
     language = es[lang];
