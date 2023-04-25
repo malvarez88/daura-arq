@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 
-import { barcelona1, board1 } from "../../assets";
+// import { barcelona1, board1 } from "../../assets";
 import en from "../../languages/en.json";
 import es from "../../languages/es.json";
 import ca from "../../languages/ca.json";
@@ -42,7 +42,7 @@ const Noticias = () => {
                 </h6>
                 <div className="noticia">
                   <div className="noticias-img">
-                    <img src={board1} alt="" className="img-fluid" />
+                    {/* <img src={board1} alt="" className="img-fluid" /> */}
                   </div>
                   <small>24/1/2023</small>
                   <h4>
@@ -67,7 +67,7 @@ const Noticias = () => {
 
                 <div className="noticia">
                   <div className="noticias-img">
-                    <img src={barcelona1} alt="" className="img-fluid" />
+                    {/* <img src={barcelona1} alt="" className="img-fluid" /> */}
                   </div>
                   <small>24/1/2023</small>
                   <h4>

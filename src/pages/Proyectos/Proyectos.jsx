@@ -29,20 +29,22 @@ const Proyectos = () => {
     setIsOpen(!isOpen);
   }
 
-
   let language;
+  let proyectSearch;
 
-  if (lang === 'es') {
-    language = es[lang]
-  } else if (lang === 'en') {
-    language = en[lang]
+  if (lang === "es") {
+    language = es[lang];
+    proyectSearch = "todos";
+  } else if (lang === "en") {
+    language = en[lang];
+    proyectSearch = "all";
   } else {
-    language = ca[lang]
+    language = ca[lang];
+    proyectSearch = "tots";
   }
 
-
   return (
-    // <AnimatePresence>
+
     <div className="proyectos">
       <div className="container">
         <div className="row">
@@ -118,7 +120,7 @@ const Proyectos = () => {
               <div className="wrapper">
                 {proyectos.map((proyecto, index) => {
                   if (
-                    categoriaSeleccionada === "todos" ||
+                    categoriaSeleccionada === proyectSearch ||
                     proyecto.categoria === categoriaSeleccionada
                   ) {
                     return (
@@ -140,7 +142,7 @@ const Proyectos = () => {
                           >
                             <img
                               src={proyecto.thumb}
-                              alt={`Image ${index}`}
+                              alt={`${index}`}
                               key={index}
                               width="300px"
                               height="300px"
@@ -163,7 +165,6 @@ const Proyectos = () => {
         </div>
       </div>
     </div>
-    // </AnimatePresence>
   );
 };
 

@@ -92,7 +92,7 @@ const Estudio = () => {
                   ))}
                 </ul>
                 <div>
-                  <img src={barcelona1} alt="" className="img-fluid" />
+                  {/* <img src={barcelona1} alt="" className="img-fluid" /> */}
                 </div>
               </div>
 

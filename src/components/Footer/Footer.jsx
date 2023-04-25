@@ -13,7 +13,6 @@ import en from "../../languages/en.json";
 import es from "../../languages/es.json";
 import ca from "../../languages/ca.json";
 
-// import translations from "../../languages/languages.json";
 
 const Footer = () => {
   const dispatch = useDispatch();
