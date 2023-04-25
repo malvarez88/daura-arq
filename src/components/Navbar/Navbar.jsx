@@ -67,7 +67,7 @@ const Navbar = () => {
                     <span> {language.proyectos}</span>
                   </a>
                 </div>
-                <div className="link-container">
+                <div className="link-container logo-container">
                   <a href="/" className="nav-link" />
                   <Logo />
                 </div>

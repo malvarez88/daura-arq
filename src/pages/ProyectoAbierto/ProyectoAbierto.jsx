@@ -3,16 +3,24 @@ import { useParams } from "react-router";
 
 import { motion } from "framer-motion";
 
-import { proyectosES, colores } from "../../constants/proyectos-es";
-// import proyectosEN from '../../constants/proyectos-en';
+import { proyectosES, coloresEs } from "../../constants/proyectos-es";
+import { proyectosEN, colors } from "../../constants/proyectos-en";
 // import proyectosCA from '../../constants/proyectos-ca';
 
 import "./proyectoabierto.css";
+import { useSelector } from "react-redux";
 
 const ProyectoAbierto = () => {
   const { ref, categoria } = useParams();
 
-  const proyectos = proyectosES
+  const lang = useSelector((state) => state.language);
+
+  let proyectos;
+  if (lang === "es") {
+    proyectos = proyectosES;
+  } else if (lang === "en") {
+    proyectos = proyectosEN;
+  }
 
   const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
 
@@ -30,13 +38,19 @@ const ProyectoAbierto = () => {
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
-              <h6 style={{ textAlign: "center", margin: "0 66px", padding: "20px" }}>
+              <h6
+                style={{
+                  textAlign: "center",
+                  margin: "0 66px",
+                  padding: "20px",
+                }}
+              >
                 {actualProject.categoria.toUpperCase()}
               </h6>
               <div className="project-info">
                 <h4
                   style={{
-                    color: colores[categoria],
+                    color: coloresEs[categoria],
                   }}
                 >
                   {actualProject.title.toLocaleUpperCase()}
@@ -50,26 +64,43 @@ const ProyectoAbierto = () => {
                     {actualProject.description}
                     <div className="project-description-info">
                       <ul className="project-list">
-                        <li className="project-link">
-                          <span>AÑO: </span>
-                          <span>{actualProject.año} </span>
-                        </li>
-                        <li className="project-link">
-                          <span>SUPERFICIE:</span>
-                          <span>{actualProject.superficie}</span>
-                        </li>
-                        <li className="project-link">
-                          <span>EQUIPO:</span>
-                          <span>{actualProject.equipo}</span>
-                        </li>
-                        <li className="project-link">
-                          <span>COLABORADORES:</span>
-                          <span>{actualProject.colaboradores}</span>
-                        </li>
-                        <li className="project-link">
-                          <span>FOTOGRAFIA:</span>
-                          <span>{actualProject.fotografia}</span>
-                        </li>
+                        {actualProject.año ? (
+                          <li className="project-link">
+                            <span>AÑO: </span>
+                            <span>{actualProject.año} </span>
+                          </li>
+                        ) : null}
+                        {actualProject.superficie ? (
+                          <li className="project-link">
+                            <span>SUPERFICIE:</span>
+                            {lang === "es" || lang === "ca" ? (
+                              <span>{actualProject.superficie}㎡</span>
+                            ) : (
+                              <span>
+                                {" "}
+                                {actualProject.superficie * 10.7639.toFixed(2)} sq ft
+                              </span>
+                            )}
+                          </li>
+                        ) : null}
+                        {actualProject.equipo > 0 ? (
+                          <li className="project-link">
+                            <span>EQUIPO:</span>
+                            <span>{actualProject.equipo}</span>
+                          </li>
+                        ) : null}
+                        {actualProject.colaboradores ? (
+                          <li className="project-link">
+                            <span>COLABORADORES:</span>
+                            <span>{actualProject.colaboradores}</span>
+                          </li>
+                        ) : null}
+                        {actualProject.fotografia ? (
+                          <li className="project-link">
+                            <span>FOTOGRAFIA: </span>
+                            <span>{actualProject.fotografia}</span>
+                          </li>
+                        ) : null}
                       </ul>
                     </div>
                   </div>

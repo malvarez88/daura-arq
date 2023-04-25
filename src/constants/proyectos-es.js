@@ -779,7 +779,7 @@ const proyectosES = [
   },
 ];
 
-const colores = {
+const coloresEs = {
   "todos": "#DF6537",
   "arquitectura": "#3068B0",
   "deporte": "#72BB66",
@@ -787,4 +787,4 @@ const colores = {
   "inmobiliario": "#DEC800",
 };
 
-export { proyectosES, colores };
+export { proyectosES, coloresEs };
