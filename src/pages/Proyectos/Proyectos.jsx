@@ -5,18 +5,21 @@ import "./proyectos.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
-import { proyectos, colores } from "../../constants";
+
+import { proyectosES, colores } from "../../constants/proyectos-es";
+
+import { proyectosEN, colors } from "../../constants/proyectos-en";
+// import proyectosCA from '../../constants/proyectos-ca';
 
 import en from "../../languages/en.json";
 import es from "../../languages/es.json";
 import ca from "../../languages/ca.json";
+import { useEffect } from "react";
 
 const Proyectos = () => {
   const lang = useSelector((state) => state.language);
 
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
-
-  const categorias = Object.keys(colores);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -31,20 +34,28 @@ const Proyectos = () => {
 
   let language;
   let proyectSearch;
+  let proyectos;
+  let categorias;
+  let colores;
 
   if (lang === "es") {
     language = es[lang];
     proyectSearch = "todos";
+    proyectos = proyectosES;
+    colores = colores;
+    categorias = Object.keys(colores);
   } else if (lang === "en") {
     language = en[lang];
     proyectSearch = "all";
+    proyectos = proyectosEN;
+    colores = colors
+    categorias = Object.keys(colores);
   } else {
     language = ca[lang];
     proyectSearch = "tots";
   }
 
   return (
-
     <div className="proyectos">
       <div className="container">
         <div className="row">
@@ -133,7 +144,7 @@ const Proyectos = () => {
                         key={index}
                       >
                         <Link
-                          to={`/proyectos/${proyecto.categoria}/${proyecto.path}`}
+                          to={`/proyectos/${proyecto.categoria}/${proyecto.ref}`}
                           className="link-project"
                         >
                           <div
@@ -141,7 +152,7 @@ const Proyectos = () => {
                             data-categoria={proyecto.categoria}
                           >
                             <img
-                              src={proyecto.thumb}
+                              src={proyecto.images[0]}
                               alt={`${index}`}
                               key={index}
                               width="300px"
@@ -149,8 +160,9 @@ const Proyectos = () => {
                             />
                             <div className="proyect-description">
                               <p>
-                                {proyecto.title.toUpperCase()}
-                                {proyecto.description}
+                                {proyecto.short
+                                  ? proyecto.short.toUpperCase()
+                                  : proyecto.ref}
                               </p>
                             </div>
                           </div>

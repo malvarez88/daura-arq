@@ -171,7 +171,7 @@ import {
   sws4,
 } from "../assets";
 
-const proyectos = [
+const proyectosES = [
   {
     ref: "DA0005",
     short: "VLLV",
@@ -559,7 +559,13 @@ const proyectos = [
     fotografia: "",
     orden: null,
     año: null,
-    images: [boardriders1, boardriders2, boardriders3, boardriders4, boardriders5],
+    images: [
+      boardriders1,
+      boardriders2,
+      boardriders3,
+      boardriders4,
+      boardriders5,
+    ],
     description:
       "Reconversión de un edificio industrial en el frente marítimo de Barcelona.La transformación de un antiguo espacio industrial y su apertura al nuevo frente marítimo  propició la aparición de espacios disfuncionales y sin encaje urbano. La intervención en estos espacios ha de permitir la llegada de nuevos usos, su actualización, y una nueva integración en el espacio urbano transformado.  Con estas premisas el proyecto mantiene el carácter de los espacios existentes, recuperando estructuras y materiales, pero incorporando las actividades urbanas de ocio y comercio que han colonizado la fachada marítima.",
   },
@@ -623,7 +629,7 @@ const proyectos = [
     fotografia: "Marcela Grassi",
     orden: 3,
     año: null,
-    images: [wbf1, wbf2,wbf3, wbf4, wbf5],
+    images: [wbf1, wbf2, wbf3, wbf4, wbf5],
     description:
       "Instalación deportiva con motivo del Mundial de Baloncesto de Barcelona.Más allá de la competición profesional de un Mundial de Baloncesto,  el deporte urbano es una actividad de ocio y socialización.  Esta instalación combina espacios de actividad física y competición, con espectáculos deportivos, musicales, y zonas de ocio. Pese a su breve duración temporal, su impacto urbano ha atraído más de 30.000 visitantes. Todos los elementos de la instalación son de construcción ligera y reutilizables para nuevos eventos.",
   },
@@ -687,7 +693,7 @@ const proyectos = [
     fotografia: "",
     orden: 8,
     año: null,
-    images: [sws1,sws2,sws3,sws4],
+    images: [sws1, sws2, sws3, sws4],
     description:
       "Arquitectura efímera para la celebración en Barcelona del World Series 2021 de Natación Artística y el Torneo de clasificación Olímpica para Tokio 2021Transformación del equipamiento deportivo para adecuarlo a las necesidades normativas de la competición y a las arquitectónicas de los espectadores y las retransmisiones del espectáculo. Estudio de los ambientes, iluminación y distintos usos de la lámina de agua y escenarios adyacentes para crear una imagen global reconocible al espectador.",
   },
@@ -703,7 +709,7 @@ const proyectos = [
     fotografia: "",
     orden: 6,
     año: null,
-    images: [fluidra1,fluidra2,fluidra3,fluidra4, fluidra5],
+    images: [fluidra1, fluidra2, fluidra3, fluidra4, fluidra5],
     description:
       "Proyecto de investigación con un maravilloso equipo para la creación de un espectáculo audiovisual dentro del agua. El espectáculo con una potente narrativa audiovisual se desarrolla sobre y bajo la superficie del agua, utilizando este elemento con su máxima expresividad, gracias al uso de fuentes, plataformas e iluminación que potencian la coreografía de nadadoras y bailarinas. Creación de nuevos elementos técnicos como la plataforma central usada como escenario y proyector de agua, luz y sonido.",
   },
@@ -719,9 +725,9 @@ const proyectos = [
     fotografia: "",
     orden: 6,
     año: null,
-    images: [fluidra1,fluidra2,fluidra3,fluidra4, fluidra5],
+    images: [terrassa1, terrassa2, terrassa3, terrassa4],
     description:
-      "Proyecto de investigación con un maravilloso equipo para la creación de un espectáculo audiovisual dentro del agua. El espectáculo con una potente narrativa audiovisual se desarrolla sobre y bajo la superficie del agua, utilizando este elemento con su máxima expresividad, gracias al uso de fuentes, plataformas e iluminación que potencian la coreografía de nadadoras y bailarinas. Creación de nuevos elementos técnicos como la plataforma central usada como escenario y proyector de agua, luz y sonido.",
+      "Piscina de entrenamiento y competición en el Club Natació Terrassa.El proyecto dota a la instalación de una nueva piscina para actividades deportivas, convertible en dos piscinas de competición de waterpolo mediante un puente móvil. La nueva construcción se inserta entre las existentes, proponiendo una solución compacta y eficiente. El volumen rememora el pasado industrial de la zona pero con la ligereza de los actuales sistemas constructivos prefabricados.  La luz natural y el control de las vistas definen la proporción de huecos y espacios, y la relación con el resto de volúmenes.",
   },
   {
     ref: "DA0758",
@@ -774,11 +780,11 @@ const proyectos = [
 ];
 
 const colores = {
-  todos: "#DF6537",
-  arquitectura: "#3068B0",
-  sport: "#72BB66",
-  patrimonio: "#CA3038",
-  inmobiliario: "#DEC800",
+  "todos": "#DF6537",
+  "arquitectura": "#3068B0",
+  "deporte": "#72BB66",
+  "patrimonio": "#CA3038",
+  "inmobiliario": "#DEC800",
 };
 
-export { proyectos, colores };
+export { proyectosES, colores };

@@ -3,14 +3,18 @@ import { useParams } from "react-router";
 
 import { motion } from "framer-motion";
 
-import { proyectos, colores } from "../../constants";
+import { proyectosES, colores } from "../../constants/proyectos-es";
+// import proyectosEN from '../../constants/proyectos-en';
+// import proyectosCA from '../../constants/proyectos-ca';
 
 import "./proyectoabierto.css";
 
 const ProyectoAbierto = () => {
-  const { path, categoria } = useParams();
+  const { ref, categoria } = useParams();
 
-  const actualProject = proyectos.find((proyecto) => proyecto.path === path);
+  const proyectos = proyectosES
+
+  const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
 
   const [visible, setVisible] = useState(false);
 
@@ -76,7 +80,7 @@ const ProyectoAbierto = () => {
               <div className="open-project-images">
                 <div className="img-thumb">
                   <img
-                    src={actualProject.thumb}
+                    src={actualProject.images[0]}
                     alt={actualProject.title}
                     className="img-fluid"
                   />
