@@ -9,18 +9,22 @@ import { useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 
-// import logo from "../../assets/dauralogo.svg";
 
-import translations from "../../utils/languages.json";
+import en from "../../languages/en.json";
+import es from "../../languages/es.json";
+import ca from "../../languages/ca.json";
 
 const Navbar = () => {
   const location = useLocation();
-  let color;
+
+  let colorProyecto;
+  let colorEstudio;
 
   if (location.pathname === "/proyectos") {
-    color = "#DF6537";
+    colorProyecto = "#DF6537";
+  } else if (location.pathname === "/estudio") {
+    colorEstudio = "#DF6537";
   }
-
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -29,7 +33,16 @@ const Navbar = () => {
 
   const lang = useSelector((state) => state.language);
 
-  const language = translations[lang];
+  let language;
+
+  if (lang === "es") {
+    language = es[lang];
+  } else if (lang === "en") {
+    language = en[lang];
+  } else {
+    language = ca[lang];
+  }
+
 
   return (
     <header className="header">
@@ -44,8 +57,14 @@ const Navbar = () => {
             <div className="col-xl-12">
               <div className="navbar">
                 <div className="link-container">
-                  <a href="/proyectos" className="nav-link" style={{color:`${color? color : "black"}`}}>
-                    {language.proyectos}
+                  <a
+                    href="/proyectos"
+                    className="nav-link"
+                    style={{
+                      color: `${colorProyecto ? colorProyecto : "black"}`,
+                    }}
+                  >
+                    <span> {language.proyectos}</span>
                   </a>
                 </div>
                 <div className="link-container">
@@ -53,8 +72,14 @@ const Navbar = () => {
                   <Logo />
                 </div>
                 <div className="link-container last">
-                  <a href="/estudio" className="nav-link">
-                    {language.estudio}
+                  <a
+                    href="/estudio"
+                    className="nav-link"
+                    style={{
+                      color: `${colorEstudio ? colorEstudio : "black"}`,
+                    }}
+                  >
+                    <span className="last">{language.estudio}</span>
                   </a>
                 </div>
               </div>

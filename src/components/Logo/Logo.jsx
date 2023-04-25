@@ -4,16 +4,17 @@ import { useLocation } from "react-router";
 import "./logo.css";
 
 const Logo = () => {
+  const location = useLocation();
 
-    const location = useLocation();
+  let color;
 
-    let color;
-
-    if(location.pathname === '/proyectos') {
-        color = '#DF6537';
-    }
-
-
+  if (
+    location.pathname === "/proyectos" ||
+    location.pathname === "/estudio" ||
+    location.pathname === "/contacto"
+  ) {
+    color = "#DF6537";
+  }
 
   return (
     <svg
@@ -45,13 +46,7 @@ const Logo = () => {
           strokeMiterlimit="10"
         />
       </g>
-      <rect
-        className="cls-1"
-        x="92.2"
-        width="16"
-        height="16"
-        fill={color}
-      />
+      <rect className="cls-1" x="92.2" width="16" height="16" fill={color} />
     </svg>
   );
 };

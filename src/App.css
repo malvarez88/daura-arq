@@ -24,32 +24,20 @@
 }
 
 :root {
-
-  --primary-color: '#f4f0f0';
-
-
-}
+  --primary-color: white;
+  --orange: #DF6537;
+  --blue : #3068B0;
+  --green : #72BB66;
+  --red : #CA3038;
+  --yellow : #DEC800;
+};
 
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: white;
   font-family: 'Heros', sans-serif;
   position: relative;
-  background-color: white;
+  background-color: var(--primary-color);
 }
-/* .app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-} */
-
-/* body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-} */
-/* 
-.general-text {} */

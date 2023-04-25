@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
-// import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
+
 import { motion } from "framer-motion";
 
+import { proyectosES, colores } from "../../constants/proyectos-es";
+// import proyectosEN from '../../constants/proyectos-en';
+// import proyectosCA from '../../constants/proyectos-ca';
+
 import "./proyectoabierto.css";
-import { mockProject } from "../../constants";
 
 const ProyectoAbierto = () => {
-  const params = useParams();
-  console.log("🚀 ~ file: ProyectoAbierto.jsx:11 ~ ProyectoAbierto ~ params:", params)
-  const actualProject = mockProject;
+  const { ref, categoria } = useParams();
+
+  const proyectos = proyectosES
+
+  const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
 
   const [visible, setVisible] = useState(false);
 
@@ -25,11 +30,15 @@ const ProyectoAbierto = () => {
         <div className="container">
           <div className="row">
             <div className="col-xl-12">
-              <h6 style={{ textAlign: "center", margin: "10px 0 40px 0" }}>
+              <h6 style={{ textAlign: "center", margin: "0 66px", padding: "20px" }}>
                 {actualProject.categoria.toUpperCase()}
               </h6>
               <div className="project-info">
-                <h4 style={{ color: "#3068B0" }}>
+                <h4
+                  style={{
+                    color: colores[categoria],
+                  }}
+                >
                   {actualProject.title.toLocaleUpperCase()}
                 </h4>
                 <h6>{actualProject.location}</h6>
@@ -71,7 +80,7 @@ const ProyectoAbierto = () => {
               <div className="open-project-images">
                 <div className="img-thumb">
                   <img
-                    src={actualProject.thumb}
+                    src={actualProject.images[0]}
                     alt={actualProject.title}
                     className="img-fluid"
                   />
@@ -79,6 +88,7 @@ const ProyectoAbierto = () => {
                 <div className="images-section">
                   {actualProject.images.map((img, index) => (
                     <img
+                      key={index}
                       src={img}
                       alt={index}
                       className="open-thumb img-fluid"

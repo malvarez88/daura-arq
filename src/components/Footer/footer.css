@@ -58,6 +58,7 @@
 .languages button {
   border: none;
   cursor: pointer;
+  background: transparent;
 }
 
 .languages button:focus {
@@ -97,14 +98,20 @@
 }
 
 @media (max-width: 768px) {
+.footer {
+  bottom: 0;
+  width: 100%;
+}
+
   .footer-list {
     display: none;
   }
   .mobile-footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 20px;
+    background-color: white;
   }
   .instagram {
     display: flex;

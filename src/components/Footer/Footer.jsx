@@ -1,26 +1,50 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./footer.css";
 
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import { instagram } from "../../assets";
 
 import { setNewLanguage } from "../../store/language";
 import { useDispatch, useSelector } from "react-redux";
 
-import translations from "../../utils/languages.json";
+import { useLocation } from "react-router";
+
+import en from "../../languages/en.json";
+import es from "../../languages/es.json";
+import ca from "../../languages/ca.json";
+
 
 const Footer = () => {
   const dispatch = useDispatch();
-  const [active, setActive] = useState(false);
+  const lang = useSelector((state) => state.language);
+  const [active, setActive] = useState(lang);
+  const location = useLocation();
+
+let colorNoticias;
+let colorContacto;
+
+  if (location.pathname === "/noticias") {
+     colorNoticias = "#DF6537";
+  } else if (location.pathname === "/contacto") {
+    colorContacto = "#DF6537";
+  }
+
 
   const handleLanguageChange = (newLang) => {
     dispatch(setNewLanguage(newLang));
     setActive(newLang);
   };
+ 
+ 
+  let language;
 
-  const lang = useSelector((state) => state.language);
-
-  const language = translations[lang];
+  if (lang === 'es') {
+    language = es[lang]
+  } else if (lang === 'en') {
+    language = en[lang]
+  } else {
+    language = ca[lang]
+  }
 
   return (
     <motion.div
@@ -37,20 +61,20 @@ const Footer = () => {
                 <li className="footer-li">
                   <div className="languages">
                     <button
-                      className={active ? "" : "change-lang"}
                       onClick={() => handleLanguageChange("ca")}
+                      style={{ color: active === "ca" ? "black" : "lightgray" }}
                     >
                       CA
                     </button>
                     <button
-                      className={active ? "active-lang" : "change-lang"}
-                      onClick={() => handleLanguageChange("es")}
+                      onClick={() => handleLanguageChange("es", 1)}
+                      style={{ color: active === "es" ? "black" : "lightgray" }}
                     >
                       ES
                     </button>
                     <button
-                      className={active ? "active-lang" : "change-lang"}
-                      onClick={() => handleLanguageChange("en")}
+                      onClick={() => handleLanguageChange("en", 2)}
+                      style={{ color: active === "en" ? "black" : "lightgray" }}
                     >
                       EN
                     </button>
@@ -59,12 +83,18 @@ const Footer = () => {
                   <span className="daura-footer">@ d'aura arquitectura</span>
                 </li>
                 <li className="footer-li">
-                  <a href="/espacios" className="footer-link">
-                    {language.espacios}
+                  <a href="/noticias" className="footer-link"
+                    style={{
+                      color: `${colorNoticias ? colorNoticias : "black"}`,
+                    }}>
+                    {language.noticias}
                   </a>
                 </li>
                 <li className="footer-li">
-                  <a href="/contacto" className="footer-link">
+                  <a href="/contacto" className="footer-link"
+                   style={{
+                    color: `${colorContacto ? colorContacto : "black"}`,
+                  }}>
                     {language.contacto}
                   </a>
                   <a href="">
@@ -80,25 +110,27 @@ const Footer = () => {
 
               <div className="mobile-footer">
                 <div className="languages">
-                  <button
-                    className={active ? "active-lang" : "change-lang"}
-                    onClick={() => handleLanguageChange("ca")}
-                  >
-                    CA
-                  </button>
-                  <button
-                    className={active ? "active-lang" : "change-lang"}
-                    onClick={() => handleLanguageChange("es")}
-                  >
-                    ES
-                  </button>
-                  <button
-                    className={active ? "active-lang" : "change-lang"}
-                    onClick={() => handleLanguageChange("en")}
-                  >
-                    EN
-                  </button>
-                {/* <span className="daura-footer">@ d'aura arquitectura</span> */}
+                <button
+                      onClick={() => handleLanguageChange("ca")}
+                      style={{ color: active === "ca" ? "black" : "lightgray" }}
+                    >
+                      CA
+                    </button>
+                    <button
+                      onClick={() => handleLanguageChange("es", 1)}
+                      style={{ color: active === "es" ? "black" : "lightgray" }}
+                    >
+                      ES
+                    </button>
+                    <button
+                      onClick={() => handleLanguageChange("en", 2)}
+                      style={{ color: active === "en" ? "black" : "lightgray" }}
+                    >
+                      EN
+                    </button>
+                    <br />
+                  <span className="daura-footer">@ d'aura arquitectura</span>
+                  {/* <span className="daura-footer">@ d'aura arquitectura</span> */}
                 </div>
                 <div className="instagram">
                   <a href="">
