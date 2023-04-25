@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./navbar.css";
 
 import Logo from "../Logo/Logo";
@@ -64,7 +64,7 @@ const Navbar = () => {
                       color: `${colorProyecto ? colorProyecto : "black"}`,
                     }}
                   >
-                    <span> {language.proyectos}</span>
+                    <span>{language.proyectos}</span>
                   </a>
                 </div>
                 <div className="link-container logo-container">

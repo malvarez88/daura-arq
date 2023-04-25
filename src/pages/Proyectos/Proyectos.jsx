@@ -7,14 +7,12 @@ import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 
 import { proyectosES, coloresEs } from "../../constants/proyectos-es";
-
 import { proyectosEN, colors } from "../../constants/proyectos-en";
-// import proyectosCA from '../../constants/proyectos-ca';
+import { proyectosCA, colorsCA } from "../../constants/proyectos-ca";
 
 import en from "../../languages/en.json";
 import es from "../../languages/es.json";
 import ca from "../../languages/ca.json";
-
 
 const Proyectos = () => {
   const lang = useSelector((state) => state.language);
@@ -33,32 +31,30 @@ const Proyectos = () => {
   }
 
   let language;
-  let proyectSearch= " ";
+  let proyectSearch = " ";
   let proyectos;
   let categorias;
   let colores;
-
-
 
   if (lang === "es") {
     language = es[lang];
     proyectSearch = "todos";
     proyectos = proyectosES;
     colores = coloresEs;
-    categorias = Object.keys(colores);
+    categorias = Object.keys(coloresEs);
   } else if (lang === "en") {
     language = en[lang];
     proyectSearch = "all";
     proyectos = proyectosEN;
-    colores = colors
-    categorias = Object.keys(colores);
+    colores = colors;
+    categorias = Object.keys(colors);
   } else {
     language = ca[lang];
+    proyectos = proyectosCA;
     proyectSearch = "tots";
+    colores = colorsCA;
+    categorias = Object.keys(colorsCA);
   }
-
-
-
 
   return (
     <div className="proyectos">

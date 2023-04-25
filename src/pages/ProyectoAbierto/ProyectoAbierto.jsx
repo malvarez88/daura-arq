@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 import { proyectosES, coloresEs } from "../../constants/proyectos-es";
 import { proyectosEN, colors } from "../../constants/proyectos-en";
-// import proyectosCA from '../../constants/proyectos-ca';
+import { proyectosCA, colorsCA } from "../../constants/proyectos-ca";
 
 import "./proyectoabierto.css";
 import { useSelector } from "react-redux";
@@ -16,10 +16,17 @@ const ProyectoAbierto = () => {
   const lang = useSelector((state) => state.language);
 
   let proyectos;
+  let color;
+
   if (lang === "es") {
     proyectos = proyectosES;
+    color = coloresEs;
   } else if (lang === "en") {
     proyectos = proyectosEN;
+    color = colors;
+  } else {
+    proyectos = proyectosCA
+    color = colorsCA
   }
 
   const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
@@ -41,7 +48,7 @@ const ProyectoAbierto = () => {
               <h6
                 style={{
                   textAlign: "center",
-                  margin: "0 66px",
+                  // margin: "0 66px",
                   padding: "20px",
                 }}
               >
@@ -77,7 +84,6 @@ const ProyectoAbierto = () => {
                               <span>{actualProject.superficie}㎡</span>
                             ) : (
                               <span>
-                                {" "}
                                 {actualProject.superficie * 10.7639.toFixed(2)} sq ft
                               </span>
                             )}

@@ -10,7 +10,7 @@ import {
   about1,
   about2,
   about3,
-  barcelona1,
+wbf1,
   profile,
 } from "../../assets";
 
@@ -92,7 +92,7 @@ const Estudio = () => {
                   ))}
                 </ul>
                 <div>
-                  {/* <img src={barcelona1} alt="" className="img-fluid" /> */}
+                  <img src={wbf1} alt="" className="img-fluid" />
                 </div>
               </div>
 

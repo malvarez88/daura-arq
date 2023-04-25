@@ -1,9 +1,12 @@
 import React from "react";
+import './noticias.css'
+
 import { useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 
-// import { barcelona1, board1 } from "../../assets";
+import { terrassa1, wbf1 } from "../../assets";
+
 import en from "../../languages/en.json";
 import es from "../../languages/es.json";
 import ca from "../../languages/ca.json";
@@ -11,15 +14,14 @@ import ca from "../../languages/ca.json";
 const Noticias = () => {
   const lang = useSelector((state) => state.language);
 
-
   let language;
 
-  if (lang === 'es') {
-    language = es[lang]
-  } else if (lang === 'en') {
-    language = en[lang]
+  if (lang === "es") {
+    language = es[lang];
+  } else if (lang === "en") {
+    language = en[lang];
   } else {
-    language = ca[lang]
+    language = ca[lang];
   }
 
   return (
@@ -42,7 +44,7 @@ const Noticias = () => {
                 </h6>
                 <div className="noticia">
                   <div className="noticias-img">
-                    {/* <img src={board1} alt="" className="img-fluid" /> */}
+                    <img src={terrassa1} alt="" className="img-fluid" />
                   </div>
                   <small>24/1/2023</small>
                   <h4>
@@ -67,22 +69,19 @@ const Noticias = () => {
 
                 <div className="noticia">
                   <div className="noticias-img">
-                    {/* <img src={barcelona1} alt="" className="img-fluid" /> */}
+                    <img src={wbf1} alt="" className="img-fluid" />
                   </div>
-                  <small>24/1/2023</small>
-                  <h4>
-                    El CN Terrassa rep el projecte bàsic per a la construcció
-                    d’una piscina coberta de 34×25 metres
-                  </h4>
+                  <small>06/09/2014</small>
+                  <h4>Barcelona World Basketball Festival</h4>
                   <p className="general-text">
-                    El CN Terrassa ha rebut el projecte bàsic per a la
-                    construcció d’una nova piscina coberta de 34×25 metres de
-                    mans de l’estudi D’Aura Arquitectura. Joan Ramon Rius i
-                    Núria Ayala, especialistes en projectes esportius aquàtics,
-                    han lliurat el document a la delegació del club, formada pel
-                    president Jordi Martín, la vicepresidenta esportiva Cristina
-                    Rey i el vicepresident de l’Àrea d’Instal·lacions Enrique
-                    Lupiáñez.
+                    Más allá de la competición profesional de un Mundial de
+                    Baloncesto, el deporte urbano es una actividad de ocio y
+                    socialización. Esta instalación combina espacios de
+                    actividad física y competición, con espectáculos deportivos,
+                    musicales, y zonas de ocio. Pese a su breve duración
+                    temporal, su impacto urbano ha atraído más de 30.000
+                    visitantes. Todos los elementos de la instalación son de
+                    construcción ligera y reutilizables para nuevos eventos.
                   </p>
                   <span>
                     <b>LEE MAS</b>
