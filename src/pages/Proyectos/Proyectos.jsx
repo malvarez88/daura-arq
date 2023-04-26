@@ -5,21 +5,24 @@ import "./proyectos.css";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 import { proyectosES, coloresEs } from "../../constants/proyectos-es";
-
 import { proyectosEN, colors } from "../../constants/proyectos-en";
-// import proyectosCA from '../../constants/proyectos-ca';
+import { proyectosCA, colorsCA } from "../../constants/proyectos-ca";
 
-import en from "../../languages/en.json";
-import es from "../../languages/es.json";
-import ca from "../../languages/ca.json";
-
+import {
+  listaProyectos,
+  projectList,
+  listaProjectes,
+} from "../../constants/index";
 
 const Proyectos = () => {
   const lang = useSelector((state) => state.language);
+  const { t } = useTranslation("global");
 
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
+  const [categoriaSeleccionada, setCategoriaSeleccionada] =
+    useState("todos");
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,33 +35,31 @@ const Proyectos = () => {
     setIsOpen(!isOpen);
   }
 
-  let language;
-  let proyectSearch= " ";
-  let proyectos;
-  let categorias;
-  let colores;
-
-
+  var proyectSearch = " ";
+  var proyectos;
+  var categorias;
+  var colores;
+  var lista;
 
   if (lang === "es") {
-    language = es[lang];
+    lista = listaProyectos;
     proyectSearch = "todos";
     proyectos = proyectosES;
     colores = coloresEs;
-    categorias = Object.keys(colores);
+    categorias = Object.keys(coloresEs);
   } else if (lang === "en") {
-    language = en[lang];
+    lista = projectList;
     proyectSearch = "all";
     proyectos = proyectosEN;
-    colores = colors
-    categorias = Object.keys(colores);
+    colores = colors;
+    categorias = Object.keys(colors);
   } else {
-    language = ca[lang];
+    lista = listaProjectes;
+    proyectos = proyectosCA;
     proyectSearch = "tots";
+    colores = colorsCA;
+    categorias = Object.keys(colorsCA);
   }
-
-
-
 
   return (
     <div className="proyectos">
@@ -72,7 +73,7 @@ const Proyectos = () => {
               transition={{ duration: 1, delay: 0.5 }}
             >
               <ul className="categories-list">
-                {language.listaproyectos.map((categoria, index) => (
+                {lista.map((categoria, index) => (
                   <li
                     key={index}
                     onClick={() => mostrarProyectos(categoria)}
@@ -98,7 +99,7 @@ const Proyectos = () => {
                         : "",
                   }}
                 >
-                  {language.proyectos}
+                  {t("navbar.proyectos").toUpperCase()}
                 </h5>
                 <button
                   className="dropdown-toggle"
@@ -110,11 +111,11 @@ const Proyectos = () => {
                         : "",
                   }}
                 >
-                  {categoriaSeleccionada.toLocaleUpperCase()}
+                  {categoriaSeleccionada.toUpperCase()}
                 </button>
                 {isOpen && (
                   <ul className="dropdown-menu">
-                    {language.listaproyectos.map((categoria, index) => (
+                    {lista.map((categoria, index) => (
                       <li
                         key={index}
                         onClick={() => mostrarProyectos(categoria)}
@@ -126,6 +127,7 @@ const Proyectos = () => {
                         }}
                       >
                         {categoria}
+                        {index < lista.length - 1 && <hr />}
                       </li>
                     ))}
                   </ul>

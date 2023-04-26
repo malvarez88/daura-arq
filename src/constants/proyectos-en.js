@@ -359,7 +359,7 @@ const proyectosEN = [
     fotografia: "",
     orden: 5,
     año: 2023,
-    images: [hp831, hp832, hp833, hp834, hp835, hp836, hp837],
+    images: [hp8131, hp8132, hp8133, hp8135, hp8134],
     description:
       "Housing reform in Barcelona. Study of project alternatives, energy renovation and selection of project and works management.",
   },
@@ -711,7 +711,7 @@ const proyectosEN = [
     año: null,
     images: [fluidra1, fluidra2, fluidra3, fluidra4, fluidra5],
     description:
-      "Proyecto de investigación con un maravilloso equipo para la creación de un espectáculo audiovisual dentro del agua. El espectáculo con una potente narrativa audiovisual se desarrolla sobre y bajo la superficie del agua, utilizando este elemento con su máxima expresividad, gracias al uso de fuentes, plataformas e iluminación que potencian la coreografía de nadadoras y bailarinas. Creación de nuevos elementos técnicos como la plataforma central usada como escenario y proyector de agua, luz y sonido.",
+      "Research project with a wonderful team for the creation of an audiovisual show in the water. The show with a powerful audiovisual narrative takes place above and below the surface of the water, using this element with its maximum expressiveness, thanks to the use of fountains, platforms and lighting that enhance the choreography of swimmers and dancers. Creation of new technical elements such as the central platform used as a stage and a water, light and sound projector.",
   },
   {
     ref: "DA0745",
@@ -786,5 +786,6 @@ const colors = {
   heritage: "#CA3038",
   "real estate": "#DEC800",
 };
+
 
 export { proyectosEN, colors };

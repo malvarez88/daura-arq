@@ -46,7 +46,12 @@
 }
 
 .project-description {
-  margin: 10px 0;
+  margin: 20px 0;
+  text-align: justify;
+}
+
+.project-description-info {
+    margin-top: 20px;
 }
 
 .project-list {

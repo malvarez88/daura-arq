@@ -6,7 +6,7 @@ import "./logo.css";
 const Logo = () => {
   const location = useLocation();
 
-  let color;
+  var  color;
 
   if (
     location.pathname === "/proyectos" ||

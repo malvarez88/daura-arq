@@ -3,15 +3,15 @@
   height: 80vh;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
 }
 
 .contact-direction {
-  margin-left: 66px;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 250px;
-  height: 500px;
+  width: 300px;
+  padding-right: 50px;
 }
 
 .contact-socials {
@@ -29,7 +29,7 @@
 
 .input-box {
   position: relative;
-  width: 550px;
+  width: 500px;
 }
 
 .input-box input {
@@ -74,12 +74,43 @@ textarea:focus-within + span {
   color: black;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .contact-section {
-    height: 100%;
+    margin-top: 20px;
+    display: block;
+    height: 80vh
   }
+
+  .contact-direction {
+    display: none;
+  }
+
+  .input-box {
+    width: 100%;
+  }
+
+  .input-box textarea {
+    height: 100px;
+  }
+
+  .contact-form {
+    margin: 0 20px;
+  }
+
+  .contact-socials {
+    width: 35px;
+    margin: 0 auto;
+  }
+
+  .mobile-contact-direction {
+    margin: 20px;
+    text-align: center;
+    display: flex;
+    font-size: 14px;
+  }
+
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 768px) {
 
 }

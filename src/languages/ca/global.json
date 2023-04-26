@@ -1,0 +1,32 @@
+{
+  "navbar": {
+    "proyectos": "projectes",
+    "estudio": "estudi",
+    "espacios": "espais"
+  },
+  "footer": {
+    "noticias": "notícies",
+    "contacto": "contacte"
+  },
+  "contact-page": {
+    "nombre": "nom",
+    "mensaje": "missatge",
+    "email": "e-mail",
+    "enviar": "enviar"
+  },
+  "estudio-page": {
+    "sobre-nosotros-1": "Fundat a l'any 2000, és una xarxa de persones i espais; apassionats per l'arquitectura, la investigació i l'experimentació. Un 'studio' més que una oficina, on la investigació està sempre present afavorint el canvi de paradigmes; un espai més que un lloc, per cercar oportunitats a través d'un flux de recursos, col·laboracions i temps. Un procés de treball més que una manera de treballar, basat en la formulació destratègies, observació, juxtaposició dinformació, pràctica i coneixement. Preguntar, dissenyar, materialitzar, i comprovar com a actitud.",
+    "sobre-nosotros-2": "La investigació i innovació són presents al nostre estudi, participant en projectes que busquen noves solucions per aplicar-les en casos reals. Creiem a les xarxes de professionals transdisciplinars orientada a obtenir el millor resultat per a un projecte; i per això apostem per la innovació oberta, la col·laboració i compartir coneixements. Alguns dels nostres partners i amics són:",
+    "equipo": "Som arquitectes, urbanistes i dissenyadors, amb experiència internacional, i participació a la docència i la recerca. Treballem a les àrees d'arquitectura, disseny d'interiors, intervencions en llocs històrics, disseny urbà i planificació, paisatge, exposicions efímeres, teoria i crítica. Amb seu a Barcelona, hem anat ampliant el nostre camp d'acció, ja involucrat en alguns projectes internacionals.",
+    "lista-estudio": ["sobre nosaltres", "equip"]
+  },
+  "proyects-page": {
+    "lista-proyectos": [
+      "tots",
+      "arquitectura",
+      "sport",
+      "patrimoni",
+      "immobiliari"
+    ]
+  }
+}
