@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./footer.css";
 
-import { color, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { instagram } from "../../assets";
 
 import { setNewLanguage } from "../../store/language";
@@ -9,10 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { useLocation } from "react-router";
 
-import en from "../../languages/en.json";
-import es from "../../languages/es.json";
-import ca from "../../languages/ca.json";
-
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
   const dispatch = useDispatch();
@@ -20,30 +17,24 @@ const Footer = () => {
   const [active, setActive] = useState(lang);
   const location = useLocation();
 
-var colorNoticias;
-var colorContacto;
+  const [t, i18n] = useTranslation("global");
+
+  var colorNoticias;
+  var colorContacto;
 
   if (location.pathname === "/noticias") {
-     colorNoticias = "#DF6537";
+    colorNoticias = "#DF6537";
   } else if (location.pathname === "/contacto") {
     colorContacto = "#DF6537";
   }
 
-
   const handleLanguageChange = (newLang) => {
     dispatch(setNewLanguage(newLang));
     setActive(newLang);
+    i18n.changeLanguage(newLang)
   };
- 
- var language;
 
-  if (lang === 'es') {
-    language = es[lang]
-  } else if (lang === 'en') {
-    language = en[lang]
-  } else {
-    language = ca[lang]
-  }
+
 
   return (
     <motion.div
@@ -82,19 +73,25 @@ var colorContacto;
                   <span className="daura-footer">@ d'aura arquitectura</span>
                 </li>
                 <li className="footer-li">
-                  <a href="/noticias" className="footer-link"
+                  <a
+                    href="/noticias"
+                    className="footer-link"
                     style={{
                       color: `${colorNoticias ? colorNoticias : "black"}`,
-                    }}>
-                    {language.noticias}
+                    }}
+                  >
+                    {t("footer.noticias")}
                   </a>
                 </li>
                 <li className="footer-li">
-                  <a href="/contacto" className="footer-link"
-                   style={{
-                    color: `${colorContacto ? colorContacto : "black"}`,
-                  }}>
-                    {language.contacto}
+                  <a
+                    href="/contacto"
+                    className="footer-link"
+                    style={{
+                      color: `${colorContacto ? colorContacto : "black"}`,
+                    }}
+                  >
+                    {t("footer.contacto")}
                   </a>
                   <a href="">
                     <img
@@ -109,25 +106,25 @@ var colorContacto;
 
               <div className="mobile-footer">
                 <div className="languages">
-                <button
-                      onClick={() => handleLanguageChange("ca")}
-                      style={{ color: active === "ca" ? "black" : "lightgray" }}
-                    >
-                      CA
-                    </button>
-                    <button
-                      onClick={() => handleLanguageChange("es", 1)}
-                      style={{ color: active === "es" ? "black" : "lightgray" }}
-                    >
-                      ES
-                    </button>
-                    <button
-                      onClick={() => handleLanguageChange("en", 2)}
-                      style={{ color: active === "en" ? "black" : "lightgray" }}
-                    >
-                      EN
-                    </button>
-                    <br />
+                  <button
+                    onClick={() => handleLanguageChange("ca")}
+                    style={{ color: active === "ca" ? "black" : "lightgray" }}
+                  >
+                    CA
+                  </button>
+                  <button
+                    onClick={() => handleLanguageChange("es", 1)}
+                    style={{ color: active === "es" ? "black" : "lightgray" }}
+                  >
+                    ES
+                  </button>
+                  <button
+                    onClick={() => handleLanguageChange("en", 2)}
+                    style={{ color: active === "en" ? "black" : "lightgray" }}
+                  >
+                    EN
+                  </button>
+                  <br />
                   <span className="daura-footer">@ d'aura arquitectura</span>
                   {/* <span className="daura-footer">@ d'aura arquitectura</span> */}
                 </div>

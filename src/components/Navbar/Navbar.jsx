@@ -1,21 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.css";
 
 import Logo from "../Logo/Logo";
 
 import { useLocation } from "react-router";
-
-import { useSelector } from "react-redux";
-
 import { motion } from "framer-motion";
-
-
-import en from "../../languages/en.json";
-import es from "../../languages/es.json";
-import ca from "../../languages/ca.json";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const location = useLocation();
+
+  const {t} = useTranslation("global");
+
+
 
   var colorProyecto;
   var colorEstudio;
@@ -31,18 +28,17 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
-  const lang = useSelector((state) => state.language);
+  // const lang = useSelector((state) => state.language);
 
-  var language;
+  // var language;
 
-  if (lang === "es") {
-    language = es[lang];
-  } else if (lang === "en") {
-    language = en[lang];
-  } else {
-    language = ca[lang];
-  }
-
+  // if (lang === "es") {
+  //   language = es[lang];
+  // } else if (lang === "en") {
+  //   language = en[lang];
+  // } else {
+  //   language = ca[lang];
+  // }
 
   return (
     <header className="header">
@@ -64,7 +60,7 @@ const Navbar = () => {
                       color: `${colorProyecto ? colorProyecto : "black"}`,
                     }}
                   >
-                    <span>{language.proyectos}</span>
+                    <span>{t("navbar.proyectos")}</span>
                   </a>
                 </div>
                 <div className="link-container logo-container">
@@ -79,7 +75,7 @@ const Navbar = () => {
                       color: `${colorEstudio ? colorEstudio : "black"}`,
                     }}
                   >
-                    <span className="last">{language.estudio}</span>
+                    <span className="last">{t("navbar.estudio")}</span>
                   </a>
                 </div>
               </div>
@@ -101,16 +97,16 @@ const Navbar = () => {
                 <div className={`menu ${isOpen ? "open" : ""}`}>
                   <ul className="navbar-menu">
                     <li className="mobile-link">
-                      <a href="/proyectos">{language.proyectos}</a>
+                      <a href="/proyectos">{t("navbar.proyectos")}</a>
                     </li>
                     <li className="mobile-link">
-                      <a href="/espacios">{language.espacios}</a>
+                      <a href="/espacios">{t("navbar.espacios")}</a>
                     </li>
                     <li className="mobile-link">
-                      <a href="/estudio">{language.estudio}</a>
+                      <a href="/estudio">{t("navbar.estudio")}</a>
                     </li>
                     <li className="mobile-link">
-                      <a href="/contacto">{language.contacto}</a>
+                      <a href="/contacto">{t("footer.contacto")}</a>
                     </li>
                   </ul>
                 </div>

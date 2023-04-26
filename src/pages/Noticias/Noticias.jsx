@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 import { terrassa1, wbf1 } from "../../assets";
 
-import en from "../../languages/en.json";
-import es from "../../languages/es.json";
-import ca from "../../languages/ca.json";
+import en from "../../languages/en/global.json";
+import es from "../../languages/es/global.json";
+import ca from "../../languages/ca/global.json";
 
 const Noticias = () => {
   const lang = useSelector((state) => state.language);

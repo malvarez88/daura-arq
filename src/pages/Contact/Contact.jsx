@@ -7,15 +7,14 @@ import { motion } from "framer-motion";
 
 import Swal from 'sweetalert'
 
-import en from "../../languages/en.json";
-import es from "../../languages/es.json";
-import ca from "../../languages/ca.json";
-
+import { useTranslation } from "react-i18next";
 
 import { instagram, linkedin } from "../../assets";
 
 
 const Contact = () => {
+  const {t} = useTranslation("global")
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,18 +44,6 @@ const Contact = () => {
     })
   };
 
-  const lang = useSelector((state) => state.language);
-
-  var language;
-
-  if (lang === 'es') {
-    language = es[lang]
-  } else if (lang === 'en') {
-    language = en[lang]
-  } else {
-    language = ca[lang]
-  }
-
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -75,7 +62,7 @@ const Contact = () => {
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 <div className="contact-direction">
-                  <h6 className="title">{language.contacto.toUpperCase()}</h6>
+                  <h6 className="title">{t("footer.contacto").toUpperCase()}</h6>
                   <p>C/ Francesc Carbonell 34, B-2 Barcelona 08034</p>
                   <p>
                     C/ Nou, 17, 1-3a. 07701 <br />
@@ -121,7 +108,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                     />
-                    <span>{language.nombre}</span>
+                    <span>{t("contact-page.nombre")}</span>
                   </div>
                   <div className="input-box">
                     <input
@@ -132,7 +119,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                     />
-                    <span>{language.email}</span>
+                    <span>{t("contact-page.email")}</span>
                   </div>
                   <div className="input-box">
                     <textarea
@@ -143,10 +130,10 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                     />
-                    <span>{language.mensaje}</span>
+                    <span>{t("contact-page.mensaje")}</span>
                   </div>
                   <button className="btn btn-secondary" type="submit">
-                    {language.enviar}
+                    {t("contact-page.enviar")}
                   </button>
                 </form>
               </motion.div>

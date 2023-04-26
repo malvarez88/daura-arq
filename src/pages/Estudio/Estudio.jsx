@@ -5,27 +5,29 @@ import { useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 
-import { partners } from "../../constants";
+import { useTranslation } from "react-i18next";
+
+import { partners, espacies, espacios,spaces } from "../../constants";
 import { about1, about2, about3, wbf1, profile } from "../../assets";
 
-import en from "../../languages/en.json";
-import es from "../../languages/es.json";
-import ca from "../../languages/ca.json";
+
 
 const Estudio = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const lang = useSelector((state) => state.language);
-  var language;
+  const {t} = useTranslation("global")
 
-  if (lang === "es") {
-    language = es[lang];
-  } else if (lang === "en") {
-    language = en[lang];
-  } else {
-    language = ca[lang];
-  }
+const language = useSelector(state => state.language)
+
+var lista;
+if(language === "es") {
+  lista = espacios
+} else if (language === "en"){
+  lista = spaces
+} else {
+  lista = espacies
+}
 
   function handleClick(index) {
     setActiveTab(index);
@@ -44,7 +46,7 @@ const Estudio = () => {
           >
             <div className="estudio">
               <ul className="estudio-list">
-                {language.listaestudio.map((espacio, index) => (
+                {lista.map((espacio, index) => (
                   <li
                     key={index}
                     onClick={() => handleClick(index)}
@@ -60,7 +62,7 @@ const Estudio = () => {
                 style={{ display: activeTab === 0 ? "block" : "none" }}
               >
                 <h5 className="title">d'aura arquitectura</h5>
-                <p className="general-text">{language.sobrenosotros}</p>
+                <p className="general-text">{t("estudio-page.sobre-nosotros-1")}</p>
 
                 <div className="sobre-nosotros-img">
                   <img src={about1} alt="about" className="img-fluid" />
@@ -68,7 +70,7 @@ const Estudio = () => {
                   <img src={about3} alt="about" className="img-fluid" />
                 </div>
 
-                <p className="general-text">{language.sobrenosotros2}</p>
+                <p className="general-text">{t("estudio-page.sobre-nosotros-2")}</p>
                 <ul className="partner-list">
                   {partners.map((partner, index) => (
                     <li key={index}>
@@ -92,7 +94,7 @@ const Estudio = () => {
                 className="eqiupo"
                 style={{ display: activeTab === 1 ? "block" : "none" }}
               >
-                <p className="general-text">{language.equipo}</p>
+                <p className="general-text">{t("estudio-page.equipo")}</p>
                 <div className="equipo-profile">
                   <div className="profile">
                     <img src={profile} alt="" className="img-fluid" />

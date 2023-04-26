@@ -787,4 +787,5 @@ const colors = {
   "real estate": "#DEC800",
 };
 
+
 export { proyectosEN, colors };
