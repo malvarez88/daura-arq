@@ -35,7 +35,6 @@ const Proyectos = () => {
     setIsOpen(!isOpen);
   }
 
-  var language;
   var proyectSearch = " ";
   var proyectos;
   var categorias;
@@ -100,7 +99,7 @@ const Proyectos = () => {
                         : "",
                   }}
                 >
-                  {t("navbar.proyectos")}
+                  {t("navbar.proyectos").toUpperCase()}
                 </h5>
                 <button
                   className="dropdown-toggle"
@@ -112,7 +111,7 @@ const Proyectos = () => {
                         : "",
                   }}
                 >
-                  {categoriaSeleccionada}
+                  {categoriaSeleccionada.toUpperCase()}
                 </button>
                 {isOpen && (
                   <ul className="dropdown-menu">
@@ -128,6 +127,7 @@ const Proyectos = () => {
                         }}
                       >
                         {categoria}
+                        {index < lista.length - 1 && <hr />}
                       </li>
                     ))}
                   </ul>
