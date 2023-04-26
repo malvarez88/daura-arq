@@ -5,6 +5,8 @@ import { useSelector } from "react-redux";
 
 import { motion } from "framer-motion";
 
+import { useTranslation } from "react-i18next";
+
 import { terrassa1, wbf1 } from "../../assets";
 
 import en from "../../languages/en/global.json";
@@ -13,6 +15,8 @@ import ca from "../../languages/ca/global.json";
 
 const Noticias = () => {
   const lang = useSelector((state) => state.language);
+
+  const {t} = useTranslation("global")
 
   var language;
 
@@ -37,7 +41,7 @@ const Noticias = () => {
             <div className="estudio" style={{ marginTop: "30px" }}>
               <div className="noticias">
                 <h6 className="title" style={{ marginBottom: "30px" }}>
-                  {language.noticias.toUpperCase()}
+                  {t("footer.noticias").toUpperCase()}
                 </h6>
                 <h6 className="title" style={{ marginBottom: "30px" }}>
                   work in progress

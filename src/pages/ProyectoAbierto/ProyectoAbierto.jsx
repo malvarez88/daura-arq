@@ -60,7 +60,7 @@ const ProyectoAbierto = () => {
                     color: coloresEs[categoria],
                   }}
                 >
-                  {actualProject.title.toLocaleUpperCase()}
+                  {actualProject.title.toUpperCase()}
                 </h4>
                 <h6>{actualProject.location}</h6>
                 <button className="info" onClick={() => setVisible(!visible)}>
