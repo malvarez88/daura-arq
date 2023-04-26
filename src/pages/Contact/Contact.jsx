@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import "./contact.css";
 
-import { useSelector } from "react-redux";
-
 import { motion } from "framer-motion";
 
-import Swal from 'sweetalert'
+import Swal from "sweetalert";
 
 import { useTranslation } from "react-i18next";
 
 import { instagram, linkedin } from "../../assets";
 
-
 const Contact = () => {
-  const {t} = useTranslation("global")
+  const { t } = useTranslation("global");
 
   const [formData, setFormData] = useState({
     name: "",
@@ -37,24 +34,24 @@ const Contact = () => {
       message: "",
     });
     Swal({
-      title: 'Email Sent!',
-      text: 'Your email has been sent successfully.',
-      icon: 'success',
-      confirmButtonText: 'OK'
-    })
+      title: "Email Sent!",
+      text: "Your email has been sent successfully.",
+      icon: "success",
+      confirmButtonText: "OK",
+    });
   };
 
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
-    >
-      <div className="contact-section">
+    <div className="contact-section">
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 1 }}
+      >
         <div className="container">
           <div className="row">
-            <div className="col-xl-5 col-sm-12">
+            <div className="col-lg-5 col-sm-12">
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -62,7 +59,9 @@ const Contact = () => {
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 <div className="contact-direction">
-                  <h6 className="title">{t("footer.contacto").toUpperCase()}</h6>
+                  <h6 className="title">
+                    {t("footer.contacto").toUpperCase()}
+                  </h6>
                   <p>C/ Francesc Carbonell 34, B-2 Barcelona 08034</p>
                   <p>
                     C/ Nou, 17, 1-3a. 07701 <br />
@@ -87,7 +86,7 @@ const Contact = () => {
                 </div>
               </motion.div>
             </div>
-            <div className="col-xl-7 col-sm-12">
+            <div className="col-lg-7 col-sm-12">
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -137,11 +136,45 @@ const Contact = () => {
                   </button>
                 </form>
               </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 100 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+              <div className="mobile-contact-direction d-block d-lg-none">
+                <h6 className="title">{t("footer.contacto").toUpperCase()}</h6>
+                <p>
+                  C/ Francesc Carbonell 34,
+                   B-2 Barcelona 08034
+                </p>
+                <p>
+                  C/ Nou, 17, 1-3a. 07701
+                  Maó 07701- Baleares
+                </p>
+                <p>(34) 93 203 2018</p>
+                <p>info@daurastudio.com</p>
+                <div className="contact-socials">
+                  <img
+                    src={instagram}
+                    alt="instagram"
+                    width="20px"
+                    className="img-fluid"
+                  />
+                  <img
+                    src={linkedin}
+                    alt="linkedin"
+                    width="26px"
+                    className="img-fluid"
+                  />
+                </div>
+              </div>
+              </motion.div>
             </div>
           </div>
         </div>
-      </div>
-    </motion.section>
+      </motion.section>
+    </div>
   );
 };
 
