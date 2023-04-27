@@ -16,8 +16,8 @@
 }
 
 .mobile-hero-img {
-  height: 250px !important;
-  /* object-fit: cover; */
+  height: 240px !important;
+  object-fit: contain;
 }
 
 

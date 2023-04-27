@@ -20,11 +20,13 @@ const Footer = () => {
   const location = useLocation();
 
 
-  // useEffect(() => {
-  //   i18n.changeLanguage(lang); 
-  // },[]);
-
+  
   const [t, i18n] = useTranslation("global");
+  // console.log("🚀 ~ file: Footer.jsx:25 ~ Footer ~ i18n:", i18n.language)
+
+  // useEffect(()=> {
+  //   i18n.changeLanguage(i18n.language)
+  // },[lang])
 
   var colorNoticias;
   var colorContacto;

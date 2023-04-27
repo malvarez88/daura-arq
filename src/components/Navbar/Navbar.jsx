@@ -87,7 +87,7 @@ const Navbar = ({logoColor}) => {
                   <Logo logoColor={logoColor} />
                 </div>
                 <div
-                  className={`hamburger ${isOpen ? "open" : ""}`}
+                  className={`hamburger open}`}
                   onClick={handleToggleMenu}
                 >
                   <div className="line"></div>
@@ -95,6 +95,16 @@ const Navbar = ({logoColor}) => {
                   <div className="line"></div>
                 </div>
                 <div className={`menu ${isOpen ? "open" : ""}`}>
+
+                <div
+                  className={`hamburger ${isOpen ? "open" : ""} close-nav`}
+                  onClick={handleToggleMenu}
+                >
+                  <div className="line"></div>
+                  <div className="line"></div>
+                  <div className="line"></div>
+                </div>
+
                   <ul className="navbar-menu">
                     <li className="mobile-link">
                       <a href="/proyectos">{t("navbar.proyectos")}</a>

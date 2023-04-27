@@ -17,7 +17,7 @@ import {
   listaProjectes,
 } from "../../constants/index";
 
-const Proyectos = ({setLogoColor}) => {
+const Proyectos = ({ setLogoColor }) => {
   const lang = useSelector((state) => state.language);
   const { t } = useTranslation("global");
 
@@ -32,7 +32,7 @@ const Proyectos = ({setLogoColor}) => {
   function mostrarProyectos(categoria, colores) {
     setCategoriaSeleccionada(categoria);
     setIsOpen(!isOpen);
-    setLogoColor(colores[categoria])
+    setLogoColor(colores[categoria]);
   }
 
   var proyectSearch = " ";
