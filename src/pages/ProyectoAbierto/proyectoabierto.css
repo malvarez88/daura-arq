@@ -11,10 +11,11 @@
 .images-section {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1em 1em;
   grid-auto-flow: row dense;
 }
+
 
 .open-project-images {
   margin: 0 66px;
@@ -75,7 +76,7 @@
 
 @media screen and (max-width: 990px) {
   .images-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1,1fr);
   }
 
   .project-info {

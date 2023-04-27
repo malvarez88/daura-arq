@@ -1,43 +1,56 @@
 @font-face {
-  font-family: 'Regular';
-  src: local('AdventorRegular'), 
-  url('./fonts/tex-gyre-adventor.regular.otf') format("opentype");;
+  font-family: "Regular";
+  src: local("AdventorRegular"),
+    url("./fonts/tex-gyre-adventor.regular.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'Heros';
-  src: local('HerosRegular'), 
-  url('./fonts/texgyreheros-regular.otf') format("opentype");;
-}
-
-
-@font-face {
-  font-family: 'Bold';
-  src: local('AdventorBold'), 
-  url('./fonts/tex-gyre-adventor.bold.otf') format("opentype");;
+  font-family: "Heros";
+  src: local("HerosRegular"),
+    url("./fonts/texgyreheros-regular.otf") format("opentype");
 }
 
 @font-face {
-  font-family: 'ExtraLigth';
-  src: local('TickbiteLight'), 
-  url('./fonts/tickbite-type-colin-extralight.otf') format("opentype");;
+  font-family: "Bold";
+  src: local("AdventorBold"),
+    url("./fonts/tex-gyre-adventor.bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "ExtraLigth";
+  src: local("TickbiteLight"),
+    url("./fonts/tickbite-type-colin-extralight.otf") format("opentype");
 }
 
 :root {
   --primary-color: white;
-  --orange: #DF6537;
-  --blue : #3068B0;
-  --green : #72BB66;
-  --red : #CA3038;
-  --yellow : #DEC800;
-};
-
+  --orange: #df6537;
+  --blue: #3068b0;
+  --green: #72bb66;
+  --red: #ca3038;
+  --yellow: #dec800;
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Heros', sans-serif;
+  
   position: relative;
   background-color: var(--primary-color);
+}
+
+body {
+  font-family: "Heros", sans-serif;
+}
+
+.title {
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.general-text {
+  text-align: justify;
+  font-family: "Heros", sans-serif;
+  margin: 30px 0;
 }

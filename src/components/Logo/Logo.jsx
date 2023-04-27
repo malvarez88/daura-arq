@@ -3,12 +3,15 @@ import { useLocation } from "react-router";
 
 import "./logo.css";
 
-const Logo = () => {
+const Logo = ({...logoColor}) => {
+
+var color = Object.values(logoColor)
+
+
+  
   const location = useLocation();
 
-  var  color;
-
-  if (
+  if(!logoColor && 
     location.pathname === "/proyectos" ||
     location.pathname === "/estudio" ||
     location.pathname === "/contacto"

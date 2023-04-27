@@ -19,16 +19,6 @@
 }
 
 
-.title {
-  text-transform: uppercase;
-  color: var(--orange);
-}
-
-.general-text {
-  text-align: justify;
-  /* letter-spacing: 1px; */
-  margin: 30px 0;
-}
 
 .partner-list {
   padding: 0;

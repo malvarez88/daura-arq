@@ -7,7 +7,7 @@ import { useLocation } from "react-router";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-const Navbar = () => {
+const Navbar = ({logoColor}) => {
   const location = useLocation();
 
   const {t} = useTranslation("global");
@@ -65,7 +65,7 @@ const Navbar = () => {
                 </div>
                 <div className="link-container logo-container">
                   <a href="/" className="nav-link" />
-                  <Logo />
+                  <Logo logoColor={logoColor}/>
                 </div>
                 <div className="link-container last">
                   <a

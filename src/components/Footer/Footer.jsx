@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./footer.css";
 
 import { motion } from "framer-motion";
@@ -11,11 +11,18 @@ import { useLocation } from "react-router";
 
 import { useTranslation } from "react-i18next";
 
+import i18n from "i18next";
+
 const Footer = () => {
   const dispatch = useDispatch();
   const lang = useSelector((state) => state.language);
   const [active, setActive] = useState(lang);
   const location = useLocation();
+
+
+  useEffect(() => {
+    i18n.changeLanguage(lang); 
+  },[]);
 
   const [t, i18n] = useTranslation("global");
 
@@ -33,7 +40,6 @@ const Footer = () => {
     setActive(newLang);
     i18n.changeLanguage(newLang)
   };
-
 
 
   return (
