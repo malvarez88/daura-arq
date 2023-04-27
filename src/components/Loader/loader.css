@@ -18,8 +18,8 @@
   #loader-logo path {
     fill: none;
     stroke: #000;
-    /* stroke-width: 1; */
-    animation: trazar 4s ease-out infinite forwards;  
+    stroke-width: 16;
+    animation: trazar 5s ease-out infinite forwards;  
   }
         
   #trazo1 {
@@ -33,40 +33,40 @@
   }
 
   #rect1 {
-    animation: appear 4s ease-out infinite forwards;
+    animation: appear 18s ease-out infinite forwards;
   }
 
   @keyframes appear {
     0% {
         opacity: 0;
-        /* transform-origin: center center;
-        transform: rotate(10deg); */
-
+        transform: translateY(100px);
+        stroke-width: 10;
     }
     50% {
         opacity: 1;
-        /* transform-origin: center;
-        transform: rotate(90deg); */
+        transform: translateX(0px);
+        stroke-width: 14;
     }
     100% {
         opacity: 0;
-        /* transform-origin: center;
-        transform: rotate(45deg); */
+        transform: translateY(-100px);
+        stroke-width: 16;
     }
   }
 
   @keyframes trazar {
     80% {
        stroke-dashoffset: 0;
-       stroke-width: .8;  
+       stroke-width: 10;  
        
     }  
     90% {
-        stroke-width: 1;
+        stroke-width: 14;
         opacity: 1;
     }
     100% {
       opacity: 0;
+      stroke-width: 16;
       stroke-dashoffset: 0;
     }
   }

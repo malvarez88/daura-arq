@@ -18,7 +18,7 @@ import { useLocation } from "react-router";
 
 function App() {
 const [logoColor, setLogoColor] = useState()
-const [isLoading, setLoading] = useState(false)  //check this
+const [isLoading, setLoading] = useState(true)  //check this
 const location = useLocation();
 
 
@@ -34,11 +34,11 @@ const location = useLocation();
 // }, [location]);
 
 
-// useEffect(() => {
-//   setTimeout(() => {
-//     setLoading(false);
-//   }, 10000);
-// }, []);
+useEffect(() => {
+  setTimeout(() => {
+    setLoading(false);
+  }, 10000);
+}, [location.pathname === '/']);
 
   return (
     <>
