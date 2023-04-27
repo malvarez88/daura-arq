@@ -1,23 +1,9 @@
 import React from "react";
-import { useLocation } from "react-router";
+import "./loader.css";
 
-import "./logo.css";
-
-const Logo = ({ ...logoColor }) => {
-  var color = Object.values(logoColor);
-
-  const location = useLocation();
-
-  if (
-    !logoColor ||
-    location.pathname === "/proyectos" ||
-    location.pathname === "/estudio" ||
-    location.pathname === "/contacto"
-  ) {
-    color = "#DF6537";
-  }
-
+const Loader = () => {
   return (
+    <div className="loader">
     <svg
       id="Capa_1"
       data-name="Capa 1"
@@ -25,7 +11,7 @@ const Logo = ({ ...logoColor }) => {
       viewBox="0 0 199.08 93.05"
       style={{ background: "transparent" }}
     >
-      <g>
+      <g className="animar">
         <ellipse
           id="elipse1"
           className="cls-2"
@@ -36,7 +22,7 @@ const Logo = ({ ...logoColor }) => {
         />
         <line id="line1" className="cls-2" x1="76" y1="51.03" x2="76" />
       </g>
-      <g>
+      <g className="animar">
         <ellipse
           id="elipse2"
           className="cls-2"
@@ -63,10 +49,11 @@ const Logo = ({ ...logoColor }) => {
         x="92.2"
         width="16"
         height="16"
-        fill={color}
+        fill="black"
       />
     </svg>
+    </div>
   );
 };
 
-export default Logo;
+export default Loader;

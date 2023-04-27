@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router";
 
 
@@ -11,15 +11,26 @@ import Contact from "./pages/Contact/Contact";
 import ProyectoAbierto from "./pages/ProyectoAbierto/ProyectoAbierto";
 import Estudio from "./pages/Estudio/Estudio";
 import Noticias from "./pages/Noticias/Noticias";
+import Loader from "./components/Loader/Loader";
 
 
 
 function App() {
 const [logoColor, setLogoColor] = useState()
+const [isLoading, setLoading] = useState(true)
 
+useEffect(() => {
+  setTimeout(() => {
+    setLoading(false);
+  }, 5000);
+}, []);
 
   return (
     <>
+    {isLoading ? (
+      <Loader /> 
+    ) : (
+      <>
       <Navbar logoColor={logoColor} />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -33,7 +44,11 @@ const [logoColor, setLogoColor] = useState()
         <Route path="/noticias" element={<Noticias />} />
       </Routes>
       <Footer />
+      </>
+    )
+    }
     </>
+
   );
 }
 

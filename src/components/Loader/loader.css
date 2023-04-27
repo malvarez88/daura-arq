@@ -1,0 +1,49 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#Capa_1 {
+    overflow: visible;
+}
+
+svg {
+    width: 400px;
+}
+
+.animar ellipse {
+  animation: animacion-elipse 2s linear infinite;
+}
+
+.animar line {
+  animation: animacion-linea 2s linear infinite;
+}
+
+/* @keyframes animacion-elipse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+@keyframes animacion-linea {
+    0% {
+      stroke-dasharray: 0, 100;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 50, 50;
+      stroke-dashoffset: -25;
+    }
+    100% {
+      stroke-dasharray: 0, 100;
+      stroke-dashoffset: -50;
+    }
+  }
