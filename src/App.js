@@ -22,7 +22,7 @@ const [isLoading, setLoading] = useState(true)
 useEffect(() => {
   setTimeout(() => {
     setLoading(false);
-  }, 5000);
+  }, 10000);
 }, []);
 
   return (

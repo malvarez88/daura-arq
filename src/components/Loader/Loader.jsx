@@ -2,56 +2,28 @@ import React from "react";
 import "./loader.css";
 
 const Loader = () => {
+
+
   return (
     <div className="loader">
-    <svg
-      id="Capa_1"
-      data-name="Capa 1"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 199.08 93.05"
-      style={{ background: "transparent" }}
-    >
-      <g className="animar">
-        <ellipse
-          id="elipse1"
+      <svg
+        id="loader-logo"
+        data-name="Capa 1"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 199.03 93.05"
+      >
+        <path
+         id="trazo1"
           className="cls-2"
-          cx="42"
-          cy="50.53"
-          rx="34"
-          ry="34.52"
+          d="m76,0v51.03-.5c0,19.06-15.22,34.52-34,34.52S8,69.59,8,50.53,23.22,16.01,42,16.01h0c18.78,0,34,15.49,34,34.56"
         />
-        <line id="line1" className="cls-2" x1="76" y1="51.03" x2="76" />
-      </g>
-      <g className="animar">
-        <ellipse
-          id="elipse2"
+        <path
+        id="trazo2"
           className="cls-2"
-          cx="148.55"
-          cy="51.22"
-          rx="34.52"
-          ry="33.83"
+          d="m199.03,85.05h-51.03.5c-19.06,0-34.52-15.22-34.52-34s15.45-34,34.52-34,34.52,15.22,34.52,34h0c0,18.78-15.49,34-34.56,34"
         />
-        <line
-          id="line2"
-          className="cls-2"
-          x1="148.05"
-          y1="85.05"
-          x2="199.08"
-          y2="85.05"
-          stroke="#1d1d1b"
-          strokeWidth="16px"
-          strokeMiterlimit="10"
-        />
-      </g>
-      <rect
-        id="rect1"
-        className="cls-1"
-        x="92.2"
-        width="16"
-        height="16"
-        fill="black"
-      />
-    </svg>
+        <rect id="rect1" className="cls-1" x="89.98" width="16" height="16" />
+      </svg>
     </div>
   );
 };

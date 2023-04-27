@@ -9,41 +9,61 @@
     overflow: visible;
 }
 
-svg {
-    width: 400px;
-}
 
-.animar ellipse {
-  animation: animacion-elipse 2s linear infinite;
-}
-
-.animar line {
-  animation: animacion-linea 2s linear infinite;
-}
-
-/* @keyframes animacion-elipse {
-  0% {
-    transform: scale(1);
+#loader-logo {
+    width: 30%;
+    display: block;
+    margin: 0 auto;
   }
-  50% {
-    transform: scale(1.2);
+  #loader-logo path {
+    fill: none;
+    stroke: #000;
+    /* stroke-width: 1; */
+    animation: trazar 4s ease-out infinite forwards;  
   }
-  100% {
-    transform: scale(1);
+        
+  #trazo1 {
+    stroke-dasharray: 266.85;  
+    stroke-dashoffset: 266.85;
   }
-} */
 
-@keyframes animacion-linea {
+  #trazo2 {
+    stroke-dasharray: 266.85;  
+    stroke-dashoffset: 266.85;
+  }
+
+  #rect1 {
+    animation: appear 4s ease-out infinite forwards;
+  }
+
+  @keyframes appear {
     0% {
-      stroke-dasharray: 0, 100;
-      stroke-dashoffset: 0;
+        opacity: 0;
+        rotate: -20deg;
+
     }
     50% {
-      stroke-dasharray: 50, 50;
-      stroke-dashoffset: -25;
+        opacity: 1;
+        rotate: -20deg;
     }
     100% {
-      stroke-dasharray: 0, 100;
-      stroke-dashoffset: -50;
+        opacity: 0;
+        rotate: 20deg;
+    }
+  }
+
+  @keyframes trazar {
+    80% {
+       stroke-dashoffset: 0;
+       stroke-width: .8;  
+       
+    }  
+    90% {
+        stroke-width: 1;
+        opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      stroke-dashoffset: 0;
     }
   }
