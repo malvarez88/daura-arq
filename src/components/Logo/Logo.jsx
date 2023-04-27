@@ -58,7 +58,7 @@ const Logo = ({ ...logoColor }) => {
         />
       </g>
       <rect
-        id="rect1"
+        // id="rect1"
         className="cls-1"
         x="92.2"
         width="16"

@@ -12,18 +12,33 @@ import ProyectoAbierto from "./pages/ProyectoAbierto/ProyectoAbierto";
 import Estudio from "./pages/Estudio/Estudio";
 import Noticias from "./pages/Noticias/Noticias";
 import Loader from "./components/Loader/Loader";
+import { useLocation } from "react-router";
 
 
 
 function App() {
 const [logoColor, setLogoColor] = useState()
-const [isLoading, setLoading] = useState(true)
+const [isLoading, setLoading] = useState(false)  //check this
+const location = useLocation();
 
-useEffect(() => {
-  setTimeout(() => {
-    setLoading(false);
-  }, 10000);
-}, []);
+
+// useEffect(() => {
+//   setTimeout(() => {
+//     const hasShownLoader = localStorage.getItem("hasShownLoader");
+
+//     if (!hasShownLoader && location.pathname === "/") {
+//       setLoading(true);
+//       localStorage.setItem("hasShownLoader", true);
+//     }
+//   }, 1000)
+// }, [location]);
+
+
+// useEffect(() => {
+//   setTimeout(() => {
+//     setLoading(false);
+//   }, 10000);
+// }, []);
 
   return (
     <>
