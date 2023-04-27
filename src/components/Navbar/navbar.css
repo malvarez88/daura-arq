@@ -85,7 +85,7 @@
   align-items: center;
   list-style: none;
   padding: 0;
-  margin: 40px 0;
+  margin: 100px 0;
   gap: 50px;
   background-color: #aeaca0;
 }
@@ -99,7 +99,7 @@
   font-weight: bold;
   color: black;
   font-size: 20px;
-  background-color: #aeaca0;
+  /* background-color: #aeaca0; */
 }
 
 .hamburger .line {
@@ -153,6 +153,7 @@
     top: 0;
     left: 0;
     width: 100%;
+
   }
 
   .hamburger {
@@ -164,6 +165,7 @@
     position: relative;
     width: 80px;
     height: 50px;
+    background: transparent;
   }
 
   .navbar {
@@ -174,6 +176,11 @@
     position: absolute;
     right: 15px;
     top: 15px;
+    background: transparent;
+  }
+
+  .nav-open-container {
+    margin: 15px;
     background: transparent;
   }
 }

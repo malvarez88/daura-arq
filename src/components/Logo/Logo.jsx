@@ -23,6 +23,7 @@ var color = Object.values(logoColor)
       data-name="Capa 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 199.08 93.05"
+      style={{background: "transparent"}}
     >
       <g>
         <ellipse className="cls-2" cx="42" cy="50.53" rx="34" ry="34.52" />
