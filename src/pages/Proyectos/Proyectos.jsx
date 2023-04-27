@@ -118,7 +118,7 @@ const Proyectos = ({setLogoColor}) => {
                     {lista.map((categoria, index) => (
                       <li
                         key={index}
-                        onClick={() => mostrarProyectos(categoria)}
+                        onClick={() => mostrarProyectos(categoria, colores)}
                         style={{
                           color:
                             categoria === categoriaSeleccionada

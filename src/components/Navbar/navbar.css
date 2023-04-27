@@ -126,6 +126,7 @@
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+
 @media (max-width: 768px) {
   .menu {
     position: absolute;
@@ -155,6 +156,8 @@
   .logo {
     display: flex;
     position: relative;
+    width: 80px;
+    height: 80px;
   }
 
   .navbar {

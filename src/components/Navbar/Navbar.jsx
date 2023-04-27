@@ -84,7 +84,7 @@ const Navbar = ({logoColor}) => {
               <div className="mobile-navbar">
                 <div className="logo">
                   <a href="/" className="nav-link" />
-                  <Logo />
+                  <Logo logoColor={logoColor} />
                 </div>
                 <div
                   className={`hamburger ${isOpen ? "open" : ""}`}

@@ -7,8 +7,6 @@ const Logo = ({...logoColor}) => {
 
 var color = Object.values(logoColor)
 
-
-  
   const location = useLocation();
 
   if(!logoColor && 

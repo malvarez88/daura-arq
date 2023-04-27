@@ -104,6 +104,7 @@
 
 .dropdown-menu li {
   padding: 10px;
+  background: transparent;
 }
 
 .dropdown-menu li hr {
