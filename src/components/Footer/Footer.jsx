@@ -20,9 +20,9 @@ const Footer = () => {
   const location = useLocation();
 
 
-  useEffect(() => {
-    i18n.changeLanguage(lang); 
-  },[]);
+  // useEffect(() => {
+  //   i18n.changeLanguage(lang); 
+  // },[]);
 
   const [t, i18n] = useTranslation("global");
 
