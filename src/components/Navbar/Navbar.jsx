@@ -7,12 +7,10 @@ import { useLocation } from "react-router";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
-const Navbar = () => {
+const Navbar = ({ logoColor }) => {
   const location = useLocation();
 
-  const {t} = useTranslation("global");
-
-
+  const { t } = useTranslation("global");
 
   var colorProyecto;
   var colorEstudio;
@@ -65,7 +63,7 @@ const Navbar = () => {
                 </div>
                 <div className="link-container logo-container">
                   <a href="/" className="nav-link" />
-                  <Logo />
+                  <Logo logoColor={logoColor} />
                 </div>
                 <div className="link-container last">
                   <a
@@ -80,36 +78,51 @@ const Navbar = () => {
                 </div>
               </div>
             </div>
-            <div className="col-xl-12">
+
+            <div className="col-12">
               <div className="mobile-navbar">
                 <div className="logo">
                   <a href="/" className="nav-link" />
-                  <Logo />
+                  <Logo logoColor={logoColor} />
                 </div>
-                <div
-                  className={`hamburger ${isOpen ? "open" : ""}`}
-                  onClick={handleToggleMenu}
-                >
+                <div className={`hamburger open}`} onClick={handleToggleMenu}>
                   <div className="line"></div>
                   <div className="line"></div>
                   <div className="line"></div>
                 </div>
-                <div className={`menu ${isOpen ? "open" : ""}`}>
-                  <ul className="navbar-menu">
-                    <li className="mobile-link">
-                      <a href="/proyectos">{t("navbar.proyectos")}</a>
-                    </li>
-                    <li className="mobile-link">
-                      <a href="/espacios">{t("navbar.espacios")}</a>
-                    </li>
-                    <li className="mobile-link">
-                      <a href="/estudio">{t("navbar.estudio")}</a>
-                    </li>
-                    <li className="mobile-link">
-                      <a href="/contacto">{t("footer.contacto")}</a>
-                    </li>
-                  </ul>
+              </div>
+              <div className={`menu ${isOpen ? "open" : ""}`}>
+                <div className="col-12" style={{background: "transparent"}}>
+                  <div className="nav-open-container">
+                    <div className="logo">
+                      <a href="/" className="nav-link" />
+                      <Logo logoColor={logoColor} />
+                    </div>
+                    <div
+                      className={`hamburger ${isOpen ? "open" : ""} close-nav`}
+                      onClick={handleToggleMenu}
+                    >
+                      <div className="line"></div>
+                      <div className="line"></div>
+                      <div className="line"></div>
+                    </div>
+                  </div>
                 </div>
+
+                <ul className="navbar-menu">
+                  <li className="mobile-link">
+                    <a href="/proyectos">{t("navbar.proyectos")}</a>
+                  </li>
+                  <li className="mobile-link">
+                    <a href="/espacios">{t("navbar.espacios")}</a>
+                  </li>
+                  <li className="mobile-link">
+                    <a href="/estudio">{t("navbar.estudio")}</a>
+                  </li>
+                  <li className="mobile-link">
+                    <a href="/contacto">{t("footer.contacto")}</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

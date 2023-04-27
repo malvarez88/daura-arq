@@ -17,12 +17,11 @@ import {
   listaProjectes,
 } from "../../constants/index";
 
-const Proyectos = () => {
+const Proyectos = ({ setLogoColor }) => {
   const lang = useSelector((state) => state.language);
   const { t } = useTranslation("global");
 
-  const [categoriaSeleccionada, setCategoriaSeleccionada] =
-    useState("todos");
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -30,9 +29,10 @@ const Proyectos = () => {
     setIsOpen(!isOpen);
   };
 
-  function mostrarProyectos(categoria) {
+  function mostrarProyectos(categoria, colores) {
     setCategoriaSeleccionada(categoria);
     setIsOpen(!isOpen);
+    setLogoColor(colores[categoria]);
   }
 
   var proyectSearch = " ";
@@ -76,7 +76,7 @@ const Proyectos = () => {
                 {lista.map((categoria, index) => (
                   <li
                     key={index}
-                    onClick={() => mostrarProyectos(categoria)}
+                    onClick={() => mostrarProyectos(categoria, colores)}
                     style={{
                       color:
                         categoria === categoriaSeleccionada
@@ -118,7 +118,7 @@ const Proyectos = () => {
                     {lista.map((categoria, index) => (
                       <li
                         key={index}
-                        onClick={() => mostrarProyectos(categoria)}
+                        onClick={() => mostrarProyectos(categoria, colores)}
                         style={{
                           color:
                             categoria === categoriaSeleccionada
@@ -160,10 +160,11 @@ const Proyectos = () => {
                           >
                             <img
                               src={proyecto.images[0]}
-                              alt={`${index}`}
+                              alt={proyecto.ref}
                               key={index}
                               width="300px"
                               height="300px"
+                              className="img-fluid proyect-img"
                             />
                             <div className="proyect-description">
                               <p>

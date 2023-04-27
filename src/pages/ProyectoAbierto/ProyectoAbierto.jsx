@@ -25,8 +25,8 @@ const ProyectoAbierto = () => {
     proyectos = proyectosEN;
     color = colors;
   } else {
-    proyectos = proyectosCA
-    color = colorsCA
+    proyectos = proyectosCA;
+    color = colorsCA;
   }
 
   const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
@@ -68,7 +68,7 @@ const ProyectoAbierto = () => {
                 </button>
                 {visible && (
                   <div className="project-description">
-                    {actualProject.description}
+                    <p className="general-text">{actualProject.description}</p>
                     <div className="project-description-info">
                       <ul className="project-list">
                         {actualProject.año ? (
@@ -84,7 +84,9 @@ const ProyectoAbierto = () => {
                               <span>{actualProject.superficie}㎡</span>
                             ) : (
                               <span>
-                                {actualProject.superficie * 10.7639.toFixed(2)} sq ft
+                                {actualProject.superficie *
+                                  (10.7639).toFixed(2)}{" "}
+                                sq ft
                               </span>
                             )}
                           </li>

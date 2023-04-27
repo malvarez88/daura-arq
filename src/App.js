@@ -1,7 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router";
-import { useSelector } from "react-redux";
-import i18n from "i18next";
+
 
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -16,18 +15,15 @@ import Noticias from "./pages/Noticias/Noticias";
 
 
 function App() {
-  const language = useSelector((state) => state.language);
+const [logoColor, setLogoColor] = useState()
 
-  useEffect(() => {
-    i18n.changeLanguage(language); 
-  }, [language]);
 
   return (
     <>
-      <Navbar />
+      <Navbar logoColor={logoColor} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/proyectos" element={<Proyectos />} />
+        <Route path="/proyectos" element={<Proyectos setLogoColor={setLogoColor} />} />
         <Route path="/contacto" element={<Contact />} />
         <Route
           path="/proyectos/:categoria/:ref"
