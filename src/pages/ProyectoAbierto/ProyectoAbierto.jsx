@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 
 const ProyectoAbierto = ({ setLogoColor }) => {
   const { ref, categoria } = useParams();
-
+  const [visible, setVisible] = useState(false);
   const lang = useSelector((state) => state.language);
 
   var proyectos;
@@ -31,16 +31,11 @@ const ProyectoAbierto = ({ setLogoColor }) => {
 
   const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
 
+  var logoColor = color[actualProject.categoria];
 
-   var logoColor = color[actualProject.categoria]
-
-   useEffect(()=> {
-
-     setLogoColor(logoColor);
-   },[])
-  
-
-  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    setLogoColor(logoColor);
+  }, [actualProject]);
 
   return (
     <motion.div
@@ -100,16 +95,20 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                             )}
                           </li>
                         ) : null}
-                        {actualProject.equipo > 0 ? (
+                        {actualProject.equipo ? (
                           <li className="project-link">
                             <span>EQUIPO:</span>
+                            <div className="double">
                             <span>{actualProject.equipo}</span>
+                            </div>
                           </li>
                         ) : null}
                         {actualProject.colaboradores ? (
                           <li className="project-link">
                             <span>COLABORADORES:</span>
-                            <span>{actualProject.colaboradores}</span>
+                            <div className="double">
+                              <span>{actualProject.colaboradores}</span>
+                            </div>
                           </li>
                         ) : null}
                         {actualProject.fotografia ? (

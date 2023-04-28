@@ -70,6 +70,11 @@
   text-align: center;
 }
 
+.double {
+  display: flex;
+  flex-direction: column;
+}
+
 .logo-container {
     transform: translate(16px);
 }
