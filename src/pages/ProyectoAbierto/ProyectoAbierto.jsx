@@ -89,7 +89,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                             ) : (
                               <span>
                                 {actualProject.superficie *
-                                  (10.7639).toFixed(2)}{" "}
+                                  (10.7639).toFixed(2)}
                                 sq ft
                               </span>
                             )}

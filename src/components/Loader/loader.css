@@ -1,72 +1,77 @@
 .loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 #Capa_1 {
-    overflow: visible;
+  overflow: visible;
+}
+
+#loader-logo {
+  width: 10%;
+  display: block;
+  margin: 0 auto;
+}
+#loader-logo path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 16;
+  animation: trazar 5s ease-out infinite forwards;
+}
+
+#trazo1 {
+  stroke-dasharray: 266.85;
+  stroke-dashoffset: 266.85;
+}
+
+#trazo2 {
+  stroke-dasharray: 266.85;
+  stroke-dashoffset: 266.85;
+}
+
+#rect1 {
+  animation: appear 6s ease-out infinite forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes trazar {
+  80% {
+    stroke-dashoffset: 0;
+    stroke-width: 10;
+  }
+  90% {
+    stroke-width: 14;
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    stroke-width: 16;
+    stroke-dashoffset: 0;
+  }
 }
 
 
-#loader-logo {
-    width: 30%;
-    display: block;
-    margin: 0 auto;
-  }
-  #loader-logo path {
-    fill: none;
-    stroke: #000;
-    stroke-width: 16;
-    animation: trazar 5s ease-out infinite forwards;  
-  }
-        
-  #trazo1 {
-    stroke-dasharray: 266.85;  
-    stroke-dashoffset: 266.85;
-  }
+@media screen and (max-width: 990px) {
+    #loader-logo {
+        width: 30%;
+        display: block;
+        margin: 0 auto;
+      }
 
-  #trazo2 {
-    stroke-dasharray: 266.85;  
-    stroke-dashoffset: 266.85;
-  }
-
-  #rect1 {
-    animation: appear 18s ease-out infinite forwards;
-  }
-
-  @keyframes appear {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-        stroke-width: 10;
-    }
-    50% {
-        opacity: 1;
-        transform: translateX(0px);
-        stroke-width: 14;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(-100px);
-        stroke-width: 16;
-    }
-  }
-
-  @keyframes trazar {
-    80% {
-       stroke-dashoffset: 0;
-       stroke-width: 10;  
-       
-    }  
-    90% {
-        stroke-width: 14;
-        opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      stroke-width: 16;
-      stroke-dashoffset: 0;
-    }
-  }
+}
