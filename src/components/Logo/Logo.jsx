@@ -8,14 +8,15 @@ const Logo = ({ ...logoColor }) => {
 
   const location = useLocation();
 
-  if (
-    !logoColor ||
-    location.pathname === "/proyectos" ||
-    location.pathname === "/estudio" ||
-    location.pathname === "/contacto"
-  ) {
-    color = "#DF6537";
-  }
+  // if (
+  //   !logoColor ||
+  //   location.pathname === "/proyectos" ||
+  //   "/estudio" ||
+  //   "/contacto"
+  // ) {
+  //   color = "#DF6537";
+  // }
+
 
   return (
     <svg

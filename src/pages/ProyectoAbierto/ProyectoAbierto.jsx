@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 import { motion } from "framer-motion";
@@ -10,7 +10,7 @@ import { proyectosCA, colorsCA } from "../../constants/proyectos-ca";
 import "./proyectoabierto.css";
 import { useSelector } from "react-redux";
 
-const ProyectoAbierto = () => {
+const ProyectoAbierto = ({ setLogoColor }) => {
   const { ref, categoria } = useParams();
 
   const lang = useSelector((state) => state.language);
@@ -30,6 +30,15 @@ const ProyectoAbierto = () => {
   }
 
   const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
+
+
+   var logoColor = color[actualProject.categoria]
+
+   useEffect(()=> {
+
+     setLogoColor(logoColor);
+   },[])
+  
 
   const [visible, setVisible] = useState(false);
 
