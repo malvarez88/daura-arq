@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { motion } from "framer-motion";
 
@@ -8,12 +10,12 @@ import { proyectosEN, colors } from "../../constants/proyectos-en";
 import { proyectosCA, colorsCA } from "../../constants/proyectos-ca";
 
 import "./proyectoabierto.css";
-import { useSelector } from "react-redux";
 
 const ProyectoAbierto = ({ setLogoColor }) => {
   const { ref, categoria } = useParams();
   const [visible, setVisible] = useState(false);
   const lang = useSelector((state) => state.language);
+  const { t } = useTranslation("global");
 
   var proyectos;
   var color;
@@ -77,13 +79,13 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                       <ul className="project-list">
                         {actualProject.año ? (
                           <li className="project-link">
-                            <span>AÑO: </span>
-                            <span>{actualProject.año} </span>
+                            <span>{t('proyecto-abierto.año').toUpperCase()} </span>
+                            <span>{actualProject.año}: </span>
                           </li>
                         ) : null}
                         {actualProject.superficie ? (
                           <li className="project-link">
-                            <span>SUPERFICIE:</span>
+                            <span>{t('proyecto-abierto.superficie').toUpperCase()}: </span>
                             {lang === "es" || lang === "ca" ? (
                               <span>{actualProject.superficie}㎡</span>
                             ) : (
@@ -95,17 +97,17 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                             )}
                           </li>
                         ) : null}
-                        {actualProject.equipo ? (
+                        {actualProject.equipo >0 ? (
                           <li className="project-link">
-                            <span>EQUIPO:</span>
+                            <span>{t('proyecto-abierto.equipo').toUpperCase()}:</span>
                             <div className="double">
-                            <span>{actualProject.equipo}</span>
+                              <span>{actualProject.equipo}</span>
                             </div>
                           </li>
                         ) : null}
                         {actualProject.colaboradores ? (
                           <li className="project-link">
-                            <span>COLABORADORES:</span>
+                            <span>{t('proyecto-abierto.colaboradores').toUpperCase()} :</span>
                             <div className="double">
                               <span>{actualProject.colaboradores}</span>
                             </div>
@@ -113,7 +115,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                         ) : null}
                         {actualProject.fotografia ? (
                           <li className="project-link">
-                            <span>FOTOGRAFIA: </span>
+                            <span>{t('proyecto-abierto.fotografia').toUpperCase()}: </span>
                             <span>{actualProject.fotografia}</span>
                           </li>
                         ) : null}

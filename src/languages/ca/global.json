@@ -28,5 +28,13 @@
       "patrimoni",
       "immobiliari"
     ]
+  },
+  "proyecto-abierto": {
+    "equipo": "equip",
+    "superficie": "superfície",
+    "año": "any",  
+    "fotografia" : "fotografia",
+    "colaboradores": "col·laboradors"
   }
+
 }
