@@ -15,29 +15,34 @@ import { useLocation } from "react-router";
 
 function App() {
   const [logoColor, setLogoColor] = useState();
-  const [isLoading, setLoading] = useState(true); //check this
+  const [showLoader, setShowLoader] = useState(false);
   const location = useLocation();
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     const hasShownLoader = localStorage.getItem("hasShownLoader");
+  useEffect(() => {
+    const loaderShown = sessionStorage.getItem('loaderShown');
 
-  //     if (!hasShownLoader && location.pathname === "/") {
-  //       setLoading(true);
-  //       localStorage.setItem("hasShownLoader", true);
-  //     }
-  //   }, 1000)
-  // }, [location]);
+    if (!loaderShown) {
+      setShowLoader(true);
+      sessionStorage.setItem('loaderShown', true);
+    }
+  }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 10000);
-  }, [location.pathname === "/"]);
+    const timeoutId = setTimeout(() => setShowLoader(false), 9800);
+    document.body.classList.add('show-loader');
+    return () => {
+      clearTimeout(timeoutId);
+      document.body.classList.remove('show-loader');
+    };
+  }, []);
+
+  window.addEventListener("beforeunload", () => {
+    document.body.classList.remove('show-loader');
+  });
 
   return (
     <>
-      {isLoading ? (
+      {showLoader && location.pathname === "/" ? (
         <Loader />
       ) : (
         <>
