@@ -19,25 +19,25 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    const loaderShown = sessionStorage.getItem('loaderShown');
+    const loaderShown = sessionStorage.getItem("loaderShown");
 
     if (!loaderShown) {
       setShowLoader(true);
-      sessionStorage.setItem('loaderShown', true);
+      sessionStorage.setItem("loaderShown", true);
     }
   }, []);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => setShowLoader(false), 9800);
-    document.body.classList.add('show-loader');
+    document.body.classList.add("show-loader");
     return () => {
       clearTimeout(timeoutId);
-      document.body.classList.remove('show-loader');
+      document.body.classList.remove("show-loader");
     };
   }, []);
 
   window.addEventListener("beforeunload", () => {
-    document.body.classList.remove('show-loader');
+    document.body.classList.remove("show-loader");
   });
 
   return (
