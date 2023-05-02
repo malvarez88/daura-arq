@@ -37,6 +37,7 @@
   box-sizing: border-box;
   position: relative;
   background-color: var(--primary-color);
+  cursor: none;
 }
 
 body {

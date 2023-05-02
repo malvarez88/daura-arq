@@ -11,11 +11,13 @@ import ProyectoAbierto from "./pages/ProyectoAbierto/ProyectoAbierto";
 import Estudio from "./pages/Estudio/Estudio";
 import Noticias from "./pages/Noticias/Noticias";
 import Loader from "./components/Loader/Loader";
+import { CustomCursor } from "./components/CustomCursor/CustomCursor";
 import { useLocation } from "react-router";
 
 function App() {
   const [logoColor, setLogoColor] = useState();
   const [showLoader, setShowLoader] = useState(false);
+  // const location = useLocation();
 
   useEffect(() => {
     const loaderShown = sessionStorage.getItem("loaderShown");
@@ -45,6 +47,7 @@ function App() {
         <Loader />
       ) : (
         <>
+          <CustomCursor />
           <Navbar logoColor={logoColor} />
           <Routes>
             <Route path="/" element={<Home />} />

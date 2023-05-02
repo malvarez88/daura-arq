@@ -21,7 +21,7 @@ const Proyectos = ({ setLogoColor }) => {
   const lang = useSelector((state) => state.language);
   const { t } = useTranslation("global");
 
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("todos");
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(proyectSearch ? proyectSearch : "todos");
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -30,6 +30,8 @@ const Proyectos = ({ setLogoColor }) => {
   };
 
   function mostrarProyectos(categoria, colores) {
+    console.log("🚀 ~ file: Proyectos.jsx:33 ~ mostrarProyectos ~ categoria:", categoria)
+    
     setCategoriaSeleccionada(categoria);
     setIsOpen(!isOpen);
     setLogoColor(colores[categoria]);
@@ -60,6 +62,8 @@ const Proyectos = ({ setLogoColor }) => {
     colores = colorsCA;
     categorias = Object.keys(colorsCA);
   }
+
+console.log("lista", lista)
 
   return (
     <div className="proyectos">
