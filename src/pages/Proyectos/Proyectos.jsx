@@ -31,6 +31,10 @@ const Proyectos = ({ setLogoColor }) => {
   const [categoriaSeleccionada, setCategoriaSeleccionada] =
     useState(idiomas[lang]);
 
+  useEffect(() => {
+    setCategoriaSeleccionada(idiomas[lang]);
+  }, [lang]);
+
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = () => {
