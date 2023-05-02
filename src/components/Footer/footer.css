@@ -44,6 +44,10 @@
 
 .footer-link:hover {
   text-decoration: none;
+}
+
+.footer-link span:hover {
+  text-decoration: none;
   color: rgb(223, 101, 55);
 }
 

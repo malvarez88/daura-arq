@@ -80,7 +80,7 @@ const Footer = () => {
                       color: `${colorNoticias ? colorNoticias : "black"}`,
                     }}
                   >
-                    {t("footer.noticias")}
+                    <span>{t("footer.noticias")}</span>
                   </a>
                 </li>
                 <li className="footer-li">
@@ -91,7 +91,7 @@ const Footer = () => {
                       color: `${colorContacto ? colorContacto : "black"}`,
                     }}
                   >
-                    {t("footer.contacto")}
+                    <span>{t("footer.contacto")}</span>
                   </a>
                   <a
                     href="https://www.instagram.com/daurastudio"
