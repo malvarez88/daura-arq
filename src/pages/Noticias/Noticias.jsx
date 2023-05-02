@@ -44,7 +44,7 @@ const Noticias = () => {
                   {t("footer.noticias").toUpperCase()}
                 </h6>
                 <h6 className="title" style={{ marginBottom: "30px" }}>
-                  work in progress
+                  {t('noticias.wip')}
                 </h6>
                 <div className="noticia">
                   <div className="noticias-img">

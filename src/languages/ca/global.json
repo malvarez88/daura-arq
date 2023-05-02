@@ -36,6 +36,9 @@
     "fotografia" : "fotografia",
     "colaboradores": "col·laboradors",
     "volver": "tornar"
+  },
+  "noticias": {
+    "wip": "en curs"
   }
 
 }
