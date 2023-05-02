@@ -17,7 +17,6 @@ import { useLocation } from "react-router";
 function App() {
   const [logoColor, setLogoColor] = useState();
   const [showLoader, setShowLoader] = useState(false);
-  // const location = useLocation();
 
   useEffect(() => {
     const loaderShown = sessionStorage.getItem("loaderShown");
@@ -47,7 +46,7 @@ function App() {
         <Loader />
       ) : (
         <>
-          <CustomCursor />
+          <CustomCursor showLoader={showLoader} />
           <Navbar logoColor={logoColor} />
           <Routes>
             <Route path="/" element={<Home />} />
