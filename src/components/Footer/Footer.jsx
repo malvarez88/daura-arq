@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./footer.css";
 
 import { motion } from "framer-motion";
@@ -19,14 +19,7 @@ const Footer = () => {
   const [active, setActive] = useState(lang);
   const location = useLocation();
 
-
-  
   const [t, i18n] = useTranslation("global");
-  // console.log("🚀 ~ file: Footer.jsx:25 ~ Footer ~ i18n:", i18n.language)
-
-  // useEffect(()=> {
-  //   i18n.changeLanguage(i18n.language)
-  // },[lang])
 
   var colorNoticias;
   var colorContacto;
@@ -40,9 +33,8 @@ const Footer = () => {
   const handleLanguageChange = (newLang) => {
     dispatch(setNewLanguage(newLang));
     setActive(newLang);
-    i18n.changeLanguage(newLang)
+    i18n.changeLanguage(newLang);
   };
-
 
   return (
     <motion.div
@@ -101,12 +93,16 @@ const Footer = () => {
                   >
                     {t("footer.contacto")}
                   </a>
-                  <a href="">
+                  <a
+                    href="https://www.instagram.com/daurastudio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       src={instagram}
                       alt="instagram"
-                      width="15px"
-                      height="15px"
+                      width="20px"
+                      className="img-fluid"
                     />
                   </a>
                 </li>
@@ -137,12 +133,16 @@ const Footer = () => {
                   {/* <span className="daura-footer">@ d'aura arquitectura</span> */}
                 </div>
                 <div className="instagram">
-                  <a href="">
+                  <a
+                    href="https://www.instagram.com/daurastudio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       src={instagram}
                       alt="instagram"
-                      width="15px"
-                      height="15px"
+                      width="10px"
+                      className="img-fluid"
                     />
                   </a>
                 </div>

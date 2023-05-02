@@ -31,7 +31,7 @@ const Noticias = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-xl-12">
+        <div className="col-12">
           <motion.div
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}

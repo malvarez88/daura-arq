@@ -32,6 +32,11 @@
   margin: 20px 66px 20px 66px;
 }
 
+.project-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .info {
   border: none;
   cursor: pointer;

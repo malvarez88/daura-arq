@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 
 import { motion } from "framer-motion";
 
@@ -16,6 +17,11 @@ const ProyectoAbierto = ({ setLogoColor }) => {
   const [visible, setVisible] = useState(false);
   const lang = useSelector((state) => state.language);
   const { t } = useTranslation("global");
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   var proyectos;
   var color;
@@ -60,14 +66,29 @@ const ProyectoAbierto = ({ setLogoColor }) => {
               >
                 {actualProject.categoria.toUpperCase()}
               </h6>
+
               <div className="project-info">
-                <h4
-                  style={{
-                    color: coloresEs[categoria],
-                  }}
-                >
-                  {actualProject.title.toUpperCase()}
-                </h4>
+                <div className="project-title">
+                  <h4
+                    style={{
+                      color: coloresEs[categoria],
+                    }}
+                  >
+                    {actualProject.title.toUpperCase()}
+                  </h4>
+                  <button
+                    className="btn btn-primary"
+                    style={{
+                      background: coloresEs[categoria],
+                      padding: "6px",
+                      fontSize: "12px",
+                      width: "80px",
+                    }}
+                    onClick={() => handleGoBack()}
+                  >
+                    Volver
+                  </button>
+                </div>
                 <h6>{actualProject.location}</h6>
                 <button className="info" onClick={() => setVisible(!visible)}>
                   <span>{!visible ? "+ INFO" : " - INFO"}</span>
