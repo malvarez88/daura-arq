@@ -61,7 +61,7 @@
 
 .languages button {
   border: none;
-  cursor: pointer;
+  /* cursor: pointer; */
   background: transparent;
 }
 

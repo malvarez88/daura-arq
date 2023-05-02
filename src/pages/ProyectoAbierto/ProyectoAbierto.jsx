@@ -86,7 +86,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                     }}
                     onClick={() => handleGoBack()}
                   >
-                    Volver
+                    {t('proyecto-abierto.volver')}
                   </button>
                 </div>
                 <h6>{actualProject.location}</h6>

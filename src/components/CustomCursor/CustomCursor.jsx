@@ -11,6 +11,17 @@ export const CustomCursor = () => {
       const mouseY = clientY - cursorRef.current.clientHeight / 2;
       cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     });
+
+    const hoverElements = document.querySelectorAll("a, button, input, li, span");
+    hoverElements.forEach((element) => {
+      element.addEventListener("mouseenter", () => {
+        cursorRef.current.classList.add("is-hovering");
+      });
+      element.addEventListener("mouseleave", () => {
+        cursorRef.current.classList.remove("is-hovering");
+      });
+    });
   }, []);
-  return <div className="app-cursor" ref={cursorRef}/>
+
+  return <div className="app-cursor" ref={cursorRef} />;
 };

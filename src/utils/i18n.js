@@ -1,5 +1,7 @@
 import i18next from "i18next";
 
+import store from "../store/store";
+
 import global_es from "../languages/es/global.json";
 import global_en from "../languages/en/global.json";
 import global_ca from "../languages/ca/global.json";
@@ -12,7 +14,7 @@ i18next.init({
   interpolation: {
     escapeValue: false,
   },
-  lng: "es",
+  lng: store.getState().language, 
   resources: {
     es: {
       global: global_es,

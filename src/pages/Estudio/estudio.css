@@ -64,10 +64,10 @@
   text-transform: uppercase;
   gap: 10px;
 }
-
+/* 
 .estudio-list li {
   cursor: pointer;
-}
+} */
 
 .partner-list li a {
   color: black;
