@@ -1,15 +1,16 @@
 import React, {useState, useEffect} from "react";
 
 import "./home.css";
-// import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+
 import { motion } from "framer-motion";
 
-import Loader from "../../components/Loader/Loader";
 
 import heroImg1 from "../../assets/1.png";
 import heroImg2 from "../../assets/2.png";
 import heroImg3 from "../../assets/3.png";
 
+
+import {gcz1, vts1, ccev1, iscola1, nova1, mina1} from '../../assets'
 
 
 const Home = () => {
@@ -45,7 +46,7 @@ const Home = () => {
                 <div className="carousel-item active">
                   <img
                     className="d-block img-fluid hero-img"
-                    src={heroImg1}
+                    src={mina1}
                     alt="First slide"
                     width="1100px"
                     height="540px"
@@ -54,19 +55,19 @@ const Home = () => {
                 <div className="carousel-item">
                   <img
                     className="d-block img-fluid hero-img"
-                    src={heroImg2}
+                    src={ccev1}
                     alt="Third slide"
                     width="1100px"
-                    height="540px"
+                    height="520px"
                   />
                 </div>
                 <div className="carousel-item">
                   <img
                     className="d-block img-fluid hero-img"
-                    src={heroImg3}
+                    src={heroImg1}
                     alt="Third slide"
                     width="1100px"
-                    height="540px"
+                    height="520px"
                   />
                 </div>
               </div>
@@ -98,12 +99,22 @@ const Home = () => {
 
             <div className="mobile-home">
               <img
+                src={mina1}
+                alt=""
+                className="img-fluid mobile-hero-img"
+              />
+              <img
+                src={ccev1}
+                alt=""
+                className="img-fluid mobile-hero-img"
+              />
+              <img
                 src={heroImg1}
                 alt=""
                 className="img-fluid mobile-hero-img"
               />
               <img
-                src={heroImg2}
+                src={iscola1}
                 alt=""
                 className="img-fluid mobile-hero-img"
               />

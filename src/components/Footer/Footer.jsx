@@ -46,7 +46,7 @@ const Footer = () => {
       <div className="footer">
         <div className="container">
           <div className="row">
-            <div className="col-xl-12">
+            <div className="col-12">
               <ul className="footer-list">
                 <li className="footer-li">
                   <div className="languages">
@@ -107,6 +107,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
+              
 
               <div className="mobile-footer">
                 <div className="languages">
