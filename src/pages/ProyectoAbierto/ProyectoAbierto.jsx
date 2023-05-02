@@ -71,7 +71,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                 <div className="project-title">
                   <h4
                     style={{
-                      color: coloresEs[categoria],
+                      color: color[categoria],
                     }}
                   >
                     {actualProject.title.toUpperCase()}
@@ -79,7 +79,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                   <button
                     className="btn btn-primary"
                     style={{
-                      background: coloresEs[categoria],
+                      background: color[categoria],
                       padding: "6px",
                       fontSize: "12px",
                       width: "80px",
@@ -91,7 +91,11 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                 </div>
                 <h6>{actualProject.location}</h6>
                 <button className="info" onClick={() => setVisible(!visible)}>
-                  <span>{!visible ? "+ INFO" : " - INFO"}</span>
+                  <span
+                  style={{
+                    color: color[categoria],
+                  }}
+                  >{!visible ? "+ INFO" : " - INFO"}</span>
                 </button>
                 {visible && (
                   <div className="project-description">
@@ -101,7 +105,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                         {actualProject.año ? (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.año").toUpperCase()}:{" "}
+                              {t("proyecto-abierto.año").toUpperCase()}:
                             </span>
                             <span>{actualProject.año}</span>
                           </li>
@@ -109,14 +113,14 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                         {actualProject.superficie ? (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.superficie").toUpperCase()}:{" "}
+                              {t("proyecto-abierto.superficie").toUpperCase()}:
                             </span>
                             {lang === "es" || lang === "ca" ? (
                               <span>{actualProject.superficie}㎡</span>
                             ) : (
                               <span>
                                 {actualProject.superficie *
-                                  (10.7639).toFixed(2)}
+                                  (10.7639).toFixed()}
                                 sq ft
                               </span>
                             )}
@@ -125,7 +129,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                         {actualProject.equipo > 0 ? (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.equipo").toUpperCase()}:{" "}
+                              {t("proyecto-abierto.equipo").toUpperCase()}:
                             </span>
                             <div className="double">
                               <span>{actualProject.equipo}</span>
@@ -137,7 +141,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                             <span>
                               {t(
                                 "proyecto-abierto.colaboradores"
-                              ).toUpperCase()}{" "}
+                              ).toUpperCase()}
                               :
                             </span>
                             <div className="double">
@@ -148,7 +152,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                         {actualProject.fotografia ? (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.fotografia").toUpperCase()}:{" "}
+                              {t("proyecto-abierto.fotografia").toUpperCase()}:
                             </span>
                             <span>{actualProject.fotografia}</span>
                           </li>
