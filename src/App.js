@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      {showLoader && location.pathname === "/" ? (
+      {showLoader ? (
         <Loader />
       ) : (
         <>

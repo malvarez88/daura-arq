@@ -9,6 +9,7 @@
 .hero-img {
   object-fit: cover;
   min-height: 550px;
+  width: 100%;
 }
 
 .mobile-home {
