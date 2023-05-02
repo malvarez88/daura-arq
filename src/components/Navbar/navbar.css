@@ -132,7 +132,7 @@
   .menu {
     position: absolute;
     /* top: 40px; */
-    top: 0;
+    top: -2px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -151,7 +151,7 @@
 
   .menu.open {
     height: 100vh;
-    top: 0;
+    top: -2px;
     left: 0;
     width: 100%;
 
