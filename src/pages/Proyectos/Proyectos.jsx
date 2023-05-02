@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 import { proyectosES, coloresEs } from "../../constants/proyectos-es";
 import { proyectosEN, colors } from "../../constants/proyectos-en";
@@ -21,9 +22,14 @@ const Proyectos = ({ setLogoColor }) => {
   const lang = useSelector((state) => state.language);
   const { t } = useTranslation("global");
 
-  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState(
-    proyectSearch ? proyectSearch : "todos"
-  );
+  const idiomas = {
+    es: "todos",
+    en: "all",
+    ca: "tots"
+  };
+
+  const [categoriaSeleccionada, setCategoriaSeleccionada] =
+    useState(idiomas[lang]);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,7 +43,7 @@ const Proyectos = ({ setLogoColor }) => {
     setLogoColor(colores[categoria]);
   }
 
-  var proyectSearch = " ";
+
   var proyectos;
   var categorias;
   var colores;
@@ -45,24 +51,20 @@ const Proyectos = ({ setLogoColor }) => {
 
   if (lang === "es") {
     lista = listaProyectos;
-    proyectSearch = "todos";
     proyectos = proyectosES;
     colores = coloresEs;
     categorias = Object.keys(coloresEs);
   } else if (lang === "en") {
     lista = projectList;
-    proyectSearch = "all";
     proyectos = proyectosEN;
     colores = colors;
     categorias = Object.keys(colors);
   } else {
     lista = listaProjectes;
     proyectos = proyectosCA;
-    proyectSearch = "tots";
     colores = colorsCA;
     categorias = Object.keys(colorsCA);
   }
-
 
   return (
     <div className="proyectos">
@@ -141,7 +143,7 @@ const Proyectos = ({ setLogoColor }) => {
               <div className="wrapper">
                 {proyectos.map((proyecto, index) => {
                   if (
-                    categoriaSeleccionada === proyectSearch ||
+                    categoriaSeleccionada === idiomas[lang] ||
                     proyecto.categoria === categoriaSeleccionada
                   ) {
                     return (

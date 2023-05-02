@@ -15,7 +15,7 @@ const listaProjectes = [
   "arquitectura",
   "sport",
   "patrimoni",
-  "immobiliari",
+  "inmobiliari",
 ];
 
 const partners = [
