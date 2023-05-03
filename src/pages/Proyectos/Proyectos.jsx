@@ -78,8 +78,9 @@ const Proyectos = ({ setLogoColor }) => {
             <motion.div
               initial={{ opacity: 0, y: 200 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 200 }}
+              exit={{ opacity: 0, y: 200, transition: { duration: 0.2} }}
               transition={{ duration: 1, delay: 0.5 }}
+              key="proyectos"
             >
               <ul className="categories-list">
                 {lista.map((categoria, index) => (

@@ -7,27 +7,25 @@ import { motion } from "framer-motion";
 
 import { useTranslation } from "react-i18next";
 
-import { partners, espacies, espacios,spaces } from "../../constants";
+import { partners, espacies, espacios, spaces } from "../../constants";
 import { about1, about2, about3, wbf1, profile } from "../../assets";
-
-
 
 const Estudio = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const {t} = useTranslation("global")
+  const { t } = useTranslation("global");
 
-const language = useSelector(state => state.language)
+  const language = useSelector((state) => state.language);
 
-var lista;
-if(language === "es") {
-  lista = espacios
-} else if (language === "en"){
-  lista = spaces
-} else {
-  lista = espacies
-}
+  var lista;
+  if (language === "es") {
+    lista = espacios;
+  } else if (language === "en") {
+    lista = spaces;
+  } else {
+    lista = espacies;
+  }
 
   function handleClick(index) {
     setActiveTab(index);
@@ -35,15 +33,16 @@ if(language === "es") {
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-xl-12">
-          <motion.div
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 1, delay: 1 }}
-          >
+    <motion.div
+      initial={{ opacity: 0, x: -200 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -200, transition: {duration: 0.1} }}
+      transition={{ duration: 1, delay: 1 }}
+      key="estudio"
+    >
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12">
             <div className="estudio">
               <ul className="estudio-list">
                 {lista.map((espacio, index) => (
@@ -62,7 +61,9 @@ if(language === "es") {
                 style={{ display: activeTab === 0 ? "block" : "none" }}
               >
                 <h5 className="title">d'aura arquitectura</h5>
-                <p className="general-text">{t("estudio-page.sobre-nosotros-1")}</p>
+                <p className="general-text">
+                  {t("estudio-page.sobre-nosotros-1")}
+                </p>
 
                 <div className="sobre-nosotros-img">
                   <img src={about1} alt="about" className="img-fluid" />
@@ -70,7 +71,9 @@ if(language === "es") {
                   <img src={about3} alt="about" className="img-fluid" />
                 </div>
 
-                <p className="general-text">{t("estudio-page.sobre-nosotros-2")}</p>
+                <p className="general-text">
+                  {t("estudio-page.sobre-nosotros-2")}
+                </p>
                 <ul className="partner-list">
                   {partners.map((partner, index) => (
                     <li key={index}>
@@ -123,10 +126,10 @@ if(language === "es") {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

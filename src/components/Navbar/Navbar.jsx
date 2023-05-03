@@ -26,7 +26,7 @@ const Navbar = ({ logoColor }) => {
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: "linear", duration: 1 }}
-        exit={{ opacity: 0, y: -100 }}
+        exit={{ opacity: 0, transition: { duration: 0.2} }}
       >
         <div className="container">
           <div className="row">

@@ -1,42 +1,36 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 
 import "./home.css";
 
 import { motion } from "framer-motion";
 
-
 import heroImg1 from "../../assets/1.png";
 import heroImg2 from "../../assets/2.png";
 import heroImg3 from "../../assets/3.png";
 
-
-import {gcz1, vts1, ccev1, iscola1, nova1, mina1} from '../../assets'
-
+import { gcz1, vts1, ccev1, iscola1, nova1, mina1 } from "../../assets";
 
 const Home = () => {
-
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 3000);
   }, []);
-  
-
 
   return (
-    // <AnimatePresence>
-    <div className="container">
-      <div className="row">
-        <div className="col-xl-12">
-          <motion.section
-            initial={{ opacity: 0, x: 200 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 200 }}
-            transition={{ duration: 1 }}
-            className="home-section"
-          >
+    <motion.section
+      initial={{ opacity: 0, x: 200 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 200, transition: { duration: 0.2} }}
+      transition={{ duration: 1 }}
+      className="home-section"
+      key="/"
+    >
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12">
             <div
               id="carouselExampleControls"
               className="carousel slide"
@@ -98,32 +92,19 @@ const Home = () => {
             </div>
 
             <div className="mobile-home">
-              <img
-                src={mina1}
-                alt=""
-                className="img-fluid mobile-hero-img"
-              />
-              <img
-                src={ccev1}
-                alt=""
-                className="img-fluid mobile-hero-img"
-              />
+              <img src={mina1} alt="" className="img-fluid mobile-hero-img" />
+              <img src={ccev1} alt="" className="img-fluid mobile-hero-img" />
               <img
                 src={heroImg1}
                 alt=""
                 className="img-fluid mobile-hero-img"
               />
-              <img
-                src={iscola1}
-                alt=""
-                className="img-fluid mobile-hero-img"
-              />
+              <img src={iscola1} alt="" className="img-fluid mobile-hero-img" />
             </div>
-          </motion.section>
+          </div>
         </div>
       </div>
-    </div>
-    // </AnimatePresence>
+    </motion.section>
   );
 };
 

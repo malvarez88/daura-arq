@@ -48,6 +48,7 @@ const Contact = () => {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
+        key="contacto"
       >
         <div className="container">
           <div className="row">
@@ -55,7 +56,7 @@ const Contact = () => {
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100 }}
+                exit={{ opacity: 0, x: -100, transition: { duration : 0.2} }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 <div className="contact-direction">
@@ -94,7 +95,7 @@ const Contact = () => {
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 100 }}
+                exit={{ opacity: 0, x: 100, transition: {duration: 0.2} }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 <form
