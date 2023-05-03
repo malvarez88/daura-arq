@@ -7,6 +7,7 @@ import global_en from "../languages/en/global.json";
 import global_ca from "../languages/ca/global.json";
 
 const language = store.getState().language;
+console.log("🚀 ~ file: i18n.js:10 ~ language:", language)
 
 
 i18next.init({

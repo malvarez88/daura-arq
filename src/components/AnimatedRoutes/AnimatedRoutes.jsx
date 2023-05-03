@@ -15,20 +15,20 @@ const AnimatedRoutes = ({ setLogoColor }) => {
   const location = useLocation();
   return (
     <AnimatePresence>
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/proyectos"
-          element={<Proyectos setLogoColor={setLogoColor} />}
-        />
-        <Route path="/contacto" element={<Contact />} />
-        <Route
-          path="/proyectos/:categoria/:ref"
-          element={<ProyectoAbierto setLogoColor={setLogoColor} />}
-        />
-        <Route path="/estudio" element={<Estudio />} />
-        <Route path="/noticias" element={<Noticias />} />
-      </Routes>
+    <Routes location={location} key={location.pathname}>
+      <Route path="/" element={<Home />} />
+      <Route
+        path="/proyectos"
+        element={<Proyectos setLogoColor={setLogoColor} />}
+      />
+      <Route path="/contacto" element={<Contact />} />
+      <Route
+        path="/proyectos/:categoria/:ref"
+        element={<ProyectoAbierto setLogoColor={setLogoColor} />}
+      />
+      <Route path="/estudio" element={<Estudio />} />
+      <Route path="/noticias" element={<Noticias />} />
+    </Routes>
     </AnimatePresence>
   );
 };
