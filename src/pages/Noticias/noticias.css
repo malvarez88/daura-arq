@@ -1,6 +1,6 @@
 .noticias {
     min-height: 100vh;
-    margin: 0 66px;
+    /* margin: 0 66px; */
     transition: all 0.5s ease-out;
     margin-bottom: 40px;
   }
@@ -26,3 +26,10 @@
     margin-bottom: 20px;
   }
   
+
+  @media screen and (max-width: 990px) {
+    .noticias {
+      margin: 0;
+    }
+
+  }

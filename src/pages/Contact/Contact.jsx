@@ -70,18 +70,22 @@ const Contact = () => {
                   <p>(34) 93 203 2018</p>
                   <p>info@daurastudio.com</p>
                   <div className="contact-socials">
-                    <img
-                      src={instagram}
-                      alt="instagram"
-                      width="20px"
-                      className="img-fluid"
-                    />
-                    <img
-                      src={linkedin}
-                      alt="linkedin"
-                      width="26px"
-                      className="img-fluid"
-                    />
+                    <a href="https://www.instagram.com/daurastudio" target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={instagram}
+                        alt="instagram"
+                        width="20px"
+                        className="img-fluid"
+                      />
+                    </a>
+                    <a href="https://www.linkedin.com/in/joanramonrius/" target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={linkedin}
+                        alt="linkedin"
+                        width="26px"
+                        className="img-fluid"
+                      />
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -142,33 +146,29 @@ const Contact = () => {
                 exit={{ opacity: 0, x: 100 }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
-              <div className="mobile-contact-direction d-block d-lg-none">
-                <h6 className="title">{t("footer.contacto").toUpperCase()}</h6>
-                <p>
-                  C/ Francesc Carbonell 34,
-                   B-2 Barcelona 08034
-                </p>
-                <p>
-                  C/ Nou, 17, 1-3a. 07701
-                  Maó 07701- Baleares
-                </p>
-                <p>(34) 93 203 2018</p>
-                <p>info@daurastudio.com</p>
-                <div className="contact-socials">
-                  <img
-                    src={instagram}
-                    alt="instagram"
-                    width="20px"
-                    className="img-fluid"
-                  />
-                  <img
-                    src={linkedin}
-                    alt="linkedin"
-                    width="26px"
-                    className="img-fluid"
-                  />
+                <div className="mobile-contact-direction d-block d-lg-none">
+                  <h6 className="title">
+                    {t("footer.contacto").toUpperCase()}
+                  </h6>
+                  <p>C/ Francesc Carbonell 34, B-2 Barcelona 08034</p>
+                  <p>C/ Nou, 17, 1-3a. 07701 Maó 07701- Baleares</p>
+                  <p>(34) 93 203 2018</p>
+                  <p>info@daurastudio.com</p>
+                  <div className="contact-socials">
+                    <img
+                      src={instagram}
+                      alt="instagram"
+                      width="20px"
+                      className="img-fluid"
+                    />
+                    <img
+                      src={linkedin}
+                      alt="linkedin"
+                      width="20px"
+                      className="img-fluid"
+                    />
+                  </div>
                 </div>
-              </div>
               </motion.div>
             </div>
           </div>

@@ -84,7 +84,13 @@
   border: none;
   cursor: pointer;
   background: transparent;
-}
+  color: black;
+  }
+
+  .dropdown-toggle:focus {
+    outline: none;
+    color: black;
+  }
 
 .dropdown-menu {
   display: flex;

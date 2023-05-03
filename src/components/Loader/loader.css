@@ -1,0 +1,37 @@
+.loader {
+  display: flex;
+  height: 100vh;
+  overflow: visible;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#loader-logo {
+  width: 10%;
+  overflow: visible;
+}
+
+  .cls-10 {
+    fill: #1d1d1b;
+    overflow: visible;
+
+  }
+
+  .cls-20 {
+    fill: none;
+    stroke: #1d1d1b;
+    stroke-miterlimit: 10;
+    stroke-width: 16px;
+    overflow: visible;
+
+  }
+
+
+
+@media screen and (max-width: 990px) {
+    #loader-logo {
+        width: 30%;
+      }
+
+}

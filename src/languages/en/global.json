@@ -28,6 +28,16 @@
         "heritage",
         "real estate"
       ]
+    },
+    "proyecto-abierto": {
+      "equipo": "team",
+      "superficie": "surface",
+      "año": "year",
+      "fotografia": "photography",
+      "colaboradores": "collaborators",
+      "volver": "return"
+    },
+    "noticias": {
+      "wip": "work in progress"
     }
-  
   }

@@ -32,6 +32,11 @@
   margin: 20px 66px 20px 66px;
 }
 
+.project-title {
+  display: flex;
+  justify-content: space-between;
+}
+
 .info {
   border: none;
   cursor: pointer;
@@ -68,6 +73,11 @@
   flex-direction: column;
   gap: 5px;
   text-align: center;
+}
+
+.double {
+  display: flex;
+  flex-direction: column;
 }
 
 .logo-container {

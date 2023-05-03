@@ -9,6 +9,8 @@
 .hero-img {
   object-fit: cover;
   min-height: 550px;
+  width: 1110px;
+  height: 550px;
 }
 
 .mobile-home {
@@ -25,7 +27,7 @@
 
   .home-section{
     padding: 20px;
-    height: 75vh;
+    height: auto;
   }
 
   .carousel {

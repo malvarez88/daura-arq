@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router";
 
 import { motion } from "framer-motion";
 
@@ -8,12 +11,17 @@ import { proyectosEN, colors } from "../../constants/proyectos-en";
 import { proyectosCA, colorsCA } from "../../constants/proyectos-ca";
 
 import "./proyectoabierto.css";
-import { useSelector } from "react-redux";
 
-const ProyectoAbierto = () => {
+const ProyectoAbierto = ({ setLogoColor }) => {
   const { ref, categoria } = useParams();
-
+  const [visible, setVisible] = useState(false);
   const lang = useSelector((state) => state.language);
+  const { t } = useTranslation("global");
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   var proyectos;
   var color;
@@ -31,7 +39,11 @@ const ProyectoAbierto = () => {
 
   const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
 
-  const [visible, setVisible] = useState(false);
+  var logoColor = color[actualProject.categoria];
+
+  useEffect(() => {
+    setLogoColor(logoColor);
+  }, [actualProject]);
 
   return (
     <motion.div
@@ -54,17 +66,36 @@ const ProyectoAbierto = () => {
               >
                 {actualProject.categoria.toUpperCase()}
               </h6>
+
               <div className="project-info">
-                <h4
-                  style={{
-                    color: coloresEs[categoria],
-                  }}
-                >
-                  {actualProject.title.toUpperCase()}
-                </h4>
+                <div className="project-title">
+                  <h4
+                    style={{
+                      color: color[categoria],
+                    }}
+                  >
+                    {actualProject.title.toUpperCase()}
+                  </h4>
+                  <button
+                    className="btn btn-primary"
+                    style={{
+                      background: color[categoria],
+                      padding: "6px",
+                      fontSize: "12px",
+                      width: "80px",
+                    }}
+                    onClick={() => handleGoBack()}
+                  >
+                    {t('proyecto-abierto.volver')}
+                  </button>
+                </div>
                 <h6>{actualProject.location}</h6>
                 <button className="info" onClick={() => setVisible(!visible)}>
-                  <span>{!visible ? "+ INFO" : " - INFO"}</span>
+                  <span
+                  style={{
+                    color: color[categoria],
+                  }}
+                  >{!visible ? "+ INFO" : " - INFO"}</span>
                 </button>
                 {visible && (
                   <div className="project-description">
@@ -73,19 +104,23 @@ const ProyectoAbierto = () => {
                       <ul className="project-list">
                         {actualProject.año ? (
                           <li className="project-link">
-                            <span>AÑO: </span>
-                            <span>{actualProject.año} </span>
+                            <span>
+                              {t("proyecto-abierto.año").toUpperCase()}:
+                            </span>
+                            <span>{actualProject.año}</span>
                           </li>
                         ) : null}
                         {actualProject.superficie ? (
                           <li className="project-link">
-                            <span>SUPERFICIE:</span>
+                            <span>
+                              {t("proyecto-abierto.superficie").toUpperCase()}:
+                            </span>
                             {lang === "es" || lang === "ca" ? (
                               <span>{actualProject.superficie}㎡</span>
                             ) : (
                               <span>
                                 {actualProject.superficie *
-                                  (10.7639).toFixed(2)}{" "}
+                                  (10.7639).toFixed()}
                                 sq ft
                               </span>
                             )}
@@ -93,19 +128,32 @@ const ProyectoAbierto = () => {
                         ) : null}
                         {actualProject.equipo > 0 ? (
                           <li className="project-link">
-                            <span>EQUIPO:</span>
-                            <span>{actualProject.equipo}</span>
+                            <span>
+                              {t("proyecto-abierto.equipo").toUpperCase()}:
+                            </span>
+                            <div className="double">
+                              <span>{actualProject.equipo}</span>
+                            </div>
                           </li>
                         ) : null}
                         {actualProject.colaboradores ? (
                           <li className="project-link">
-                            <span>COLABORADORES:</span>
-                            <span>{actualProject.colaboradores}</span>
+                            <span>
+                              {t(
+                                "proyecto-abierto.colaboradores"
+                              ).toUpperCase()}
+                              :
+                            </span>
+                            <div className="double">
+                              <span>{actualProject.colaboradores}</span>
+                            </div>
                           </li>
                         ) : null}
                         {actualProject.fotografia ? (
                           <li className="project-link">
-                            <span>FOTOGRAFIA: </span>
+                            <span>
+                              {t("proyecto-abierto.fotografia").toUpperCase()}:
+                            </span>
                             <span>{actualProject.fotografia}</span>
                           </li>
                         ) : null}

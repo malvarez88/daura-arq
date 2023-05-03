@@ -17,8 +17,6 @@
   align-items: flex-start;
 }
 
-
-
 .footer-link {
   text-decoration: none;
   color: black;
@@ -37,12 +35,15 @@
   align-items: end;
 }
 
-
 .footer-li img {
   margin-left: auto;
 }
 
 .footer-link:hover {
+  text-decoration: none;
+}
+
+.footer-link span:hover {
   text-decoration: none;
   color: rgb(223, 101, 55);
 }
@@ -57,7 +58,7 @@
 
 .languages button {
   border: none;
-  cursor: pointer;
+  /* cursor: pointer; */
   background: transparent;
 }
 
@@ -81,13 +82,11 @@
   content: none;
 }
 
-
 .daura-footer {
-  font-family: 'ExtraLigth';
+  font-family: "ExtraLigth";
   font-size: 15px;
   overflow: visible;
 }
-
 
 .active-lang {
   color: black;
@@ -98,11 +97,15 @@
 }
 
 @media (max-width: 768px) {
-.footer {
-  bottom: 0;
-  width: 100%;
-}
-
+  .footer {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: 0;
+  }
   .footer-list {
     display: none;
   }

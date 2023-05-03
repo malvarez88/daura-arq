@@ -31,7 +31,7 @@ const Noticias = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-xl-12">
+        <div className="col-12">
           <motion.div
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
@@ -44,7 +44,7 @@ const Noticias = () => {
                   {t("footer.noticias").toUpperCase()}
                 </h6>
                 <h6 className="title" style={{ marginBottom: "30px" }}>
-                  work in progress
+                  {t('noticias.wip')}
                 </h6>
                 <div className="noticia">
                   <div className="noticias-img">

@@ -1,42 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./navbar.css";
 
 import Logo from "../Logo/Logo";
 
-import { useLocation } from "react-router";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 const Navbar = ({ logoColor }) => {
-  const location = useLocation();
+
 
   const { t } = useTranslation("global");
 
-  var colorProyecto;
   var colorEstudio;
 
-  if (location.pathname === "/proyectos") {
-    colorProyecto = "#DF6537";
-  } else if (location.pathname === "/estudio") {
-    colorEstudio = "#DF6537";
-  }
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // const lang = useSelector((state) => state.language);
-
-  // var language;
-
-  // if (lang === "es") {
-  //   language = es[lang];
-  // } else if (lang === "en") {
-  //   language = en[lang];
-  // } else {
-  //   language = ca[lang];
-  // }
 
   return (
     <header className="header">
@@ -55,7 +37,7 @@ const Navbar = ({ logoColor }) => {
                     href="/proyectos"
                     className="nav-link"
                     style={{
-                      color: `${colorProyecto ? colorProyecto : "black"}`,
+                      color: `${logoColor ? logoColor : "black"}`,
                     }}
                   >
                     <span>{t("navbar.proyectos")}</span>
@@ -114,7 +96,7 @@ const Navbar = ({ logoColor }) => {
                     <a href="/proyectos">{t("navbar.proyectos")}</a>
                   </li>
                   <li className="mobile-link">
-                    <a href="/espacios">{t("navbar.espacios")}</a>
+                    <a href="/noticias">{t("footer.noticias")}</a>
                   </li>
                   <li className="mobile-link">
                     <a href="/estudio">{t("navbar.estudio")}</a>

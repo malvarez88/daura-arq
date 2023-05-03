@@ -5,9 +5,15 @@ import "./index.css";
 import App from "./App";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import { initReactI18next } from 'react-i18next';
 
 import { I18nextProvider } from "react-i18next";
 import i18n from "./utils/i18n";
+
+
+// i18n.use(initReactI18next).init({
+//   lng: store.getState().language, 
+// });
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

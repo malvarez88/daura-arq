@@ -132,7 +132,7 @@
   .menu {
     position: absolute;
     /* top: 40px; */
-    top: 0;
+    top: -2px;
     left: 0;
     right: 0;
     bottom: 0;
@@ -141,6 +141,7 @@
     overflow: hidden;
     background-color: #aeaca0;
     transition: height 0.3s ease-in-out;
+    transition:all 0.3s ease;
   }
 
   .mobile-navbar {
@@ -150,10 +151,14 @@
 
   .menu.open {
     height: 100vh;
-    top: 0;
+    top: -2px;
     left: 0;
     width: 100%;
 
+  }
+
+  .menu-open target ~ meta[name="theme-color"] {
+    content: #aeaca0;
   }
 
   .hamburger {

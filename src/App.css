@@ -35,9 +35,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
   position: relative;
   background-color: var(--primary-color);
+  cursor: none;
 }
 
 body {
@@ -53,4 +53,11 @@ body {
   text-align: justify;
   font-family: "Heros", sans-serif;
   margin: 30px 0;
+}
+
+
+@media only screen and (max-width: 600px) {
+  meta[name="theme-color"] {
+    content: #ffffff;
+  }
 }

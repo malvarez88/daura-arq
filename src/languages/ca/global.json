@@ -26,7 +26,19 @@
       "arquitectura",
       "sport",
       "patrimoni",
-      "immobiliari"
+      "inmobiliari"
     ]
+  },
+  "proyecto-abierto": {
+    "equipo": "equip",
+    "superficie": "superfície",
+    "año": "any",  
+    "fotografia" : "fotografia",
+    "colaboradores": "col·laboradors",
+    "volver": "tornar"
+  },
+  "noticias": {
+    "wip": "en curs"
   }
+
 }

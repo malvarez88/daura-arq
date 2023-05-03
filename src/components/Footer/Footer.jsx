@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./footer.css";
 
 import { motion } from "framer-motion";
@@ -19,30 +19,22 @@ const Footer = () => {
   const [active, setActive] = useState(lang);
   const location = useLocation();
 
-
-  
   const [t, i18n] = useTranslation("global");
-  // console.log("🚀 ~ file: Footer.jsx:25 ~ Footer ~ i18n:", i18n.language)
-
-  // useEffect(()=> {
-  //   i18n.changeLanguage(i18n.language)
-  // },[lang])
 
   var colorNoticias;
   var colorContacto;
 
-  if (location.pathname === "/noticias") {
-    colorNoticias = "#DF6537";
-  } else if (location.pathname === "/contacto") {
-    colorContacto = "#DF6537";
-  }
+  // if (location.pathname === "/noticias") {
+  //   colorNoticias = "#DF6537";
+  // } else if (location.pathname === "/contacto") {
+  //   colorContacto = "#DF6537";
+  // }
 
   const handleLanguageChange = (newLang) => {
     dispatch(setNewLanguage(newLang));
     setActive(newLang);
-    i18n.changeLanguage(newLang)
+    i18n.changeLanguage(newLang);
   };
-
 
   return (
     <motion.div
@@ -54,7 +46,7 @@ const Footer = () => {
       <div className="footer">
         <div className="container">
           <div className="row">
-            <div className="col-xl-12">
+            <div className="col-12">
               <ul className="footer-list">
                 <li className="footer-li">
                   <div className="languages">
@@ -88,7 +80,7 @@ const Footer = () => {
                       color: `${colorNoticias ? colorNoticias : "black"}`,
                     }}
                   >
-                    {t("footer.noticias")}
+                    <span>{t("footer.noticias")}</span>
                   </a>
                 </li>
                 <li className="footer-li">
@@ -99,18 +91,23 @@ const Footer = () => {
                       color: `${colorContacto ? colorContacto : "black"}`,
                     }}
                   >
-                    {t("footer.contacto")}
+                    <span>{t("footer.contacto")}</span>
                   </a>
-                  <a href="">
+                  <a
+                    href="https://www.instagram.com/daurastudio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       src={instagram}
                       alt="instagram"
-                      width="15px"
-                      height="15px"
+                      width="20px"
+                      className="img-fluid"
                     />
                   </a>
                 </li>
               </ul>
+              
 
               <div className="mobile-footer">
                 <div className="languages">
@@ -137,12 +134,16 @@ const Footer = () => {
                   {/* <span className="daura-footer">@ d'aura arquitectura</span> */}
                 </div>
                 <div className="instagram">
-                  <a href="">
+                  <a
+                    href="https://www.instagram.com/daurastudio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       src={instagram}
                       alt="instagram"
-                      width="15px"
-                      height="15px"
+                      width="10px"
+                      className="img-fluid"
                     />
                   </a>
                 </div>

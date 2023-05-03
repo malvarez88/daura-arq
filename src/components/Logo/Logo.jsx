@@ -3,19 +3,15 @@ import { useLocation } from "react-router";
 
 import "./logo.css";
 
-const Logo = ({...logoColor}) => {
+const Logo = ({ ...logoColor }) => {
+  var color = Object.values(logoColor);
 
-var color = Object.values(logoColor)
 
   const location = useLocation();
 
-  if(!logoColor && 
-    location.pathname === "/proyectos" ||
-    location.pathname === "/estudio" ||
-    location.pathname === "/contacto"
-  ) {
-    color = "#DF6537";
-  }
+  // if (location.pathname === "/estudio" || "/contacto" || "/noticias") {
+  //   color = "#DF6537";
+  // }
 
   return (
     <svg
@@ -23,14 +19,22 @@ var color = Object.values(logoColor)
       data-name="Capa 1"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 199.08 93.05"
-      style={{background: "transparent"}}
+      style={{ background: "transparent" }}
     >
       <g>
-        <ellipse className="cls-2" cx="42" cy="50.53" rx="34" ry="34.52" />
-        <line className="cls-2" x1="76" y1="51.03" x2="76" />
+        <ellipse
+          id="elipse1"
+          className="cls-2"
+          cx="42"
+          cy="50.53"
+          rx="34"
+          ry="34.52"
+        />
+        <line id="line1" className="cls-2" x1="76" y1="51.03" x2="76" />
       </g>
       <g>
         <ellipse
+          id="elipse2"
           className="cls-2"
           cx="148.55"
           cy="51.22"
@@ -38,6 +42,7 @@ var color = Object.values(logoColor)
           ry="33.83"
         />
         <line
+          id="line2"
           className="cls-2"
           x1="148.05"
           y1="85.05"
@@ -48,7 +53,14 @@ var color = Object.values(logoColor)
           strokeMiterlimit="10"
         />
       </g>
-      <rect className="cls-1" x="92.2" width="16" height="16" fill={color} />
+      <rect
+        // id="rect1"
+        className="cls-1"
+        x="92.2"
+        width="16"
+        height="16"
+        fill={color}
+      />
     </svg>
   );
 };

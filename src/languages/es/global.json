@@ -4,13 +4,13 @@
     "estudio": "estudio",
     "espacios": "espacios"
   },
-  "footer" : {
+  "footer": {
     "noticias": "noticias",
     "contacto": "contacto"
   },
   "contact-page": {
     "nombre": "nombre",
-    "mensaje" : "mensaje",
+    "mensaje": "mensaje",
     "email": "e-mail",
     "enviar": "enviar"
   },
@@ -18,7 +18,7 @@
     "sobre-nosotros-1": "Fundado en el año 2000, es una red de personas y espacios; apasionados por la arquitectura, la investigación y la experimentación. Un 'studio' más que una oficina, dónde la investigación está siempre presente favoreciendo el cambio de paradigmas; un espacio más que un lugar, para la búsqueda de oportunidades a través de un flujo de recursos, colaboraciones y tiempo. Un proceso de trabajo más que una forma de trabajar, basado en la formulación de estrategias, observación, yuxtaposición de información, práctica y conocimiento. Preguntar, diseñar, materializar, y comprobar como actitud.",
     "sobre-nosotros-2": "La investigación e innovación estan presente en nuestro estudio, participando en proyectos que buscan nuevas soluciones para aplicarlas en casos reales. Creemos en las redes de profesionales transdisciplinares orientada a obtener el mejor resultado para un proyecto; y por ello apostamos por la innovación abierta, la colaboración y compartir conocimientos. Algunos de nuestros partners y amigos son:",
     "equipo": "Somos arquitectos, urbanistas y diseñadores, con experiencia internacional, y participación en la docencia y la investigación. Trabajamos en las áreas de arquitectura, diseño de interiores, las intervenciones en sitios históricos, el diseño urbano y planificación, paisaje, exposiciones efímeras, la teoría y la crítica. Con sede en Barcelona, hemos ido ampliando nuestro campo de acción, estando ya involucrado en algunos proyectos internacionales.",
-    "lista-estudio" : ["sobre nosotros", "equipo"]
+    "lista-estudio": ["sobre nosotros", "equipo"]
   },
   "proyects-page": {
     "lista-proyectos": [
@@ -28,6 +28,16 @@
       "patrimonio",
       "inmobiliario"
     ]
+  },
+  "proyecto-abierto": {
+    "equipo": "equipo",
+    "superficie": "superficie",
+    "año": "año",
+    "fotografia": "fotografia",
+    "colaboradores": "colaboradores",
+    "volver": "volver"
+  },
+  "noticias": {
+    "wip": "en proceso"
   }
-
 }
