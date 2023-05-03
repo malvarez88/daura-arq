@@ -6,6 +6,7 @@ import "./logo.css";
 const Logo = ({ ...logoColor }) => {
   var color = Object.values(logoColor);
 
+
   const location = useLocation();
 
   // if (location.pathname === "/estudio" || "/contacto" || "/noticias") {

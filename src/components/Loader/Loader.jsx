@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap, { Power0 } from "gsap";
 import "./loader.css";
 
 const Loader = () => {
+  const loaderLogoRef = useRef(null);
+  const trazo1Ref = useRef(null);
+  const trazo2Ref = useRef(null);
+  const rect1Ref = useRef(null);
 
+  useEffect(() => {
+    const logo = loaderLogoRef.current;
+    const trazo1 = trazo1Ref.current;
+    const trazo2 = trazo2Ref.current;
+    const rect1 = rect1Ref.current;
+
+    gsap.set([trazo1, trazo2, rect1], { opacity: 0 });
+
+    gsap.from(logo, { opacity: 0, duration: 1 });
+
+    const tl = gsap.timeline({ delay: 1 });
+
+    tl.to(trazo2, { opacity: 1, duration: 1, ease: Power0.easeOut })
+      .to(trazo1, {opacity: 1, duration: 1, ease: Power0.easeOut })
+      .to(trazo1, {
+        rotation: 90,
+        transformOrigin: "50% 60%",
+        duration: 1,
+        ease: Power0.easeNone,
+      })
+      .to(trazo1, { opacity: 1, duration: 1, x: 100, ease: Power0.easeOut })
+      .to(rect1, { opacity: 1, duration: 1, x: 20, ease: Power0.easeOut });
+  }, []);
 
   return (
     <div className="loader">
@@ -10,19 +38,20 @@ const Loader = () => {
         id="loader-logo"
         data-name="Capa 1"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 199.03 93.05"
+        viewBox="0 0 168.67 93.05"
+        ref={loaderLogoRef}
       >
+        <rect className="cls-10" x="68" width="16" height="16" ref={rect1Ref} />
         <path
-         id="trazo1"
-          className="cls-2"
+          className="cls-20"
           d="m76,0v51.03-.5c0,19.06-15.22,34.52-34,34.52S8,69.59,8,50.53,23.22,16.01,42,16.01h0c18.78,0,34,15.49,34,34.56"
+          ref={trazo1Ref}
         />
         <path
-        id="trazo2"
-          className="cls-2"
-          d="m199.03,85.05h-51.03.5c-19.06,0-34.52-15.22-34.52-34s15.45-34,34.52-34,34.52,15.22,34.52,34h0c0,18.78-15.49,34-34.56,34"
+          className="cls-20"
+          d="m76,0v51.03-.5c0,19.06-15.22,34.52-34,34.52S8,69.59,8,50.53,23.22,16.01,42,16.01h0c18.78,0,34,15.49,34,34.56"
+          ref={trazo2Ref}
         />
-        <rect id="rect1" className="cls-1" x="89.98" width="16" height="16" />
       </svg>
     </div>
   );

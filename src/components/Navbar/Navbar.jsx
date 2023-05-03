@@ -3,7 +3,6 @@ import "./navbar.css";
 
 import Logo from "../Logo/Logo";
 
-import { useLocation } from "react-router";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
@@ -13,12 +12,6 @@ const Navbar = ({ logoColor }) => {
   const { t } = useTranslation("global");
 
   var colorEstudio;
-
-  // if (location.pathname === "/proyectos") {
-  //   colorProyecto = "#DF6537";
-  // } else if (location.pathname === "/estudio") {
-  //   colorEstudio = "#DF6537";
-  // }
 
   const [isOpen, setIsOpen] = useState(false);
 
