@@ -15,21 +15,22 @@ const Loader = () => {
     const rect1 = rect1Ref.current;
 
     gsap.set([trazo1, trazo2, rect1], { opacity: 0 });
-
+    
     gsap.from(logo, { opacity: 0, duration: 1 });
 
     const tl = gsap.timeline({ delay: 1 });
 
-    tl.to(trazo2, { opacity: 1, duration: 1, ease: Power0.easeOut })
-      .to(trazo1, {opacity: 1, duration: 1, ease: Power0.easeOut })
+    tl.to(logo, {opacity: 1, duration: 0.5, ease: Power0.easeInOut})
+      .to(trazo2, { opacity: 1, duration: 0.5, ease: Power0.easeInOut })
+      .to(trazo1, {opacity: 1, duration: 1, ease: Power0.easeInOut})
       .to(trazo1, {
         rotation: 90,
         transformOrigin: "50% 60%",
         duration: 1,
-        ease: Power0.easeNone,
+        ease: Power0.easeInOut,
       })
-      .to(trazo1, { opacity: 1, duration: 1, x: 100, ease: Power0.easeOut })
-      .to(rect1, { opacity: 1, duration: 1, x: 20, ease: Power0.easeOut });
+      .to(trazo1, { opacity: 1, duration: 1, x: 100 })
+      .to(rect1, { opacity: 1, duration: 1, x: 20 });
   }, []);
 
   return (

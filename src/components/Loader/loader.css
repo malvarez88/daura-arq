@@ -9,14 +9,13 @@
 
 #loader-logo {
   width: 10%;
-  /* margin: 0 auto; */
   overflow: visible;
-
 }
 
   .cls-10 {
     fill: #1d1d1b;
     overflow: visible;
+
   }
 
   .cls-20 {
@@ -25,6 +24,7 @@
     stroke-miterlimit: 10;
     stroke-width: 16px;
     overflow: visible;
+
   }
 
 

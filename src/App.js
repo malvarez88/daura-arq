@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const timeoutId = setTimeout(() => setShowLoader(true), 19800);
+    const timeoutId = setTimeout(() => setShowLoader(false), 7000);
     document.body.classList.add("show-loader");
     return () => {
       clearTimeout(timeoutId);
