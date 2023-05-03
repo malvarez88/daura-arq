@@ -6,15 +6,14 @@ import global_es from "../languages/es/global.json";
 import global_en from "../languages/en/global.json";
 import global_ca from "../languages/ca/global.json";
 
-// import { useSelector } from "react-redux";
+const language = store.getState().language;
 
-// const language = useSelector((state) => state.language);
 
 i18next.init({
   interpolation: {
     escapeValue: false,
   },
-  lng: store.getState().language, 
+  lng: language, 
   resources: {
     es: {
       global: global_es,

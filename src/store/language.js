@@ -1,9 +1,7 @@
 import { createAction, createReducer } from "@reduxjs/toolkit";
 export const setNewLanguage = createAction("SET_LANGUAGE");
 
-const INITIAL_STATE = {
-    "language" : "es",
-}
+const INITIAL_STATE = localStorage.getItem("language") || "es";
 
 const languageReducer = createReducer(
  localStorage.getItem("language") || {},

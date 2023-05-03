@@ -12,7 +12,6 @@ import Estudio from "./pages/Estudio/Estudio";
 import Noticias from "./pages/Noticias/Noticias";
 import Loader from "./components/Loader/Loader";
 import { CustomCursor } from "./components/CustomCursor/CustomCursor";
-import { useLocation } from "react-router";
 
 function App() {
   const [logoColor, setLogoColor] = useState();
