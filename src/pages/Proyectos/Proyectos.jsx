@@ -121,7 +121,7 @@ const Proyectos = ({ setLogoColor }) => {
                         : "",
                   }}
                 >
-                  {categoriaSeleccionada.toUpperCase()}
+                  {categoriaSeleccionada?.toUpperCase()}
                 </button>
                 {isOpen && (
                   <ul className="dropdown-menu">
@@ -145,8 +145,9 @@ const Proyectos = ({ setLogoColor }) => {
               </div>
             </motion.div>
             <div className="grid-container">
+              {!proyectos? <div>Loading...</div> : 
               <div className="wrapper">
-                {proyectos.map((proyecto, index) => {
+                {proyectos?.map((proyecto, index) => {
                   if (
                     categoriaSeleccionada === idiomas[lang] ||
                     proyecto.categoria === categoriaSeleccionada
@@ -190,6 +191,7 @@ const Proyectos = ({ setLogoColor }) => {
                   }
                 })}
               </div>
+              }
             </div>
           </div>
         </div>
