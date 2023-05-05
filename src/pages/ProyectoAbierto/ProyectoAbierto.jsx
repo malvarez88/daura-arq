@@ -24,20 +24,6 @@ const ProyectoAbierto = ({ setLogoColor }) => {
     setLogoColor("#DF6537")
   };
 
-  // var proyectos;
-  // var color;
-
-  // if (lang === "es") {
-  //   proyectos = proyectosES;
-  //   color = coloresEs;
-  // } else if (lang === "en") {
-  //   proyectos = proyectosEN;
-  //   color = colors;
-  // } else {
-  //   proyectos = proyectosCA;
-  //   color = colorsCA;
-  // }
-
   const langData = {
     es: {
       proyectos: proyectosES,
