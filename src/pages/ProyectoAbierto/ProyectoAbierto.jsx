@@ -42,10 +42,6 @@ const ProyectoAbierto = ({ setLogoColor }) => {
   const { proyectos, color } = langData[lang] || langData.es;
 
   const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
-  console.log(
-    "🚀 ~ file: ProyectoAbierto.jsx:45 ~ ProyectoAbierto ~ actualProject:",
-    actualProject
-  );
 
   var logoColor = color[actualProject.categoria];
 
@@ -58,8 +54,8 @@ const ProyectoAbierto = ({ setLogoColor }) => {
       initial={{ opacity: 0, x: 200 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: false }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 1 }}
+      transition={{ ease: "linear", duration: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.2 } }}
     >
       <div className="proyectos">
         <div className="container">
