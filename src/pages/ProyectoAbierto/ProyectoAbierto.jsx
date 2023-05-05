@@ -21,7 +21,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
 
   const handleGoBack = () => {
     navigate(-1);
-    setLogoColor("#DF6537")
+    setLogoColor("#DF6537");
   };
 
   const langData = {
@@ -38,10 +38,14 @@ const ProyectoAbierto = ({ setLogoColor }) => {
       color: colorsCA,
     },
   };
-  
+
   const { proyectos, color } = langData[lang] || langData.es;
 
   const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
+  console.log(
+    "🚀 ~ file: ProyectoAbierto.jsx:45 ~ ProyectoAbierto ~ actualProject:",
+    actualProject
+  );
 
   var logoColor = color[actualProject.categoria];
 
@@ -89,16 +93,18 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                     }}
                     onClick={() => handleGoBack()}
                   >
-                    {t('proyecto-abierto.volver')}
+                    {t("proyecto-abierto.volver")}
                   </button>
                 </div>
                 <h6>{actualProject.location}</h6>
                 <button className="info" onClick={() => setVisible(!visible)}>
                   <span
-                  style={{
-                    color: color[categoria],
-                  }}
-                  >{!visible ? "+ INFO" : " - INFO"}</span>
+                    style={{
+                      color: color[categoria],
+                    }}
+                  >
+                    {!visible ? "+ INFO" : " - INFO"}
+                  </span>
                 </button>
                 {visible && (
                   <div className="project-description">
@@ -122,20 +128,21 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                               <span>{actualProject.superficie}㎡</span>
                             ) : (
                               <span>
-                                {actualProject.superficie *
-                                  (10.7639).toFixed()}
+                                {actualProject.superficie * (10.7639).toFixed()}
                                 sq ft
                               </span>
                             )}
                           </li>
                         ) : null}
-                        {actualProject.equipo > 0 ? (
+                        {actualProject.equipo && actualProject.equipo > 0 ? (
                           <li className="project-link">
                             <span>
                               {t("proyecto-abierto.equipo").toUpperCase()}:
                             </span>
                             <div className="double">
-                              <span>{actualProject.equipo}</span>
+                              {actualProject.equipo.map((nombre, index) => (
+                                <span key={index}>{nombre}</span>
+                              ))}
                             </div>
                           </li>
                         ) : null}
@@ -160,6 +167,14 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                             <span>{actualProject.fotografia}</span>
                           </li>
                         ) : null}
+                        {actualProject.promotor? (
+                           <li className="project-link">
+                           <span>
+                             {t("proyecto-abierto.promotor").toUpperCase()}:
+                           </span>
+                           <span>{actualProject.promotor}</span>
+                         </li>
+                        ): null}
                       </ul>
                     </div>
                   </div>

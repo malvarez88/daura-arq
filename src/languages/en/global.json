@@ -35,6 +35,7 @@
       "año": "year",
       "fotografia": "photography",
       "colaboradores": "collaborators",
+      "promotor": "promoter",
       "volver": "return"
     },
     "noticias": {
