@@ -13,7 +13,6 @@ import {
   about2,
   about3,
   wbf1,
-  profile,
   gemmaPous,
   juanRamon,
   marinaRuis,
@@ -32,16 +31,13 @@ const Estudio = () => {
 
   const language = useSelector((state) => state.language);
 
-  const team = [gemmaPous, juanRamon, marinaRuis, miguelGarcia, nuriaAyala, omarMasoud, robertRusega]
-
-  var lista;
-  if (language === "es") {
-    lista = espacios;
-  } else if (language === "en") {
-    lista = spaces;
-  } else {
-    lista = espacies;
-  }
+  const spacesByLanguage = {
+    ca: espacies,
+    en: spaces,
+    default: espacios,
+  };
+  
+  const lista = spacesByLanguage[language] || spacesByLanguage.default;
 
   function handleClick(index) {
     setActiveTab(index);
@@ -52,7 +48,7 @@ const Estudio = () => {
     <motion.div
       initial={{ opacity: 0, x: -200 }}
       animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -200, transition: { duration: 0.1 } }}
+      exit={{ opacity: 0, x: -200, transition: { duration: 0.2 } }}
       transition={{ duration: 1, delay: 1 }}
       key="estudio"
     >
