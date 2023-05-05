@@ -29,8 +29,3 @@ i18next.init({
 });
 
 export default i18next;
-
-
-
-
-

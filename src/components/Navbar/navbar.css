@@ -56,7 +56,7 @@
 }
 
 .menu.open {
-  height: 200px;
+  height: 100vh;
   z-index: 1;
 }
 

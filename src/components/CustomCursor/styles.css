@@ -19,3 +19,11 @@
   border: 1px solid #333;
   transition: 0.1s;
 }
+
+@media screen and (max-width: 768px ){ 
+  .app-cursor {
+    visibility: hidden;
+    display: none;
+    cursor: none;
+  }
+}

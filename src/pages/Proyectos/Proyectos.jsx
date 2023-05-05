@@ -121,7 +121,8 @@ const Proyectos = ({ setLogoColor }) => {
                         : "",
                   }}
                 >
-                  {categoriaSeleccionada?.toUpperCase()}
+                 {/* {categoriaSeleccionada ? categoriaSeleccionada.toUpperCase() : ''} */}
+                 {categoriaSeleccionada ? categoriaSeleccionada.toUpperCase() : <div>Loading...</div> }
                 </button>
                 {isOpen && (
                   <ul className="dropdown-menu">

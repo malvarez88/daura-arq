@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./navbar.css";
 
 import Logo from "../Logo/Logo";
@@ -18,6 +18,14 @@ const Navbar = ({ logoColor }) => {
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('no-scroll');
+    } else {
+      document.body.classList.remove('no-scroll');
+    }
+  }, [isOpen]);
 
 
   return (
