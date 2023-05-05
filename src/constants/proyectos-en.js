@@ -781,10 +781,10 @@ const proyectosEN = [
 
 const colors = {
   all: "#DF6537",
-  architecture: "#3068B0",
-  sport: "#72BB66",
-  heritage: "#CA3038",
-  "real estate": "#DEC800",
+  architecture: "#203457",
+  sport: "#7F9052",
+  heritage: "#7F403B",
+  "real estate": "#CBA971",
 };
 
 

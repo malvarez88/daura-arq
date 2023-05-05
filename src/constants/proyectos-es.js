@@ -781,10 +781,11 @@ const proyectosES = [
 
 const coloresEs = {
   todos: "#DF6537",
-  arquitectura: "#3068B0",
-  deporte: "#72BB66",
-  patrimonio: "#CA3038",
-  inmobiliario: "#DEC800",
+  arquitectura: "#203457",
+  deporte: "#7F9052",
+  patrimonio: "#7F403B",
+  inmobiliario: "#CBA971",
 };
+
 
 export { proyectosES, coloresEs };
