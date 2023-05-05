@@ -21,21 +21,39 @@ const ProyectoAbierto = ({ setLogoColor }) => {
 
   const handleGoBack = () => {
     navigate(-1);
+    setLogoColor("#DF6537")
   };
 
-  var proyectos;
-  var color;
+  // var proyectos;
+  // var color;
 
-  if (lang === "es") {
-    proyectos = proyectosES;
-    color = coloresEs;
-  } else if (lang === "en") {
-    proyectos = proyectosEN;
-    color = colors;
-  } else {
-    proyectos = proyectosCA;
-    color = colorsCA;
-  }
+  // if (lang === "es") {
+  //   proyectos = proyectosES;
+  //   color = coloresEs;
+  // } else if (lang === "en") {
+  //   proyectos = proyectosEN;
+  //   color = colors;
+  // } else {
+  //   proyectos = proyectosCA;
+  //   color = colorsCA;
+  // }
+
+  const langData = {
+    es: {
+      proyectos: proyectosES,
+      color: coloresEs,
+    },
+    en: {
+      proyectos: proyectosEN,
+      color: colors,
+    },
+    ca: {
+      proyectos: proyectosCA,
+      color: colorsCA,
+    },
+  };
+  
+  const { proyectos, color } = langData[lang] || langData.es;
 
   const actualProject = proyectos.find((proyecto) => proyecto.ref === ref);
 
@@ -60,7 +78,6 @@ const ProyectoAbierto = ({ setLogoColor }) => {
               <h6
                 style={{
                   textAlign: "center",
-                  // margin: "0 66px",
                   padding: "20px",
                 }}
               >
@@ -77,7 +94,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                     {actualProject.title.toUpperCase()}
                   </h4>
                   <button
-                    className="btn btn-primary"
+                    className="btn btn-primary d-none d-sm-block"
                     style={{
                       background: color[categoria],
                       padding: "6px",
