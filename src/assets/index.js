@@ -8,6 +8,18 @@ import profile from "./profile.png";
 import instagram from "./instag.png";
 import linkedin from "./linkedIn.png";
 
+
+//EQUIPO
+import gemmaPous from './GemmaPous-bn.jpg';
+import juanRamon from './JoanRamon Rius_bn2.jpeg';
+import marinaRuis from './MarinaRius-bn.jpg';
+import miguelGarcia from './MiquelGarcia_3.jpg';
+import nuriaAyala from './nuriaAyala-bn.jpg';
+import omarMasoud from './OmarMasoud-bn.jpg';
+import robertRusega from './RobertRuesga-bn.jpg'
+import equipo from './equipo.jpeg';
+
+
 // PROYECTOS
 
 //HU0005
@@ -429,4 +441,12 @@ export {
   profile,
   instagram,
   linkedin,
+  gemmaPous,
+  equipo,
+  juanRamon,
+  marinaRuis,
+  miguelGarcia,
+  nuriaAyala,
+  omarMasoud,
+  robertRusega
 };

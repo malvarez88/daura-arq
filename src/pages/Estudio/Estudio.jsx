@@ -8,7 +8,21 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 import { partners, espacies, espacios, spaces } from "../../constants";
-import { about1, about2, about3, wbf1, profile } from "../../assets";
+import {
+  about1,
+  about2,
+  about3,
+  wbf1,
+  profile,
+  gemmaPous,
+  juanRamon,
+  marinaRuis,
+  miguelGarcia,
+  nuriaAyala,
+  omarMasoud,
+  robertRusega,
+  equipo,
+} from "../../assets";
 
 const Estudio = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -17,6 +31,8 @@ const Estudio = () => {
   const { t } = useTranslation("global");
 
   const language = useSelector((state) => state.language);
+
+  const team = [gemmaPous, juanRamon, marinaRuis, miguelGarcia, nuriaAyala, omarMasoud, robertRusega]
 
   var lista;
   if (language === "es") {
@@ -36,7 +52,7 @@ const Estudio = () => {
     <motion.div
       initial={{ opacity: 0, x: -200 }}
       animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: -200, transition: {duration: 0.1} }}
+      exit={{ opacity: 0, x: -200, transition: { duration: 0.1 } }}
       transition={{ duration: 1, delay: 1 }}
       key="estudio"
     >
@@ -100,28 +116,32 @@ const Estudio = () => {
                 <p className="general-text">{t("estudio-page.equipo")}</p>
                 <div className="equipo-profile">
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
+                    <img src={nuriaAyala} alt="Nuria Ayala i Mitjavila" className="img-fluid" />
                     <p>Núria Ayala i Mitjavila</p>
                   </div>
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
+                    <img src={juanRamon} alt="Joan Ramon Rius" className="img-fluid" />
                     <p>Joan Ramon Rius</p>
                   </div>
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
+                    <img src={miguelGarcia} alt="Miquel Garcia Soler" className="img-fluid" />
                     <p>Miquel García Soler</p>
                   </div>
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
-                    <p>Núria Ayala i Mitjavila</p>
+                    <img src={gemmaPous} alt="Gemma Pous" className="img-fluid" />
+                    <p>Gemma Pous</p>
                   </div>
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
-                    <p>Núria Ayala i Mitjavila</p>
+                    <img src={omarMasoud} alt="Omar Masoud" className="img-fluid" />
+                    <p>Omar Masoud</p>
                   </div>
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
-                    <p>Núria Ayala i Mitjavila</p>
+                    <img src={robertRusega} alt="Robert Rusega" className="img-fluid" />
+                    <p>Robert Rusega</p>
+                  </div>
+                  <div className="profile">
+                    <img src={marinaRuis} alt="Marina Ruis" className="img-fluid" />
+                    <p>Marina Ruis</p>
                   </div>
                 </div>
               </div>
