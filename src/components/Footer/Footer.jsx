@@ -24,12 +24,6 @@ const Footer = () => {
   var colorNoticias;
   var colorContacto;
 
-  // if (location.pathname === "/noticias") {
-  //   colorNoticias = "#DF6537";
-  // } else if (location.pathname === "/contacto") {
-  //   colorContacto = "#DF6537";
-  // }
-
   const handleLanguageChange = (newLang) => {
     dispatch(setNewLanguage(newLang));
     setActive(newLang);
