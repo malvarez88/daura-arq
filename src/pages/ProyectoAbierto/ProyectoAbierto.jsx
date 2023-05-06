@@ -37,7 +37,7 @@ const ProyectoAbierto = () => {
       <div className="proyectos">
         <div className="container">
           <div className="row">
-            <div className="col-xl-12">
+            <div className="col-12">
               <h6
                 style={{
                   textAlign: "center",
@@ -157,7 +157,7 @@ const ProyectoAbierto = () => {
                 )}
               </div>
             </div>
-            <div className="col-xl-12">
+            <div className="col-12">
               <div className="open-project-images">
                 <div className="img-thumb">
                   <img

@@ -79,7 +79,7 @@ const Estudio = () => {
       </Grid>
       <div className="container">
         <div className="row">
-          <div className="col-xl-12">
+          <div className="col-12">
             <div className="estudio">
               <ul className="estudio-list">
                 {lista.map((espacio, index) => (

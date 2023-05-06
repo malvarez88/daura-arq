@@ -34,7 +34,7 @@ const Navbar = ({ logoColor }) => {
       >
         {/* <div className="container">
           <div className="row">
-            <div className="col-xl-12">
+            <div className="col-12">
               <div className="navbar">
                 <div className="link-container">
                   <a
