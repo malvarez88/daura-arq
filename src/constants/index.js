@@ -50,4 +50,5 @@ const partners = [
   },
 ];
 
-export { espacios, partners, spaces, espacies,listaProyectos,projectList,listaProjectes };
+
+export { espacios, partners, spaces, espacies,listaProyectos,projectList,listaProjectes, };
