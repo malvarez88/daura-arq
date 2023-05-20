@@ -107,18 +107,18 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                     <p className="general-text">{actualProject.description}</p>
                     <div className="project-description-info">
                       <ul className="project-list">
-                        {actualProject.año ? (
+                        {/* {actualProject.año ? (
                           <li className="project-link">
                             <span>
                               {t("proyecto-abierto.año").toUpperCase()}:
                             </span>
                             <span>{actualProject.año}</span>
                           </li>
-                        ) : null}
+                        ) : null} */}
                         {actualProject.superficie ? (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.superficie").toUpperCase()}:
+                              {t("proyecto-abierto.superficie")}:
                             </span>
                             {lang === "es" || lang === "ca" ? (
                               <span>{actualProject.superficie}㎡</span>
@@ -130,10 +130,10 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                             )}
                           </li>
                         ) : null}
-                        {actualProject.equipo && actualProject.equipo > 0 ? (
+                        {actualProject.equipo && actualProject.equipo.length > 0 ? (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.equipo").toUpperCase()}:
+                              {t("proyecto-abierto.equipo")}:
                             </span>
                             <div className="double">
                               {actualProject.equipo.map((nombre, index) => (
@@ -147,7 +147,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                             <span>
                               {t(
                                 "proyecto-abierto.colaboradores"
-                              ).toUpperCase()}
+                              )}
                               :
                             </span>
                             <div className="double">
@@ -158,19 +158,19 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                         {actualProject.fotografia ? (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.fotografia").toUpperCase()}:
+                              {t("proyecto-abierto.fotografia")}:
                             </span>
                             <span>{actualProject.fotografia}</span>
                           </li>
                         ) : null}
-                        {actualProject.promotor? (
-                           <li className="project-link">
-                           <span>
-                             {t("proyecto-abierto.promotor").toUpperCase()}:
-                           </span>
-                           <span>{actualProject.promotor}</span>
-                         </li>
-                        ): null}
+                        {actualProject.promotor ? (
+                          <li className="project-link">
+                            <span>
+                              {t("proyecto-abierto.promotor")}:
+                            </span>
+                            <span>{actualProject.promotor}</span>
+                          </li>
+                        ) : null}
                       </ul>
                     </div>
                   </div>

@@ -36,7 +36,7 @@ const Estudio = () => {
     en: spaces,
     default: espacios,
   };
-  
+
   const lista = spacesByLanguage[language] || spacesByLanguage.default;
 
   function handleClick(index) {
@@ -86,19 +86,6 @@ const Estudio = () => {
                 <p className="general-text">
                   {t("estudio-page.sobre-nosotros-2")}
                 </p>
-                <ul className="partner-list">
-                  {partners.map((partner, index) => (
-                    <li key={index}>
-                      <a
-                        href={partner.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {partner.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
                 <div>
                   <img src={wbf1} alt="" className="img-fluid" />
                 </div>

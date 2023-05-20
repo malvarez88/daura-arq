@@ -64,14 +64,16 @@
   margin: 10px 0;
   padding: 0;
   display: flex;
-  justify-content: space-around;
+}
+
+.project-list > li {
+  width: 200px;
 }
 
 .project-link {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  text-align: center;
 }
 
 .double {

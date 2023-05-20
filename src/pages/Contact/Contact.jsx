@@ -56,7 +56,7 @@ const Contact = () => {
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -100, transition: { duration : 0.2} }}
+                exit={{ opacity: 0, x: -100, transition: { duration: 0.2 } }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 <div className="contact-direction">
@@ -65,7 +65,7 @@ const Contact = () => {
                   </h6>
                   <p>C/ Francesc Carbonell 34, B-2 Barcelona 08034</p>
                   <p>
-                    C/ Nou, 17, 1-3a. 07701 <br />
+                    C/ Nou, 17, 1-3a. <br />
                     Maó 07701- Baleares
                   </p>
                   <p>(34) 93 203 2018</p>
@@ -95,7 +95,7 @@ const Contact = () => {
               <motion.div
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 100, transition: {duration: 0.2} }}
+                exit={{ opacity: 0, x: 100, transition: { duration: 0.2 } }}
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 <form
@@ -131,10 +131,10 @@ const Contact = () => {
                       required
                       id="message"
                       name="message"
+                      placeholder={t("contact-page.mensaje")}
                       value={formData.message}
                       onChange={handleChange}
                     />
-                    <span>{t("contact-page.mensaje")}</span>
                   </div>
                   <button className="btn btn-secondary" type="submit">
                     {t("contact-page.enviar")}
