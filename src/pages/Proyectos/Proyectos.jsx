@@ -1,39 +1,19 @@
-import React, { useEffect, useState } from "react";
-
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import Categories from '../../Models/Categories';
+import Projects from "../../Models/Projects";
+import { dauraCategories } from "../../constants/dauraCategorires";
+import { PROJECTS } from "../../constants/projects";
 import "./proyectos.css";
 
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
-import i18next from "i18next";
-
-import { proyectosES, coloresEs } from "../../constants/proyectos-es";
-import { proyectosEN, colors } from "../../constants/proyectos-en";
-import { proyectosCA, colorsCA } from "../../constants/proyectos-ca";
-
-import {
-  listaProyectos,
-  projectList,
-  listaProjectes,
-} from "../../constants/index";
-
 const Proyectos = ({ setLogoColor }) => {
-  const lang = useSelector((state) => state.language);
   const { t } = useTranslation("global");
-
-  const idiomas = {
-    es: "todos",
-    en: "all",
-    ca: "tots"
-  };
-
-  const [categoriaSeleccionada, setCategoriaSeleccionada] =
-    useState(idiomas[lang]);
-
-  useEffect(() => {
-    setCategoriaSeleccionada(idiomas[lang]);
-  }, [lang]);
+  const categories = new Categories(dauraCategories);
+  const projects = new Projects(PROJECTS);
+  const [selectedCategory, setSelectedCategory] = useState(categories.getCategory("all"));
+  const selectedProjects = projects.getCategoryProjects(selectedCategory.category);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,33 +21,13 @@ const Proyectos = ({ setLogoColor }) => {
     setIsOpen(!isOpen);
   };
 
-  function mostrarProyectos(categoria, colores) {
-    setCategoriaSeleccionada(categoria);
+  const getSelectedColor = (category) => category === selectedCategory.category ? selectedCategory?.categoryColor : '';
+
+  function selectCategory(category) {
+    const cat = categories.getCategory(category);
+    setSelectedCategory(cat);
     setIsOpen(!isOpen);
-    setLogoColor(colores[categoria]);
-  }
-
-
-  var proyectos;
-  var categorias;
-  var colores;
-  var lista;
-
-  if (lang === "es") {
-    lista = listaProyectos;
-    proyectos = proyectosES;
-    colores = coloresEs;
-    categorias = Object.keys(coloresEs);
-  } else if (lang === "en") {
-    lista = projectList;
-    proyectos = proyectosEN;
-    colores = colors;
-    categorias = Object.keys(colors);
-  } else {
-    lista = listaProjectes;
-    proyectos = proyectosCA;
-    colores = colorsCA;
-    categorias = Object.keys(colorsCA);
+    setLogoColor(cat?.categoryColor);
   }
 
   return (
@@ -78,23 +38,20 @@ const Proyectos = ({ setLogoColor }) => {
             <motion.div
               initial={{ opacity: 0, y: 200 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 200, transition: { duration: 0.2} }}
+              exit={{ opacity: 0, y: 200, transition: { duration: 0.2 } }}
               transition={{ duration: 1, delay: 0.5 }}
               key="proyectos"
             >
               <ul className="categories-list">
-                {lista.map((categoria, index) => (
+                {categories.map((category, index) => (
                   <li
                     key={index}
-                    onClick={() => mostrarProyectos(categoria, colores)}
+                    onClick={() => selectCategory(category?.category)}
                     style={{
-                      color:
-                        categoria === categoriaSeleccionada
-                          ? colores[categoria]
-                          : "",
+                      color: getSelectedColor(category?.category), cursor: 'none'
                     }}
                   >
-                    {categoria}
+                    {t(`Projects.Categories.${category?.category}`)}
                   </li>
                 ))}
               </ul>
@@ -103,10 +60,7 @@ const Proyectos = ({ setLogoColor }) => {
                 <h5
                   className="mobile-title"
                   style={{
-                    color:
-                      categorias === categoriaSeleccionada
-                        ? colores[categorias]
-                        : "",
+                    color: selectedCategory?.categoryColor
                   }}
                 >
                   {t("navbar.proyectos").toUpperCase()}
@@ -115,30 +69,22 @@ const Proyectos = ({ setLogoColor }) => {
                   className="dropdown-toggle"
                   onClick={handleToggle}
                   style={{
-                    color:
-                      categorias === categoriaSeleccionada
-                        ? colores[categorias]
-                        : "",
+                    color: selectedCategory?.categoryColor
                   }}
                 >
-                 {/* {categoriaSeleccionada ? categoriaSeleccionada.toUpperCase() : ''} */}
-                 {categoriaSeleccionada ? categoriaSeleccionada.toUpperCase() : <div>Loading...</div> }
+                  {selectedCategory?.category.toUpperCase()}
                 </button>
                 {isOpen && (
                   <ul className="dropdown-menu">
-                    {lista.map((categoria, index) => (
+                    {categories.map((category, index) => (
                       <li
                         key={index}
-                        onClick={() => mostrarProyectos(categoria, colores)}
+                        onClick={() => selectCategory(category?.category)}
                         style={{
-                          color:
-                            categoria === categoriaSeleccionada
-                              ? colores[categoria]
-                              : "",
+                          color: getSelectedColor(category?.category)
                         }}
                       >
-                        {categoria}
-                        {index < lista.length - 1 && <hr />}
+                        {t(`Projects.Categories.${category?.category}`)}
                       </li>
                     ))}
                   </ul>
@@ -146,52 +92,49 @@ const Proyectos = ({ setLogoColor }) => {
               </div>
             </motion.div>
             <div className="grid-container">
-              {!proyectos? <div>Loading...</div> : 
-              <div className="wrapper">
-                {proyectos?.map((proyecto, index) => {
-                  if (
-                    categoriaSeleccionada === idiomas[lang] ||
-                    proyecto.categoria === categoriaSeleccionada
-                  ) {
-                    return (
-                      <motion.div
-                        initial={{ opacity: 0, x: 200 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        key={index}
+              {!projects &&
+                (<div>
+                  Loading...
+                </div>)}
+              {projects &&
+                <div className="wrapper">
+                  {selectedProjects.map((project) => (
+                    <motion.div
+                      initial={{ opacity: 0, x: 200 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1, delay: 0.5 }}
+                      key={project.ref}
+                    >
+                      <Link
+                        to={`/proyectos/${project.category}/${project.ref}`}
+                        className="link-project"
                       >
-                        <Link
-                          to={`/proyectos/${proyecto.categoria}/${proyecto.ref}`}
-                          className="link-project"
+                        <div
+                          className="proyect-thumb"
+                          data-categoria={project.category}
                         >
-                          <div
-                            className="proyect-thumb"
-                            data-categoria={proyecto.categoria}
-                          >
-                            <img
-                              src={proyecto.images[0]}
-                              alt={proyecto.ref}
-                              key={index}
-                              width="300px"
-                              height="300px"
-                              className="img-fluid proyect-img"
-                            />
-                            <div className="proyect-description">
-                              <p>
-                                {proyecto.short
-                                  ? proyecto.short.toUpperCase()
-                                  : proyecto.ref}
-                              </p>
-                            </div>
+                          <img
+                            src={project.images[0]}
+                            alt={project.ref}
+                            key={project.ref}
+                            width="300px"
+                            height="300px"
+                            className="img-fluid proyect-img"
+                          />
+                          <div className="proyect-description">
+                            <p>
+                              {project.short
+                                ? project.short.toUpperCase()
+                                : project.ref}
+                            </p>
                           </div>
-                        </Link>
-                      </motion.div>
-                    );
-                  }
-                })}
-              </div>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
               }
             </div>
           </div>

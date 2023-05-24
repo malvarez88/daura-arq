@@ -25,7 +25,7 @@ const Footer = () => {
   var colorContacto;
 
   const handleLanguageChange = (newLang) => {
-    dispatch(setNewLanguage(newLang));
+    // dispatch(setNewLanguage(newLang));
     setActive(newLang);
     i18n.changeLanguage(newLang);
   };
@@ -35,7 +35,7 @@ const Footer = () => {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ ease: "linear", duration: 1 }}
-      exit={{opacity: 0, transition: { duration: 0.2}}}
+      exit={{ opacity: 0, transition: { duration: 0.2 } }}
     >
       <div className="footer">
         <div className="container">
@@ -101,7 +101,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              
+
 
               <div className="mobile-footer">
                 <div className="languages">

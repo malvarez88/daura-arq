@@ -18,6 +18,16 @@ const listaProjectes = [
   "inmobiliari",
 ];
 
+const CATEGORIES = ["all", "architecture", "sport", "heritage", "realState"];
+
+/* const CATEGORIES = {
+  ALL: "all",
+  ARCHITECTURE: "architecture",
+  SPORTS: "sports",
+  HERITAGE: "heritage",
+  REAL_STATE: "realState",
+}; */
+
 const partners = [
   { name: "SOFAR", url: "https://espacio-sofar.com/" },
   {
@@ -50,5 +60,4 @@ const partners = [
   },
 ];
 
-
-export { espacios, partners, spaces, espacies,listaProyectos,projectList,listaProjectes, };
+export { espacios, partners, spaces, espacies,listaProyectos,projectList,listaProjectes, CATEGORIES };
