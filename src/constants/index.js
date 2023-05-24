@@ -2,32 +2,6 @@ const espacios = ["sobre nosotros", "equipo"];
 const spaces = ["about us", "team"];
 const espacies = ["sobre nosaltres", "equip"];
 
-const listaProyectos = [
-  "todos",
-  "arquitectura",
-  "deporte",
-  "patrimonio",
-  "inmobiliario",
-];
-const projectList = ["all", "architecture", "sport", "heritage", "real estate"];
-const listaProjectes = [
-  "tots",
-  "arquitectura",
-  "sport",
-  "patrimoni",
-  "inmobiliari",
-];
-
-const CATEGORIES = ["all", "architecture", "sport", "heritage", "realState"];
-
-/* const CATEGORIES = {
-  ALL: "all",
-  ARCHITECTURE: "architecture",
-  SPORTS: "sports",
-  HERITAGE: "heritage",
-  REAL_STATE: "realState",
-}; */
-
 const partners = [
   { name: "SOFAR", url: "https://espacio-sofar.com/" },
   {
@@ -60,4 +34,4 @@ const partners = [
   },
 ];
 
-export { espacios, partners, spaces, espacies,listaProyectos,projectList,listaProjectes, CATEGORIES };
+export { espacios, partners, spaces, espacies };

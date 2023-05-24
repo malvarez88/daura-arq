@@ -1,10 +1,10 @@
 import i18next from "i18next";
 
-import store from "../store/store";
+import store from "./store/store";
 
-import global_es from "../languages/es/global.json";
-import global_en from "../languages/en/global.json";
-import global_ca from "../languages/ca/global.json";
+import global_es from "./languages/es/global.json";
+import global_en from "./languages/en/global.json";
+import global_ca from "./languages/ca/global.json";
 
 const language = store.getState().language;
 
