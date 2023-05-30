@@ -20,6 +20,8 @@ const Logo = ({ ...logoColor }) => {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 199.08 93.05"
       style={{ background: "transparent" }}
+      width="114px"
+      height="53px"
     >
       <g>
         <ellipse
@@ -61,7 +63,7 @@ const Logo = ({ ...logoColor }) => {
         height="16"
         fill={color}
       />
-    </svg>
+    </svg >
   );
 };
 
