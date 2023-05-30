@@ -1,32 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { instagram } from "../../assets";
 import "./footer.css";
 
-import { motion } from "framer-motion";
-import { instagram } from "../../assets";
-
-import { setNewLanguage } from "../../store/language";
-import { useDispatch, useSelector } from "react-redux";
-
-import { useLocation } from "react-router";
-
-import { useTranslation } from "react-i18next";
-
-import i18n from "i18next";
-
 const Footer = () => {
-  const dispatch = useDispatch();
-  const lang = useSelector((state) => state.language);
-  const [active, setActive] = useState(lang);
-  const location = useLocation();
-
   const [t, i18n] = useTranslation("global");
 
-  var colorNoticias;
-  var colorContacto;
-
   const handleLanguageChange = (newLang) => {
-    dispatch(setNewLanguage(newLang));
-    setActive(newLang);
     i18n.changeLanguage(newLang);
   };
 
@@ -35,7 +16,7 @@ const Footer = () => {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ ease: "linear", duration: 1 }}
-      exit={{opacity: 0, transition: { duration: 0.2}}}
+      exit={{ opacity: 0, transition: { duration: 0.2 } }}
     >
       <div className="footer">
         <div className="container">
@@ -46,19 +27,19 @@ const Footer = () => {
                   <div className="languages">
                     <button
                       onClick={() => handleLanguageChange("ca")}
-                      style={{ color: active === "ca" ? "black" : "lightgray" }}
+                      style={{ color: i18n?.resolvedLanguage === "ca" ? "black" : "lightgray" }}
                     >
                       CA
                     </button>
                     <button
-                      onClick={() => handleLanguageChange("es", 1)}
-                      style={{ color: active === "es" ? "black" : "lightgray" }}
+                      onClick={() => handleLanguageChange("es")}
+                      style={{ color: i18n?.resolvedLanguage === "es" ? "black" : "lightgray" }}
                     >
                       ES
                     </button>
                     <button
-                      onClick={() => handleLanguageChange("en", 2)}
-                      style={{ color: active === "en" ? "black" : "lightgray" }}
+                      onClick={() => handleLanguageChange("en")}
+                      style={{ color: i18n?.resolvedLanguage === "en" ? "black" : "lightgray" }}
                     >
                       EN
                     </button>
@@ -70,9 +51,6 @@ const Footer = () => {
                   <a
                     href="/noticias"
                     className="footer-link"
-                    style={{
-                      color: `${colorNoticias ? colorNoticias : "black"}`,
-                    }}
                   >
                     <span>{t("footer.noticias")}</span>
                   </a>
@@ -81,9 +59,6 @@ const Footer = () => {
                   <a
                     href="/contacto"
                     className="footer-link"
-                    style={{
-                      color: `${colorContacto ? colorContacto : "black"}`,
-                    }}
                   >
                     <span>{t("footer.contacto")}</span>
                   </a>
@@ -101,25 +76,25 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              
+
 
               <div className="mobile-footer">
                 <div className="languages">
                   <button
                     onClick={() => handleLanguageChange("ca")}
-                    style={{ color: active === "ca" ? "black" : "lightgray" }}
+                    style={{ color: i18n?.resolvedLanguage === "ca" ? "black" : "lightgray" }}
                   >
                     CA
                   </button>
                   <button
-                    onClick={() => handleLanguageChange("es", 1)}
-                    style={{ color: active === "es" ? "black" : "lightgray" }}
+                    onClick={() => handleLanguageChange("es")}
+                    style={{ color: i18n?.resolvedLanguage === "es" ? "black" : "lightgray" }}
                   >
                     ES
                   </button>
                   <button
-                    onClick={() => handleLanguageChange("en", 2)}
-                    style={{ color: active === "en" ? "black" : "lightgray" }}
+                    onClick={() => handleLanguageChange("en")}
+                    style={{ color: i18n?.resolvedLanguage === "en" ? "black" : "lightgray" }}
                   >
                     EN
                   </button>
