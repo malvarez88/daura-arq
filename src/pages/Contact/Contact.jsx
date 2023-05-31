@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./contact.css";
 
 import { motion } from "framer-motion";
@@ -8,6 +8,7 @@ import Swal from "sweetalert";
 import { useTranslation } from "react-i18next";
 
 import { instagram, linkedin } from "../../assets";
+import { changeDocTitle } from "../../hooks/hooks";
 
 const Contact = () => {
   const { t } = useTranslation("global");
@@ -17,6 +18,11 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  const location = t('footer.contacto')
+  useEffect(()=> {
+    changeDocTitle(location)
+  },[location])
 
   const handleChange = (e) => {
     setFormData({

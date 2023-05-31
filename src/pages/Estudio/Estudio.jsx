@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./estudio.css";
 
 import { useSelector } from "react-redux";
@@ -23,6 +23,7 @@ import {
   nuriaAyala,
 } from "../../assets";
 import Grid from "@mui/system/Unstable_Grid/Grid";
+import { changeDocTitle } from "../../hooks/hooks";
 
 const Estudio = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -34,7 +35,16 @@ const Estudio = () => {
 
   const { t } = useTranslation("global");
 
+
+
   const language = useSelector((state) => state.language);
+
+  const location = t('navbar.estudio')
+ 
+
+  useEffect(()=> {
+    changeDocTitle(location)
+  },[location])
 
   const spacesByLanguage = {
     ca: espacies,
