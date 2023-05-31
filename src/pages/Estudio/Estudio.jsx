@@ -7,27 +7,42 @@ import { motion } from "framer-motion";
 
 import { useTranslation } from "react-i18next";
 
-import { partners, espacies, espacios,spaces } from "../../constants";
-import { about1, about2, about3, wbf1, profile } from "../../assets";
-
-
+import { partners, espacies, espacios, spaces } from "../../constants";
+import {
+  about1,
+  about2,
+  about3,
+  wbf1,
+  gemmaPous,
+  juanRamon,
+  marinaRuis,
+  miguelGarcia,
+  nuriaAyala,
+  omarMasoud,
+  robertRusega,
+  equipo,
+} from "../../assets";
+import Grid from "@mui/system/Unstable_Grid/Grid";
 
 const Estudio = () => {
-  const [activeTab, setActiveTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const TABS = {
+    US: "Us",
+    TEAM: "Team"
+  };
+  const [activeTab, setActiveTab] = useState(TABS.US);
 
-  const {t} = useTranslation("global")
+  const { t } = useTranslation("global");
 
-const language = useSelector(state => state.language)
+  const language = useSelector((state) => state.language);
 
-var lista;
-if(language === "es") {
-  lista = espacios
-} else if (language === "en"){
-  lista = spaces
-} else {
-  lista = espacies
-}
+  const spacesByLanguage = {
+    ca: espacies,
+    en: spaces,
+    default: espacios,
+  };
+
+  const lista = spacesByLanguage[language] || spacesByLanguage.default;
 
   function handleClick(index) {
     setActiveTab(index);
@@ -35,15 +50,36 @@ if(language === "es") {
   }
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-xl-12">
-          <motion.div
-            initial={{ opacity: 0, x: -200 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 1, delay: 1 }}
-          >
+    <motion.div
+      initial={{ opacity: 0, x: -200 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -200, transition: { duration: 0.2 } }}
+      transition={{ duration: 1, delay: 1 }}
+      key="estudio"
+    >
+      <Grid container justifyContent={'center'}>
+        <Grid xs={10.5}>
+          <Grid container>
+            {Object.keys(TABS).map(tab => (
+              <Grid key={tab} onClick={() => setActiveTab(tab)} className={activeTab === tab ? "active" : ""} mr="7px">
+                <span>{TABS[tab].toUpperCase()}</span>
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+        {/* SOBRE NOSOTROS */}
+        <Grid>
+          <Grid container>
+            <Grid>
+              <h5 className="title">d'aura arquitectura</h5>
+            </Grid>
+            <Grid></Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      <div className="container">
+        <div className="row">
+          <div className="col-xl-12">
             <div className="estudio">
               <ul className="estudio-list">
                 {lista.map((espacio, index) => (
@@ -62,7 +98,9 @@ if(language === "es") {
                 style={{ display: activeTab === 0 ? "block" : "none" }}
               >
                 <h5 className="title">d'aura arquitectura</h5>
-                <p className="general-text">{t("estudio-page.sobre-nosotros-1")}</p>
+                <p className="general-text">
+                  {t("estudio-page.sobre-nosotros-1")}
+                </p>
 
                 <div className="sobre-nosotros-img">
                   <img src={about1} alt="about" className="img-fluid" />
@@ -70,20 +108,9 @@ if(language === "es") {
                   <img src={about3} alt="about" className="img-fluid" />
                 </div>
 
-                <p className="general-text">{t("estudio-page.sobre-nosotros-2")}</p>
-                <ul className="partner-list">
-                  {partners.map((partner, index) => (
-                    <li key={index}>
-                      <a
-                        href={partner.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {partner.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <p className="general-text">
+                  {t("estudio-page.sobre-nosotros-2")}
+                </p>
                 <div>
                   <img src={wbf1} alt="" className="img-fluid" />
                 </div>
@@ -97,36 +124,40 @@ if(language === "es") {
                 <p className="general-text">{t("estudio-page.equipo")}</p>
                 <div className="equipo-profile">
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
+                    <img src={nuriaAyala} alt="Nuria Ayala i Mitjavila" className="img-fluid" />
                     <p>Núria Ayala i Mitjavila</p>
                   </div>
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
+                    <img src={juanRamon} alt="Joan Ramon Rius" className="img-fluid" />
                     <p>Joan Ramon Rius</p>
                   </div>
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
+                    <img src={miguelGarcia} alt="Miquel Garcia Soler" className="img-fluid" />
                     <p>Miquel García Soler</p>
                   </div>
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
-                    <p>Núria Ayala i Mitjavila</p>
+                    <img src={gemmaPous} alt="Gemma Pous" className="img-fluid" />
+                    <p>Gemma Pous</p>
                   </div>
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
-                    <p>Núria Ayala i Mitjavila</p>
+                    <img src={omarMasoud} alt="Omar Masoud" className="img-fluid" />
+                    <p>Omar Masoud</p>
                   </div>
                   <div className="profile">
-                    <img src={profile} alt="" className="img-fluid" />
-                    <p>Núria Ayala i Mitjavila</p>
+                    <img src={robertRusega} alt="Robert Rusega" className="img-fluid" />
+                    <p>Robert Rusega</p>
+                  </div>
+                  <div className="profile">
+                    <img src={marinaRuis} alt="Marina Ruis" className="img-fluid" />
+                    <p>Marina Ruis</p>
                   </div>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -9,24 +9,20 @@ import { useTranslation } from "react-i18next";
 
 import { terrassa1, wbf1 } from "../../assets";
 
-import en from "../../languages/en/global.json";
-import es from "../../languages/es/global.json";
-import ca from "../../languages/ca/global.json";
+// import en from "../../languages/en/global.json";
+// import es from "../../languages/es/global.json";
+// import ca from "../../languages/ca/global.json";
 
 const Noticias = () => {
-  const lang = useSelector((state) => state.language);
 
   const {t} = useTranslation("global")
+  // const lang = useSelector((state) => state.language);
 
-  var language;
-
-  if (lang === "es") {
-    language = es[lang];
-  } else if (lang === "en") {
-    language = en[lang];
-  } else {
-    language = ca[lang];
-  }
+  // const language = {
+  //   es: es[lang],
+  //   en: en[lang],
+  //   ca: ca[lang]
+  // }[lang] || ca[lang];
 
   return (
     <div className="container">
@@ -35,8 +31,9 @@ const Noticias = () => {
           <motion.div
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -200 }}
+            exit={{ opacity: 0, x: -200, transition: { duration: 0.2} }}
             transition={{ duration: 1, delay: 1 }}
+            key="noticias"
           >
             <div className="estudio" style={{ marginTop: "30px" }}>
               <div className="noticias">

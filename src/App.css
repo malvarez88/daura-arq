@@ -25,10 +25,10 @@
 :root {
   --primary-color: white;
   --orange: #df6537;
-  --blue: #3068b0;
-  --green: #72bb66;
-  --red: #ca3038;
-  --yellow: #dec800;
+  --blue: #203457  ;
+  --green: #7F9052;
+  --red: #7F403B;
+  --yellow: #CBA971;
 }
 
 * {
@@ -55,6 +55,15 @@ body {
   margin: 30px 0;
 }
 
+a, li, span, a:hover {
+  text-decoration: none;
+}
+button {
+  cursor: none !important;
+}
+.no-scroll {
+  overflow: hidden;
+}
 
 @media only screen and (max-width: 600px) {
   meta[name="theme-color"] {

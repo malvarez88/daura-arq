@@ -781,10 +781,10 @@ const proyectosCA = [
 
 const colorsCA = {
   tots: "#DF6537",
-  arquitectura: "#3068B0",
-  sport: "#72BB66",
-  patrimoni: "#CA3038",
-  inmobiliari: "#DEC800",
+  arquitectura: "#203457",
+  sport: "#7F9052",
+  patrimoni: "#7F403B",
+  inmobiliari: "#CBA971",
 };
 
 export { proyectosCA, colorsCA };
