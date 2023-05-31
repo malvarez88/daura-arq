@@ -377,7 +377,7 @@ export const PROJECTS = [
     },
   
     {
-        index:3,
+        index:11,
       ref: "DA0010",
       short: "GCZ",
       title: "Gran Cafe Zaragoza",
@@ -394,7 +394,7 @@ export const PROJECTS = [
         "Reform of the emblematic establishment on calle Alfonso I in Zaragoza, the work of the local architect Luís Aladrén in 1885, with an eclectic and historicist style typical of the late s. XIX. The original business with a large corner façade was used as a famous jewelry store for the new bourgeoisie of the city. The glass-enclosed display cases and coffered ceilings inside conveyed the luxury of the silver and jewelry trade. The project transformed the commercial use to that of the new property “Gran Café Zaragoza” which would later remain as “Café 1885”. The interior rooms are cleaned of curtains, giving greater prominence to the cast iron columns and the elaborate coffered ceilings. Local declared Well Cataloged of the Aragonese Cultural Heritage by the Government of Aragon since 2002.",
     },
     {
-        index:15,
+        index:8,
       ref: "DA0569",
       short: "STA MARIA",
       title: "Santa Maria 33",
@@ -411,7 +411,7 @@ export const PROJECTS = [
         "Performance in a small building of historical value in the old town of Sant Cugat del Vallés. The abandoned traditional house is updated to the new use in the main commercial street of the municipality, maintaining the use of housing on the first floor. The main façade, the traditional “volta” structure and the roof eaves are recovered and valued. Capillarity damp and attacks on the roof structure by termites and damp are also treated and eliminated. Building declared BCIL (Cultural Asset of Local Interest).",
     },
     {
-        index:16,
+        index:3,
       ref: "DA0573",
       short: "UVIC-CAMPUS",
       title: "Uvic Campus Casa Convalescencia",
@@ -440,7 +440,7 @@ export const PROJECTS = [
         "Restoration of the old Convalescence Home of the Hospital de la Santa Creu de Vic, the work of the architect Josep Morató i Codina, built halfway between Baroque (late 18th century) and Neoclassicism (early 19th century). It is an action in 4000 m2 of building, including, located on the edge of the old medieval wall of Vic. The objective of the action is to reuse the building as the headquarters of the Rectorate of the University of Vic and a retail and shopping center -working, Creacció. The University of Vic, the Vic City Council and the Board of Trustees of the Hospital de la Santa Creu, as the owner of the building, have been involved in the process during the almost 14 years that the entire intervention has lasted. The building was in a poor state of conservation, but it presented a constructive richness and high-quality architectural spaces, including a neoclassical cloister, 24 baroque vaults and high-quality paintings. The cloister and all the circulations around it have been recovered. The restorative spirit has led us to recover or repair the well-preserved existing carpentry, improving thermal behavior. Most of the wooden structures and the 24 existing vaults have also been preserved, repairing or reinforcing. After the Restoration the Building has been declared BCIL (Cultural Asset of Local Interest).",
     },
     {
-        index: 18,
+        index: 1,
       ref: "DA0621",
       short: "PARANINF",
       title: "Antigua Esglesia de la Santa Creu de Vic y Sala Gótica-Paraninf",
@@ -457,7 +457,7 @@ export const PROJECTS = [
         "The Iglesia de la Santa Creu, the work of Josep Morató i Sellés, was built between 1748 and 1753. It is a unique nave of imposing architectural volumetry, especially highlighting the cambril, splendidly ornamented. The interior pictorial decoration has been restored in different historical stages, with greater and lesser success, finally leaving an ornate style. The entire architectural complex is baroque and neoclassical transition. A room attached to the church of Gothic origin with large pointed arches originally belonging to the Hospital de la Santa Creu is restored and incorporated into the use of the auditorium. This comprehensive restoration has made it possible to recover and value the work of a whole saga of very important artists and master builders from a historical period in Catalonia, between the 17th and 18th centuries: the Morató nisaga vigatana. Building declared BCIL (Cultural Asset of Local Interest).",
     },
     {
-        index:26,
+        index:10,
       ref: "DA0722",
       short: "FJB",
       title: "Casa Francesc Lalanne",
@@ -502,7 +502,7 @@ export const PROJECTS = [
         "The 'Talaias' are interesting observation towers strategically located around the Menorcan coast. La Talaia de Artruts is located on the southwest coast of Menorca and dates from the late 16th century to the early 17th century. It is an Asset of Cultural Interest (BIC) identified in the Ciutadella Historical Heritage Protection Catalog. The project consolidates the building with local and traditional materials and recovers eliminated elements. The action will allow to avoid the progressive deterioration and the future visit of the building.",
     },
     {
-        index:4,
+        index:2,
       ref: "DA0015",
       short: "LA FRASCA",
       title: "Bodega R. Lopez de Heredia",
@@ -593,7 +593,7 @@ export const PROJECTS = [
         "Conversion of an industrial building on the seafront of Barcelona. The transformation of an old industrial space and its opening to the new seafront led to the appearance of dysfunctional spaces without urban fit. The intervention in these spaces must allow the arrival of new uses, their updating, and a new integration in the transformed urban space. With these premises, the project maintains the character of the existing spaces, recovering structures and materials, but incorporating the urban leisure and commercial activities that have colonized the seafront.",
     },
     {
-        index:19,
+        index:4,
       ref: "DA0628",
       short: "CORUS",
       title: "Corus Laboratories",
@@ -644,7 +644,7 @@ export const PROJECTS = [
         "Water area and lounge bar for the Hotel Oasis (Marbella). Natural materials and vegetation characterize the project to create a relaxing space that is different from the rest of the hotel's activities. The pool is a social space next to the lounge bar that opens or closes to it according to the schedules and scheduled activities. Water is one more element of the garden's landscaping project, incorporating the nearby nature and the more distant nature of the Sierra Blanca.",
     },
     {
-        index:17,
+        index:9,
       ref: "DA0603",
       short: "WBF",
       title: "World Basket Festival",
@@ -763,7 +763,7 @@ export const PROJECTS = [
         "Training and competition pool at Club Natació Terrassa. The project provides the installation of a new pool for sports activities, convertible into two water polo competition pools by means of a mobile bridge. The new construction is inserted between the existing ones, proposing a compact and efficient solution. The volume recalls the industrial past of the area but with the lightness of the current prefabricated construction systems. The natural light and the control of the views define the proportion of openings and spaces, and the relationship with the rest of the volumes.",
     },
     {
-        index: 30,
+        index: 5,
       ref: "DA0758",
       short: "CNG",
       title: "Club Natació Granollers",
@@ -780,7 +780,7 @@ export const PROJECTS = [
         "Training and competition pool at Club Natació Terrassa. The project provides the facility with a new pool for sports activities, convertible into two water polo competition pools by means of a mobile bridge. The new construction is inserted between the existing ones, proposing a compact and efficient solution. The volume recalls the industrial past of the area but with the lightness of the current prefabricated construction systems. The natural light and the control of the views define the proportion of openings and spaces, and the relationship with the rest of the volumes.",
     },
     {
-        index: 31,
+        index: 6,
       ref: "DA0759",
       short: "CARTAMA",
       title: "Complejo Acuático de la Ciudad Deportiva de Cártama",
@@ -797,7 +797,7 @@ export const PROJECTS = [
         "Sports equipment with indoor pool and attached multipurpose spaces. 1st Prize Project Competition. The project proposes an installation that defends the urban scale of the complex. The sports space as an infrastructure that in this case articulates the connection between the two urban centers of the municipality. On an intermediate scale, the water area building intervenes in the organization of the Sports City, redefining the accesses and the centrality of the spaces. On the smallest scale, the project proposes a compact building with high energy efficiency; user-oriented and sustainable management.",
     },
     {
-        index:32,
+        index:7,
       ref: "DA0802",
       short: "CAN RABASSA",
       title: "Piscina Municipal Can Rabassa",

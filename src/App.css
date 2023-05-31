@@ -55,6 +55,12 @@ body {
   margin: 30px 0;
 }
 
+a, li, span, a:hover {
+  text-decoration: none;
+}
+button {
+  cursor: none !important;
+}
 .no-scroll {
   overflow: hidden;
 }
