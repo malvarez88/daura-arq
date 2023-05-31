@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 import "./home.css";
-
 import { motion } from "framer-motion";
-
 import heroImg1 from "../../assets/1.png";
-import heroImg2 from "../../assets/2.png";
-import heroImg3 from "../../assets/3.png";
 
-import { gcz1, vts1, ccev1, iscola1, nova1, mina1 } from "../../assets";
+import { ccev1, iscola1, mina1 } from "../../assets";
 import Grid from "@mui/system/Unstable_Grid/Grid";
 
 const Home = () => {
@@ -28,7 +24,7 @@ const Home = () => {
       transition={{ duration: 1 }}
       key="/"
     >
-      <Grid container justifyContent={'center'}>
+      <Grid container justifyContent={"center"}>
         <Grid>
           <div
             id="carouselExampleControls"
@@ -93,11 +89,7 @@ const Home = () => {
           <div className="mobile-home">
             <img src={mina1} alt="" className="img-fluid mobile-hero-img" />
             <img src={ccev1} alt="" className="img-fluid mobile-hero-img" />
-            <img
-              src={heroImg1}
-              alt=""
-              className="img-fluid mobile-hero-img"
-            />
+            <img src={heroImg1} alt="" className="img-fluid mobile-hero-img" />
             <img src={iscola1} alt="" className="img-fluid mobile-hero-img" />
           </div>
         </Grid>

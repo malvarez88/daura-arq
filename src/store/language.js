@@ -1,4 +1,4 @@
-import { createAction, createReducer, createSlice } from "@reduxjs/toolkit";
+import { createAction, createReducer } from "@reduxjs/toolkit";
 export const setNewLanguage = createAction("SET_LANGUAGE");
 
 const INITIAL_STATE = localStorage.getItem("language") || "es";

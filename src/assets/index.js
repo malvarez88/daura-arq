@@ -16,7 +16,8 @@ import marinaRuis from './MarinaRius-bn.jpg';
 import miguelGarcia from './MiquelGarcia_3.jpg';
 import nuriaAyala from './nuriaAyala-bn.jpg';
 import omarMasoud from './OmarMasoud-bn.jpg';
-import robertRusega from './RobertRuesga-bn.jpg'
+import robertRusega from './RobertRuesga-bn.jpg';
+import victoriaBassaGarrido from './VictoriaBassaGarrido.jpg'
 import equipo from './equipo.jpeg';
 
 
@@ -448,5 +449,6 @@ export {
   miguelGarcia,
   nuriaAyala,
   omarMasoud,
-  robertRusega
+  robertRusega,
+  victoriaBassaGarrido
 };
