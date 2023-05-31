@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Categories from '../../Models/Categories';
@@ -8,6 +8,7 @@ import { dauraCategories } from "../../constants/dauraCategorires";
 import { PROJECTS } from "../../constants/projects";
 import "./proyectos.css";
 import Grid from "@mui/system/Unstable_Grid/Grid";
+import { changeDocTitle } from "../../hooks/hooks";
 
 const Proyectos = ({ setLogoColor }) => {
   const { t } = useTranslation("global");
@@ -15,6 +16,12 @@ const Proyectos = ({ setLogoColor }) => {
   const projects = new Projects(PROJECTS);
   const [selectedCategory, setSelectedCategory] = useState(categories.getCategory("all"));
   const selectedProjects = projects.getCategoryProjects(selectedCategory.category);
+
+  const location = t('navbar.proyectos')
+  useEffect(()=> {
+    changeDocTitle(location)
+  },[location])
+
 
   const [isOpen, setIsOpen] = useState(false);
 
