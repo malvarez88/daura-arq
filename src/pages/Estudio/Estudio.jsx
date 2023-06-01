@@ -24,8 +24,12 @@ import {
 } from "../../assets";
 
 const Estudio = () => {
-  const [activeTab, setActiveTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
+  const TABS = {
+    US: "Us",
+    TEAM: "Team"
+  };
+  const [activeTab, setActiveTab] = useState(TABS.US);
 
   const { t } = useTranslation("global");
 

@@ -56,29 +56,24 @@
   margin-right: auto;
 }
 
-.languages button {
+.languages {
   border: none;
   /* cursor: pointer; */
   background: transparent;
 }
 
-.languages button:focus {
+.languages:focus {
   outline: none;
 }
 
-.languages button::before {
-  content: "";
-  display: inline-block;
+.separator {
   width: 3px;
   height: 3px;
   border-radius: 7.5px;
   background-color: black;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-bottom: 3px;
 }
 
-.languages button:first-child::before {
+.languages:first-child::before {
   content: none;
 }
 
