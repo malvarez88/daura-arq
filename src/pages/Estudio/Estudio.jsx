@@ -82,16 +82,16 @@ const Estudio = () => {
                 </p>
 
                 <div className="sobre-nosotros-img">
-                  <img src={about1} alt="about" className="img-fluid" />
-                  <img src={about2} alt="about" className="img-fluid" />
-                  <img src={about3} alt="about" className="img-fluid" />
+                  <img src={about1} alt="about" className="img-fluid img-team" />
+                  <img src={about2} alt="about" className="img-fluid img-team" />
+                  <img src={about3} alt="about" className="img-fluid img-team" />
                 </div>
 
                 <p className="general-text">
                   {t("estudio-page.sobre-nosotros-2")}
                 </p>
                 <div>
-                  <img src={wbf1} alt="" className="img-fluid" />
+                  <img src={wbf1} alt="" className="img-fluid img-team" />
                 </div>
               </div>
 
@@ -103,31 +103,31 @@ const Estudio = () => {
                 <p className="general-text">{t("estudio-page.equipo")}</p>
                 <div className="equipo-profile">
                   <div className="profile">
-                    <img src={nuriaAyala} alt="Nuria Ayala i Mitjavila" className="img-fluid" />
+                    <img src={nuriaAyala} alt="Nuria Ayala i Mitjavila" className="img-fluid img-team" />
                     <p>Núria Ayala i Mitjavila</p>
                   </div>
                   <div className="profile">
-                    <img src={juanRamon} alt="Joan Ramon Rius" className="img-fluid" />
+                    <img src={juanRamon} alt="Joan Ramon Rius" className="img-fluid img-team" />
                     <p>Joan Ramon Rius</p>
                   </div>
                   <div className="profile">
-                    <img src={miguelGarcia} alt="Miquel Garcia Soler" className="img-fluid" />
+                    <img src={miguelGarcia} alt="Miquel Garcia Soler" className="img-fluid img-team" />
                     <p>Miquel García Soler</p>
                   </div>
                   <div className="profile">
-                    <img src={gemmaPous} alt="Gemma Pous" className="img-fluid" />
+                    <img src={gemmaPous} alt="Gemma Pous" className="img-fluid img-team" />
                     <p>Gemma Pous</p>
                   </div>
                   <div className="profile">
-                    <img src={omarMasoud} alt="Omar Masoud" className="img-fluid" />
+                    <img src={omarMasoud} alt="Omar Masoud" className="img-fluid img-team" />
                     <p>Omar Masoud</p>
                   </div>
                   <div className="profile">
-                    <img src={robertRusega} alt="Robert Rusega" className="img-fluid" />
+                    <img src={robertRusega} alt="Robert Rusega" className="img-fluid img-team" />
                     <p>Robert Rusega</p>
                   </div>
                   <div className="profile">
-                    <img src={marinaRuis} alt="Marina Ruis" className="img-fluid" />
+                    <img src={marinaRuis} alt="Marina Ruis" className="img-fluid img-team" />
                     <p>Marina Ruis</p>
                   </div>
                 </div>
