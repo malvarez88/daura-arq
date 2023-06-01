@@ -173,7 +173,7 @@ import {
 
 export const PROJECTS = [
     {
-      index: 1,
+      index: 20,
       ref: "DA0005",
       short: "VLLV",
       title: "HU005",
@@ -190,7 +190,7 @@ export const PROJECTS = [
         "New single-family house in the urban environment of Barcelona. Optimization of the site's resources by creating interior and exterior patios that improve the privacy and natural lighting of the home.",
     },
     {
-        index: 2,
+        index: 25,
       ref: "DA0008",
       short: "",
       title: "HU008",
@@ -207,7 +207,7 @@ export const PROJECTS = [
         "Single-family home on the edge of urban land and in front of a space of high ecological value. The project compacts the building area, freeing up most of the plot and blurs the volume, reducing the reading of its height and presence. The house is bright, in direct relation with the natural space that surrounds it.",
     },
     {
-        index:5,
+        index:12,
       ref: "DA0056",
       short: "IM0056",
       title: "IM0056",
@@ -224,7 +224,7 @@ export const PROJECTS = [
         "Logistics and office building. Modular and prefabricated construction improving its implementation. The offices on the main façade are integrated into the enclosure material, being protected by a metallic brisesoleil that allows an industrial scale in the materials and domestic solutions for the user.",
     },
     {
-        index: 6,
+        index: 26,
       ref: "DA0083",
       short: "IH0083",
       title: "IH0083",
@@ -240,7 +240,7 @@ export const PROJECTS = [
       description: "",
     },
     {
-        index: 9,
+        index: 27,
       ref: "DA0309",
       short: "ISCOLA",
       title: "Edificio Iscola",
@@ -257,7 +257,7 @@ export const PROJECTS = [
         "Multi-family building with 112 homes, common areas, commercial premises and car parks.",
     },
     {
-        index:10,
+        index:34,
       ref: "DA0312",
       short: "ONDARA",
       title: "Edificio Ondara",
@@ -274,7 +274,7 @@ export const PROJECTS = [
         "Multi-family building with 41 homes, common areas, commercial premises and parking lots.",
     },
     {
-        index:11,
+        index:28,
       ref: "DA0322",
       short: "HP0322",
       title: "HP0322",
@@ -291,7 +291,7 @@ export const PROJECTS = [
         "Multi-family building between median of 12 homes in Barcelona.",
     },
     {
-        index:12,
+        index:29,
       ref: "DA369",
       short: "C. NOVA",
       title: "Edifici Ciutat Nova",
@@ -308,7 +308,7 @@ export const PROJECTS = [
         "Multi-family building with 47 homes, common areas, commercial premises and parking lots.",
     },
     {
-        index:20,
+        index:22,
       ref: "DA0649",
       short: "HU0649",
       title: "HU0649",
@@ -325,7 +325,7 @@ export const PROJECTS = [
         "Detached house in Valldoreix (Barcelona). The project maximizes the relational spaces between three compact nuclei of greater privacy. The dining room, living room and professional study open to the surrounding vegetation with diagonal visuals, incorporating the space into the interior. The heights of the spaces, their compactness or their transparency propose different ways of living them, but only the use that the family that inhabits them makes of them gives them meaning. Sharing a breakfast with them gives final meaning to the whole project and turns matter into feelings.",
     },
     {
-        index:33,
+        index:17,
       ref: "DA0803",
       short: "HP0803",
       title: "HP0803",
@@ -342,7 +342,7 @@ export const PROJECTS = [
         "Division and segregation of a property into two new homes. Study of project alternatives, energy renovation and selection of project and works management.",
     },
     {
-        index:35,
+        index:15,
       ref: "DA0811",
       short: "HP0811",
       title: "HP0811",
@@ -359,7 +359,7 @@ export const PROJECTS = [
         "Multi-family building with 9 homes, common areas, commercial premises and parking lots.",
     },
     {
-        index:36,
+        index:19,
       ref: "DA0813",
       short: "HP0813",
       title: "HP0813",
@@ -485,7 +485,7 @@ export const PROJECTS = [
         "Set of performances at the Casa Francesc Lalanne, also known as Casas Armentera i Parellada, in the Eixample district of Barcelona. Intervention was made in this 1908-1910 building, recovering historical elements hidden by previous interventions, carrying out a detailed structural analysis, and adapting the spaces to the new needs of the Foundation that owns the building. The valorization of the brick vaults and the pavements of Nolla put the building designed by the architect of ls. XIX-XX Arnau Calvet. 1st Prize Project Competition. Building declared BCIL (Cultural Asset of Local Interest).",
     },
     {
-        index:34,
+        index:18,
       ref: "DA0804",
       short: "ARTRUTX",
       title: "Talaia D'Artrutx",
@@ -519,7 +519,7 @@ export const PROJECTS = [
         "Tasting rooms, reception patio and visitor service building at Bodegas R. López de Heredia. As local architects, in collaboration with Zaha Hadid Arch., we have experimented with the design of architectural spaces, innovative structural solutions and new materials, which serve as a reference for the renovation of a century-old family winery. The result has added new values related to the traditional culture of 'Viña Tondonia'. The reception building houses the exhibition pavilion that Viña Tondonia showed at the 1910 fair. The new modular container was initially conceived to participate in new fairs, and, finally, it stands as an access point for visitors from the cellar Both 'La Frasca', as well as the exterior spaces, the new access to the winery or the tasting rooms incorporate technologically innovative solutions to provide the visitor with a new approach to the winery, the wine experience and its landscapes.",
     },
     {
-        index: 7,
+        index: 13,
       ref: "DA0118",
       short: "VTDN",
       title: "Viña Tondonia Stand",
@@ -536,7 +536,7 @@ export const PROJECTS = [
         "Ephemeral architecture for the brand image of the Winery in international events. The small-sized project includes the exhibition of the brand, its products, and space for visitor service and product tasting. The graphic image of the century-old winery and the characteristic old gold color of its Gran Reserva wine take center stage in an intimate and singular stand. The organic forms accompany the visitor towards the vineyards of the Rioja Alta and the underground galleries next to the Ebro river.",
     },
     {
-        index:8,
+        index:21,
       ref: "DA0138",
       short: "VIENESOS",
       title: "Centre Cívic els Vienesos",
@@ -553,7 +553,7 @@ export const PROJECTS = [
         "Expansion of the 'Els Vienesos' Civic Center with new multipurpose rooms, classrooms and a new floor. The project unifies the existing spaces and those resulting from the extension, giving a new urban and significant façade to the adjacent pedestrian space.",
     },
     {
-        index:13,
+        index:30,
       ref: "DA0470",
       short: "CA LA MINA",
       title: "Centre Cívic CA La Mina",
@@ -570,7 +570,7 @@ export const PROJECTS = [
         "Enlargement of the “Parc de les Aigües” Civic Center. The main objective of this project was to find a creative and efficient way to enlarge the existing civic center. This Center is built on the historic Montcada i Reixac water mine, which feeds the 'Rec Comtal' from a Roman waterway parallel to the Besós river. Therefore, the project had to grow vertically and it was resolved with the creation of a new floor on the existing roof, which visually opened the building up to the natural environment that surrounds it. A new entrance is also proposed from the rear of the building, the street that connects downtown Montcada with the Can Sant Joan neighborhood. The extension was built with prefabricated lightweight components that connect the existing building with the new building.",
     },
     {
-        index:14,
+        index:36,
       ref: "DA0523",
       short: "BOARDRIDERS",
       title: "Boardriders Barceloneta",
@@ -610,7 +610,7 @@ export const PROJECTS = [
         "Heaquarters and laboratories of a healthcare multinational in Spain. The production processes of the new laboratories are the main reason for the project. Different degrees of transparency are used in the sectorization of the spaces to show and relate activities. The circulation of materials and information define distributions, materials and common spaces. The work with the different departments of the company makes the building also a corporate image and positioning in its sector.",
     },
     {
-        index:21,
+        index:16,
       ref: "DA0681",
       short: "BIB SCG",
       title: "Biblioteca Central Sant Cugat",
@@ -627,7 +627,7 @@ export const PROJECTS = [
         "New building for the Gabriel Ferrater Library in the Ramon Barnils park in Sant Cugat del Vallès. 3rd prize project competition. The project emerges from the landscape like a nameless and timeless old fortress. We imagine the library as an enveloping shelter of books, a building full of luminous, solitary or collective corners, where one can find both the calm of reading and the stimulation of meeting and exchanging ideas. The interior spaces are not rectangular, but polygons with 5 or 6 sides. Thus, with the shelves we can create spaces that surround the reader without restricting their movements, and increasing storage capacity by up to 50%. The park is part of the building and the park building, related to the interior and exterior spaces. The roofs blend visually with the park and, due to their staggering, reveal the distant view of the Monastery of Sant Cugat, so present in the municipality, and with whom the library will keep a formal and conceptual resonance. Contemporary is compatible with Historical.",
     },
     {
-        index:27,
+        index:33,
       ref: "DA0729",
       short: "OASIS",
       title: "Hotel Oasis",
@@ -661,7 +661,7 @@ export const PROJECTS = [
         "Sports facility on the occasion of the Barcelona Basketball World Cup. Beyond the professional competition of a Basketball World Cup, urban sport is a leisure and socializing activity. This facility combines spaces for physical activity and competition, with sports and music shows, and leisure areas. Despite its short duration, its urban impact has attracted more than 30,000 visitors. All the elements of the installation are of light construction and reusable for new events.",
     },
     {
-        index:22,
+        index:31,
       ref: "DA0691",
       short: "WP'18",
       title: "Waterpolo BCN'18 Campeonato de Europa",
@@ -695,7 +695,7 @@ export const PROJECTS = [
         "Rehabilitation and expansion project of the sports facilities of the Club Natació Olot. The intervention on the existing equipment preserves the functional spaces and creates a new enclosure and roof structure for the main pool. The exterior spaces are related to the interior activity, allowing a more permeable use in summer.",
     },
     {
-        index:24,
+        index:32,
       ref: "DA0714",
       short: "MIRASOL",
       title: "Piscina Municipal Mirasol",
@@ -712,7 +712,7 @@ export const PROJECTS = [
         "The building is located on the designated plot, looking for an easy and natural settlement on the ground and detaches slightly to connect its surroundings. The aim is to create an attractive and compact volume that integrates with the building and the surrounding environment. The proposal differentiates the spaces for sports practice, the pool room and other rooms, giving them a preferential and representative character. The rest of the spaces are organized in longitudinal program strips or packages, consistent with the circulation schemes typical of sports facilities 3rd prize Project Competition.",
     },
     {
-        index:25,
+        index:35,
       ref: "DA0720",
       short: "FWS-21",
       title: "Fina Artistic Swimming World Series 2021",
@@ -729,7 +729,7 @@ export const PROJECTS = [
         "Ephemeral architecture for the celebration in Barcelona of the World Series 2021 of Artistic Swimming and the Olympic Qualification Tournament for Tokyo 2021 Transformation of sports equipment to adapt it to the regulatory needs of the competition and the architectural needs of the spectators and the broadcasts of the show. Study of the environments, lighting and different uses of the sheet of water and adjacent settings to create a global image recognizable to the viewer.",
     },
     {
-        index:28,
+        index:24,
       ref: "DA0733",
       short: "50'S",
       title: "Fluidra 50'S Anniversary",
@@ -746,7 +746,7 @@ export const PROJECTS = [
         "Research project with a wonderful team for the creation of an audiovisual show in the water. The show with a powerful audiovisual narrative takes place above and below the surface of the water, using this element with its maximum expressiveness, thanks to the use of fountains, platforms and lighting that enhance the choreography of swimmers and dancers. Creation of new technical elements such as the central platform used as a stage and a water, light and sound projector.",
     },
     {
-        index:29,
+        index:14,
       ref: "DA0745",
       short: "CNT",
       title: "Club Natació Terrassa",
