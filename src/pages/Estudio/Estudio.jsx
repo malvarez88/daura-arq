@@ -24,7 +24,6 @@ import {
 } from "../../assets";
 
 const Estudio = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const TABS = {
     US: "Us",
     TEAM: "Team"
@@ -33,19 +32,8 @@ const Estudio = () => {
 
   const { t } = useTranslation("global");
 
-  const language = useSelector((state) => state.language);
-
-  const spacesByLanguage = {
-    ca: espacies,
-    en: spaces,
-    default: espacios,
-  };
-
-  const lista = spacesByLanguage[language] || spacesByLanguage.default;
-
-  function handleClick(index) {
-    setActiveTab(index);
-    setActiveIndex(index);
+  function handleClick(tab) {
+    setActiveTab(tab);
   }
 
   return (
@@ -61,20 +49,20 @@ const Estudio = () => {
           <div className="col-xl-12">
             <div className="estudio">
               <ul className="estudio-list">
-                {lista.map((espacio, index) => (
+                {Object.keys(TABS).map((tab, index) => (
                   <li
-                    key={index}
-                    onClick={() => handleClick(index)}
-                    className={activeIndex === index ? "active" : ""}
+                    key={tab}
+                    onClick={() => handleClick(TABS[tab])}
+                    className={activeTab === TABS[tab] ? "active" : ""}
                   >
-                    {espacio}
+                    {t(`estudio-page.${TABS[tab]}`)}
                   </li>
                 ))}
               </ul>
               {/* SOBRE NOSOTROS */}
               <div
                 className="sobre-nosotros"
-                style={{ display: activeTab === 0 ? "block" : "none" }}
+                style={{ display: activeTab === TABS.US ? "block" : "none" }}
               >
                 <h5 className="title">d'aura arquitectura</h5>
                 <p className="general-text">
@@ -98,7 +86,7 @@ const Estudio = () => {
               {/* EQUIPO */}
               <div
                 className="eqiupo"
-                style={{ display: activeTab === 1 ? "block" : "none" }}
+                style={{ display: activeTab === TABS.TEAM ? "block" : "none" }}
               >
                 <p className="general-text">{t("estudio-page.equipo")}</p>
                 <div className="equipo-profile">
