@@ -6,7 +6,6 @@ import Footer from "./components/Footer/Footer";
 import AnimatedRoutes from "./components/AnimatedRoutes/AnimatedRoutes";
 import Loader from "./components/Loader/Loader";
 import { CustomCursor } from "./components/CustomCursor/CustomCursor";
-import Grid from "@mui/system/Unstable_Grid/Grid";
 
 
 function App() {
@@ -42,13 +41,9 @@ function App() {
       ) : (
         <>
           <CustomCursor showLoader={showLoader} />
-          <Grid container justifyContent={"center"}>
-            <Grid sm={11} md={9} lg={9} xl={6}>
-              <Navbar logoColor={logoColor} />
-              <AnimatedRoutes setLogoColor={setLogoColor} />
-              <Footer />
-            </Grid>
-          </Grid>
+          <Navbar logoColor={logoColor} />
+          <AnimatedRoutes setLogoColor={setLogoColor} />
+          <Footer />
         </>
       )}
     </>

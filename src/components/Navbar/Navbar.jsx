@@ -5,7 +5,6 @@ import Logo from "../Logo/Logo";
 
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import Grid from "@mui/system/Unstable_Grid/Grid";
 
 const Navbar = ({ logoColor }) => {
   const { t } = useTranslation("global");
@@ -25,21 +24,21 @@ const Navbar = ({ logoColor }) => {
   }, [isOpen]);
 
   return (
-    <header>
+    <header className="header">
       <motion.div
         initial={{ opacity: 0, y: -100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ ease: "linear", duration: 1 }}
         exit={{ opacity: 0, transition: { duration: 0.2 } }}
       >
-        {/* <div className="container">
+        <div className="container">
           <div className="row">
             <div className="col-xl-12">
               <div className="navbar">
                 <div className="link-container">
                   <a
                     href="/proyectos"
-                    className="link"
+                    className="nav-link"
                     style={{
                       color: `${logoColor ? logoColor : "black"}`,
                     }}
@@ -48,13 +47,13 @@ const Navbar = ({ logoColor }) => {
                   </a>
                 </div>
                 <div className="link-container logo-container">
-                  <a href="/" className="link" />
+                  <a href="/" className="nav-link" />
                   <Logo logoColor={logoColor} />
                 </div>
                 <div className="link-container last">
                   <a
                     href="/estudio"
-                    className="link"
+                    className="nav-link"
                     style={{
                       color: `${colorEstudio ? colorEstudio : "black"}`,
                     }}
@@ -68,7 +67,7 @@ const Navbar = ({ logoColor }) => {
             <div className="col-12">
               <div className="mobile-navbar">
                 <div className="logo">
-                  <a href="/" className="link" />
+                  <a href="/" className="nav-link" />
                   <Logo logoColor={logoColor} />
                 </div>
                 <div className={`hamburger open}`} onClick={handleToggleMenu}>
@@ -81,7 +80,7 @@ const Navbar = ({ logoColor }) => {
                 <div className="col-12" style={{ background: "transparent" }}>
                   <div className="nav-open-container">
                     <div className="logo">
-                      <a href="/" className="link" />
+                      <a href="/" className="nav-link" />
                       <Logo logoColor={logoColor} />
                     </div>
                     <div
@@ -112,42 +111,7 @@ const Navbar = ({ logoColor }) => {
               </div>
             </div>
           </div>
-        </div> */}
-        <Grid container justifyContent={"space-between"} alignItems={'center'} mt="24px" mb="32px">
-          <Grid xs={2}>
-            <a
-              href="/proyectos"
-              className="link"
-              style={{
-                color: `${logoColor ? logoColor : "black"}`,
-              }}
-            >
-              <span>{t("navbar.proyectos")}</span>
-            </a>
-          </Grid>
-          <Grid xs={2}>
-            <Grid container justifyContent={'center'}>
-              <a href="/">
-                <Logo logoColor={logoColor} />
-              </a>
-            </Grid>
-          </Grid>
-          <Grid xs={2}>
-            <Grid container justifyContent={'flex-end'}>
-              <Grid>
-                <a
-                  href="/estudio"
-                  className="link"
-                  style={{
-                    color: `${colorEstudio ? colorEstudio : "black"}`,
-                  }}
-                >
-                  <span>{t("navbar.estudio")}</span>
-                </a>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
+        </div>
       </motion.div>
     </header>
   );
