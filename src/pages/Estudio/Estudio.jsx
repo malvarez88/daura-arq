@@ -24,7 +24,6 @@ import {
 } from "../../assets";
 
 const Estudio = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
   const TABS = {
     US: "Us",
     TEAM: "Team"
@@ -33,19 +32,8 @@ const Estudio = () => {
 
   const { t } = useTranslation("global");
 
-  const language = useSelector((state) => state.language);
-
-  const spacesByLanguage = {
-    ca: espacies,
-    en: spaces,
-    default: espacios,
-  };
-
-  const lista = spacesByLanguage[language] || spacesByLanguage.default;
-
-  function handleClick(index) {
-    setActiveTab(index);
-    setActiveIndex(index);
+  function handleClick(tab) {
+    setActiveTab(tab);
   }
 
   return (
@@ -61,20 +49,20 @@ const Estudio = () => {
           <div className="col-xl-12">
             <div className="estudio">
               <ul className="estudio-list">
-                {lista.map((espacio, index) => (
+                {Object.keys(TABS).map((tab, index) => (
                   <li
-                    key={index}
-                    onClick={() => handleClick(index)}
-                    className={activeIndex === index ? "active" : ""}
+                    key={tab}
+                    onClick={() => handleClick(TABS[tab])}
+                    className={activeTab === TABS[tab] ? "active" : ""}
                   >
-                    {espacio}
+                    {t(`estudio-page.${TABS[tab]}`)}
                   </li>
                 ))}
               </ul>
               {/* SOBRE NOSOTROS */}
               <div
                 className="sobre-nosotros"
-                style={{ display: activeTab === 0 ? "block" : "none" }}
+                style={{ display: activeTab === TABS.US ? "block" : "none" }}
               >
                 <h5 className="title">d'aura arquitectura</h5>
                 <p className="general-text">
@@ -82,52 +70,52 @@ const Estudio = () => {
                 </p>
 
                 <div className="sobre-nosotros-img">
-                  <img src={about1} alt="about" className="img-fluid" />
-                  <img src={about2} alt="about" className="img-fluid" />
-                  <img src={about3} alt="about" className="img-fluid" />
+                  <img src={about1} alt="about" className="img-fluid img-team" />
+                  <img src={about2} alt="about" className="img-fluid img-team" />
+                  <img src={about3} alt="about" className="img-fluid img-team" />
                 </div>
 
                 <p className="general-text">
                   {t("estudio-page.sobre-nosotros-2")}
                 </p>
                 <div>
-                  <img src={wbf1} alt="" className="img-fluid" />
+                  <img src={wbf1} alt="" className="img-fluid img-team" />
                 </div>
               </div>
 
               {/* EQUIPO */}
               <div
                 className="eqiupo"
-                style={{ display: activeTab === 1 ? "block" : "none" }}
+                style={{ display: activeTab === TABS.TEAM ? "block" : "none" }}
               >
                 <p className="general-text">{t("estudio-page.equipo")}</p>
                 <div className="equipo-profile">
                   <div className="profile">
-                    <img src={nuriaAyala} alt="Nuria Ayala i Mitjavila" className="img-fluid" />
+                    <img src={nuriaAyala} alt="Nuria Ayala i Mitjavila" className="img-fluid img-team" />
                     <p>Núria Ayala i Mitjavila</p>
                   </div>
                   <div className="profile">
-                    <img src={juanRamon} alt="Joan Ramon Rius" className="img-fluid" />
+                    <img src={juanRamon} alt="Joan Ramon Rius" className="img-fluid img-team" />
                     <p>Joan Ramon Rius</p>
                   </div>
                   <div className="profile">
-                    <img src={miguelGarcia} alt="Miquel Garcia Soler" className="img-fluid" />
+                    <img src={miguelGarcia} alt="Miquel Garcia Soler" className="img-fluid img-team" />
                     <p>Miquel García Soler</p>
                   </div>
                   <div className="profile">
-                    <img src={gemmaPous} alt="Gemma Pous" className="img-fluid" />
+                    <img src={gemmaPous} alt="Gemma Pous" className="img-fluid img-team" />
                     <p>Gemma Pous</p>
                   </div>
                   <div className="profile">
-                    <img src={omarMasoud} alt="Omar Masoud" className="img-fluid" />
+                    <img src={omarMasoud} alt="Omar Masoud" className="img-fluid img-team" />
                     <p>Omar Masoud</p>
                   </div>
                   <div className="profile">
-                    <img src={robertRusega} alt="Robert Rusega" className="img-fluid" />
+                    <img src={robertRusega} alt="Robert Rusega" className="img-fluid img-team" />
                     <p>Robert Rusega</p>
                   </div>
                   <div className="profile">
-                    <img src={marinaRuis} alt="Marina Ruis" className="img-fluid" />
+                    <img src={marinaRuis} alt="Marina Ruis" className="img-fluid img-team" />
                     <p>Marina Ruis</p>
                   </div>
                 </div>

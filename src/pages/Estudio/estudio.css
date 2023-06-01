@@ -78,7 +78,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin: 40px 0;
 }
@@ -88,8 +88,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  width: 300px;
+  gap: 8px;
+  width: 21vw;
 }
 
 @media screen and (max-width: 990px) {

@@ -11,5 +11,7 @@ export default class Categories {
     getCategory(categoryName) {
         return this.categories?.find(category => category.category === categoryName);
     }
+
+    static ALL = 'all';
 }
 
