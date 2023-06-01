@@ -33,13 +33,13 @@
     ]
   },
   "proyecto-abierto": {
-    "equipo": "team",
-    "superficie": "surface",
-    "año": "year",
-    "fotografia": "photography",
-    "colaboradores": "collaborators",
-    "promotor": "promoter",
-    "volver": "return"
+    "equipo": "Team",
+    "superficie": "Surface",
+    "año": "Year",
+    "fotografia": "Photography",
+    "colaboradores": "Collaborators",
+    "promotor": "Promoter",
+    "volver": "Return"
   },
   "noticias": {
     "wip": "work in progress"

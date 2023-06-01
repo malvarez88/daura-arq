@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router';
 import Categories from '../../Models/Categories';
 import Projects from "../../Models/Projects";
 import { dauraCategories } from "../../constants/dauraCategorires";
@@ -14,6 +15,9 @@ const Proyectos = ({ setLogoColor }) => {
   const projects = new Projects(PROJECTS);
   const [selectedCategory, setSelectedCategory] = useState(categories.getCategory("all"));
   const selectedProjects = projects.getCategoryProjects(selectedCategory.category);
+  const location = useLocation();
+  const categorySelected = location?.state;
+
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,6 +33,14 @@ const Proyectos = ({ setLogoColor }) => {
     setIsOpen(!isOpen);
     setLogoColor(cat?.categoryColor);
   }
+
+  useEffect(() => {
+    if (categorySelected) {
+      setSelectedCategory(categorySelected);
+      return setLogoColor(categorySelected?.categoryColor)
+    }
+    return setLogoColor(selectedCategory?.categoryColor)
+  }, []);
 
   return (
     <div className="proyectos">
@@ -72,7 +84,7 @@ const Proyectos = ({ setLogoColor }) => {
                     color: selectedCategory?.categoryColor
                   }}
                 >
-                  {selectedCategory?.category.toUpperCase()}
+                  {selectedCategory?.category?.toUpperCase()}
                 </button>
                 {isOpen && (
                   <ul className="dropdown-menu">
@@ -108,7 +120,7 @@ const Proyectos = ({ setLogoColor }) => {
                       key={project.ref}
                     >
                       <Link
-                        to={`/proyectos/${project.category}/${project.ref}`}
+                        to={`/proyectos/${project.ref}${selectedCategory.category === 'all' ? '' : `?category=${project?.category}`}`}
                         className="link-project"
                       >
                         <div

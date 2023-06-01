@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate, useParams, useLocation } from "react-router";
 import Categories from "../../Models/Categories";
 import Projects from "../../Models/Projects";
 import { dauraCategories } from "../../constants/dauraCategorires";
@@ -9,22 +9,34 @@ import { PROJECTS } from "../../constants/projects";
 import { thousandSeparator } from "../../utils/numbers";
 import "./proyectoabierto.css";
 
-const ProyectoAbierto = () => {
+const ProyectoAbierto = ({ setLogoColor }) => {
   const { t } = useTranslation("global");
-  const { ref, categoria } = useParams();
+  const location = useLocation();
+  const { ref } = useParams();
+  const queryParams = new URLSearchParams(location.search);
+  const isCategorySelected = queryParams.get('category');
   const projects = new Projects(PROJECTS);
-  const categories = new Categories(dauraCategories);
-  const selectedCategory = categories?.getCategory(categoria);
   const selectedProject = projects?.getProjectByRef(ref);
+  const categories = new Categories(dauraCategories);
+  const selectedCategory = categories?.getCategory(selectedProject?.category);
   const [showInfo, setShowInfo] = useState(false);
   const navigate = useNavigate();
+
 
   const surfaceMts = thousandSeparator(Number(selectedProject?.surface));
   const surfaceFts = thousandSeparator(Number(surfaceMts) * (10.7639).toFixed());
 
   const handleGoBack = () => {
-    navigate(-1);
+    if (isCategorySelected) {
+      const state = selectedCategory;
+      return navigate('/proyectos', { state })
+    }
+    return navigate(-1)
   };
+  useEffect(() => {
+    setLogoColor(selectedCategory?.categoryColor)
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <motion.div
