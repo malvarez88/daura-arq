@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, {useEffect} from "react";
 import "./styles.css";
 
-export const CustomCursor = ({ showLoader }) => {
+export const CustomCursor = ({showLoader}) => {
   const cursorRef = React.useRef(null);
 
 
@@ -17,13 +17,13 @@ export const CustomCursor = ({ showLoader }) => {
     document.addEventListener("mousemove", (e) => {
       const { clientX, clientY } = e;
       const mouseX = clientX - (cursorRef.current ? cursorRef.current.clientWidth / 2 : 0);
-      const mouseY = clientY - (cursorRef.current ? cursorRef.current.clientHeight / 2 : 0);
+      const mouseY = clientY -  (cursorRef.current ? cursorRef.current.clientHeight / 2 : 0);
       if (cursorRef.current) {
         cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
       }
     });
 
-    const hoverElements = document.querySelectorAll("a, button, input, li, span, img");
+    const hoverElements = document.querySelectorAll("a, button, input, li, span");
     hoverElements.forEach((element) => {
       element.addEventListener("mouseenter", () => {
         cursorRef.current.classList.add("is-hovering");
@@ -33,7 +33,7 @@ export const CustomCursor = ({ showLoader }) => {
       });
     });
   }, []);
+  
 
-
-  return <div className="app-cursor" ref={cursorRef} />;
+  return  <div className="app-cursor" ref={cursorRef} />;
 };

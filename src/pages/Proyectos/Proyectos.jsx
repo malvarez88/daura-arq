@@ -7,7 +7,6 @@ import Projects from "../../Models/Projects";
 import { dauraCategories } from "../../constants/dauraCategorires";
 import { PROJECTS } from "../../constants/projects";
 import "./proyectos.css";
-import Grid from "@mui/system/Unstable_Grid/Grid";
 
 const Proyectos = ({ setLogoColor }) => {
   const { t } = useTranslation("global");
@@ -32,10 +31,10 @@ const Proyectos = ({ setLogoColor }) => {
   }
 
   return (
-    <Grid container justifyContent={'center'}>
-      <Grid xs={11}>
-        <Grid container flexDirection={'column'}>
-          <Grid>
+    <div className="proyectos">
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
             <motion.div
               initial={{ opacity: 0, y: 200 }}
               animate={{ opacity: 1, y: 0 }}
@@ -43,176 +42,105 @@ const Proyectos = ({ setLogoColor }) => {
               transition={{ duration: 1, delay: 0.5 }}
               key="proyectos"
             >
-              <Grid container className="categories-list" mb="34px">
+              <ul className="categories-list">
                 {categories.map((category, index) => (
-                  <Grid key={index} onClick={() => selectCategory(category?.category)} sx={{ color: getSelectedColor(category?.category), cursor: 'none' }}>
-                    <li
-                      style={{
-                        color: getSelectedColor(category?.category), cursor: 'none',
-                      }}
-                    >
-                      {t(`Projects.Categories.${category?.category}`)}
-                    </li>
-                  </Grid>
+                  <li
+                    key={index}
+                    onClick={() => selectCategory(category?.category)}
+                    style={{
+                      color: getSelectedColor(category?.category), cursor: 'none'
+                    }}
+                  >
+                    {t(`Projects.Categories.${category?.category}`)}
+                  </li>
                 ))}
-              </Grid>
-            </motion.div>
-          </Grid>
-          <Grid>
-            <Grid container spacing={4}>
-              {selectedProjects?.map((project) => (
-                <Grid>
-                  <motion.div
-                    initial={{ opacity: 0, x: 200 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1, delay: 0.5 }}
-                    key={project.ref}
-                  >
-                    <Link
-                      to={`/proyectos/${project.category}/${project.ref}`}
-                      className="link-project"
-                    >
-                      <div
-                        className="proyect-thumb"
-                        data-categoria={project.category}
-                      >
-                        <img
-                          src={project.images[0]}
-                          alt={project.ref}
-                          key={project.ref}
-                          width="300px"
-                          height="300px"
-                          className="img-fluid proyect-img"
-                        />
-                        <div className="proyect-description">
-                          <p>
-                            {project.short
-                              ? project.short.toUpperCase()
-                              : project.ref}
-                          </p>
-                        </div>
-                      </div>
-                    </Link>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-      {/* <div className="proyectos">
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <motion.div
-                initial={{ opacity: 0, y: 200 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 200, transition: { duration: 0.2 } }}
-                transition={{ duration: 1, delay: 0.5 }}
-                key="proyectos"
-              >
-                <ul className="categories-list">
-                  {categories.map((category, index) => (
-                    <li
-                      key={index}
-                      onClick={() => selectCategory(category?.category)}
-                      style={{
-                        color: getSelectedColor(category?.category), cursor: 'none',
-                      }}
-                    >
-                      {t(`Projects.Categories.${category?.category}`)}
-                    </li>
-                  ))}
-                </ul>
+              </ul>
 
-                <div className="dropdown">
-                  <h5
-                    className="mobile-title"
-                    style={{
-                      color: selectedCategory?.categoryColor
-                    }}
-                  >
-                    {t("navbar.proyectos").toUpperCase()}
-                  </h5>
-                  <button
-                    className="dropdown-toggle"
-                    onClick={handleToggle}
-                    style={{
-                      color: selectedCategory?.categoryColor
-                    }}
-                  >
-                    {selectedCategory?.category.toUpperCase()}
-                  </button>
-                  {isOpen && (
-                    <ul className="dropdown-menu">
-                      {categories.map((category, index) => (
-                        <li
-                          key={index}
-                          onClick={() => selectCategory(category?.category)}
-                          style={{
-                            color: getSelectedColor(category?.category)
-                          }}
-                        >
-                          {t(`Projects.Categories.${category?.category}`)}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              </motion.div>
-              <div className="grid-container">
-                {!projects &&
-                  (<div>
-                    Loading...
-                  </div>)}
-                {projects &&
-                  <div className="wrapper">
-                    {selectedProjects.map((project) => (
-                      <motion.div
-                        initial={{ opacity: 0, x: 200 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 1, delay: 0.5 }}
-                        key={project.ref}
+              <div className="dropdown">
+                <h5
+                  className="mobile-title"
+                  style={{
+                    color: selectedCategory?.categoryColor
+                  }}
+                >
+                  {t("navbar.proyectos").toUpperCase()}
+                </h5>
+                <button
+                  className="dropdown-toggle"
+                  onClick={handleToggle}
+                  style={{
+                    color: selectedCategory?.categoryColor
+                  }}
+                >
+                  {selectedCategory?.category.toUpperCase()}
+                </button>
+                {isOpen && (
+                  <ul className="dropdown-menu">
+                    {categories.map((category, index) => (
+                      <li
+                        key={index}
+                        onClick={() => selectCategory(category?.category)}
+                        style={{
+                          color: getSelectedColor(category?.category)
+                        }}
                       >
-                        <Link
-                          to={`/proyectos/${project.category}/${project.ref}`}
-                          className="link-project"
-                        >
-                          <div
-                            className="proyect-thumb"
-                            data-categoria={project.category}
-                          >
-                            <img
-                              src={project.images[0]}
-                              alt={project.ref}
-                              key={project.ref}
-                              width="300px"
-                              height="300px"
-                              className="img-fluid proyect-img"
-                            />
-                            <div className="proyect-description">
-                              <p>
-                                {project.short
-                                  ? project.short.toUpperCase()
-                                  : project.ref}
-                              </p>
-                            </div>
-                          </div>
-                        </Link>
-                      </motion.div>
+                        {t(`Projects.Categories.${category?.category}`)}
+                      </li>
                     ))}
-                  </div>
-                }
+                  </ul>
+                )}
               </div>
+            </motion.div>
+            <div className="grid-container">
+              {!projects &&
+                (<div>
+                  Loading...
+                </div>)}
+              {projects &&
+                <div className="wrapper">
+                  {selectedProjects.map((project) => (
+                    <motion.div
+                      initial={{ opacity: 0, x: 200 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 1, delay: 0.5 }}
+                      key={project.ref}
+                    >
+                      <Link
+                        to={`/proyectos/${project.category}/${project.ref}`}
+                        className="link-project"
+                      >
+                        <div
+                          className="proyect-thumb"
+                          data-categoria={project.category}
+                        >
+                          <img
+                            src={project.images[0]}
+                            alt={project.ref}
+                            key={project.ref}
+                            width="300px"
+                            height="300px"
+                            className="img-fluid proyect-img"
+                          />
+                          <div className="proyect-description">
+                            <p>
+                              {project.short
+                                ? project.short.toUpperCase()
+                                : project.ref}
+                            </p>
+                          </div>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  ))}
+                </div>
+              }
             </div>
           </div>
         </div>
-      </div> */}
-    </Grid>
+      </div>
+    </div>
   );
 };
 

@@ -22,15 +22,10 @@ import {
   robertRusega,
   equipo,
 } from "../../assets";
-import Grid from "@mui/system/Unstable_Grid/Grid";
 
 const Estudio = () => {
+  const [activeTab, setActiveTab] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
-  const TABS = {
-    US: "Us",
-    TEAM: "Team"
-  };
-  const [activeTab, setActiveTab] = useState(TABS.US);
 
   const { t } = useTranslation("global");
 
@@ -57,26 +52,6 @@ const Estudio = () => {
       transition={{ duration: 1, delay: 1 }}
       key="estudio"
     >
-      <Grid container justifyContent={'center'}>
-        <Grid xs={10.5}>
-          <Grid container>
-            {Object.keys(TABS).map(tab => (
-              <Grid key={tab} onClick={() => setActiveTab(tab)} className={activeTab === tab ? "active" : ""} mr="7px">
-                <span>{TABS[tab].toUpperCase()}</span>
-              </Grid>
-            ))}
-          </Grid>
-        </Grid>
-        {/* SOBRE NOSOTROS */}
-        <Grid>
-          <Grid container>
-            <Grid>
-              <h5 className="title">d'aura arquitectura</h5>
-            </Grid>
-            <Grid></Grid>
-          </Grid>
-        </Grid>
-      </Grid>
       <div className="container">
         <div className="row">
           <div className="col-xl-12">

@@ -43,7 +43,7 @@ function App() {
         <>
           <CustomCursor showLoader={showLoader} />
           <Grid container justifyContent={"center"}>
-            <Grid xs={11} sm={11} md={9} lg={9} xl={6}>
+            <Grid sm={11} md={9} lg={9} xl={6}>
               <Navbar logoColor={logoColor} />
               <AnimatedRoutes setLogoColor={setLogoColor} />
               <Footer />
