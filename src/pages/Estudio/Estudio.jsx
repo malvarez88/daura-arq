@@ -7,20 +7,12 @@ import { motion } from "framer-motion";
 
 import { useTranslation } from "react-i18next";
 
-import { partners, espacies, espacios, spaces } from "../../constants";
+import { equipo } from "../../constants";
 import {
   about1,
   about2,
   about3,
   wbf1,
-  gemmaPous,
-  juanRamon,
-  marinaRuis,
-  miguelGarcia,
-  nuriaAyala,
-  omarMasoud,
-  robertRusega,
-  equipo,
 } from "../../assets";
 import { changeDocTitle } from "../../hooks/hooks";
 
@@ -97,34 +89,12 @@ const Estudio = () => {
               >
                 <p className="general-text">{t("estudio-page.equipo")}</p>
                 <div className="equipo-profile">
-                  <div className="profile">
-                    <img src={nuriaAyala} alt="Nuria Ayala i Mitjavila" className="img-fluid img-team" />
-                    <p>Núria Ayala i Mitjavila</p>
+                  {equipo.map((member, index)=> (
+                    <div className="profile" key={index}>
+                    <img src={member.image} alt={member.name} className="img-fluid img-team" />
+                    <p>{member.name}</p>
                   </div>
-                  <div className="profile">
-                    <img src={juanRamon} alt="Joan Ramon Rius" className="img-fluid img-team" />
-                    <p>Joan Ramon Rius</p>
-                  </div>
-                  <div className="profile">
-                    <img src={miguelGarcia} alt="Miquel Garcia Soler" className="img-fluid img-team" />
-                    <p>Miquel García Soler</p>
-                  </div>
-                  <div className="profile">
-                    <img src={gemmaPous} alt="Gemma Pous" className="img-fluid img-team" />
-                    <p>Gemma Pous</p>
-                  </div>
-                  <div className="profile">
-                    <img src={omarMasoud} alt="Omar Masoud" className="img-fluid img-team" />
-                    <p>Omar Masoud</p>
-                  </div>
-                  <div className="profile">
-                    <img src={robertRusega} alt="Robert Rusega" className="img-fluid img-team" />
-                    <p>Robert Rusega</p>
-                  </div>
-                  <div className="profile">
-                    <img src={marinaRuis} alt="Marina Ruis" className="img-fluid img-team" />
-                    <p>Marina Ruis</p>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
