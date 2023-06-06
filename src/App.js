@@ -14,12 +14,12 @@ function App() {
 
   useEffect(() => {
     const loaderShown = sessionStorage.getItem("loaderShown");
-
     if (!loaderShown) {
       setShowLoader(true);
       sessionStorage.setItem("loaderShown", true);
     }
   }, []);
+
 
   useEffect(() => {
     const timeoutId = setTimeout(() => setShowLoader(false), 7000);
@@ -41,9 +41,9 @@ function App() {
       ) : (
         <>
           <CustomCursor showLoader={showLoader} />
-          <Navbar logoColor={logoColor} />
+          <Navbar logoColor={logoColor}/>
           <AnimatedRoutes setLogoColor={setLogoColor} />
-          <Footer />
+          <Footer/>
         </>
       )}
     </>

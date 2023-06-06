@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import "./home.css";
 
 import { motion } from "framer-motion";
 
 import heroImg1 from "../../assets/1.png";
-import heroImg2 from "../../assets/2.png";
-import heroImg3 from "../../assets/3.png";
 
-import { gcz1, vts1, ccev1, iscola1, nova1, mina1 } from "../../assets";
+import { ccev1, iscola1, mina1 } from "../../assets";
 
 const Home = () => {
   const [isLoading, setLoading] = useState(true);
+
 
   useEffect(() => {
     setTimeout(() => {
