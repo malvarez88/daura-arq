@@ -1,10 +1,13 @@
-import {gemmaPous,
+import {
+  gemmaPous,
   juanRamon,
   marinaRuis,
   miguelGarcia,
   nuriaAyala,
   omarMasoud,
-  robertRusega, victoriaBassaG} from '../assets';
+  robertRusega,
+  victoriaBassaG,
+} from "../assets";
 
 const espacios = ["sobre nosotros", "equipo"];
 const spaces = ["about us", "team"];
@@ -43,34 +46,33 @@ const partners = [
 ];
 
 const equipo = [
-  {name:'Victoria Bassa Garrido',
-image: victoriaBassaG},
- { name: 'Núria Ayala i Mitjavila',
-  image: nuriaAyala},
+  { name: "Victoria Bassa Garrido", image: victoriaBassaG },
   {
-    name: 'Joan Ramon Rius',
-    image: juanRamon
+    name: "Robert Rusega",
+    image: robertRusega,
   },
   {
-    name: 'Miquel García Soler',
-    image: miguelGarcia
+    name: "Gemma Pous",
+    image: gemmaPous,
   },
   {
-    name: 'Gemma Pous',
-    image: gemmaPous
-  }, 
-  {
-    name: 'Omar Masoud',
-    image: omarMasoud
+    name: "Marina Ruis",
+    image: marinaRuis,
   },
-{
-  name: 'Robert Rusega',
-  image: robertRusega
-},
-{
-  name: 'Marina Ruis',
-  image: marinaRuis
-}
-]
+
+  {
+    name: "Omar Masoud",
+    image: omarMasoud,
+  },
+  { name: "Núria Ayala i Mitjavila", image: nuriaAyala },
+  {
+    name: "Joan Ramon Rius",
+    image: juanRamon,
+  },
+  {
+    name: "Miquel García Soler",
+    image: miguelGarcia,
+  },
+];
 
 export { espacios, partners, spaces, espacies, equipo };
