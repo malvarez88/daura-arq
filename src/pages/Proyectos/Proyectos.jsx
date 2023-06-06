@@ -8,6 +8,7 @@ import Projects from "../../Models/Projects";
 import { dauraCategories } from "../../constants/dauraCategorires";
 import { PROJECTS } from "../../constants/projects";
 import "./proyectos.css";
+import { changeDocTitle } from "../../hooks/hooks";
 
 const Proyectos = ({ setLogoColor }) => {
   const { t } = useTranslation("global");
@@ -17,6 +18,12 @@ const Proyectos = ({ setLogoColor }) => {
   const selectedProjects = projects.getCategoryProjects(selectedCategory.category);
   const location = useLocation();
   const categorySelected = location?.state;
+
+
+  const pathLocation = t('navbar.proyectos')
+  useEffect(() => {
+    changeDocTitle(pathLocation)
+  }, [location, pathLocation])
 
 
   const [isOpen, setIsOpen] = useState(false);

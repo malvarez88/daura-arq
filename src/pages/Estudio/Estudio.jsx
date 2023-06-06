@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./estudio.css";
 
 import { useSelector } from "react-redux";
@@ -22,6 +22,7 @@ import {
   robertRusega,
   equipo,
 } from "../../assets";
+import { changeDocTitle } from "../../hooks/hooks";
 
 const Estudio = () => {
   const TABS = {
@@ -31,6 +32,12 @@ const Estudio = () => {
   const [activeTab, setActiveTab] = useState(TABS.US);
 
   const { t } = useTranslation("global");
+
+  const location = t('navbar.estudio')
+
+  useEffect(() => {
+    changeDocTitle(location)
+  }, [location])
 
   function handleClick(tab) {
     setActiveTab(tab);

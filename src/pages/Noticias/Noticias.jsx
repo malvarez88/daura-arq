@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './noticias.css'
 
 import { useSelector } from "react-redux";
@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 import { terrassa1, wbf1 } from "../../assets";
+import { changeDocTitle } from "../../hooks/hooks";
 
 // import en from "../../languages/en/global.json";
 // import es from "../../languages/es/global.json";
@@ -16,6 +17,13 @@ import { terrassa1, wbf1 } from "../../assets";
 const Noticias = () => {
 
   const {t} = useTranslation("global")
+
+
+  const location = t('footer.noticias')
+  useEffect(()=> {
+    changeDocTitle(location)
+  },[location])
+
   // const lang = useSelector((state) => state.language);
 
   // const language = {
