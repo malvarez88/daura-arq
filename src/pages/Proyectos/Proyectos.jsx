@@ -20,10 +20,10 @@ const Proyectos = ({ setLogoColor }) => {
   const categorySelected = location?.state;
 
 
-  const tabTitle = t('navbar.proyectos')
+  const pathLocation = t('navbar.proyectos')
   useEffect(() => {
-    changeDocTitle(tabTitle)
-  }, [tabTitle])
+    changeDocTitle(pathLocation)
+  }, [location, pathLocation])
 
 
   const [isOpen, setIsOpen] = useState(false);
