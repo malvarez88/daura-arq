@@ -3,13 +3,10 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { instagram } from "../../assets";
 import "./footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-  const [t, i18n] = useTranslation("global");
-
-  const handleLanguageChange = (newLang) => {
-    i18n.changeLanguage(newLang);
-  };
+  const { t, i18n } = useTranslation("global");
 
   return (
     <motion.div
@@ -26,19 +23,19 @@ const Footer = () => {
                 <li className="footer-li">
                   <div className="languages">
                     <button
-                      onClick={() => handleLanguageChange("ca")}
+                      onClick={() => i18n.changeLanguage("ca")}
                       style={{ color: i18n?.resolvedLanguage === "ca" ? "black" : "lightgray" }}
                     >
                       CA
                     </button>
                     <button
-                      onClick={() => handleLanguageChange("es")}
+                      onClick={() => i18n.changeLanguage("es")}
                       style={{ color: i18n?.resolvedLanguage === "es" ? "black" : "lightgray" }}
                     >
                       ES
                     </button>
                     <button
-                      onClick={() => handleLanguageChange("en")}
+                      onClick={() => i18n.changeLanguage("en")}
                       style={{ color: i18n?.resolvedLanguage === "en" ? "black" : "lightgray" }}
                     >
                       EN
@@ -48,20 +45,20 @@ const Footer = () => {
                   <span className="daura-footer">@ d'aura arquitectura</span>
                 </li>
                 <li className="footer-li">
-                  <a
-                    href="/noticias"
+                  <Link
+                    to="/noticias"
                     className="footer-link"
                   >
                     <span>{t("footer.noticias")}</span>
-                  </a>
+                  </Link>
                 </li>
                 <li className="footer-li">
-                  <a
-                    href="/contacto"
+                  <Link
+                    to="/contacto"
                     className="footer-link"
                   >
                     <span>{t("footer.contacto")}</span>
-                  </a>
+                  </Link>
                   <a
                     href="https://www.instagram.com/daurastudio"
                     target="_blank"
@@ -81,19 +78,19 @@ const Footer = () => {
               <div className="mobile-footer">
                 <div className="languages">
                   <button
-                    onClick={() => handleLanguageChange("ca")}
+                    onClick={() => i18n.changeLanguage("ca")}
                     style={{ color: i18n?.resolvedLanguage === "ca" ? "black" : "lightgray" }}
                   >
                     CA
                   </button>
                   <button
-                    onClick={() => handleLanguageChange("es")}
+                    onClick={() => i18n?.changeLanguage("es")}
                     style={{ color: i18n?.resolvedLanguage === "es" ? "black" : "lightgray" }}
                   >
                     ES
                   </button>
                   <button
-                    onClick={() => handleLanguageChange("en")}
+                    onClick={() => i18n?.changeLanguage("en")}
                     style={{ color: i18n?.resolvedLanguage === "en" ? "black" : "lightgray" }}
                   >
                     EN

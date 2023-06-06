@@ -3,29 +3,25 @@ import "./navbar.css";
 
 import Logo from "../Logo/Logo";
 
-import { useLocation } from "react-router";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({ logoColor }) => {
-
-
   const { t } = useTranslation("global");
+  const navigate = useNavigate();
 
   var colorEstudio;
-
-  // if (location.pathname === "/proyectos") {
-  //   colorProyecto = "#DF6537";
-  // } else if (location.pathname === "/estudio") {
-  //   colorEstudio = "#DF6537";
-  // }
-
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleChangePath = (path) => {
+    navigate(path)
+    setIsOpen(false);
+  }
 
   return (
     <header className="header">
@@ -40,30 +36,30 @@ const Navbar = ({ logoColor }) => {
             <div className="col-xl-12">
               <div className="navbar">
                 <div className="link-container">
-                  <a
-                    href="/proyectos"
+                  <Link
+                    to="/proyectos"
                     className="nav-link"
                     style={{
                       color: `${logoColor ? logoColor : "black"}`,
                     }}
                   >
                     <span>{t("navbar.proyectos")}</span>
-                  </a>
+                  </Link>
                 </div>
                 <div className="link-container logo-container">
-                  <a href="/" className="nav-link" />
+                  <Link to="/" className="nav-link" />
                   <Logo logoColor={logoColor} />
                 </div>
                 <div className="link-container last">
-                  <a
-                    href="/estudio"
+                  <Link
+                    to="/estudio"
                     className="nav-link"
                     style={{
                       color: `${colorEstudio ? colorEstudio : "black"}`,
                     }}
                   >
                     <span className="last">{t("navbar.estudio")}</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -71,7 +67,7 @@ const Navbar = ({ logoColor }) => {
             <div className="col-12">
               <div className="mobile-navbar">
                 <div className="logo">
-                  <a href="/" className="nav-link" />
+                  <Link to="/" className="nav-link" />
                   <Logo logoColor={logoColor} />
                 </div>
                 <div className={`hamburger open}`} onClick={handleToggleMenu}>
@@ -84,7 +80,7 @@ const Navbar = ({ logoColor }) => {
                 <div className="col-12" style={{ background: "transparent" }}>
                   <div className="nav-open-container">
                     <div className="logo">
-                      <a href="/" className="nav-link" />
+                      <Link to="/" className="nav-link" />
                       <Logo logoColor={logoColor} />
                     </div>
                     <div
@@ -99,17 +95,17 @@ const Navbar = ({ logoColor }) => {
                 </div>
 
                 <ul className="navbar-menu">
-                  <li className="mobile-link">
-                    <a href="/proyectos">{t("navbar.proyectos")}</a>
+                  <li className="mobile-link" onClick={() => handleChangePath("/proyectos")}>
+                    {t("navbar.proyectos")}
                   </li>
-                  <li className="mobile-link">
-                    <a href="/noticias">{t("footer.noticias")}</a>
+                  <li className="mobile-link" onClick={() => handleChangePath("/noticias")}>
+                    {t("footer.noticias")}
                   </li>
-                  <li className="mobile-link">
-                    <a href="/estudio">{t("navbar.estudio")}</a>
+                  <li className="mobile-link" onClick={() => handleChangePath("/estudio")}>
+                    {t("navbar.estudio")}
                   </li>
-                  <li className="mobile-link">
-                    <a href="/contacto">{t("footer.contacto")}</a>
+                  <li className="mobile-link" onClick={() => handleChangePath("/contacto")}>
+                    {t("footer.contacto")}
                   </li>
                 </ul>
               </div>
