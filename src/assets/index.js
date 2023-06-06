@@ -18,6 +18,7 @@ import nuriaAyala from './nuriaAyala-bn.jpg';
 import omarMasoud from './OmarMasoud-bn.jpg';
 import robertRusega from './RobertRuesga-bn.jpg'
 import equipo from './equipo.jpeg';
+import victoriaBassaG from './VictoriaBassaGarrido.jpg'
 
 
 // PROYECTOS
@@ -448,5 +449,6 @@ export {
   miguelGarcia,
   nuriaAyala,
   omarMasoud,
-  robertRusega
+  robertRusega,
+  victoriaBassaG
 };
