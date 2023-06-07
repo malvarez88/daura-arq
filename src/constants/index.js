@@ -7,6 +7,7 @@ import {
   omarMasoud,
   robertRusega,
   victoriaBassaG,
+  profile
 } from "../assets";
 
 const espacios = ["sobre nosotros", "equipo"];
@@ -46,24 +47,6 @@ const partners = [
 ];
 
 const equipo = [
-  { name: "Victoria Bassa Garrido", image: victoriaBassaG },
-  {
-    name: "Robert Rusega",
-    image: robertRusega,
-  },
-  {
-    name: "Gemma Pous",
-    image: gemmaPous,
-  },
-  {
-    name: "Marina Ruis",
-    image: marinaRuis,
-  },
-
-  {
-    name: "Omar Masoud",
-    image: omarMasoud,
-  },
   { name: "Núria Ayala i Mitjavila", image: nuriaAyala },
   {
     name: "Joan Ramon Rius",
@@ -72,6 +55,28 @@ const equipo = [
   {
     name: "Miquel García Soler",
     image: miguelGarcia,
+  },
+  {
+    name: "Marina Ruis",
+    image: marinaRuis,
+  },
+  {
+    name: "Robert Rusega",
+    image: robertRusega,
+  },
+  {
+    name: "Laura ...",
+    image: profile,
+  },
+  {
+    name: "Gemma Pous",
+    image: gemmaPous,
+  },
+  { name: "Victoria Bassa Garrido", image: victoriaBassaG },
+
+  {
+    name: "Omar Masoud",
+    image: omarMasoud,
   },
 ];
 
