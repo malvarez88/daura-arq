@@ -65,7 +65,7 @@ const equipo = [
     image: robertRusega,
   },
   {
-    name: "Laura ...",
+    name: "Laura Gimenez",
     image: profile,
   },
   {
