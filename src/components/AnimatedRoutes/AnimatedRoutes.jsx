@@ -16,7 +16,7 @@ const AnimatedRoutes = ({ setLogoColor }) => {
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home setLogoColor={setLogoColor} />} />
         <Route
           path="/proyectos"
           element={<Proyectos setLogoColor={setLogoColor} />}

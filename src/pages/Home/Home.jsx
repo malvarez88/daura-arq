@@ -8,15 +8,13 @@ import heroImg1 from "../../assets/1.png";
 
 import { ccev1, iscola1, mina1 } from "../../assets";
 
-const Home = () => {
+const Home = ({ setLogoColor }) => {
   const [isLoading, setLoading] = useState(true);
 
-
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
+    setLogoColor();
+  }, [])
+
 
   return (
     <motion.section

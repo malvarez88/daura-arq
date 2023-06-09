@@ -8,6 +8,7 @@ import { dauraCategories } from "../../constants/dauraCategorires";
 import { PROJECTS } from "../../constants/projects";
 import { thousandSeparator } from "../../utils/numbers";
 import "./proyectoabierto.css";
+import { maxHeight } from "@mui/system";
 
 const ProyectoAbierto = ({ setLogoColor }) => {
   const { t } = useTranslation("global");
@@ -75,7 +76,8 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                       padding: "6px",
                       fontSize: "12px",
                       width: "80px",
-                      color: selectedCategory?.categoryTextColor
+                      color: selectedCategory?.categoryTextColor,
+                      maxHeight: "35px"
                     }}
                     onClick={() => handleGoBack()}
                   >
