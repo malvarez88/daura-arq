@@ -9,10 +9,10 @@
   transition: all 0.4s;
 }
 
-.open-thumb:hover {
+/* .open-thumb:hover {
   width: 100%;
   height: 100%;
-}
+} */
 
 .images-section {
   margin-top: 20px;
