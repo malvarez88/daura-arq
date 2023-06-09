@@ -146,7 +146,7 @@
   }
 
   .proyect-img {
-    /* width: 100%; */
+    width: 100%;
     object-fit: cover;
     width: 400px;
     height: 300px;
@@ -162,8 +162,15 @@
   }
 }
 
-/* @media (max-width: 900px) {
+@media (max-width: 994px) and (min-width: 768px) {
     .wrapper {
+      /* display: flex; */
         grid-template-columns: repeat(2, 1fr);
+        justify-content: space-around;
     }
- } */
+    .grid-container{
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+    }
+ }

@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import './noticias.css'
 
-import { useSelector } from "react-redux";
-
 import { motion } from "framer-motion";
 
 import { useTranslation } from "react-i18next";
@@ -10,27 +8,15 @@ import { useTranslation } from "react-i18next";
 import { terrassa1, wbf1 } from "../../assets";
 import { changeDocTitle } from "../../hooks/hooks";
 
-// import en from "../../languages/en/global.json";
-// import es from "../../languages/es/global.json";
-// import ca from "../../languages/ca/global.json";
-
 const Noticias = () => {
 
-  const {t} = useTranslation("global")
+  const { t } = useTranslation("global")
 
 
   const location = t('footer.noticias')
-  useEffect(()=> {
+  useEffect(() => {
     changeDocTitle(location)
-  },[location])
-
-  // const lang = useSelector((state) => state.language);
-
-  // const language = {
-  //   es: es[lang],
-  //   en: en[lang],
-  //   ca: ca[lang]
-  // }[lang] || ca[lang];
+  }, [location])
 
   return (
     <div className="container">
@@ -39,7 +25,7 @@ const Noticias = () => {
           <motion.div
             initial={{ opacity: 0, x: -200 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -200, transition: { duration: 0.2} }}
+            exit={{ opacity: 0, x: -200, transition: { duration: 0.2 } }}
             transition={{ duration: 1, delay: 1 }}
             key="noticias"
           >

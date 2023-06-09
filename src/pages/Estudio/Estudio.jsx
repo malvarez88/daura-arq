@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from "react";
-import "./estudio.css";
-
-import { useSelector } from "react-redux";
-
 import { motion } from "framer-motion";
-
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import s from "./estudio.module.css";
 
-import { equipo } from "../../constants";
 import {
   about1,
   about2,
   about3,
   wbf1,
 } from "../../assets";
+import { equipo } from "../../constants";
 import { changeDocTitle } from "../../hooks/hooks";
 
 const Estudio = () => {
@@ -46,13 +42,13 @@ const Estudio = () => {
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
-            <div className="estudio">
-              <ul className="estudio-list">
+            <div className={s.estudio}>
+              <ul className={s.estudioList}>
                 {Object.keys(TABS).map((tab, index) => (
                   <li
                     key={tab}
                     onClick={() => handleClick(TABS[tab])}
-                    className={activeTab === TABS[tab] ? "active" : ""}
+                    className={activeTab === TABS[tab] ? s.active : ""}
                   >
                     {t(`estudio-page.${TABS[tab]}`)}
                   </li>
@@ -60,7 +56,7 @@ const Estudio = () => {
               </ul>
               {/* SOBRE NOSOTROS */}
               <div
-                className="sobre-nosotros"
+
                 style={{ display: activeTab === TABS.US ? "block" : "none" }}
               >
                 <h5 className="title">d'aura arquitectura</h5>
@@ -68,17 +64,17 @@ const Estudio = () => {
                   {t("estudio-page.sobre-nosotros-1")}
                 </p>
 
-                <div className="sobre-nosotros-img">
-                  <img src={about1} alt="about" className="img-fluid img-team" />
-                  <img src={about2} alt="about" className="img-fluid img-team" />
-                  <img src={about3} alt="about" className="img-fluid img-team" />
+                <div className={s.sobreNosotrosImg}>
+                  <img src={about1} alt="about" className={`img-fluid img-team ${s.mobileFullWidth}`} />
+                  <img src={about2} alt="about" className={`img-fluid img-team ${s.mobileFullWidth}`} />
+                  <img src={about3} alt="about" className={`img-fluid img-team ${s.mobileFullWidth}`} />
                 </div>
 
                 <p className="general-text">
                   {t("estudio-page.sobre-nosotros-2")}
                 </p>
                 <div>
-                  <img src={wbf1} alt="" className="img-fluid img-team" />
+                  <img src={wbf1} alt="" className={`img-fluid img-team ${s.mobileFullWidth}`} />
                 </div>
               </div>
 
@@ -88,12 +84,12 @@ const Estudio = () => {
                 style={{ display: activeTab === TABS.TEAM ? "block" : "none" }}
               >
                 <p className="general-text">{t("estudio-page.equipo")}</p>
-                <div className="equipo-profile">
-                  {equipo.map((member, index)=> (
-                    <div className="profile" key={index}>
-                    <img src={member.image} alt={member.name} className="img-fluid img-team" />
-                    <p>{member.name}</p>
-                  </div>
+                <div className={s.equipoProfile}>
+                  {equipo.map((member, index) => (
+                    <div className={s.profile} key={index}>
+                      <img src={member.image} alt={member.name} className={`img-fluid img-team ${s.mobileFullWidth}`} />
+                      <p>{member.name}</p>
+                    </div>
                   ))}
                 </div>
               </div>

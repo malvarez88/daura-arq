@@ -5,11 +5,11 @@
   margin-bottom: 40px;
 }
 
-.estudio-list li.active {
+.estudioList li.active {
   color: var(--orange);
 }
 
-.sobre-nosotros-img {
+.sobreNosotrosImg {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -56,7 +56,7 @@
   margin-bottom: 3px;
 }
 
-.estudio-list {
+.estudioList {
   padding: 0;
   margin: 30px 0;
   list-style: none;
@@ -65,7 +65,7 @@
   gap: 10px;
 }
 /* 
-.estudio-list li {
+.estudioList li {
   cursor: pointer;
 } */
 
@@ -74,7 +74,7 @@
   text-decoration: underline;
 }
 
-.equipo-profile {
+.equipoProfile {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -93,13 +93,13 @@
 }
 
 @media screen and (max-width: 990px) {
-  .sobre-nosotros-img {
+  .sobreNosotrosImg {
     justify-content: center;
     flex-wrap: wrap;
     grid-template-columns: repeat(1,1fr);
   }
 
-  .img-fluid {
+  .mobileFullWidth {
     width: 100%;
     height: 100%;
     object-fit: cover;
