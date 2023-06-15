@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./navbar.css";
 
 import Logo from "../Logo/Logo";
@@ -16,12 +16,18 @@ const Navbar = ({ logoColor }) => {
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
+
   };
 
   const handleChangePath = (path) => {
     navigate(path)
     setIsOpen(false);
   }
+
+  useEffect(() => {
+    if (isOpen) document.body.style.overflow = 'hidden';
+    if (!isOpen) document.body.style.overflow = 'auto';
+  }, [isOpen])
 
   return (
     <header className="header">
