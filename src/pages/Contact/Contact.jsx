@@ -1,4 +1,6 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import emailjs from 'emailjs-com';
+// import mailTest from './mailTest.html';
 import "./contact.css";
 
 import { motion } from "framer-motion";
@@ -20,9 +22,11 @@ const Contact = () => {
   });
 
   const location = t('footer.contacto')
-  useEffect(()=> {
+  useEffect(() => {
     changeDocTitle(location)
-  },[location])
+  }, [location])
+
+  const sendEmail = (HTML) => emailjs.send('service_2lexg9f', 'template_xvhtv32', HTML, 'FAlAwX4dLhWkESlfj')
 
   const handleChange = (e) => {
     setFormData({
@@ -34,17 +38,13 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
     Swal({
       title: "Email Sent!",
       text: "Your email has been sent successfully.",
       icon: "success",
       confirmButtonText: "OK",
     });
+    sendEmail(formData);
   };
 
   return (
