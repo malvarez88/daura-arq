@@ -57,11 +57,11 @@ const equipo = [
     image: miguelGarcia,
   },
   {
-    name: "Marina Ruis",
+    name: "Marina Rius",
     image: marinaRuis,
   },
   {
-    name: "Robert Rusega",
+    name: "Robert Ruesga",
     image: robertRusega,
   },
   {
