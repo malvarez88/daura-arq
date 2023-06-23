@@ -4,7 +4,7 @@ Architecture Studio
 
 ## Description
 
-This is a website for an Architecture Studio built using React. It showcases the studio's projects and provides information about their services and team. The website utilizes various technologies, including JavaScript, GSAP, and Bootstrap.
+This is a website for an Architecture Studio built using React. It showcases the studio's projects and provides information about their services and team. The website utilizes various technologies, including JavaScript, Framer Motion, and Bootstrap.
 
 ## Features
 
@@ -18,7 +18,7 @@ This is a website for an Architecture Studio built using React. It showcases the
 
 - React
 - JavaScript
-- GSAP (GreenSock Animation Platform)
+- Framer Motion
 - Bootstrap
 
 ## Installation
@@ -35,7 +35,7 @@ This is a website for an Architecture Studio built using React. It showcases the
 ## Credits
 
 - [React](https://reactjs.org/)
-- [GSAP](https://greensock.com/gsap/)
+- [Framer Motion](https://www.framer.com/motion/)
 - [Bootstrap](https://getbootstrap.com/)
 
 ## Contributing
