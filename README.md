@@ -11,7 +11,7 @@ This is a website for an Architecture Studio built using React. It showcases the
 - Project gallery with images and descriptions
 - Services and team sections
 - Responsive design for optimal viewing on different devices
-- Smooth animations and transitions powered by GSAP
+- Smooth animations and transitions powered by Framer Motion
 - Styling and layout using Bootstrap
 
 ## Technologies Used
