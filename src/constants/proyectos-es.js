@@ -321,7 +321,7 @@ const proyectosES = [
     title: "HP0803",
     categoria: "inmobiliario",
     location: "Barcelona",
-    superficie: 85,
+    superficie: 185,
     promotor: "",
     equipo: ["D'Aura Arquitectura", "Berkshire Hathaway"],
     fotografia: "",
@@ -329,7 +329,7 @@ const proyectosES = [
     año: 2022,
     images: [hp831, hp832, hp833, hp834, hp835, hp836, hp837],
     description:
-      "División y segregación de un inmueble en dos nuevas viviendas. Estudio de alternativas de proyecto, renovación energética y selección gestión de proyecto y obras.",
+      "División y segregación de un inmueble en dos nuevas viviendas. Estudio de alternativas de proyecto, renovación energética y asesoramiento en la gestión de proyecto y obras.",
   },
   {
     ref: "DA0811",
@@ -361,7 +361,7 @@ const proyectosES = [
     año: 2023,
     images: [hp8131, hp8132, hp8133, hp8135, hp8134],
     description:
-      "Reforma de vivienda en Barcelona. Estudio de alternativas de proyecto, renovación energética y selección gestión de proyecto y obras.",
+      "Reforma de vivienda en Barcelona. Estudio de alternativas de proyecto, renovación energética y asesoramiento en la gestión de proyecto y obras.",
   },
 
   {

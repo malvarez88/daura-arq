@@ -331,7 +331,7 @@ export const PROJECTS = [
       title: "HP0803",
       category: "realState",
       location: "Barcelona",
-      surface: 85,
+      surface: 185,
       promoter: "",
       team: ["D'Aura Arquitectura", "Berkshire Hathaway"],
       photographer: "",

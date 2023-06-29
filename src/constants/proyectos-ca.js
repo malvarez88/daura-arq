@@ -321,7 +321,7 @@ const proyectosCA = [
     title: "HP0803",
     categoria: "inmobiliari",
     location: "Barcelona",
-    superficie: 85,
+    superficie: 185,
     promotor: "",
     equipo: ["D'Aura Arquitectura", "Berkshire Hathaway"],
     fotografia: "",
@@ -481,7 +481,7 @@ const proyectosCA = [
     año: null,
     images: [artrux1, artrux2, artrux3, artrux4, artrux5],
     description:
-      "Les Talaies són interessants torres d'observació ubicades estratègicament al voltant de la costa menorquina. La Talaia d'Artruts està ubicada a la costa sud-oest de Menorca i datada entre finals del segle XVI i principis del s. XVII. És un Bé d'Interès Cultural (BIC) identificat en el Catàleg de protecció del Patrimoni Històric de Ciutadella. El projecte consolida l'edificació amb materials locals i tradicionals i recupera elements eliminats. L'actuació permetrà evitar el deteriorament progressiu i la futura visita de l'edifici.",
+      "Les Talaies són interessants torres d'observació ubicades estratègicament al voltant de la costa menorquina. La Talaia d'Artrutx està ubicada a la costa sud-oest de Menorca i datada entre finals del segle XVI i principis del s. XVII. És un Bé d'Interès Cultural (BIC) identificat en el Catàleg de protecció del Patrimoni Històric de Ciutadella. El projecte consolida l'edificació amb materials locals i tradicionals i recupera elements eliminats. L'actuació permetrà evitar el deteriorament progressiu i la futura visita de l'edifici.",
   },
   {
     ref: "DA0015",

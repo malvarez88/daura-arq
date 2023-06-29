@@ -321,7 +321,7 @@ const proyectosEN = [
     title: "HP0803",
     categoria: "real estate",
     location: "Barcelona",
-    superficie: 85,
+    superficie: 185,
     promotor: "",
     equipo: ["D'Aura Arquitectura", "Berkshire Hathaway"],
     fotografia: "",
