@@ -26,7 +26,14 @@ const Contact = () => {
     changeDocTitle(location)
   }, [location])
 
-  const sendEmail = (HTML) => emailjs.send('service_2lexg9f', 'template_xvhtv32', HTML, 'FAlAwX4dLhWkESlfj')
+  const sendEmail = (HTML) => {
+    emailjs.send('service_2lexg9f', 'template_xvhtv32', HTML, 'FAlAwX4dLhWkESlfj')
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+   }, function(error) {
+      console.log('FAILED...', error);
+   });
+  }
 
   const handleChange = (e) => {
     setFormData({
@@ -37,12 +44,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
     Swal({
       title: "Email Sent!",
       text: "Your email has been sent successfully.",
       icon: "success",
-      confirmButtonText: "OK",
+      button: "OK",
     });
     sendEmail(formData);
   };
