@@ -583,7 +583,7 @@ const proyectosCA = [
     año: null,
     images: [corus1, corus2, corus3, corus4, corus5, corus6],
     description:
-      "Headquarters i laboratoris de multinacional sanitària a Espanya. Els processos productius dels nous laboratoris son els motiu principal d’aquest projecte. S’utilitzen diferents graus de transparència en la sectorització dels espais per mostrar i relacionar les activitats. La circulació  dels materials i de la informació defineix les distribucions i els espais. El treball amb els diferents departaments de l’empresa fa que l’edifici esdevingui també imatge corporativa i el posicioni l’empresa en el sector.",
+      "Oficines centrals i laboratoris de multinacional sanitària a Espanya. Els processos productius dels nous laboratoris son els motiu principal d’aquest projecte. S’utilitzen diferents graus de transparència en la sectorització dels espais per mostrar i relacionar les activitats. La circulació  dels materials i de la informació defineix les distribucions i els espais. El treball amb els diferents departaments de l’empresa fa que l’edifici esdevingui també imatge corporativa i el posicioni l’empresa en el sector.",
   },
   {
     ref: "DA0681",
