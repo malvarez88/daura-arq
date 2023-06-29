@@ -443,7 +443,7 @@ export const PROJECTS = [
         index: 1,
       ref: "DA0621",
       short: "PARANINF",
-      title: "Antigua Esglesia de la Santa Creu de Vic y Sala Gótica-Paraninf",
+      title: "Restauracio de l'Antiga Esglesia de la Santa Creu de Vic i Sala Gótica-Paraninf de la Universitat de Vic",
       category: "heritage",
       location: "Vic ( Barcelona)",
       surface: 4050,
