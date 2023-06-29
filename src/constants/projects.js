@@ -446,7 +446,7 @@ export const PROJECTS = [
       title: "Restauracio de l'Antiga Esglesia de la Santa Creu de Vic i Sala Gótica-Paraninf de la Universitat de Vic",
       category: "heritage",
       location: "Vic ( Barcelona)",
-      surface: 4050,
+      surface: 1135,
       promoter: "Universitat de Vic",
       team: ["D'Aura Arquitectura", "Vives-Bassa-Ayala SCP"],
       photographer: "",
