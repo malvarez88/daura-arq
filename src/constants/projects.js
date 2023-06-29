@@ -468,7 +468,7 @@ export const PROJECTS = [
       team: ["D'Aura Arquitectura", "Ferran Arquitectura"],
       photographer: "",
       order: 3,
-      year: null,
+      year: 960,
       images: [
         lalanne1,
         lalanne2,
