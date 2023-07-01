@@ -142,6 +142,12 @@ import {
   cartama4,
   cartama5,
   cartama6,
+  cartama7,
+  cartama8,
+  cartama9,
+  cartama10,
+  cartama11,
+  cartama12,
   mina1,
   mina2,
   mina3,
@@ -757,7 +763,20 @@ const proyectosES = [
     fotografia: "",
     orden: 2,
     año: null,
-    images: [cartama1, cartama2, cartama3, cartama4, cartama5, cartama6],
+    images: [
+      cartama1,
+      cartama2,
+      cartama3,
+      cartama4,
+      cartama5,
+      cartama6,
+      cartama7,
+      cartama8,
+      cartama9,
+      cartama10,
+      cartama11,
+      cartama12,
+    ],
     description:
       "Equipamiento deportivo con  piscina cubierta y espacios polivalentes anexos. 1er Premio Concurso de Proyectos.El proyecto propone una instalación que defiende la escala urbana del complejo. El espacio deportivo como infraestructura que en este caso articula la conexión entre los dos núcleos urbanos del municipio. A una escala intermedia, el edificio de zona de aguas interviene en la organización de la Ciudad Deportiva redefiniendo los accesos y la centralidad de los espacios. En la menor escala, el proyecto propone un edificio compacto y de alta eficiencia energética; orientado al usuario y a una gestión sostenible.",
   },
@@ -786,6 +805,5 @@ const coloresEs = {
   patrimonio: "#7F403B",
   inmobiliario: "#CBA971",
 };
-
 
 export { proyectosES, coloresEs };

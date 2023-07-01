@@ -119,6 +119,8 @@ import {
   can2,
   can3,
   can4,
+  can5,
+  can6,
   hu6491,
   hu6492,
   hu6493,
@@ -142,6 +144,12 @@ import {
   cartama4,
   cartama5,
   cartama6,
+  cartama7,
+  cartama8,
+  cartama9,
+  cartama10,
+  cartama11,
+  cartama12,
   mina1,
   mina2,
   mina3,
@@ -757,7 +765,20 @@ const proyectosEN = [
     fotografia: "",
     orden: 2,
     año: null,
-    images: [cartama1, cartama2, cartama3, cartama4, cartama5, cartama6],
+    images: [
+      cartama1,
+      cartama2,
+      cartama3,
+      cartama4,
+      cartama5,
+      cartama6,
+      cartama7,
+      cartama8,
+      cartama9,
+      cartama10,
+      cartama11,
+      cartama12,
+    ],
     description:
       "Sports equipment with indoor pool and attached multipurpose spaces. 1st Prize Project Competition. The project proposes an installation that defends the urban scale of the complex. The sports space as an infrastructure that in this case articulates the connection between the two urban centers of the municipality. On an intermediate scale, the water area building intervenes in the organization of the Sports City, redefining the accesses and the centrality of the spaces. On the smallest scale, the project proposes a compact building with high energy efficiency; user-oriented and sustainable management.",
   },
@@ -773,7 +794,7 @@ const proyectosEN = [
     fotografia: "",
     orden: 2,
     año: null,
-    images: [can1, can2, can3, can4],
+    images: [can1, can2, can3, can4, can5, can6],
     description:
       "Municipal sports and leisure equipment. 1st prize contest. The new leisure and sports complex is located next to Masía Can Rabassa, improving its features and highlighting its history and the surrounding natural spaces. Drafting of a master plan for the complex, anticipating future growth and expansion of activities, as well as its connection with the Serralada Litoral Natural Park. The equipment consists of a mixed pool (leisure / education), natural and leisure areas, and a light service building.",
   },
@@ -786,6 +807,5 @@ const colors = {
   heritage: "#7F403B",
   "real estate": "#CBA971",
 };
-
 
 export { proyectosEN, colors };
