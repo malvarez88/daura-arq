@@ -751,7 +751,7 @@ const proyectosES = [
     title: "Complejo Acuático de la Ciudad Deportiva de Cártama",
     categoria: "deporte",
     location: "Cártama (Málaga)",
-    superficie: null,
+    superficie: 2750,
     promotor: "Ayuntamiento de Cártama",
     equipo: [],
     fotografia: "",

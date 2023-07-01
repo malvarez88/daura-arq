@@ -786,7 +786,7 @@ export const PROJECTS = [
       title: "Complejo Acuático de la Ciudad Deportiva de Cártama",
       category: "sport",
       location: "Cártama (Málaga)",
-      surface: null,
+      surface: 2750,
       promoter: "Ayuntamiento de Cártama",
       team: [],
       photographer: "",
