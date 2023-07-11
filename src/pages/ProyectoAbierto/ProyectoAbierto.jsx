@@ -24,7 +24,8 @@ const ProyectoAbierto = ({ setLogoColor }) => {
 
 
   const surfaceMts = thousandSeparator(Number(selectedProject?.surface));
-  const surfaceFts = thousandSeparator(Number(surfaceMts) * (10.7639).toFixed());
+  const surfaceFts = thousandSeparator(Number(selectedProject?.surface) * (10.7639).toFixed());
+
 
   const handleGoBack = () => {
     if (isCategorySelected) {

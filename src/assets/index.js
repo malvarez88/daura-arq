@@ -8,18 +8,16 @@ import profile from "./profile.png";
 import instagram from "./instag.png";
 import linkedin from "./linkedIn.png";
 
-
 //EQUIPO
-import gemmaPous from './GemmaPous-bn.jpg';
-import juanRamon from './JoanRamon Rius_bn2.jpeg';
-import marinaRuis from './MarinaRius-bn.jpg';
-import miguelGarcia from './MiquelGarcia_3.jpg';
-import nuriaAyala from './nuriaAyala-bn.jpg';
-import omarMasoud from './OmarMasoud-bn.jpg';
-import robertRusega from './RobertRuesga-bn.jpg'
-import equipo from './equipo.jpeg';
-import victoriaBassaG from './VictoriaBassaGarrido.jpg'
-
+import gemmaPous from "./GemmaPous-bn.jpg";
+import juanRamon from "./JoanRamon Rius_bn2.jpeg";
+import marinaRuis from "./MarinaRius-bn.jpg";
+import miguelGarcia from "./MiquelGarcia_3.jpg";
+import nuriaAyala from "./nuriaAyala-bn.jpg";
+import omarMasoud from "./OmarMasoud-bn.jpg";
+import robertRusega from "./RobertRuesga-bn.jpg";
+import equipo from "./equipo.jpeg";
+import victoriaBassaG from "./VictoriaBassaGarrido.jpg";
 
 // PROYECTOS
 
@@ -224,18 +222,26 @@ import gran2 from "./da0758/DA0758 (2).jpg";
 import gran3 from "./da0758/DA0758 (3).jpg";
 
 //cartama
-import cartama1 from "./da0759/DA0759 (1).jpg";
-import cartama2 from "./da0759/DA0759 (2).jpg";
-import cartama3 from "./da0759/DA0759 (3).jpg";
-import cartama4 from "./da0759/DA0759 (4).jpg";
-import cartama5 from "./da0759/DA0759 (5).jpg";
-import cartama6 from "./da0759/DA0759 (6).jpg";
+import cartama1 from "./da0759/DA0759 (2).jpg";
+import cartama2 from "./da0759/DA0759_1.jpg";
+import cartama3 from "./da0759/DA0759_3.jpg";
+import cartama4 from "./da0759/DA0759_4.jpg";
+import cartama5 from "./da0759/DA0759_5.jpg";
+import cartama6 from "./da0759/DA0759_6.jpg";
+import cartama7 from "./da0759/DA0759_7.jpg";
+import cartama8 from "./da0759/DA0759_8.jpg";
+import cartama9 from "./da0759/DA0759_9.jpg";
+import cartama10 from "./da0759/DA0759_11.jpg";
+import cartama11 from "./da0759/DA0759_12.jpg";
+import cartama12 from "././da0759/DA0759_14.jpg";
 
 //can rabassa
 import can1 from "./da0802/DA0802 (1).jpg";
 import can2 from "./da0802/DA0802 (2).jpg";
 import can3 from "./da0802/DA0802 (3).jpg";
 import can4 from "./da0802/DA0802 (4).jpg";
+import can5 from "./da0802/canrabassa1.jpg";
+import can6 from "./da0802/canrabassa2.jpg";
 
 //HP0803
 import hp831 from "./da0803/DA0803 (1).jpeg";
@@ -387,6 +393,8 @@ export {
   can2,
   can3,
   can4,
+  can5,
+  can6,
   hu6491,
   hu6492,
   hu6493,
@@ -410,6 +418,12 @@ export {
   cartama4,
   cartama5,
   cartama6,
+  cartama7,
+  cartama8,
+  cartama9,
+  cartama10,
+  cartama11,
+  cartama12,
   mina1,
   mina2,
   mina3,
@@ -450,5 +464,5 @@ export {
   nuriaAyala,
   omarMasoud,
   robertRusega,
-  victoriaBassaG
+  victoriaBassaG,
 };
