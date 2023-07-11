@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import "./home.css";
 
@@ -9,11 +9,11 @@ import heroImg1 from "../../assets/1.png";
 import { ccev1, iscola1, mina1 } from "../../assets";
 
 const Home = ({ setLogoColor }) => {
-  const [isLoading, setLoading] = useState(true);
+  // const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     setLogoColor();
-  }, [])
+  }, [setLogoColor])
 
 
   return (
@@ -31,7 +31,7 @@ const Home = ({ setLogoColor }) => {
             <div
               id="carouselExampleControls"
               className="carousel slide"
-              data-ride="carousel"
+              data-bs-ride="carousel"
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
