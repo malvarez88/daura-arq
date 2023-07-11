@@ -677,7 +677,7 @@ export const PROJECTS = [
     category: "sport",
     location: "Barcelona",
     surface: 2480,
-    promoter: "Federeació Catalana de Natació",
+    promoter: "Federació Catalana de Natació/ R.F. Espanyola de Natació",
     team: [],
     photographer: "",
     order: 7,
