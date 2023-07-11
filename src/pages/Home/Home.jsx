@@ -8,13 +8,12 @@ import heroImg1 from "../../assets/1.png";
 
 import { ccev1, iscola1, mina1 } from "../../assets";
 
-const Home = ({setLogoColor}) => {
+const Home = ({ setLogoColor }) => {
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(()=> {
+  useEffect(() => {
     setLogoColor();
-
-  },[])
+  }, [])
 
 
   return (
