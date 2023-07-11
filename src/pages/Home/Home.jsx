@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 
 import "./home.css";
 
+import { changeDocTitle } from "../../hooks/hooks";
+
 import { motion } from "framer-motion";
 
 import heroImg1 from "../../assets/1.png";
@@ -13,7 +15,14 @@ const Home = ({ setLogoColor }) => {
 
   useEffect(() => {
     setLogoColor();
-  }, [setLogoColor])
+  }, [])
+
+
+  const location = 'Home'
+
+  useEffect(() => {
+    changeDocTitle(location)
+  }, [location])
 
 
   return (
@@ -27,11 +36,11 @@ const Home = ({ setLogoColor }) => {
     >
       <div className="container">
         <div className="row">
-          <div className="col-xl-12">
+          <div className="col-12">
             <div
               id="carouselExampleControls"
               className="carousel slide"
-              data-bs-ride="carousel"
+              data-ride="carousel"
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
