@@ -50,7 +50,7 @@
       "heritage": "Heritage",
       "realState": "Real State"
     },
-    "Surface": "{{surfaceFts}}sq fts",
+    "Surface": "{{surfaceMts}}㎡",
     "Description": {
       "DA0005": "New single-family house in the urban environment of Barcelona. Optimization of the site's resources by creating interior and exterior patios that improve the privacy and natural lighting of the home.",
       "DA0008": "Single-family home on the edge of urban land and in front of a space of high ecological value. The project compacts the building area, freeing up most of the plot and blurs the volume, reducing the reading of its height and presence. The house is bright, in direct relation with the natural space that surrounds it.",
