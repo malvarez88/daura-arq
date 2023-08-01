@@ -1,16 +1,18 @@
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { useNavigate, useParams, useLocation } from "react-router";
-import Categories from "../../Models/Categories";
-import Projects from "../../Models/Projects";
-import { dauraCategories } from "../../constants/dauraCategorires";
-import { PROJECTS } from "../../constants/projects";
-import { thousandSeparator } from "../../utils/numbers";
-import "./proyectoabierto.css";
+/* eslint-disable react/button-has-type */
+import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useNavigate, useParams, useLocation } from 'react-router';
+import Categories from '../../Models/Categories';
+import Projects from '../../Models/Projects';
+import { dauraCategories } from '../../constants/dauraCategorires';
+import { PROJECTS } from '../../constants/projects';
+import { thousandSeparator } from '../../utils/numbers';
+import './proyectoabierto.css';
+import { axiosInstance } from '../../services/axiosInstance';
 
-const ProyectoAbierto = ({ setLogoColor }) => {
-  const { t } = useTranslation("global");
+function ProyectoAbierto({ setLogoColor }) {
+  const { t } = useTranslation('global');
   const location = useLocation();
   const { ref } = useParams();
   const queryParams = new URLSearchParams(location.search);
@@ -22,20 +24,18 @@ const ProyectoAbierto = ({ setLogoColor }) => {
   const [showInfo, setShowInfo] = useState(false);
   const navigate = useNavigate();
 
-
   const surfaceMts = thousandSeparator(Number(selectedProject?.surface));
   const surfaceFts = thousandSeparator(Number(selectedProject?.surface) * (10.7639).toFixed());
-
 
   const handleGoBack = () => {
     if (isCategorySelected) {
       const state = selectedCategory;
-      return navigate('/proyectos', { state })
+      return navigate('/proyectos', { state });
     }
-    return navigate(-1)
+    return navigate(-1);
   };
   useEffect(() => {
-    setLogoColor(selectedCategory?.categoryColor)
+    setLogoColor(selectedCategory?.categoryColor);
     window.scrollTo(0, 0);
   }, []);
 
@@ -44,7 +44,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
       initial={{ opacity: 0, x: 200 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: false }}
-      transition={{ ease: "linear", duration: 1 }}
+      transition={{ ease: 'linear', duration: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.2 } }}
     >
       <div className="proyectos">
@@ -53,13 +53,12 @@ const ProyectoAbierto = ({ setLogoColor }) => {
             <div className="col-xl-12">
               <h6
                 style={{
-                  textAlign: "center",
-                  padding: "20px",
+                  textAlign: 'center',
+                  padding: '20px',
                 }}
               >
                 {t(`Projects.Categories.${selectedProject?.category}`).toUpperCase()}
               </h6>
-
               <div className="project-info">
                 <div className="project-title">
                   <h4
@@ -71,17 +70,18 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                   </h4>
                   <button
                     className="btn btn-primary d-none d-sm-block"
+                    type="primary"
                     style={{
                       background: selectedCategory?.categoryColor,
-                      padding: "6px",
-                      fontSize: "12px",
-                      width: "80px",
+                      padding: '6px',
+                      fontSize: '12px',
+                      width: '80px',
                       color: selectedCategory?.categoryTextColor,
-                      maxHeight: "35px"
+                      maxHeight: '35px',
                     }}
                     onClick={() => handleGoBack()}
                   >
-                    {t("proyecto-abierto.volver")}
+                    {t('proyecto-abierto.volver')}
                   </button>
                 </div>
                 <h6>{selectedProject.location}</h6>
@@ -91,7 +91,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                       color: selectedCategory?.categoryColor,
                     }}
                   >
-                    {!showInfo ? "+ INFO" : " - INFO"}
+                    {!showInfo ? '+ INFO' : ' - INFO'}
                   </span>
                 </button>
                 {showInfo && (
@@ -111,11 +111,11 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                           </li>
                         ) : null} */}
 
-
                         {selectedProject.surface && (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.superficie")}:
+                              {t('proyecto-abierto.superficie')}
+                              :
                             </span>
                             <span>{t('Projects.Surface', { surfaceMts, surfaceFts })}</span>
                           </li>
@@ -125,7 +125,8 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                         {(selectedProject.team && selectedProject.team.length > 0) && (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.equipo")}:
+                              {t('proyecto-abierto.equipo')}
+                              :
                             </span>
                             <div className="double">
                               {selectedProject.team.map((nombre, index) => (
@@ -138,7 +139,7 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                           <li className="project-link">
                             <span>
                               {t(
-                                "proyecto-abierto.colaboradores"
+                                'proyecto-abierto.colaboradores',
                               )}
                               :
                             </span>
@@ -148,11 +149,11 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                           </li>
                         )}
 
-
                         {selectedProject.photographer ? (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.fotografia")}:
+                              {t('proyecto-abierto.fotografia')}
+                              :
                             </span>
                             <span>{selectedProject.photographer}</span>
                           </li>
@@ -160,7 +161,8 @@ const ProyectoAbierto = ({ setLogoColor }) => {
                         {selectedProject.promoter ? (
                           <li className="project-link">
                             <span>
-                              {t("proyecto-abierto.promotor")}:
+                              {t('proyecto-abierto.promotor')}
+                              :
                             </span>
                             <span>{selectedProject.promoter}</span>
                           </li>
@@ -197,6 +199,6 @@ const ProyectoAbierto = ({ setLogoColor }) => {
       </div>
     </motion.div>
   );
-};
+}
 
 export default ProyectoAbierto;

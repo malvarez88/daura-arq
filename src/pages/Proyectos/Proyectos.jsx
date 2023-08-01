@@ -1,30 +1,34 @@
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router';
 import Categories from '../../Models/Categories';
-import Projects from "../../Models/Projects";
-import { dauraCategories } from "../../constants/dauraCategorires";
-import { PROJECTS } from "../../constants/projects";
-import "./proyectos.css";
-import { changeDocTitle } from "../../hooks/hooks";
+import Projects from '../../Models/Projects';
+import { dauraCategories } from '../../constants/dauraCategorires';
+import { PROJECTS } from '../../constants/projects';
+import './proyectos.css';
+import { changeDocTitle } from '../../hooks/hooks';
+import { axiosInstance } from '../../services/axiosInstance';
 
-const Proyectos = ({ setLogoColor }) => {
-  const { t } = useTranslation("global");
+function Proyectos({ setLogoColor }) {
+  const { t } = useTranslation('global');
   const categories = new Categories(dauraCategories);
   const projects = new Projects(PROJECTS);
-  const [selectedCategory, setSelectedCategory] = useState(categories.getCategory("all"));
+  const [selectedCategory, setSelectedCategory] = useState(categories.getCategory('all'));
   const selectedProjects = projects.getCategoryProjects(selectedCategory.category);
   const location = useLocation();
   const categorySelected = location?.state;
 
+  const getProjects = async () => {
+    const { data: projects } = await axiosInstance().get('/proyectos?fields[0]=nombre&fields[1]=referencia&populate[imagenPrincipal][fields][0]=url');
+    // console.log("🚀🚀 \n ---> file: Proyectos.jsx:25 ---> projects:", projects);
+  };
 
-  const pathLocation = t('navbar.proyectos')
+  const pathLocation = t('navbar.proyectos');
   useEffect(() => {
-    changeDocTitle(pathLocation)
-  }, [location, pathLocation])
-
+    changeDocTitle(pathLocation);
+  }, [location, pathLocation]);
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,7 +36,7 @@ const Proyectos = ({ setLogoColor }) => {
     setIsOpen(!isOpen);
   };
 
-  const getSelectedColor = (category) => category === selectedCategory.category ? selectedCategory?.categoryColor : '';
+  const getSelectedColor = (category) => (category === selectedCategory.category ? selectedCategory?.categoryColor : '');
 
   function selectCategory(category) {
     const cat = categories.getCategory(category);
@@ -44,9 +48,10 @@ const Proyectos = ({ setLogoColor }) => {
   useEffect(() => {
     if (categorySelected) {
       setSelectedCategory(categorySelected);
-      return setLogoColor(categorySelected?.categoryColor)
+      return setLogoColor(categorySelected?.categoryColor);
     }
-    return setLogoColor(selectedCategory?.categoryColor)
+    getProjects();
+    return setLogoColor(selectedCategory?.categoryColor);
   }, []);
 
   return (
@@ -67,7 +72,7 @@ const Proyectos = ({ setLogoColor }) => {
                     key={index}
                     onClick={() => selectCategory(category?.category)}
                     style={{
-                      color: getSelectedColor(category?.category), cursor: 'none'
+                      color: getSelectedColor(category?.category), cursor: 'none',
                     }}
                   >
                     {t(`Projects.Categories.${category?.category}`)}
@@ -79,16 +84,16 @@ const Proyectos = ({ setLogoColor }) => {
                 <h5
                   className="mobile-title"
                   style={{
-                    color: selectedCategory?.categoryColor
+                    color: selectedCategory?.categoryColor,
                   }}
                 >
-                  {t("navbar.proyectos").toUpperCase()}
+                  {t('navbar.proyectos').toUpperCase()}
                 </h5>
                 <button
                   className="dropdown-toggle"
                   onClick={handleToggle}
                   style={{
-                    color: selectedCategory?.categoryColor
+                    color: selectedCategory?.categoryColor,
                   }}
                 >
                   {selectedCategory?.category?.toUpperCase()}
@@ -100,7 +105,7 @@ const Proyectos = ({ setLogoColor }) => {
                         key={index}
                         onClick={() => selectCategory(category?.category)}
                         style={{
-                          color: getSelectedColor(category?.category)
+                          color: getSelectedColor(category?.category),
                         }}
                       >
                         {t(`Projects.Categories.${category?.category}`)}
@@ -111,56 +116,59 @@ const Proyectos = ({ setLogoColor }) => {
               </div>
             </motion.div>
             <div className="grid-container">
-              {!projects &&
-                (<div>
-                  Loading...
-                </div>)}
-              {projects &&
-                <div className="wrapper">
-                  {selectedProjects.map((project) => (
-                    <motion.div
-                      initial={{ opacity: 0, x: 200 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 1, delay: 0.5 }}
-                      key={project.ref}
-                    >
-                      <Link
-                        to={`/proyectos/${project.ref}${selectedCategory.category === 'all' ? '' : `?category=${project?.category}`}`}
-                        className="link-project"
+              {!projects
+                && (
+                  <div>
+                    Loading...
+                  </div>
+                )}
+              {projects
+                && (
+                  <div className="wrapper">
+                    {selectedProjects.map((project) => (
+                      <motion.div
+                        initial={{ opacity: 0, x: 200 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        key={project.ref}
                       >
-                        <div
-                          className="proyect-thumb"
-                          data-categoria={project.category}
+                        <Link
+                          to={`/proyectos/${project.ref}${selectedCategory.category === 'all' ? '' : `?category=${project?.category}`}`}
+                          className="link-project"
                         >
-                          <img
-                            src={project.images[0]}
-                            alt={project.ref}
-                            key={project.ref}
-                            width="300px"
-                            height="300px"
-                            className="img-fluid proyect-img"
-                          />
-                          <div className="proyect-description">
-                            <p>
-                              {project.short
-                                ? project.short.toUpperCase()
-                                : project.ref}
-                            </p>
+                          <div
+                            className="proyect-thumb"
+                            data-categoria={project.category}
+                          >
+                            <img
+                              src={project.images[0]}
+                              alt={project.ref}
+                              key={project.ref}
+                              width="300px"
+                              height="300px"
+                              className="img-fluid proyect-img"
+                            />
+                            <div className="proyect-description">
+                              <p>
+                                {project.short
+                                  ? project.short.toUpperCase()
+                                  : project.ref}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-              }
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
             </div>
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Proyectos;
