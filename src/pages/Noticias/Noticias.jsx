@@ -88,7 +88,11 @@ function Noticias() {
                       <button
                         type="button"
                         onClick={() => toggleContent(index)}
-                        style={{border: 'none', outline:'none', textDecoration: 'underline'}}
+                        style={{
+                          border: "none",
+                          outline: "none",
+                          textDecoration: "underline",
+                        }}
                       >
                         {visibleIndexes.includes(index) ? "OCULTAR" : "LEE MAS"}
                       </button>

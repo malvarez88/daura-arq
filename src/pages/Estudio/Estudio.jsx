@@ -13,6 +13,7 @@ import { axiosInstance } from '../../services/axiosInstance';
 
 function Estudio() {
   const [about, setAbout] = useState(null);
+  const [team, setTeam] = useState(null);
 
   const TABS = {
     US: 'Us',
@@ -39,8 +40,14 @@ function Estudio() {
     setAbout(data.attributes);
   };
 
+  const getTeam = async () => {
+    const {data} = await axiosInstance().get('/arquitectos?populate[imagen][fields][0]=url');
+    setTeam(data);
+  };
+
   useEffect(() => {
     getAboutUs();
+    getTeam();
   }, [locale]);
 
   return (
@@ -111,14 +118,14 @@ function Estudio() {
               >
                 <p className="general-text">{about?.equipo}</p>
                 <div className={s.equipoProfile}>
-                  {equipo.map((member) => (
-                    <div className={s.profile} key={member}>
+                  {team?.map((member) => (
+                    <div className={member?.attributes?.imagen?.data?.attributes?.url} key={member}>
                       <img
                         src={member.image}
                         alt={member.name}
                         className={`img-fluid img-team ${s.mobileFullWidth}`}
                       />
-                      <p>{member.name}</p>
+                      <p>{member?.Nombre}</p>
                     </div>
                   ))}
                 </div>
