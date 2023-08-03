@@ -1,31 +1,31 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import s from './estudio.module.css';
+import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import s from "./estudio.module.css";
 
-import {
-  about1, about2, about3, wbf1,
-} from '../../assets';
-import { equipo } from '../../constants';
-import { changeDocTitle } from '../../hooks/hooks';
-import { axiosInstance } from '../../services/axiosInstance';
+// import {
+//   about1, about2, about3, wbf1,
+// } from '../../assets';
+// import { equipo } from '../../constants';
+import { changeDocTitle } from "../../hooks/hooks";
+import { axiosInstance } from "../../services/axiosInstance";
 
 function Estudio() {
   const [about, setAbout] = useState(null);
   const [team, setTeam] = useState(null);
 
   const TABS = {
-    US: 'Us',
-    TEAM: 'Team',
+    US: "Us",
+    TEAM: "Team",
   };
   const [activeTab, setActiveTab] = useState(TABS.US);
 
-  const { t, i18n } = useTranslation('global');
+  const { t, i18n } = useTranslation("global");
 
   const locale = i18n.language;
 
-  const location = t('navbar.estudio');
+  const location = t("navbar.estudio");
 
   useEffect(() => {
     changeDocTitle(location);
@@ -36,12 +36,17 @@ function Estudio() {
   }
 
   const getAboutUs = async () => {
-    const { data } = await axiosInstance().get(`/nosotro?locale=${locale}`);
+    const { data } = await axiosInstance().get(
+      `/nosotro?populate[nosotrosBanner][fields][0]=url&populate[nosotrosImagenes][fields]=url&locale=${locale}`
+    );
     setAbout(data.attributes);
   };
+  // nosotro?locale=${locale}
 
   const getTeam = async () => {
-    const {data} = await axiosInstance().get('/arquitectos?populate[imagen][fields][0]=url');
+    const { data } = await axiosInstance().get(
+      "/arquitectos?populate[imagen][fields][0]=url"
+    );
     setTeam(data);
   };
 
@@ -67,7 +72,7 @@ function Estudio() {
                   <li
                     key={tab}
                     onClick={() => handleClick(TABS[tab])}
-                    className={activeTab === TABS[tab] ? s.active : ''}
+                    className={activeTab === TABS[tab] ? s.active : ""}
                   >
                     {t(`estudio-page.${TABS[tab]}`)}
                   </li>
@@ -75,7 +80,7 @@ function Estudio() {
               </ul>
               {/* SOBRE NOSOTROS */}
               <div
-                style={{ display: activeTab === TABS.US ? 'block' : 'none' }}
+                style={{ display: activeTab === TABS.US ? "block" : "none" }}
               >
                 <h5 className="title">d'aura arquitectura</h5>
                 <p className="general-text">
@@ -84,27 +89,26 @@ function Estudio() {
                 </p>
 
                 <div className={s.sobreNosotrosImg}>
-                  <img
-                    src={about1}
-                    alt="about"
-                    className={`img-fluid img-team ${s.mobileFullWidth}`}
-                  />
-                  <img
-                    src={about2}
-                    alt="about"
-                    className={`img-fluid img-team ${s.mobileFullWidth}`}
-                  />
-                  <img
-                    src={about3}
-                    alt="about"
-                    className={`img-fluid img-team ${s.mobileFullWidth}`}
-                  />
+                  {about?.nosotrosImagenes?.data?.map((image) => (
+                    <img
+                      key={image.id}
+                      src={image?.attributes?.url}
+                      alt="about"
+                      className={`img-fluid img-team ${s.mobileFullWidth}`}
+                    />
+                  ))}
                 </div>
 
                 <p className="general-text">{about?.nosotros2}</p>
-                <div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
                   <img
-                    src={wbf1}
+                    src={about?.nosotrosBanner?.data?.attributes?.url}
                     alt=""
                     className={`img-fluid img-team ${s.mobileFullWidth}`}
                   />
@@ -114,12 +118,17 @@ function Estudio() {
               {/* EQUIPO */}
               <div
                 className="eqiupo"
-                style={{ display: activeTab === TABS.TEAM ? 'block' : 'none' }}
+                style={{ display: activeTab === TABS.TEAM ? "block" : "none" }}
               >
                 <p className="general-text">{about?.equipo}</p>
                 <div className={s.equipoProfile}>
                   {team?.map((member) => (
-                    <div className={member?.attributes?.imagen?.data?.attributes?.url} key={member}>
+                    <div
+                      className={
+                        member?.attributes?.imagen?.data?.attributes?.url
+                      }
+                      key={member}
+                    >
                       <img
                         src={member.image}
                         alt={member.name}
