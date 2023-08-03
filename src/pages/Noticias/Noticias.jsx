@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import "./noticias.css";
+import React, { useEffect, useState } from 'react';
+import './noticias.css';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-import { changeDocTitle } from "../../hooks/hooks";
-import { axiosInstance } from "../../services/axiosInstance";
-import { shortDate } from "../../utils/numbers";
+import { changeDocTitle } from '../../hooks/hooks';
+import { axiosInstance } from '../../services/axiosInstance';
+import { shortDate } from '../../utils/numbers';
 
 function Noticias() {
   const [news, setNews] = useState(null);
-  const { t, i18n } = useTranslation("global");
+  const { t, i18n } = useTranslation('global');
 
-  const location = t("footer.noticias");
+  const location = t('footer.noticias');
   useEffect(() => {
     changeDocTitle(location);
   }, [location]);
@@ -22,7 +22,7 @@ function Noticias() {
 
   const getNews = async () => {
     const { data } = await axiosInstance().get(
-      `/noticias?populate[foto][fields][0]=url&locale=${locale}&sort=createdAt:desc`
+      `/noticias?populate[foto][fields][0]=url&locale=${locale}&sort=createdAt:desc`,
     );
     setNews(data);
   };
@@ -52,13 +52,13 @@ function Noticias() {
             transition={{ duration: 1, delay: 1 }}
             key="noticias"
           >
-            <div className="estudio" style={{ marginTop: "30px" }}>
+            <div className="estudio" style={{ marginTop: '30px' }}>
               <div className="noticias">
-                <h6 className="title" style={{ marginBottom: "30px" }}>
-                  {t("footer.noticias").toUpperCase()}
+                <h6 className="title" style={{ marginBottom: '30px' }}>
+                  {t('footer.noticias').toUpperCase()}
                 </h6>
-                <h6 className="title" style={{ marginBottom: "30px" }}>
-                  {t("noticias.wip")}
+                <h6 className="title" style={{ marginBottom: '30px' }}>
+                  {t('noticias.wip')}
                 </h6>
 
                 {news?.map((n, index) => (
@@ -73,13 +73,14 @@ function Noticias() {
                     <small>{shortDate(n?.attributes?.createdAt)}</small>
                     <h4>{n?.attributes?.Titulo}</h4>
                     <p className="general-text">{n?.attributes?.descripcion}</p>
-
                     <p
                       className="general-text"
                       style={{
+                        opacity: visibleIndexes.includes(index) ? 1 : 0,
                         display: visibleIndexes.includes(index)
-                          ? "block"
-                          : "none",
+                          ? 'block'
+                          : 'none',
+                        transition: 'opacity 1s ease',
                       }}
                     >
                       {n?.attributes?.contenido}
@@ -89,12 +90,12 @@ function Noticias() {
                         type="button"
                         onClick={() => toggleContent(index)}
                         style={{
-                          border: "none",
-                          outline: "none",
-                          textDecoration: "underline",
+                          border: 'none',
+                          outline: 'none',
+                          textDecoration: 'underline',
                         }}
                       >
-                        {visibleIndexes.includes(index) ? "OCULTAR" : "LEE MAS"}
+                        {visibleIndexes.includes(index) ? 'OCULTAR' : 'LEE MAS'}
                       </button>
                     </span>
                     <hr />
