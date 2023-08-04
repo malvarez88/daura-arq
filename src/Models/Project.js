@@ -20,12 +20,14 @@
 
 export default class Project {
   constructor(project) {
+    this.id = project.id;
     this.index = project.attributes.orden;
     this.ref = project.attributes.referencia;
     this.short = project.attributes.nombre;
     this.mainImage = project.attributes.imagenPrincipal.data.attributes.url;
     this.title = project?.attributes?.nombre_largo;
-    this.images = project?.attributes?.images;
+    this.description = project?.attributes?.descripcion;
+    this.images = project?.attributes?.imagenes;
     this.category = project?.attributes?.categoria?.data?.attributes?.nombre;
     this.location = project?.attributes?.location;
     this.surface = project?.attributes?.surface;
@@ -34,7 +36,6 @@ export default class Project {
     this.promoter = project?.attributes?.promoter;
     this.photographer = project?.attributes?.photographer;
     this.order = project?.attributes?.order;
-    this.year = project?.attributes?.year;
     this.year = project?.attributes?.year;
   }
 }

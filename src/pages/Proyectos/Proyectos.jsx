@@ -5,39 +5,24 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router';
-import Categories from '../../Models/Categories';
 import Projects from '../../Models/Projects';
 import './proyectos.css';
 import { changeDocTitle } from '../../hooks/hooks';
 import { axiosInstance } from '../../services/axiosInstance';
 
-function Proyectos({ setLogoColor }) {
+function Proyectos({ setLogoColor, categories }) {
   const { t } = useTranslation('global');
   const [projects, setProjects] = useState({});
-  const [categories, setCategories] = useState({});
   const [selectedCategory, setSelectedCategory] = useState({});
   const [selectedProjects, setSelectedProjects] = useState([]);
+  console.log("🚀🚀 \n ---> file: Proyectos.jsx:18 ---> selectedProjects:", selectedProjects)
   const location = useLocation();
   const categorySelected = location?.state;
-
-  const getCategories = async () => {
-    const query = '/categorias?fields[0]=nombre&fields[1]=color&fields[2]=colorLetra';
-    const { data } = await axiosInstance().get(query);
-    if (data) setCategories(new Categories(data));
-  };
 
   const getProjects = async () => {
     const query = '/proyectos?fields[0]=nombre&fields[1]=referencia&fields[2]=orden&populate[imagenPrincipal][fields][0]=url&populate[categoria][fields]=nombre';
     const { data } = await axiosInstance().get(query);
     if (data) setProjects(new Projects(data));
-  };
-
-  const filterProjects = () => {
-    if (projects.length > 0) {
-      if (selectedCategory?.category !== 'all') return setSelectedProjects(projects.getCategoryProjects(selectedCategory?.category));
-      return setSelectedProjects(projects);
-    }
-    return '';
   };
 
   const pathLocation = t('navbar.proyectos');
@@ -52,7 +37,7 @@ function Proyectos({ setLogoColor }) {
   };
 
   const getSelectedColor = (category) => {
-    if (category === selectedCategory?.category) return selectedCategory?.categoryColor
+    if (category === selectedCategory?.category) return selectedCategory?.categoryColor;
     return '';
   };
 
@@ -63,22 +48,34 @@ function Proyectos({ setLogoColor }) {
     setLogoColor(cat?.categoryColor);
   }
 
+  const filterProjects = () => {
+    console.log("exe")
+    if (projects.length > 0) {
+      if (selectedCategory?.category !== 'all') return projects.getCategoryProjects(selectedCategory?.category);
+      return projects;
+    }
+    return '';
+  };
+
   useEffect(() => {
+    console.log("mmmm,,....")
     if (categorySelected) {
       setSelectedCategory(categorySelected);
       setLogoColor(categorySelected?.categoryColor);
+    } else {
+      setSelectedCategory(categories.getCategory('all'));
     }
-    getCategories();
+    // getCategories();
     getProjects();
-    return setLogoColor(selectedCategory?.categoryColor);
   }, []);
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (categories.length > 0) setSelectedCategory(categories.getCategory('all'));
-  }, [categories]);
+  }, [categories]); */
 
   useEffect(() => {
-    filterProjects();
+    setSelectedProjects(filterProjects());
+    // console.log("🚀🚀 \n ---> file: Proyectos.jsx:19 ---> selectedProjects:", selectedProjects);
   }, [selectedCategory, projects]);
 
   return (
@@ -150,10 +147,10 @@ function Proyectos({ setLogoColor }) {
                     Loading...
                   </div>
                 )}
-              {selectedProjects?.length > 1
+              {selectedProjects?.length > 0
                 && (
                   <div className="wrapper">
-                    {projects?.projects.map((project) => (
+                    {selectedProjects.map((project) => (
                       <motion.div
                         initial={{ opacity: 0, x: 200 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -163,7 +160,7 @@ function Proyectos({ setLogoColor }) {
                         key={project.ref}
                       >
                         <Link
-                          to={`/proyectos/${project.ref}${selectedCategory.category === 'all' ? '' : `?category=${project?.category}`}`}
+                          to={`/proyectos/${project.id}${selectedCategory.category === 'all' ? '' : `?category=${project?.category}`}`}
                           className="link-project"
                         >
                           <div

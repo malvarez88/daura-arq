@@ -8,10 +8,9 @@ const allCategory = {
     colorLetra: 'Negro',
   },
 };
-
 export default class Categories {
   constructor(categories) {
-    this.categories = categories?.map((category) => new Category(category));
+    this.categories = categories ? categories?.map((category) => new Category(category)) : [];
     this.categories.unshift(new Category(allCategory));
     this.length = this.categories?.length;
   }
