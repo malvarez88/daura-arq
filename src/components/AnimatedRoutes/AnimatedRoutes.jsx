@@ -23,7 +23,6 @@ function AnimatedRoutes({ setLogoColor }) {
   };
 
   useEffect(() => {
-    console.log("animated routes");
     getCategories();
   }, []);
   return (

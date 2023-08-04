@@ -2,10 +2,11 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams, useLocation } from 'react-router';
-import './proyectoabierto.css';
-import { axiosInstance } from '../../services/axiosInstance';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { useLocation, useNavigate, useParams } from 'react-router';
 import Project from '../../Models/Project';
+import { axiosInstance } from '../../services/axiosInstance';
+import './proyectoabierto.css';
 
 function ProyectoAbierto({ setLogoColor, categories }) {
   const { t } = useTranslation('global');
@@ -31,10 +32,13 @@ function ProyectoAbierto({ setLogoColor, categories }) {
     if (data.attributes) setProject(new Project(data));
   };
   useEffect(() => {
-    setLogoColor(selectedCategory?.categoryColor);
     getProject();
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    setLogoColor(selectedCategory?.categoryColor);
+  }, [selectedCategory]);
 
   return (
     <motion.div
@@ -54,7 +58,7 @@ function ProyectoAbierto({ setLogoColor, categories }) {
                   padding: '20px',
                 }}
               >
-                {project?.category}
+                {project?.category?.toUpperCase()}
               </h6>
               <div className="project-info">
                 <div className="project-title">
@@ -93,7 +97,7 @@ function ProyectoAbierto({ setLogoColor, categories }) {
                 </button>
                 {showInfo && (
                   <div className="project-description">
-                    <p className="general-text">{project.description}</p>
+                    <ReactMarkdown className="general-text">{project.description}</ReactMarkdown>
                     <div className="project-description-info">
                       <ul className="project-list">
 

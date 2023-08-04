@@ -15,7 +15,6 @@ function Proyectos({ setLogoColor, categories }) {
   const [projects, setProjects] = useState({});
   const [selectedCategory, setSelectedCategory] = useState({});
   const [selectedProjects, setSelectedProjects] = useState([]);
-  console.log("🚀🚀 \n ---> file: Proyectos.jsx:18 ---> selectedProjects:", selectedProjects)
   const location = useLocation();
   const categorySelected = location?.state;
 
@@ -49,7 +48,6 @@ function Proyectos({ setLogoColor, categories }) {
   }
 
   const filterProjects = () => {
-    console.log("exe")
     if (projects.length > 0) {
       if (selectedCategory?.category !== 'all') return projects.getCategoryProjects(selectedCategory?.category);
       return projects;
@@ -58,7 +56,6 @@ function Proyectos({ setLogoColor, categories }) {
   };
 
   useEffect(() => {
-    console.log("mmmm,,....")
     if (categorySelected) {
       setSelectedCategory(categorySelected);
       setLogoColor(categorySelected?.categoryColor);
