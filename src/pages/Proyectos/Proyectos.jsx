@@ -11,15 +11,16 @@ import { changeDocTitle } from '../../hooks/hooks';
 import { axiosInstance } from '../../services/axiosInstance';
 
 function Proyectos({ setLogoColor, categories }) {
-  const { t } = useTranslation('global');
+  const { t, i18n } = useTranslation('global');
   const [projects, setProjects] = useState({});
   const [selectedCategory, setSelectedCategory] = useState({});
   const [selectedProjects, setSelectedProjects] = useState([]);
   const location = useLocation();
   const categorySelected = location?.state;
+  const locale = i18n?.language;
 
   const getProjects = async () => {
-    const query = '/proyectos?fields[0]=nombre&fields[1]=referencia&fields[2]=orden&populate[imagenPrincipal][fields][0]=url&populate[categoria][fields]=nombre';
+    const query = `/proyectos?fields[0]=nombre&fields[1]=referencia&fields[2]=orden&populate[imagenPrincipal][fields][0]=url&populate[categoria][fields]=nombre&locale=${locale}`;
     const { data } = await axiosInstance().get(query);
     if (data) setProjects(new Projects(data));
   };
