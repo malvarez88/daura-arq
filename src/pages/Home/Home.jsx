@@ -1,29 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import "./home.css";
+import './home.css';
 
-import { changeDocTitle } from "../../hooks/hooks";
+import { motion } from 'framer-motion';
+import { changeDocTitle } from '../../hooks/hooks';
 
-import { motion } from "framer-motion";
+import heroImg1 from '../../assets/1.png';
 
-import heroImg1 from "../../assets/1.png";
+import { ccev1, iscola1, mina1 } from '../../assets';
 
-import { ccev1, iscola1, mina1 } from "../../assets";
-
-const Home = ({ setLogoColor }) => {
+function Home({ setLogoColor }) {
   // const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     setLogoColor();
-  }, [])
+  }, []);
 
-
-  const location = 'Home'
+  const location = 'Home';
 
   useEffect(() => {
-    changeDocTitle(location)
-  }, [location])
-
+    changeDocTitle(location);
+  }, [location]);
 
   return (
     <motion.section
@@ -80,7 +77,7 @@ const Home = ({ setLogoColor }) => {
                 <span
                   className="carousel-control-prev-icon"
                   aria-hidden="true"
-                ></span>
+                />
                 <span className="sr-only">Previous</span>
               </a>
               <a
@@ -92,7 +89,7 @@ const Home = ({ setLogoColor }) => {
                 <span
                   className="carousel-control-next-icon"
                   aria-hidden="true"
-                ></span>
+                />
                 <span className="sr-only">Next</span>
               </a>
             </div>
@@ -112,6 +109,6 @@ const Home = ({ setLogoColor }) => {
       </div>
     </motion.section>
   );
-};
+}
 
 export default Home;
