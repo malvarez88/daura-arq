@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Project from './Project';
 
 export default class Projects {
@@ -6,13 +7,16 @@ export default class Projects {
     this.length = this.projects.length;
   }
 
+  map(callback) {
+    return this.projects?.map(callback);
+  }
+
   getSortedPrjects() {
     return this.projects.sort((a, b) => a.index - b.index);
   }
 
   getCategoryProjects(category) {
     if (category === 'all') return this.getSortedPrjects();
-    // eslint-disable-next-line max-len
     return this.projects?.filter((project) => project.category === category).sort((a, b) => a.index - b.index);
   }
 

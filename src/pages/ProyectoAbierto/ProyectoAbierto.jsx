@@ -2,30 +2,22 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams, useLocation } from 'react-router';
-import Categories from '../../Models/Categories';
-import Projects from '../../Models/Projects';
-import { dauraCategories } from '../../constants/dauraCategorires';
-import { PROJECTS } from '../../constants/projects';
-import { thousandSeparator } from '../../utils/numbers';
-import './proyectoabierto.css';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { useLocation, useNavigate, useParams } from 'react-router';
+import Project from '../../Models/Project';
 import { axiosInstance } from '../../services/axiosInstance';
+import './proyectoabierto.css';
 
-function ProyectoAbierto({ setLogoColor }) {
+function ProyectoAbierto({ setLogoColor, categories }) {
   const { t } = useTranslation('global');
   const location = useLocation();
-  const { ref } = useParams();
+  const { id: projectId } = useParams();
   const queryParams = new URLSearchParams(location.search);
   const isCategorySelected = queryParams.get('category');
-  const projects = new Projects(PROJECTS);
-  const selectedProject = projects?.getProjectByRef(ref);
-  const categories = new Categories(dauraCategories);
-  const selectedCategory = categories?.getCategory(selectedProject?.category);
+  const [project, setProject] = useState({});
+  const selectedCategory = categories?.getCategory(project?.category);
   const [showInfo, setShowInfo] = useState(false);
   const navigate = useNavigate();
-
-  const surfaceMts = thousandSeparator(Number(selectedProject?.surface));
-  const surfaceFts = thousandSeparator(Number(selectedProject?.surface) * (10.7639).toFixed());
 
   const handleGoBack = () => {
     if (isCategorySelected) {
@@ -34,10 +26,19 @@ function ProyectoAbierto({ setLogoColor }) {
     }
     return navigate(-1);
   };
+
+  const getProject = async () => {
+    const { data } = await axiosInstance().get(`/proyectos/${projectId}?populate[imagenes][fields][0]=url&populate[imagenPrincipal][fields][0]=url&populate[categoria]=nombre`);
+    if (data.attributes) setProject(new Project(data));
+  };
   useEffect(() => {
-    setLogoColor(selectedCategory?.categoryColor);
+    getProject();
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    setLogoColor(selectedCategory?.categoryColor);
+  }, [selectedCategory]);
 
   return (
     <motion.div
@@ -57,7 +58,7 @@ function ProyectoAbierto({ setLogoColor }) {
                   padding: '20px',
                 }}
               >
-                {t(`Projects.Categories.${selectedProject?.category}`).toUpperCase()}
+                {project?.category?.toUpperCase()}
               </h6>
               <div className="project-info">
                 <div className="project-title">
@@ -66,7 +67,7 @@ function ProyectoAbierto({ setLogoColor }) {
                       color: selectedCategory?.categoryColor,
                     }}
                   >
-                    {selectedProject.title.toUpperCase()}
+                    {project?.title}
                   </h4>
                   <button
                     className="btn btn-primary d-none d-sm-block"
@@ -84,7 +85,7 @@ function ProyectoAbierto({ setLogoColor }) {
                     {t('proyecto-abierto.volver')}
                   </button>
                 </div>
-                <h6>{selectedProject.location}</h6>
+                <h6>{project.location}</h6>
                 <button className="info" onClick={() => setShowInfo(!showInfo)}>
                   <span
                     style={{
@@ -96,46 +97,34 @@ function ProyectoAbierto({ setLogoColor }) {
                 </button>
                 {showInfo && (
                   <div className="project-description">
-                    <p className="general-text">{t(`Projects.Description.${ref}`)}</p>
+                    <ReactMarkdown className="general-text">{project.description}</ReactMarkdown>
                     <div className="project-description-info">
                       <ul className="project-list">
 
-                        {/* SE saco el Año! */}
-
-                        {/* {selectedProject.year ? (
-                          <li className="project-link">
-                            <span>
-                              {t("proyecto-abierto.year").toUpperCase()}:
-                            </span>
-                            <span>{selectedProject.year}</span>
-                          </li>
-                        ) : null} */}
-
-                        {selectedProject.surface && (
+                        {project.surface && (
                           <li className="project-link">
                             <span>
                               {t('proyecto-abierto.superficie')}
                               :
                             </span>
-                            <span>{t('Projects.Surface', { surfaceMts, surfaceFts })}</span>
+                            <span>{t('Projects.Surface', { surfaceMts: project?.surface })}</span>
                           </li>
                         )}
 
-                        {/* NO vi que ninguno tenga team o colaboradores */}
-                        {(selectedProject.team && selectedProject.team.length > 0) && (
+                        {(project.team && project.team.length > 0) && (
                           <li className="project-link">
                             <span>
                               {t('proyecto-abierto.equipo')}
                               :
                             </span>
                             <div className="double">
-                              {selectedProject.team.map((nombre, index) => (
-                                <span key={index}>{nombre}</span>
+                              {project.team.map((nombre) => (
+                                <span key={nombre}>{nombre}</span>
                               ))}
                             </div>
                           </li>
                         )}
-                        {selectedProject.colaboradores && (
+                        {project.colaboradores && (
                           <li className="project-link">
                             <span>
                               {t(
@@ -144,27 +133,27 @@ function ProyectoAbierto({ setLogoColor }) {
                               :
                             </span>
                             <div className="double">
-                              <span>{selectedProject.colaboradores}</span>
+                              <span>{project.colaboradores}</span>
                             </div>
                           </li>
                         )}
 
-                        {selectedProject.photographer ? (
+                        {project.photographer ? (
                           <li className="project-link">
                             <span>
                               {t('proyecto-abierto.fotografia')}
                               :
                             </span>
-                            <span>{selectedProject.photographer}</span>
+                            <span>{project.photographer}</span>
                           </li>
                         ) : null}
-                        {selectedProject.promoter ? (
+                        {project.promoter ? (
                           <li className="project-link">
                             <span>
                               {t('proyecto-abierto.promotor')}
                               :
                             </span>
-                            <span>{selectedProject.promoter}</span>
+                            <span>{project.promoter}</span>
                           </li>
                         ) : null}
                       </ul>
@@ -177,17 +166,17 @@ function ProyectoAbierto({ setLogoColor }) {
               <div className="open-project-images">
                 <div className="img-thumb">
                   <img
-                    src={selectedProject.images[0]}
-                    alt={selectedProject.title}
+                    src={project.mainImage}
+                    alt={project.title}
                     className="img-fluid"
                   />
                 </div>
                 <div className="images-section">
-                  {selectedProject.images.map((img, index) => (
+                  {project?.images?.data.map((img) => (
                     <img
-                      key={index}
-                      src={img}
-                      alt={index}
+                      key={img?.attributes?.url}
+                      src={img?.attributes?.url}
+                      alt="fotos proyecto"
                       className="open-thumb img-fluid"
                     />
                   ))}
