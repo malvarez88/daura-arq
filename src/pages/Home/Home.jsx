@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
+/* eslint-disable max-len */
+import React, { useEffect, useState } from 'react';
 
 import './home.css';
 
 import { motion } from 'framer-motion';
 import { changeDocTitle } from '../../hooks/hooks';
 
-import heroImg1 from '../../assets/1.png';
-
-import { ccev1, iscola1, mina1 } from '../../assets';
+import { axiosInstance } from '../../services/axiosInstance';
 
 function Home({ setLogoColor }) {
   // const [isLoading, setLoading] = useState(true);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     setLogoColor();
@@ -18,9 +18,22 @@ function Home({ setLogoColor }) {
 
   const location = 'Home';
 
+  const getHomeImages = async () => {
+    const imageArray = [];
+    const { data } = await axiosInstance().get('/banner?populate[imagen1][fields][0]=url&populate[imagen2][fields][0]=url&populate[imagen3][fields][0]=url');
+    if (data?.attributes?.imagen1?.data?.attributes?.url) imageArray.push(data?.attributes?.imagen1?.data?.attributes?.url);
+    if (data?.attributes?.imagen2?.data?.attributes?.url) imageArray.push(data?.attributes?.imagen2?.data?.attributes?.url);
+    if (data?.attributes?.imagen3?.data?.attributes?.url) imageArray.push(data?.attributes?.imagen3?.data?.attributes?.url);
+    setImages(imageArray);
+  };
+
   useEffect(() => {
     changeDocTitle(location);
   }, [location]);
+
+  useEffect(() => {
+    getHomeImages();
+  }, []);
 
   return (
     <motion.section
@@ -40,33 +53,17 @@ function Home({ setLogoColor }) {
               data-ride="carousel"
             >
               <div className="carousel-inner">
-                <div className="carousel-item active">
-                  <img
-                    className="d-block img-fluid hero-img"
-                    src={mina1}
-                    alt="First slide"
-                    width="1100px"
-                    height="540px"
-                  />
-                </div>
-                <div className="carousel-item">
-                  <img
-                    className="d-block img-fluid hero-img"
-                    src={ccev1}
-                    alt="Third slide"
-                    width="1100px"
-                    height="520px"
-                  />
-                </div>
-                <div className="carousel-item">
-                  <img
-                    className="d-block img-fluid hero-img"
-                    src={heroImg1}
-                    alt="Third slide"
-                    width="1100px"
-                    height="520px"
-                  />
-                </div>
+                {images.length > 0 && images.map((image) => (
+                  <div className="carousel-item active">
+                    <img
+                      className="d-block img-fluid hero-img"
+                      src={image}
+                      alt="Home slide"
+                      width="1100px"
+                      height="540px"
+                    />
+                  </div>
+                ))}
               </div>
               <a
                 className="carousel-control-prev"
@@ -95,14 +92,14 @@ function Home({ setLogoColor }) {
             </div>
 
             <div className="mobile-home">
-              <img src={mina1} alt="" className="img-fluid mobile-hero-img" />
-              <img src={ccev1} alt="" className="img-fluid mobile-hero-img" />
+              {/* <img src={mina1} alt="" className="img-fluid mobile-hero-img" /> */}
+              {/* <img src={ccev1} alt="" className="img-fluid mobile-hero-img" /> */}
               <img
-                src={heroImg1}
+                // src={heroImg1}
                 alt=""
                 className="img-fluid mobile-hero-img"
               />
-              <img src={iscola1} alt="" className="img-fluid mobile-hero-img" />
+              {/* <img src={iscola1} alt="" className="img-fluid mobile-hero-img" /> */}
             </div>
           </div>
         </div>

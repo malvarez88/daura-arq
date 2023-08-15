@@ -1,46 +1,46 @@
-import React, { useState, useEffect } from "react";
-import emailjs from "emailjs-com";
+import React, { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
 // import mailTest from './mailTest.html';
-import "./contact.css";
+import './contact.css';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import Swal from "sweetalert";
+import Swal from 'sweetalert';
 
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
-import { instagram, linkedin } from "../../assets";
-import { changeDocTitle } from "../../hooks/hooks";
+import { instagram, linkedin } from '../../assets';
+import { changeDocTitle } from '../../hooks/hooks';
 
-import { axiosInstance } from "../../services/axiosInstance";
+import { axiosInstance } from '../../services/axiosInstance';
 
 function Contact() {
-  const { t, i18n } = useTranslation("global");
+  const { t, i18n } = useTranslation('global');
   const [contactData, setContactData] = useState(null);
 
   const locale = i18n.language;
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
+    name: '',
+    email: '',
+    message: '',
   });
 
-  const location = t("footer.contacto");
+  const location = t('footer.contacto');
   useEffect(() => {
     changeDocTitle(location);
   }, [location]);
 
   const sendEmail = (HTML) => {
     emailjs
-      .send("service_2lexg9f", "template_xvhtv32", HTML, "FAlAwX4dLhWkESlfj")
+      .send('service_2lexg9f', 'template_xvhtv32', HTML, 'FAlAwX4dLhWkESlfj')
       .then(
         (response) => {
-          console.log("SUCCESS!", response.status, response.text);
+          console.log('SUCCESS!', response.status, response.text);
         },
         (error) => {
-          console.log("FAILED...", error);
-        }
+          console.log('FAILED...', error);
+        },
       );
   };
 
@@ -55,16 +55,16 @@ function Contact() {
     e.preventDefault();
     // console.log(formData);
     Swal({
-      title: "Email Sent!",
-      text: "Your email has been sent successfully.",
-      icon: "success",
-      button: "OK",
+      title: 'Email Sent!',
+      text: 'Your email has been sent successfully.',
+      icon: 'success',
+      button: 'OK',
     });
     sendEmail(formData);
   };
 
   const getContactData = async () => {
-    const { data } = await axiosInstance().get("/contacto");
+    const { data } = await axiosInstance().get('/contacto');
     setContactData(data.attributes);
   };
 
@@ -92,7 +92,7 @@ function Contact() {
               >
                 <div className="contact-direction">
                   <h6 className="title">
-                    {t("footer.contacto").toUpperCase()}
+                    {t('footer.contacto').toUpperCase()}
                   </h6>
                   <p>{contactData?.direccion1}</p>
                   <p>{contactData?.direccion2}</p>
@@ -148,7 +148,7 @@ function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                     />
-                    <span>{t("contact-page.nombre")}</span>
+                    <span>{t('contact-page.nombre')}</span>
                   </div>
                   <div className="input-box">
                     <input
@@ -159,7 +159,7 @@ function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                     />
-                    <span>{t("contact-page.email")}</span>
+                    <span>{t('contact-page.email')}</span>
                   </div>
                   <div className="input-box">
                     <textarea
@@ -167,13 +167,13 @@ function Contact() {
                       required
                       id="message"
                       name="message"
-                      placeholder={t("contact-page.mensaje")}
+                      placeholder={t('contact-page.mensaje')}
                       value={formData.message}
                       onChange={handleChange}
                     />
                   </div>
                   <button className="btn btn-secondary" type="submit">
-                    {t("contact-page.enviar")}
+                    {t('contact-page.enviar')}
                   </button>
                 </form>
               </motion.div>
@@ -185,7 +185,7 @@ function Contact() {
               >
                 <div className="mobile-contact-direction d-block d-lg-none">
                   <h6 className="title">
-                    {t("footer.contacto").toUpperCase()}
+                    {t('footer.contacto').toUpperCase()}
                   </h6>
                   <p>C/ Francesc Carbonell 34, B-2 Barcelona 08034</p>
                   <p>C/ Nou, 17, 1-3a. 07701 Maó 07701- Baleares</p>
