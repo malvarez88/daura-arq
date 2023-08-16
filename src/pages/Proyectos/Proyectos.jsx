@@ -73,7 +73,6 @@ function Proyectos({ setLogoColor, categories }) {
 
   useEffect(() => {
     setSelectedProjects(filterProjects());
-    // console.log("🚀🚀 \n ---> file: Proyectos.jsx:19 ---> selectedProjects:", selectedProjects);
   }, [selectedCategory, projects]);
 
   return (
