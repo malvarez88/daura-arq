@@ -8,7 +8,6 @@ import { axiosInstance } from '../../services/axiosInstance';
 
 function Estudio() {
   const [about, setAbout] = useState(null);
-  console.log("🚀🚀 \n ---> file: Estudio.jsx:11 ---> about:", about)
   const [team, setTeam] = useState(null);
 
   const TABS = {
