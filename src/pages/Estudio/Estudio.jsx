@@ -8,6 +8,7 @@ import { axiosInstance } from '../../services/axiosInstance';
 
 function Estudio() {
   const [about, setAbout] = useState(null);
+  console.log("🚀🚀 \n ---> file: Estudio.jsx:11 ---> about:", about)
   const [team, setTeam] = useState(null);
 
   const TABS = {
@@ -119,17 +120,15 @@ function Estudio() {
                 <div className={s.equipoProfile}>
                   {team?.map((member) => (
                     <div
-                      className={
-                        member?.attributes?.imagen?.data?.attributes?.url
-                      }
+                      className={s.profile}
                       key={member}
                     >
                       <img
-                        src={member.image}
-                        alt={member.name}
+                        src={member?.attributes?.imagen?.data?.attributes?.url}
+                        alt={member?.attributes?.Nombre}
                         className={`img-fluid img-team ${s.mobileFullWidth}`}
                       />
-                      <p>{member?.Nombre}</p>
+                      <p>{member?.attributes?.Nombre}</p>
                     </div>
                   ))}
                 </div>

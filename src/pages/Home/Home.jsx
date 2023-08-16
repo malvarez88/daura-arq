@@ -53,8 +53,8 @@ function Home({ setLogoColor }) {
               data-ride="carousel"
             >
               <div className="carousel-inner">
-                {images.length > 0 && images.map((image) => (
-                  <div className="carousel-item active">
+                {images.length > 0 && images.map((image, idx) => (
+                  <div className={`carousel-item ${idx === 0 ? 'active' : ''}`} key={image}>
                     <img
                       className="d-block img-fluid hero-img"
                       src={image}
