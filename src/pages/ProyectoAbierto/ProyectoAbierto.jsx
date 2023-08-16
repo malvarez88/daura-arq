@@ -15,7 +15,6 @@ function ProyectoAbierto({ setLogoColor, categories }) {
   const queryParams = new URLSearchParams(location.search);
   const isCategorySelected = queryParams.get('category');
   const [project, setProject] = useState({});
-  console.log("🚀🚀 \n ---> file: ProyectoAbierto.jsx:18 ---> project:", project)
   const selectedCategory = categories?.getCategory(project?.category);
   const [showInfo, setShowInfo] = useState(false);
   const navigate = useNavigate();
