@@ -29,13 +29,13 @@ export default class Project {
     this.description = project?.attributes?.descripcion;
     this.images = project?.attributes?.imagenes;
     this.category = project?.attributes?.categoria?.data?.attributes?.nombre;
-    this.location = project?.attributes?.location;
-    this.surface = project?.attributes?.surface;
+    this.location = project?.attributes?.ubicacion;
+    this.surface = project?.attributes?.superficie;
     this.promoter = project?.attributes?.promoter;
-    this.team = project?.attributes?.team;
-    this.promoter = project?.attributes?.promoter;
-    this.photographer = project?.attributes?.photographer;
-    this.order = project?.attributes?.order;
-    this.year = project?.attributes?.year;
+    this.team = project?.attributes?.equipo;
+    this.promoter = project?.attributes?.promotor;
+    this.photographer = project?.attributes?.fotografia;
+    this.order = project?.attributes?.orden;
+    this.date = project?.attributes?.fecha;
   }
 }

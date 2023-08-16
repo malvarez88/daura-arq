@@ -118,7 +118,7 @@ function ProyectoAbierto({ setLogoColor, categories }) {
                               :
                             </span>
                             <div className="double">
-                              {project.team.map((nombre) => (
+                              {project.team.split(',').map((nombre) => (
                                 <span key={nombre}>{nombre}</span>
                               ))}
                             </div>
