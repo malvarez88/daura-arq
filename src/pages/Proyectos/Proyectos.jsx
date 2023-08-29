@@ -22,7 +22,7 @@ function Proyectos({ setLogoColor, categories }) {
   const getProjects = async () => {
     const query = `/proyectos?fields[0]=nombre&fields[1]=referencia&fields[2]=orden&populate[imagenPrincipal][fields][0]=url&populate[categoria][fields]=nombre&pagination[pageSize]=50&locale=${locale}`;
     const { data } = await axiosInstance().get(query);
-    if (data) setProjects(new Projects(data).getSortedPrjects());
+    if (data) setProjects(new Projects(data));
   };
 
   const pathLocation = t('navbar.proyectos');
@@ -51,7 +51,7 @@ function Proyectos({ setLogoColor, categories }) {
   const filterProjects = () => {
     if (projects.length > 0) {
       if (selectedCategory?.category !== 'all') return projects.getCategoryProjects(selectedCategory?.category);
-      return projects;
+      return projects.getSortedPrjects();
     }
     return '';
   };
