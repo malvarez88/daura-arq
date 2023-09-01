@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './noticias.css';
-
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { motion } from 'framer-motion';
 
 import { useTranslation } from 'react-i18next';
@@ -83,7 +83,9 @@ function Noticias() {
                         transition: 'opacity 1s ease',
                       }}
                     >
-                      {n?.attributes?.contenido}
+                      <ReactMarkdown>
+                        {n?.attributes?.contenido}
+                      </ReactMarkdown>
                     </p>
                     <span>
                       <button

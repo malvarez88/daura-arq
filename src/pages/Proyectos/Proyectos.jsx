@@ -20,7 +20,7 @@ function Proyectos({ setLogoColor, categories }) {
   const locale = i18n?.language;
 
   const getProjects = async () => {
-    const query = `/proyectos?fields[0]=nombre&fields[1]=referencia&fields[2]=orden&populate[imagenPrincipal][fields][0]=url&populate[categoria][fields]=nombre&locale=${locale}`;
+    const query = `/proyectos?fields[0]=nombre&fields[1]=referencia&fields[2]=orden&populate[imagenPrincipal][fields][0]=url&populate[categoria][fields]=nombre&pagination[pageSize]=50&locale=${locale}`;
     const { data } = await axiosInstance().get(query);
     if (data) setProjects(new Projects(data));
   };
@@ -51,7 +51,7 @@ function Proyectos({ setLogoColor, categories }) {
   const filterProjects = () => {
     if (projects.length > 0) {
       if (selectedCategory?.category !== 'all') return projects.getCategoryProjects(selectedCategory?.category);
-      return projects;
+      return projects.getSortedPrjects();
     }
     return '';
   };
@@ -63,13 +63,8 @@ function Proyectos({ setLogoColor, categories }) {
     } else {
       setSelectedCategory(categories.getCategory('all'));
     }
-    // getCategories();
     getProjects();
   }, []);
-
-  /* useEffect(() => {
-    if (categories.length > 0) setSelectedCategory(categories.getCategory('all'));
-  }, [categories]); */
 
   useEffect(() => {
     setSelectedProjects(filterProjects());
