@@ -111,7 +111,7 @@ function ProyectoAbierto({ setLogoColor, categories }) {
                           </li>
                         )}
 
-                        {(project.team && project.team.length > 0) && (
+                        {project.team && (
                           <li className="project-link">
                             <span>
                               {t('proyecto-abierto.equipo')}
@@ -133,29 +133,39 @@ function ProyectoAbierto({ setLogoColor, categories }) {
                               :
                             </span>
                             <div className="double">
-                              <span>{project.colaboradores}</span>
+                              {project.colaboradores.split(',').map((colaborador) => (
+                                <div key={colaborador}>{colaborador}</div>
+                              ))}
                             </div>
                           </li>
                         )}
 
-                        {project.photographer ? (
+                        {project.photographer && (
                           <li className="project-link">
                             <span>
                               {t('proyecto-abierto.fotografia')}
                               :
                             </span>
-                            <span>{project.photographer}</span>
+                            <div className="double">
+                              {project.photographer.split(',').map((photographer) => (
+                                <div key={photographer}>{photographer}</div>
+                              ))}
+                            </div>
                           </li>
-                        ) : null}
-                        {project.promoter ? (
+                        )}
+                        {project.promoter && (
                           <li className="project-link">
                             <span>
                               {t('proyecto-abierto.promotor')}
                               :
                             </span>
-                            <span>{project.promoter}</span>
+                            <div className="double">
+                              {project.promoter.split(',').map((promoter) => (
+                                <div key={promoter}>{promoter}</div>
+                              ))}
+                            </div>
                           </li>
-                        ) : null}
+                        )}
                       </ul>
                     </div>
                   </div>
