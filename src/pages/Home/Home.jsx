@@ -92,14 +92,14 @@ function Home({ setLogoColor }) {
             </div>
 
             <div className="mobile-home">
-              {/* <img src={mina1} alt="" className="img-fluid mobile-hero-img" /> */}
-              {/* <img src={ccev1} alt="" className="img-fluid mobile-hero-img" /> */}
-              <img
-                // src={heroImg1}
-                alt=""
-                className="img-fluid mobile-hero-img"
-              />
-              {/* <img src={iscola1} alt="" className="img-fluid mobile-hero-img" /> */}
+              {images.length > 0 && images.map((image) => (
+                <img
+                  key={image}
+                  src={image}
+                  alt={image}
+                  className="img-fluid mobile-hero-img"
+                />
+              ))}
             </div>
           </div>
         </div>
