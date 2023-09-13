@@ -69,8 +69,8 @@ function Noticias() {
                     </div>
                     <p>{shortDate(n?.attributes?.createdAt)}</p>
                     <a href={n?.attributes?.link} target="_blank" rel="noreferrer" style={{ color: 'inherit', cursor: 'pointer' }}><h4>{n?.attributes?.Titulo}</h4></a>
-                    <p className="general-text">{n?.attributes?.descripcion}</p>
-                    <p
+                    <span className="general-text"><ReactMarkdown>{n?.attributes?.descripcion}</ReactMarkdown></span>
+                    <span
                       className="general-text"
                       style={{
                         opacity: visibleIndexes.includes(index) ? 1 : 0,
@@ -83,7 +83,7 @@ function Noticias() {
                       <ReactMarkdown>
                         {n?.attributes?.contenido}
                       </ReactMarkdown>
-                    </p>
+                    </span>
                     <span>
                       <button
                         type="button"

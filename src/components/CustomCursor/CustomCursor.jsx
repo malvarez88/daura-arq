@@ -13,7 +13,6 @@ export default function CustomCursor({ showLoader }) {
   }, [showLoader]);
 
   useEffect(() => {
-    console.log("1");
     document.addEventListener('mousemove', (e) => {
       const { clientX, clientY } = e;
       const mouseX = clientX - (cursorRef.current ? cursorRef.current.clientWidth / 2 : 0);
@@ -23,7 +22,7 @@ export default function CustomCursor({ showLoader }) {
       }
     });
 
-    const hoverElements = document.querySelectorAll('a, button, input, li, span, img, h4');
+    const hoverElements = document.querySelectorAll('a, button, input, li, span, img');
     hoverElements.forEach((element) => {
       element.addEventListener('mouseenter', () => {
         cursorRef.current.classList.add('is-hovering');
