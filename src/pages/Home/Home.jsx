@@ -9,7 +9,6 @@ import { changeDocTitle } from '../../hooks/hooks';
 import { axiosInstance } from '../../services/axiosInstance';
 
 function Home({ setLogoColor }) {
-  // const [isLoading, setLoading] = useState(true);
   const [images, setImages] = useState([]);
 
   useEffect(() => {

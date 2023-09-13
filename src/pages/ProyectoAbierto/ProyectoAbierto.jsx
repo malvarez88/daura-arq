@@ -182,7 +182,7 @@ function ProyectoAbierto({ setLogoColor, categories }) {
                   />
                 </div>
                 <div className="images-section">
-                  {project?.images?.data.map((img) => (
+                  {project?.images?.data && project?.images?.data.map((img) => (
                     <img
                       key={img?.attributes?.url}
                       src={img?.attributes?.url}
