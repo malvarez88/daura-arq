@@ -10,6 +10,7 @@ import Contact from "../../pages/Contact/Contact";
 import ProyectoAbierto from "../../pages/ProyectoAbierto/ProyectoAbierto";
 import Estudio from "../../pages/Estudio/Estudio";
 import Noticias from "../../pages/Noticias/Noticias";
+import NotFound from "../../pages/404/NotFound"
 
 const AnimatedRoutes = ({ setLogoColor }) => {
   const location = useLocation();
@@ -28,6 +29,7 @@ const AnimatedRoutes = ({ setLogoColor }) => {
         />
         <Route path="/estudio" element={<Estudio />} />
         <Route path="/noticias" element={<Noticias />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>
   );
