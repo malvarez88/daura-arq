@@ -57,9 +57,6 @@ function Noticias() {
                 <h6 className="title" style={{ marginBottom: '30px' }}>
                   {t('footer.noticias').toUpperCase()}
                 </h6>
-                <h6 className="title" style={{ marginBottom: '30px' }}>
-                  {t('noticias.wip')}
-                </h6>
 
                 {news?.map((n, index) => (
                   <div className="noticia" key={n?.id}>
@@ -70,8 +67,8 @@ function Noticias() {
                         className="img-fluid"
                       />
                     </div>
-                    <small>{shortDate(n?.attributes?.createdAt)}</small>
-                    <h4>{n?.attributes?.Titulo}</h4>
+                    <p>{shortDate(n?.attributes?.createdAt)}</p>
+                    <a href={n?.attributes?.link} target="_blank" rel="noreferrer" style={{ color: 'inherit', cursor: 'pointer' }}><h4>{n?.attributes?.Titulo}</h4></a>
                     <p className="general-text">{n?.attributes?.descripcion}</p>
                     <p
                       className="general-text"

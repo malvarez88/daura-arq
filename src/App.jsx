@@ -5,7 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import AnimatedRoutes from './components/AnimatedRoutes/AnimatedRoutes';
 import Loader from './components/Loader/Loader';
-import { CustomCursor } from './components/CustomCursor/CustomCursor';
+import CustomCursor from './components/CustomCursor/CustomCursor';
 // import { axiosInstance } from './services/axiosInstance';
 
 function App() {
