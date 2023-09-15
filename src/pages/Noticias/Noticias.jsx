@@ -1,22 +1,45 @@
-import React, { useEffect } from "react";
-import './noticias.css'
+import React, { useEffect, useState } from 'react';
+import './noticias.css';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { motion } from 'framer-motion';
 
-import { motion } from "framer-motion";
+import { useTranslation } from 'react-i18next';
 
-import { useTranslation } from "react-i18next";
+import { changeDocTitle } from '../../hooks/hooks';
+import { axiosInstance } from '../../services/axiosInstance';
+import { shortDate } from '../../utils/numbers';
 
-import { terrassa1, wbf1 } from "../../assets";
-import { changeDocTitle } from "../../hooks/hooks";
+function Noticias() {
+  const [news, setNews] = useState(null);
+  const { t, i18n } = useTranslation('global');
 
-const Noticias = () => {
-
-  const { t } = useTranslation("global")
-
-
-  const location = t('footer.noticias')
+  const location = t('footer.noticias');
   useEffect(() => {
-    changeDocTitle(location)
-  }, [location])
+    changeDocTitle(location);
+  }, [location]);
+
+  const locale = i18n.language;
+
+  const getNews = async () => {
+    const { data } = await axiosInstance().get(
+      `/noticias?populate[foto][fields][0]=url&locale=${locale}&sort=createdAt:desc`,
+    );
+    setNews(data);
+  };
+
+  useEffect(() => {
+    getNews();
+  }, [locale]);
+
+  const [visibleIndexes, setVisibleIndexes] = useState([]);
+
+  const toggleContent = (index) => {
+    if (visibleIndexes.includes(index)) {
+      setVisibleIndexes(visibleIndexes.filter((item) => item !== index));
+    } else {
+      setVisibleIndexes([...visibleIndexes, index]);
+    }
+  };
 
   return (
     <div className="container">
@@ -29,60 +52,54 @@ const Noticias = () => {
             transition={{ duration: 1, delay: 1 }}
             key="noticias"
           >
-            <div className="estudio" style={{ marginTop: "30px" }}>
+            <div className="estudio" style={{ marginTop: '30px' }}>
               <div className="noticias">
-                <h6 className="title" style={{ marginBottom: "30px" }}>
-                  {t("footer.noticias").toUpperCase()}
+                <h6 className="title" style={{ marginBottom: '30px' }}>
+                  {t('footer.noticias').toUpperCase()}
                 </h6>
-                <h6 className="title" style={{ marginBottom: "30px" }}>
-                  {t('noticias.wip')}
-                </h6>
-                <div className="noticia">
-                  <div className="noticias-img">
-                    <img src={terrassa1} alt="" className="img-fluid" />
-                  </div>
-                  <small>24/1/2023</small>
-                  <h4>
-                    El CN Terrassa rep el projecte bàsic per a la construcció
-                    d’una piscina coberta de 34×25 metres
-                  </h4>
-                  <p className="general-text">
-                    El CN Terrassa ha rebut el projecte bàsic per a la
-                    construcció d’una nova piscina coberta de 34×25 metres de
-                    mans de l’estudi D’Aura Arquitectura. Joan Ramon Rius i
-                    Núria Ayala, especialistes en projectes esportius aquàtics,
-                    han lliurat el document a la delegació del club, formada pel
-                    president Jordi Martín, la vicepresidenta esportiva Cristina
-                    Rey i el vicepresident de l’Àrea d’Instal·lacions Enrique
-                    Lupiáñez.
-                  </p>
-                  <span>
-                    <b>LEE MAS</b>
-                  </span>
-                  <hr />
-                </div>
 
-                <div className="noticia">
-                  <div className="noticias-img">
-                    <img src={wbf1} alt="" className="img-fluid" />
+                {news?.map((n, index) => (
+                  <div className="noticia" key={n?.id}>
+                    <div className="noticias-img">
+                      <img
+                        src={n?.attributes?.foto?.data?.attributes?.url}
+                        alt=""
+                        className="img-fluid"
+                      />
+                    </div>
+                    <p>{shortDate(n?.attributes?.createdAt)}</p>
+                    <a href={n?.attributes?.link} target="_blank" rel="noreferrer" style={{ color: 'inherit', cursor: 'pointer' }}><h4>{n?.attributes?.Titulo}</h4></a>
+                    <span className="general-text"><ReactMarkdown>{n?.attributes?.descripcion}</ReactMarkdown></span>
+                    <span
+                      className="general-text"
+                      style={{
+                        opacity: visibleIndexes.includes(index) ? 1 : 0,
+                        display: visibleIndexes.includes(index)
+                          ? 'block'
+                          : 'none',
+                        transition: 'opacity 1s ease',
+                      }}
+                    >
+                      <ReactMarkdown>
+                        {n?.attributes?.contenido}
+                      </ReactMarkdown>
+                    </span>
+                    <span>
+                      <button
+                        type="button"
+                        onClick={() => toggleContent(index)}
+                        style={{
+                          border: 'none',
+                          outline: 'none',
+                          textDecoration: 'underline',
+                        }}
+                      >
+                        {visibleIndexes.includes(index) ? 'OCULTAR' : 'LEE MAS'}
+                      </button>
+                    </span>
+                    <hr />
                   </div>
-                  <small>06/09/2014</small>
-                  <h4>Barcelona World Basketball Festival</h4>
-                  <p className="general-text">
-                    Más allá de la competición profesional de un Mundial de
-                    Baloncesto, el deporte urbano es una actividad de ocio y
-                    socialización. Esta instalación combina espacios de
-                    actividad física y competición, con espectáculos deportivos,
-                    musicales, y zonas de ocio. Pese a su breve duración
-                    temporal, su impacto urbano ha atraído más de 30.000
-                    visitantes. Todos los elementos de la instalación son de
-                    construcción ligera y reutilizables para nuevos eventos.
-                  </p>
-                  <span>
-                    <b>LEE MAS</b>
-                  </span>
-                  <hr />
-                </div>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -90,6 +107,6 @@ const Noticias = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Noticias;
