@@ -10,6 +10,7 @@ import { axiosInstance } from '../../services/axiosInstance';
 
 function Home({ setLogoColor }) {
   const [images, setImages] = useState([]);
+  const [video, setVideo] = useState(null);
 
   useEffect(() => {
     setLogoColor();
@@ -19,7 +20,8 @@ function Home({ setLogoColor }) {
 
   const getHomeImages = async () => {
     const imageArray = [];
-    const { data } = await axiosInstance().get('/banner?populate[imagen1][fields][0]=url&populate[imagen2][fields][0]=url&populate[imagen3][fields][0]=url');
+    const { data } = await axiosInstance().get('/banner?populate[imagen1][fields][0]=url&populate[imagen2][fields][0]=url&populate[imagen3][fields][0]=url&populate[video][fields][0]=url');
+    if (data?.attributes?.video?.data?.attributes?.url) return setVideo(data?.attributes?.video?.data?.attributes?.url);
     if (data?.attributes?.imagen1?.data?.attributes?.url) imageArray.push(data?.attributes?.imagen1?.data?.attributes?.url);
     if (data?.attributes?.imagen2?.data?.attributes?.url) imageArray.push(data?.attributes?.imagen2?.data?.attributes?.url);
     if (data?.attributes?.imagen3?.data?.attributes?.url) imageArray.push(data?.attributes?.imagen3?.data?.attributes?.url);
@@ -46,13 +48,19 @@ function Home({ setLogoColor }) {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <div
-              id="carouselExampleControls"
-              className="carousel slide"
-              data-ride="carousel"
-            >
-              <div className="carousel-inner">
-                {images.length > 0 && images.map((image, idx) => (
+
+            {video && (
+              <div>
+                <video src={video} width="1113px" autoPlay muted loop> </video>
+              </div>
+            )}
+            {!video && images.length > 0 && images.map((image, idx) => (
+              <div
+                id="carouselExampleControls"
+                className="carousel slide"
+                data-ride="carousel"
+              >
+                <div className="carousel-inner">
                   <div className={`carousel-item ${idx === 0 ? 'active' : ''}`} key={image}>
                     <img
                       className="d-block img-fluid hero-img"
@@ -62,33 +70,33 @@ function Home({ setLogoColor }) {
                       height="540px"
                     />
                   </div>
-                ))}
+                </div>
+                <a
+                  className="carousel-control-prev"
+                  href="#carouselExampleControls"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  />
+                  <span className="sr-only">Previous</span>
+                </a>
+                <a
+                  className="carousel-control-next"
+                  href="#carouselExampleControls"
+                  role="button"
+                  data-slide="next"
+                >
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  />
+                  <span className="sr-only">Next</span>
+                </a>
               </div>
-              <a
-                className="carousel-control-prev"
-                href="#carouselExampleControls"
-                role="button"
-                data-slide="prev"
-              >
-                <span
-                  className="carousel-control-prev-icon"
-                  aria-hidden="true"
-                />
-                <span className="sr-only">Previous</span>
-              </a>
-              <a
-                className="carousel-control-next"
-                href="#carouselExampleControls"
-                role="button"
-                data-slide="next"
-              >
-                <span
-                  className="carousel-control-next-icon"
-                  aria-hidden="true"
-                />
-                <span className="sr-only">Next</span>
-              </a>
-            </div>
+            ))}
 
             <div className="mobile-home">
               {images.length > 0 && images.map((image) => (
