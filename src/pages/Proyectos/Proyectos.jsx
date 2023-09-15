@@ -149,7 +149,7 @@ function Proyectos({ setLogoColor, categories }) {
                         viewport={{ once: true }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        key={project.ref}
+                        key={project.id}
                       >
                         <Link
                           to={`/proyectos/${project.id}${selectedCategory.category === 'all' ? '' : `?category=${project?.category}`}`}
