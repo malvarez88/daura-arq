@@ -55,22 +55,24 @@ function Home({ setLogoColor }) {
                 <video src={video} width="1113px" autoPlay muted loop> </video>
               </div>
             )}
-            {!video && images.length > 0 && images.map((image, idx) => (
+            {!video && images.length > 0 && (
               <div
                 id="carouselExampleControls"
                 className="carousel slide"
                 data-ride="carousel"
               >
                 <div className="carousel-inner">
-                  <div className={`carousel-item ${idx === 0 ? 'active' : ''}`} key={image}>
-                    <img
-                      className="d-block img-fluid hero-img"
-                      src={image}
-                      alt="Home slide"
-                      width="1100px"
-                      height="540px"
-                    />
-                  </div>
+                  {images.map((image, idx) => (
+                    <div className={`carousel-item ${idx === 0 ? 'active' : ''}`} key={image}>
+                      <img
+                        className="d-block img-fluid hero-img"
+                        src={image}
+                        alt="Home slide"
+                        width="1100px"
+                        height="540px"
+                      />
+                    </div>
+                  ))}
                 </div>
                 <a
                   className="carousel-control-prev"
@@ -97,7 +99,7 @@ function Home({ setLogoColor }) {
                   <span className="sr-only">Next</span>
                 </a>
               </div>
-            ))}
+            )}
 
             <div className="mobile-home">
               {images.length > 0 && images.map((image) => (
