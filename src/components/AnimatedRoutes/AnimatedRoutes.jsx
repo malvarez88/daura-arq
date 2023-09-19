@@ -1,31 +1,44 @@
-import React from "react";
-import { Routes, Route } from "react-router";
-import { useLocation } from "react-router";
+import { AnimatePresence } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Route, Routes, useLocation } from 'react-router';
+import Categories from '../../Models/Categories';
+import Contact from '../../pages/Contact/Contact';
+import Estudio from '../../pages/Estudio/Estudio';
+import Home from '../../pages/Home/Home';
+import Noticias from '../../pages/Noticias/Noticias';
+import ProyectoAbierto from '../../pages/ProyectoAbierto/ProyectoAbierto';
+import Proyectos from '../../pages/Proyectos/Proyectos';
+import { axiosInstance } from '../../services/axiosInstance';
+import NotFound from '../../pages/404/NotFound';
 
-import { AnimatePresence } from "framer-motion";
-
-import Home from "../../pages/Home/Home";
-import Proyectos from "../../pages/Proyectos/Proyectos";
-import Contact from "../../pages/Contact/Contact";
-import ProyectoAbierto from "../../pages/ProyectoAbierto/ProyectoAbierto";
-import Estudio from "../../pages/Estudio/Estudio";
-import Noticias from "../../pages/Noticias/Noticias";
-import NotFound from "../../pages/404/NotFound"
-
-const AnimatedRoutes = ({ setLogoColor }) => {
+function AnimatedRoutes({ setLogoColor }) {
+  const { i18n } = useTranslation();
   const location = useLocation();
+  const [categories, setCategories] = useState(new Categories());
+  const locale = i18n?.language;
+
+  const getCategories = async () => {
+    const query = `/categorias?fields[0]=nombre&fields[1]=color&fields[2]=colorLetra&locale=${locale}`;
+    const { data } = await axiosInstance().get(query);
+    if (data) setCategories(new Categories(data));
+  };
+
+  useEffect(() => {
+    getCategories();
+  }, [locale]);
   return (
     <AnimatePresence>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home setLogoColor={setLogoColor} />} />
         <Route
           path="/proyectos"
-          element={<Proyectos setLogoColor={setLogoColor} />}
+          element={<Proyectos setLogoColor={setLogoColor} categories={categories} />}
         />
         <Route path="/contacto" element={<Contact />} />
         <Route
-          path="/proyectos/:ref"
-          element={<ProyectoAbierto setLogoColor={setLogoColor} />}
+          path="/proyectos/:id"
+          element={<ProyectoAbierto setLogoColor={setLogoColor} categories={categories} />}
         />
         <Route path="/estudio" element={<Estudio />} />
         <Route path="/noticias" element={<Noticias />} />
@@ -33,6 +46,6 @@ const AnimatedRoutes = ({ setLogoColor }) => {
       </Routes>
     </AnimatePresence>
   );
-};
+}
 
 export default AnimatedRoutes;
