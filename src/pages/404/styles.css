@@ -1,0 +1,9 @@
+.notfound {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    text-transform: uppercase;
+}
