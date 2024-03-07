@@ -51,8 +51,8 @@ function Home({ setLogoColor }) {
           <div className="col-12">
 
             {video && (
-              <div>
-                <video src={video} width="1113px" autoPlay muted loop> </video>
+              <div className='video'>
+                <video src={video} autoPlay muted loop> </video>
               </div>
             )}
             {!video && images.length > 0 && (
